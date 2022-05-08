@@ -5,19 +5,20 @@ import java.time.LocalDate;
 import dataStructures.DynamicArray;
 import dataStructures.LinkedList;
 
-//Esta clase es el alma de la aplicación. Añadir Descripción
+//Esta clase es el alma de la aplicación.
 public class User {
 	private String userName;
 	private String password;
-	public DynamicArray<Account> accounts = new DynamicArray<Account>(); 
-	public LinkedList<Transaction> transactions = new LinkedList<Transaction>();
+	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
+	private LinkedList<Transaction> transactions = new LinkedList<Transaction>();
+	@SuppressWarnings("unused")
+	private LinkedList <Transaction> incomingTransactions = new LinkedList<Transaction>(); //Implementación a futuro
 	private short idProvider = 0;
 	
 	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
 	};
-	
 	
 	protected void editAccounts() {
 		
@@ -47,7 +48,7 @@ public class User {
 		transactions.pushBack(trans); //Toca hacer una verificación de si la cuenta existe
 	}
 	
-	protected String getUserName() {
+	public String getUserName() {
 		return this.userName;
 	}
 	
@@ -69,14 +70,9 @@ public class User {
 		return "Us: " + userName;
 	}
 	
-	public Account getAccounts(int index)
-	{		
-		return accounts.get(index);
-	}
-	
-	public Transaction getTransactions(int index)
-	{		
-		return transactions.get(index);
+	public String accountsInfo()
+	{
+		return null;
 	}
 	
 	public String completeUserInfo() {
@@ -85,8 +81,4 @@ public class User {
 			
 		
 	}
-
-	public String userAndPassword() {
-		return this.userName + "; " + this.password;	
-		}
 }

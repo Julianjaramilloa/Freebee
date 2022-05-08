@@ -18,8 +18,5 @@ public class Account{
 		this.currency = currency;
 	}
 	
-	public String accountInfo() {
-		return this.name + "; " + this.balance + "; " + this.currency;
-	}
 	
 }

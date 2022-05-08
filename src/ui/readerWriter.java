@@ -189,8 +189,8 @@ public class readerWriter {
 //				listaDeCuentas = currentUser.getAccounts(u); 
 //				listaDeTrans = u.getTransactions;
 //						
-				for (int a = 0; a < currentUser.accounts.size(); a++) {f.write("C; " + currentUser.getAccounts(a) + "\n");}
-				for (int t = 0; t < currentUser.transactions.size(); t++) {f.write("T; " + currentUser.getTransactions(t) + "\n");}
+				for (int a = 0; a < currentUser.accounts.size(); a++) {f.write("C; " + currentUser.getAccounts(a).accountInfo() + "\n");}
+				for (int t = 0; t < currentUser.transactions.size(); t++) {f.write("T; " + currentUser.getTransactions(t).transactionInfo() + "\n");}
 //				
 	        }
 			

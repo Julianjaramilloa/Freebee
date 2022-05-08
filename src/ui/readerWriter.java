@@ -21,7 +21,7 @@ public class readerWriter {
 	
 	// De aquí en adelante readAndLoad()
 	UserList userList;
-	final String fileName = "freebieRecord.txt";
+	final String fileName = "freebeeRecord.txt";
 	
 	// "user" es el usuario que se está llenando de cuentas y transacciones en cada momento
 	User user = null;
@@ -44,6 +44,7 @@ public class readerWriter {
 		      System.out.println("El archivo " + fileName + " ya existe");
 		      // Lee el archivo y crea los objetos
 		      readData(fileName);
+		      System.out.println("read successful!");
 		      }
 		    } catch (IOException e) {
 		System.out.println("Algo salió mal con la creación de " + fileName);
@@ -58,8 +59,12 @@ public class readerWriter {
 		File f = new File(fileName);
 		try {
 			Scanner sc = new Scanner(f);
+			System.out.print(sc.hasNextLine());
+
 			while (sc.hasNextLine()) {
-				String line = sc.nextLine();
+
+				String line = sc.next();
+				System.out.print(line);
 				tokenize(line);
 			}
 			sc.close();

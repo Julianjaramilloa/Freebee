@@ -12,9 +12,16 @@ public class Console {
 	
 	public Console(boolean loadData) {
 		userList = new UserList();
+		loadData = true;
 		if(loadData) {
-			userList.readAndLoadData();
+			readAndLoadData(userList);
 		}
+	}
+	
+	public void readAndLoadData(UserList userlist) {
+		readerWriter read = new readerWriter(userlist);
+		read.readFile();
+		
 	}
 	
 	public void mainMenu() {

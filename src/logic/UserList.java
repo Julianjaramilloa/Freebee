@@ -6,7 +6,7 @@ import dataStructures.DArrayIterator;
 import dataStructures.DynamicArray;
 import dataStructures.LinkedLIterator;
 import dataStructures.LinkedList;
-
+import ui.readerWriter;
 public class UserList {
 	public DynamicArray<User> users = new DynamicArray<User>();
 	private int currentUser;
@@ -90,9 +90,6 @@ public class UserList {
 		
 	};
 	
-	public void readAndLoadData() {
-		
-	}
 
 	public String get() {
 		// TODO Auto-generated method stub

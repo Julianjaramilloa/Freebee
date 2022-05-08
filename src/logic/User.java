@@ -18,6 +18,7 @@ public class User {
 		this.password = password;
 	};
 	
+	
 	protected void editAccounts() {
 		
 	};
@@ -79,4 +80,8 @@ public class User {
 			
 		
 	}
+
+	public String userAndPassword() {
+		return this.userName + "; " + this.password;	
+		}
 }

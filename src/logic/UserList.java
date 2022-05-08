@@ -13,6 +13,10 @@ public class UserList {
 	
 	public UserList() {};
 	
+	public int size() {
+		return users.size();
+	}
+	
 	//Métodos para crear un usuario:
 	
 	public String userCreation(String userName, String password, String auxPass) {
@@ -88,5 +92,10 @@ public class UserList {
 	
 	public void readAndLoadData() {
 		
+	}
+
+	public String get() {
+		// TODO Auto-generated method stub
+		return null;
 	};
 }

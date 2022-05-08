@@ -170,7 +170,7 @@ public class readerWriter {
 	
 	// De aquí en adelante saveChanges()
 	
-	/*public void saveChanges() {
+	public void saveChanges(UserList list) {
 		
 		// Para que esta función correctamente, se debe modificar el get, de manera que quede
 		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
@@ -181,23 +181,23 @@ public class readerWriter {
 				PrintWriter p = new PrintWriter(b);) {
 			
 			// Recorre la lista de usuarios (lo llamé userList)
-			for (int u = 0; u < UserList.size(); u++) {
+			for (int u = 0; u < list.size(); u++) {
 				
-				f.write("U; " + UserList.get(u) + "\n");
+				f.write("U; " + list.users.iterate().next().userAndPassword() + "\n");
 				
 				// Demostrativo, hay que implementar bien:
-				listaDeCuentas = u.getAccounts; 
-				listaDeTrans = u.getTransactions;
-						
-				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
-				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
-				
+				//listaDeCuentas = u.getAccounts; 
+//				listaDeTrans = u.getTransactions;
+//						
+//				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
+//				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
+//				
 	        }
 			
 		} catch (IOException i1) {i1.printStackTrace();}
 		
 	}
-	*/
+	
 	
 
 }

@@ -31,27 +31,43 @@ public class DynamicArray<T> implements List<T> {
 	@Override
 	public void add(T data, int index) {
 		checkIndex(index);
+		if(size == arr.length) {
+			expandArr();
+		}
+		for(int i=size-1; i>= index; i--) {
+			arr[i+1] = arr[i];
+		}
 		arr[index] = data;
+		size++;
 	}
 
 	@Override
 	public void pushBack(T data) {
 		if(size == arr.length) {
-			T[]aux = arr;
-			arr = (T[])new Object[arr.length*2];
-			for(int i=0; i<aux.length; i++) {
-				arr[i] = aux[i];
-			}
+			expandArr();
 		}
-		size++;
 		arr[size] = data;
+		size++;
+		
 	}
 
+	private void expandArr() {
+		T[]aux = arr;
+		arr = (T[])new Object[arr.length*2];
+		for(int i=0; i<aux.length; i++) {
+			arr[i] = aux[i];
+		}
+	}
+	
 	@Override
 	public void remove(int index) {
 		checkIndex(index);
-		T toDelete = arr[index];
-		
+		for(int i=index+1; i<size;i++) {
+			arr[i-1] = arr[i];
+		}
+		int blankSpace = size-1; 
+		arr [blankSpace] = null;
+		size--;
 	}
 	
 	@Override
@@ -80,6 +96,23 @@ public class DynamicArray<T> implements List<T> {
 	public void clear() {
 		arr = (T[]) new Object[1];;
 		size = 0;
+	}
+	
+	public DArrayIterator<T> iterate(){
+		return new DArrayIterator<T>(this);
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		for(int i=0; i<size; i++) {
+			sb.append(arr[i].toString());
+			sb.append("; ");
+		}
+		sb.append("]");		
+		return sb.toString();
+		
 	}
 
 }

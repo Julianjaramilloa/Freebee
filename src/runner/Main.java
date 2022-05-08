@@ -13,7 +13,7 @@ import ui.Console;
  * @author Camilo Andrés Apraez
  * @author César Arthuro Lemos
  * 				
- * Proyecto Freebie, de la asignatura Estructuras de Datos.
+ * Proyecto freebee, de la asignatura Estructuras de Datos.
  *  
  */
 public class Main {

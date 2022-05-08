@@ -53,8 +53,13 @@ public class Console {
 				}
 				break;
 			case 4:
-				System.out.println("Gracias por usar FREEBIE");
+				System.out.println("Gracias por usar freebee+"
+						+ "Programa cerrado");
 				System.exit(0);
+				break;
+			case 5:
+				System.out.println("See users");
+				System.out.println(userList.users.toString());
 				break;
 			default:
 				System.err.println("No escogiste un número correcto. Escoge solo las opciones disponibles");
@@ -63,7 +68,7 @@ public class Console {
 		}
 		
 		sc.close();
-		System.out.println("Gracias por usar FREEBIE\n"
+		System.out.println("Gracias por usar freebee\n"
 				+ "Programa cerrado");
 		System.exit(0);
 	};
@@ -103,7 +108,7 @@ public class Console {
 	}
 	
 	private void appInfo() {
-		System.out.println("FREEBIE v1.1, programa para la gestión de las finanzas personales.\n"
+		System.out.println("freebee v1.1, programa para la gestión de las finanzas personales.\n"
 				+ "Proyecto Estructuras de Datos, Joseph Gallego, G3 Universidad Nacional 2022-1.\n"
 				+ "Equipo 1. Conformado por:\n"
 				+ "	Marcos Pinzón Pardo.\n"
@@ -131,7 +136,7 @@ public class Console {
 			String auxPass;
 			
 
-			System.out.println("Ingresa un número de usuario y una contraseña");
+			System.out.println("Crea un nombre de usuario y una contraseña");
 			System.out.println("Nombre de Usuario:");
 			userName = sc.nextLine();
 			System.out.println("Ahora ingresa una contraseña: ");
@@ -146,6 +151,7 @@ public class Console {
 			}
 			if(userList.exists(userName)) {
 				System.err.println("Ya existe un usuario con este nombre. Ingresa otro");
+				continue;
 			}
 			userList.addUser(userName, password);
 			created = true;

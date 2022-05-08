@@ -1,10 +1,12 @@
 package logic;
 
+import dataStructures.DArrayIterator;
+import dataStructures.DynamicArray;
 import dataStructures.LinkedLIterator;
 import dataStructures.LinkedList;
 
 public class UserList {
-	private LinkedList<User> users = new LinkedList<User>();
+	public DynamicArray<User> users = new DynamicArray<User>();
 	private String fileName;
 	
 	public UserList(String savedData) {
@@ -22,10 +24,10 @@ public class UserList {
 	 */
 	public boolean exists(String username) {
 		boolean exists = false;
-		LinkedLIterator<User> it = users.iterate();
+		DArrayIterator<User> it = users.iterate();
 		while(it.hasNext()) {
 			User aux = it.next();
-			if(aux.getUserName() == username) {
+			if(aux.getUserName().equals(username) ) {
 				exists = true;
 			}
 		}

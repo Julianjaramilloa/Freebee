@@ -15,7 +15,7 @@ public class LinkedList<T> implements List<T> {
 		Node<T> aux = new Node<T>(data);
 		if(head == null) {
 			head = aux;
-			tail = head.next;
+			tail = head;
 		}else {
 			tail.next = aux;
 			tail = tail.next;
@@ -167,6 +167,31 @@ public class LinkedList<T> implements List<T> {
         }
         
 	}
+
+	//Es necesario buscar una buena forma de hacer este método de tal manera que
+	//sea rápido. He intentado con StringBuilder pero por alguna razón el programa
+	//parecía ser excesivamente lento.
+	@Override
+	public String toString() {
+		String rep = "";
+		
+		if(size==0) {
+			rep += "Lista Vacía";
+		}else if (size==1) {
+			rep += "head: " + "tail: " + head.data.toString();
+		}else{
+			System.out.println("Auxilio");
+			rep += "head: " + head.data.toString();
+			Node<T> aux = head;
+			while(aux.next != null) {
+				rep += "->" + aux.data.toString();
+			}
+			rep+= tail.data.toString() + ": tail";
+		}
+		return rep;
+	}
+	
+
 
 }
 

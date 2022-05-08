@@ -41,6 +41,13 @@ class User {
 			rightCred = false;
 		}
 		return rightCred;
+	}
+
+	@Override
+	public String toString() {
+		return "us: " + userName + ", acc:" + accounts.size() + ", trans: " + transactions.size();
 	};
 	
+
+		
 }

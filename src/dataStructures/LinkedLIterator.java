@@ -21,11 +21,13 @@ public class LinkedLIterator<T> implements Iterator<T> {
 
 	@Override
 	public T next() {
+		T data = current.data;
 		if(hasNext()==true) {
 			current = current.next;
-			return current.data;
+		}else {
+			throw new IndexOutOfBoundsException("No hay más valores en la lista");
 		}
-		return null;
+		return data;
 	}
 
 }

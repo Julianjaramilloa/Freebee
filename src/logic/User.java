@@ -9,8 +9,8 @@ import dataStructures.LinkedList;
 public class User {
 	private String userName;
 	private String password;
-	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
-	private LinkedList<Transaction> transactions = new LinkedList<Transaction>();
+	public DynamicArray<Account> accounts = new DynamicArray<Account>(); 
+	public LinkedList<Transaction> transactions = new LinkedList<Transaction>();
 	private short idProvider = 0;
 	
 	public User(String userName, String password) {
@@ -69,9 +69,14 @@ public class User {
 		return "Us: " + userName;
 	}
 	
-	public String accountsInfo()
-	{
-		return null;
+	public Account getAccounts(int index)
+	{		
+		return accounts.get(index);
+	}
+	
+	public Transaction getTransactions(int index)
+	{		
+		return transactions.get(index);
 	}
 	
 	public String completeUserInfo() {

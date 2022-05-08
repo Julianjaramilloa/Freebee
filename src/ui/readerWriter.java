@@ -182,15 +182,15 @@ public class readerWriter {
 			
 			// Recorre la lista de usuarios (lo llamé userList)
 			for (int u = 0; u < list.size(); u++) {
-				
-				f.write("U; " + list.users.iterate().next().userAndPassword() + "\n");
+				User currentUser = list.users.iterate().next();
+				f.write("U; " + currentUser.userAndPassword() + "\n");
 				
 				// Demostrativo, hay que implementar bien:
-				//listaDeCuentas = u.getAccounts; 
+//				listaDeCuentas = currentUser.getAccounts(u); 
 //				listaDeTrans = u.getTransactions;
 //						
-//				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
-//				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
+				for (int a = 0; a < currentUser.accounts.size(); a++) {f.write("C; " + currentUser.getAccounts(a) + "\n");}
+				for (int t = 0; t < currentUser.transactions.size(); t++) {f.write("T; " + currentUser.getTransactions(t) + "\n");}
 //				
 	        }
 			

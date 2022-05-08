@@ -80,6 +80,8 @@ public class readerWriter {
 		sc.useDelimiter(";");
 		
 		String data = sc.next().trim();
+		System.out.println(data);
+
 		
 		if(data.charAt(0) == 'U') {
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
@@ -89,11 +91,11 @@ public class readerWriter {
 			System.out.println("Es un usuario, tokenizando");
 			
 			
-		} else if(data == "A") {
+		} else if(data.charAt(0) == 'C') {
 			tokenizeAccount(data, user);
 			System.out.println("Es una cuenta, tokenizando");
 			
-		} else if(data == "T") {
+		} else if(data.charAt(0) == 'T') {
 			tokenizeTransaction(data, user);
 			System.out.println("Es una transacción, tokenizando");
 			
@@ -107,16 +109,7 @@ public class readerWriter {
 
 	private User tokenizeUser(String name, String password) {
 		
-		System.out.println("Tokenizando usuario");
-		
-//		Scanner sc = new Scanner(data);
-//		sc.useDelimiter(";");
-//		
-//		String name = sc.next().trim();
-//		String password = sc.next().trim();
-		
-//		sc.close();
-		
+		System.out.println("Tokenizando usuario");	
 		User user = new User(name, password);
 		System.out.println("\n\tUsuario creado:\n\n" + "Name:" + name + " Password:" + password + "\n");
 		

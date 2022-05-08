@@ -139,7 +139,6 @@ public class Console {
 			System.out.println("Ingresa nuevamente la contraseña");
 			auxPass = sc.nextLine();
 			
-			System.out.println(password + " " + auxPass);
 			if(password.equals(auxPass) == false) {
 				System.err.println("La segunda contraseña no corresponde con la primera");
 				continue;

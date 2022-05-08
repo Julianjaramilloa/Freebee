@@ -4,7 +4,7 @@ import dataStructures.DynamicArray;
 import dataStructures.LinkedList;
 
 //Esta clase es el alma de la aplicación. Añadir Descripción
-class User {
+public class User {
 	private String userName;
 	private String password;
 	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
@@ -30,24 +30,21 @@ class User {
 		return this.userName;
 	}
 	
-	protected boolean login(String userName, String password) {
-		boolean rightCred = false;
+	protected boolean right(String userName, String password) {
+		boolean right = false;
 		
-		if(this.userName == userName) {
-			if(this.password == password) {
-				rightCred = true;
+		if(this.userName.equals(userName)) {
+			if(this.password.equals(password)) {
+				right = true;
 			}
 		}else {
-			rightCred = false;
+			right = false;
 		}
-		return rightCred;
-	}
-
-	@Override
-	public String toString() {
-		return "us: " + userName + ", acc:" + accounts.size() + ", trans: " + transactions.size();
+		return right;
 	};
 	
-
-		
+	@Override
+	public String toString() {
+		return "Us: " + userName;
+	}
 }

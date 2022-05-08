@@ -190,6 +190,17 @@ public class LinkedList<T> implements List<T> {
 		}
 		return rep;
 	}
+
+
+	@Override
+	public void replace(int index, T data) {
+		checkIndex(index);
+		Node<T> aux = head;
+		for(int i=0; i<index; i++) {
+			aux=aux.next;
+		}
+		aux.data = data;
+	}
 	
 
 

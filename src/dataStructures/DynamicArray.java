@@ -7,7 +7,7 @@ public class DynamicArray<T> implements List<T> {
 	private T[] arr =(T[]) new Object[1];
 	int size = 0;
 	
-	private void checkIndex(int index) {
+	public void checkIndex(int index) {
 		if(size <= index || index < 0) {
 			throw new IndexOutOfBoundsException("El índice es inválido.");
 		}
@@ -84,6 +84,12 @@ public class DynamicArray<T> implements List<T> {
 			throw new NoSuchElementException("La lista está vacía");
 		}
 		
+	}
+	
+	@Override
+	public void replace(int index, T data) {
+		checkIndex(index);
+		arr[index] = data;
 	}
 
 	@Override

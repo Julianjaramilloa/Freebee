@@ -2,14 +2,16 @@ package ui;
 
 import java.util.Scanner;
 
+import logic.User;
 import logic.UserList;
 
 public class Console {
 	private UserList userList;
 	Scanner sc = new Scanner(System.in);//Para prevenir problemas con Scanners multiples
+	final String cont = "¿Quieres seguir en la app?";
 	
-	public Console(String savedData, boolean loadData) {
-		userList = new UserList(savedData);
+	public Console(boolean loadData) {
+		userList = new UserList();
 		if(loadData) {
 			userList.readAndLoadData();
 		}
@@ -17,7 +19,7 @@ public class Console {
 	
 	public void mainMenu() {
 		
-		System.out.println("\n          Hola de nuevo. Bienvenido a FREEBIE");
+		System.out.println("\n          Hola de nuevo. Bienvenido a freebee");
 		System.out.println("       El mejor gestor de tus finanzas personales\n");
 		
 		
@@ -36,29 +38,27 @@ public class Console {
 			switch(opt) {
 			case 1:
 				userMenu();
-				if(!menu()) {
+				if(!choice(cont)) {
 					exit=true;
 				}
 				break;
 			case 2:
 				createUserMenu();
-				if(!menu()) {
+				if(!choice(cont)){
 					exit=true;
 				}
 				break;
 			case 3:
 				appInfo();
-				if(!menu()) {
+				if(!choice(cont)) {
 					exit=true;
 				}
 				break;
 			case 4:
-				System.out.println("Gracias por usar freebee+"
-						+ "Programa cerrado");
+				System.out.println("Gracias por usar freebee");
 				System.exit(0);
 				break;
 			case 5:
-				System.out.println("See users");
 				System.out.println(userList.users.toString());
 				break;
 			default:
@@ -73,10 +73,10 @@ public class Console {
 		System.exit(0);
 	};
 	
-	private boolean menu() {
+	private boolean choice(String choice) {
 		boolean menu = false;
-		System.out.println("\n¿Volver al menú principal?\n"
-				+ "1: Sí\n"
+		System.out.println("\n" + choice
+				+ "\n1: Sí\n"
 				+ "2: No");
 		boolean validOption = false;
 		
@@ -108,7 +108,7 @@ public class Console {
 	}
 	
 	private void appInfo() {
-		System.out.println("freebee v1.1, programa para la gestión de las finanzas personales.\n"
+		System.out.println("FREEBIE v1.1, programa para la gestión de las finanzas personales.\n"
 				+ "Proyecto Estructuras de Datos, Joseph Gallego, G3 Universidad Nacional 2022-1.\n"
 				+ "Equipo 1. Conformado por:\n"
 				+ "	Marcos Pinzón Pardo.\n"
@@ -136,7 +136,7 @@ public class Console {
 			String auxPass;
 			
 
-			System.out.println("Crea un nombre de usuario y una contraseña");
+			System.out.println("Ingresa un número de usuario y una contraseña");
 			System.out.println("Nombre de Usuario:");
 			userName = sc.nextLine();
 			System.out.println("Ahora ingresa una contraseña: ");
@@ -144,32 +144,68 @@ public class Console {
 			System.out.println("Ingresa nuevamente la contraseña");
 			auxPass = sc.nextLine();
 			
-			if(password.equals(auxPass) == false) {
-				System.err.println("La segunda contraseña no corresponde con la primera");
-				continue;
+			String result = userList.userCreation(userName, password, auxPass);
+			if(result != null) 
+			{
+				System.out.println(result);
+				if(choice("¿Volver a intentarlo?")) {
+					continue;
+				}else {
+					break;
+				}
+				
+			}else 
+			{
+				System.out.println("¡Usuario exitosamente creado!");
+				if(choice("¿Seguir creando usuarios?")) {
+					continue;
+				}else {
+					created = true;
+				}
 			}
-			if(userList.exists(userName)) {
-				System.err.println("Ya existe un usuario con este nombre. Ingresa otro");
-				continue;
-			}
-			userList.addUser(userName, password);
-			created = true;
-			System.out.println("¡Usuario exitosamente creado!");
+			
+			
 		}
 		
 		
 	}
 	
 	private void userMenu() {
+		if(!userList.hasUsers()) {
+			System.out.println("No hay usuarios. No se puede hacer login");
+			return;
+		}
+		
+		User user;
 		System.out.println("\nIngresa tus credenciales:");
 		boolean logged = false;
 		while(!logged) {
-			String user = sc.nextLine();
+			System.out.println("Usuario:");
+			String userN = sc.nextLine();
+			System.out.println("Contraseña:");
 			String pass = sc.nextLine();
 			
+			user = userList.login(userN, pass);
+			if(user == null) {
+				System.out.println("Usuario o Contraseña Incorrectos");
+				continue;
+			}else {
+				System.out.println("Login Exitoso");
+				logged = true;
+			}
 		}
+		
+		
 	}
 	
+	private void userMenuOptions(String userName) {
+		System.out.println("Hola estimado" + userName);
+		System.out.println("\nOpciones:");
+		System.out.println("	 1. Cuentas\n"
+				+ "Transacciones"
+				+ "Tips"
+				+ "Volver");
+	}
 }
 
 

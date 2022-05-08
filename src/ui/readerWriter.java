@@ -20,9 +20,10 @@ import dataStructures.LinkedList;
 
 public class readerWriter {
 	
+	/*
 	// De aquí en adelante readAndLoad()
 
-	String fileName = "freebieRecord.txt";
+	final String fileName = "freebieRecord.txt";
 	
 	// "user" es el usuario que se está llenando de cuentas y transacciones en cada momento
 	User user = null;
@@ -195,6 +196,6 @@ public class readerWriter {
 		} catch (IOException i1) {i1.printStackTrace();}
 		
 	}
-	
+	*/
 
 }

@@ -3,6 +3,7 @@
  */
 package runner;
 
+import logic.UserList;
 import ui.Console;
 
 /**
@@ -22,7 +23,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Console c = new Console("users.txt", true);
+		Console c = new Console(true);
 		c.mainMenu();
 	}
 

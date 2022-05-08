@@ -8,7 +8,7 @@ enum Categories{
 	Compras,
 	ComidasFuera,
 	Transporte,
-	Educación,
+	Educacion,
 	Ocio,
 	Ingresos;
 }

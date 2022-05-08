@@ -1,21 +1,22 @@
-package Structures;
+package dataStructures;
 
 import java.io.Serializable;
 
 public class Queue<T extends Serializable> implements Serializable {
-	node<T> head;
-	node<T> tail;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	Node<T> head;
+	Node<T> tail;
 	
 	public Queue() { this.head = null; }
 	
 	public void enqueue(T data)
 	{
 
-	    // Creating new node with given value
-	    node<T> temp = new node<>(data);
+	    Node<T> temp = new Node<>(data);
 
-	    // Checking if list is empty
-	    // and assigning new value to head node
 	    if (head == null) {
 	        head = temp;
 	        tail = temp;
@@ -40,7 +41,7 @@ public class Queue<T extends Serializable> implements Serializable {
 	}
 	public String peek() 
 	{
-		node<T> temp = head;
+		Node<T> temp = head;
 		return String.valueOf(temp.data);
 	}
 

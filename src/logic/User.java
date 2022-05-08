@@ -1,5 +1,7 @@
 package logic;
 
+import java.time.LocalDate;
+
 import dataStructures.DynamicArray;
 import dataStructures.LinkedList;
 
@@ -11,7 +13,7 @@ public class User {
 	private LinkedList<Transaction> transactions = new LinkedList<Transaction>();
 	private short idProvider = 0;
 	
-	protected User(String userName, String password) {
+	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
 	};
@@ -20,10 +22,28 @@ public class User {
 		
 	};
 	
-	protected void addAccount(String name, float balance, float currency) {
+	public void addAccount(String name, float balance, String currency) {
 		short id = idProvider;
 		Account acc = new Account(id, name, balance, currency);
+		accounts.pushBack(acc);
 		idProvider ++;
+	}
+	
+	public void addTransaction(
+			LocalDate date,
+			short accId,
+			String desc,
+			Categories type, 
+			float amount,
+			boolean isIngreso) {
+		Transaction trans = new Transaction(
+				date,
+				accId,
+				desc,
+				type,
+				amount,
+				isIngreso);
+		transactions.pushBack(trans); //Toca hacer una verificación de si la cuenta existe
 	}
 	
 	protected String getUserName() {
@@ -46,5 +66,17 @@ public class User {
 	@Override
 	public String toString() {
 		return "Us: " + userName;
+	}
+	
+	public String accountsInfo()
+	{
+		return null;
+	}
+	
+	public String completeUserInfo() {
+		return null;	
+		
+			
+		
 	}
 }

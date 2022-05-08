@@ -2,16 +2,6 @@ package logic;
 
 import java.time.LocalDate;
 
-enum Categories{
-	Vivienda,
-	Salud,
-	Compras,
-	ComidasFuera,
-	Transporte,
-	Educacion,
-	Ocio,
-	Ingresos;
-}
 
 public class Transaction {
 	LocalDate date;

@@ -23,7 +23,10 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Console c = new Console(true);
+		//En el constructor de Console está lo de si se carga o no. Por ahora
+		//Lo tengo como que no se carga automáticamente. Para que se carge
+		//automaticamente, ponga true;
+		Console c = new Console(false);
 		c.mainMenu();
 	}
 

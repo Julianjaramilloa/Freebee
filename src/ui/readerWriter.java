@@ -9,27 +9,27 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.Scanner;
-
-import dataStructures.LinkedLIterator;
-import dataStructures.LinkedList;
+import java.util.Locale.Category;
 
 /*
- * Freebie
+ * freebee
  * @author Marcos Pinzón Pardo
  */
 
 public class readerWriter {
 	
-	/*
+	
 	// De aquí en adelante readAndLoad()
-
+	UserList userList;
 	final String fileName = "freebieRecord.txt";
 	
 	// "user" es el usuario que se está llenando de cuentas y transacciones en cada momento
 	User user = null;
 
 	// Constructor
-	public readerWriter() {}
+	public readerWriter(UserList userList) {
+		this.userList = userList;
+	}
 	
 	// Crea el archivo o inicia readData
 	public void readFile() {
@@ -53,7 +53,7 @@ public class readerWriter {
 	}
 		
 	// Lee linea por linea y crea usuario, luego cuentas y luego transacciones
-	public void readData(String fileName) {
+	private void readData(String fileName) {
 		
 		File f = new File(fileName);
 		try {
@@ -69,6 +69,7 @@ public class readerWriter {
 		}
 	}
 
+	//Este método, como se puede ver en readData(), se aplica sobre cada renglón del txt
 	private void tokenize(String line) {
 		
 		System.out.println("Tokenizando línea");
@@ -79,8 +80,8 @@ public class readerWriter {
 		
 		if(data == "U") {
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
-			user = tokenizeUser(data);
-			.addUser(cUser)
+			User user = tokenizeUser(data);
+			userList.addUser(user);
 			System.out.println("Es un usuario, tokenizando");
 			
 			
@@ -93,7 +94,7 @@ public class readerWriter {
 			System.out.println("Es una transacción, tokenizando");
 			
 		} else {
-			System.out.println("Algo falló con la tokenización");
+			System.err.println("Algo falló con la tokenización");
 		}
 		
 		sc.close();
@@ -133,7 +134,7 @@ public class readerWriter {
 		
 		
 		//Hay que especificar a qué usuario se añade
-		cUser.addAccount(name, balance, currency);
+		user.addAccount(name, balance, currency);
 		System.out.println("\n\tCuenta creada:\n\n" + "Name:" + name + " Balance:" + balance + " Currency:" + currency + "\n");
 		
 	}
@@ -147,7 +148,7 @@ public class readerWriter {
 		
 		LocalDate dateOfTransaction = LocalDate.parse(sc.next().trim());
 		String desc = sc.next().trim();
-		String category = sc.next().trim(); // Esto hay que poner que sea de tipo Categories
+		Categories cat = Categories.valueOf(sc.next().trim()) ;
 		float amount = Float.parseFloat(sc.next().trim());
 		Boolean isIngreso = Boolean.parseBoolean(sc.next().trim());
 		short accId = Short.valueOf(sc.next().trim());
@@ -156,10 +157,10 @@ public class readerWriter {
 		
 		
 		//Hay que especificar a qué usuario se añade
-		cUser.addTransaction(dateOfTransaction, desc, category, amount, isIngreso, accId);
+		user.addTransaction(dateOfTransaction, accId, desc, cat, amount, isIngreso);
 		
 		System.out.println("\n\tTransacción creada:\n\n" + 
-		"Fecha:" + dateOfTransaction + " Descripción:" + desc + " Category:" + category +
+		"Fecha:" + dateOfTransaction + " Descripción:" + desc + " Category:" + cat +
 		"Cantidad:" + amount + " Es un ingreso:" + isIngreso + " Cuenta:" + accId + "\n");
 		
 	}
@@ -169,7 +170,7 @@ public class readerWriter {
 	
 	// De aquí en adelante saveChanges()
 	
-	public void saveChanges() {
+	/*public void saveChanges() {
 		
 		// Para que esta función correctamente, se debe modificar el get, de manera que quede
 		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
@@ -197,5 +198,6 @@ public class readerWriter {
 		
 	}
 	*/
+	
 
 }

@@ -22,15 +22,19 @@ public class UserList {
 		}else if(exists(userName)) {
 			results = "Ya existe un usuario con este nombre.";
 		}else {
-			addUser(userName, password);
+			addUserCred(userName, password);
 		}
 		return results;
 	}
 	
-	private void addUser(String userName, String password) {
+	public void addUserCred(String userName, String password) {
 		User user = new User(userName, password);
 		users.pushBack(user);
 	};
+	
+	public void addUser(User user) {
+		users.pushBack(user);
+	}
 	
 	/*
 	 * Este método permite ver si el usuario con username existe en la lista.

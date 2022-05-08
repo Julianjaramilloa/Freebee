@@ -4,17 +4,18 @@ public class Account{
 	short id;
 	String name;
 	float balance;
-	float currency;
+	String currency;
 	
 	public Account(
 			short id,
 			String name,
 			float balance,
-			float currency) 
+			String currency) 
 	{
 		this.id = id;
 		this.name = name;
 		this.balance = balance;
 		this.currency = currency;
 	}
+	
 }

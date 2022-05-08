@@ -29,7 +29,4 @@ public class Transaction {
 	this.isIngreso = isIngreso;		
 	}
 	
-	public String transactionInfo() {
-		return this.date + "; " + this.Description + "; " + this.type + "; " + this.amount + "; " + this.isIngreso + this.accId;
-	}
 }

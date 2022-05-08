@@ -70,7 +70,6 @@ public class Console {
 				break;
 			default:
 				System.err.println("No escogiste un número correcto. Escoge solo las opciones disponibles");
-				printMenuOptions();
 			}
 		}
 		
@@ -183,7 +182,7 @@ public class Console {
 			return;
 		}
 		
-		User user;
+		User user = null;
 		System.out.println("\nIngresa tus credenciales:");
 		boolean logged = false;
 		while(!logged) {
@@ -195,23 +194,78 @@ public class Console {
 			user = userList.login(userN, pass);
 			if(user == null) {
 				System.out.println("Usuario o Contraseña Incorrectos");
-				continue;
+				if(choice("¿Volver a intentarlo?")) {
+					continue;
+				}else {
+					return;
+				}
 			}else {
 				System.out.println("Login Exitoso");
 				logged = true;
 			}
 		}
 		
+		userMenuOptions(user.getUserName(), true);
+		boolean finished = false;
+		while(!finished) {
+		String option = sc.nextLine();
+		int opt;
+			try{
+				 opt = Integer.parseInt(option);
+			}catch(NumberFormatException nfe) {
+				System.err.println("La entrada que pusiste no es un número. Vuelve a seleccionar una opción");
+				continue;
+			}
+			switch(opt) {
+			case 1:
+				transactionsMenu();
+				if(choice("¿Volver al menú de usuario?")) {
+					continue;
+				}else{
+					finished = true;
+				}
+				break;
+			case 2:
+				accountsMenu();
+				if(choice("¿Volver al menú de usuario?")) {
+					continue;
+				}else{
+					finished = true;
+				}
+				break;
+			case 3:
+				finished = true;
+				break;
+			case 4:
+				System.out.println("Gracias por usar freebee");
+				System.exit(0);
+				break;
+			default:
+				System.err.println("No escogiste un número correcto. Escoge solo las opciones disponibles");
+				userMenuOptions(user.getUserName(), false);
+			}
+		
+		}
+	}
+	
+	private void userMenuOptions(String userName, boolean first) {
+		if(first) {
+			System.out.println("          ¡Hola estimado " + userName + "!");
+		}		
+		System.out.println("\nOpciones:");
+		System.out.println("	 1. Cuentas\n"
+				+ "	2. Transacciones\n"
+				+ "	3. Tips\n"
+				+ "	4. Volver\n"
+				+ "	5. Salir de la app\n");
+	}
+	
+	private void transactionsMenu() {
 		
 	}
 	
-	private void userMenuOptions(String userName) {
-		System.out.println("Hola estimado" + userName);
-		System.out.println("\nOpciones:");
-		System.out.println("	 1. Cuentas\n"
-				+ "Transacciones"
-				+ "Tips"
-				+ "Volver");
+	private void accountsMenu() {
+		
 	}
 }
 

@@ -21,7 +21,7 @@ public class readerWriter {
 	
 	// De aquí en adelante readAndLoad()
 	UserList userList;
-	final String fileName = "freebeeRecord.txt";
+	final String fileName = "freebieRecord.txt";
 	
 	// "user" es el usuario que se está llenando de cuentas y transacciones en cada momento
 	User user = null;
@@ -40,12 +40,10 @@ public class readerWriter {
 		    if (textfile.createNewFile()) {
 		      System.out.println("Nuevo archivo " + fileName + " creado");   
 		    // Si ya existe, lee los datos y crea usuarios, cuentas y transacciones
-
 		    } else {
 		      System.out.println("El archivo " + fileName + " ya existe");
 		      // Lee el archivo y crea los objetos
 		      readData(fileName);
-		      System.out.println("read successful!");
 		      }
 		    } catch (IOException e) {
 		System.out.println("Algo salió mal con la creación de " + fileName);
@@ -60,9 +58,8 @@ public class readerWriter {
 		File f = new File(fileName);
 		try {
 			Scanner sc = new Scanner(f);
-
 			while (sc.hasNextLine()) {
-				String line = sc.nextLine();			
+				String line = sc.nextLine();
 				tokenize(line);
 			}
 			sc.close();
@@ -81,10 +78,9 @@ public class readerWriter {
 		
 		String data = sc.next().trim();
 		
-		if(data.charAt(0) == 'U') {
+		if(data == "U") {
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
-
-			User user = tokenizeUser(sc.next().trim(), sc.next().trim());
+			User user = tokenizeUser(data);
 			userList.addUser(user);
 			System.out.println("Es un usuario, tokenizando");
 			
@@ -105,17 +101,17 @@ public class readerWriter {
 
 	}
 
-	private User tokenizeUser(String name, String password) {
+	private User tokenizeUser(String data) {
 		
 		System.out.println("Tokenizando usuario");
 		
-//		Scanner sc = new Scanner(data);
-//		sc.useDelimiter(";");
-//		
-//		String name = sc.next().trim();
-//		String password = sc.next().trim();
+		Scanner sc = new Scanner(data);
+		sc.useDelimiter(";");
 		
-//		sc.close();
+		String name = sc.next().trim();
+		String password = sc.next().trim();
+		
+		sc.close();
 		
 		User user = new User(name, password);
 		System.out.println("\n\tUsuario creado:\n\n" + "Name:" + name + " Password:" + password + "\n");
@@ -174,7 +170,7 @@ public class readerWriter {
 	
 	// De aquí en adelante saveChanges()
 	
-	public void saveChanges(UserList list) {
+	/*public void saveChanges() {
 		
 		// Para que esta función correctamente, se debe modificar el get, de manera que quede
 		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
@@ -185,23 +181,23 @@ public class readerWriter {
 				PrintWriter p = new PrintWriter(b);) {
 			
 			// Recorre la lista de usuarios (lo llamé userList)
-			for (int u = 0; u < list.size(); u++) {
-				User currentUser = list.users.iterate().next();
-				f.write("U; " + currentUser.userAndPassword() + "\n");
+			for (int u = 0; u < UserList.size(); u++) {
+				
+				f.write("U; " + UserList.get(u) + "\n");
 				
 				// Demostrativo, hay que implementar bien:
-//				listaDeCuentas = currentUser.getAccounts(u); 
-//				listaDeTrans = u.getTransactions;
-//						
-				for (int a = 0; a < currentUser.accounts.size(); a++) {f.write("C; " + currentUser.getAccounts(a).accountInfo() + "\n");}
-				for (int t = 0; t < currentUser.transactions.size(); t++) {f.write("T; " + currentUser.getTransactions(t).transactionInfo() + "\n");}
-//				
+				listaDeCuentas = u.getAccounts; 
+				listaDeTrans = u.getTransactions;
+						
+				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
+				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
+				
 	        }
 			
 		} catch (IOException i1) {i1.printStackTrace();}
 		
 	}
-	
+	*/
 	
 
 }

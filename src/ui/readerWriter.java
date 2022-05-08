@@ -7,8 +7,12 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.Scanner;
+import java.util.Locale;
 import java.util.Locale.Category;
 
 /*
@@ -21,7 +25,8 @@ public class readerWriter {
 	
 	// De aquí en adelante readAndLoad()
 	UserList userList;
-	final String fileName = "freebieRecord.txt";
+	final String fileName = "freebeeRecord.txt";
+	User currentUser = null;
 	
 	// "user" es el usuario que se está llenando de cuentas y transacciones en cada momento
 	User user = null;
@@ -68,7 +73,6 @@ public class readerWriter {
 			e.printStackTrace();
 		}
 	}
-
 	//Este método, como se puede ver en readData(), se aplica sobre cada renglón del txt
 	private void tokenize(String line) {
 		
@@ -78,21 +82,41 @@ public class readerWriter {
 		
 		String data = sc.next().trim();
 		System.out.println(data);
-
 		
-		if(data == "U") {
+		if(data.charAt(0) == 'U') {
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
-			User user = tokenizeUser(data);
-			userList.addUser(user);
+			User userToken = tokenizeUser(sc.next().trim(), sc.next().trim());
+			currentUser = userToken;
+			
+			userList.addUser(userToken);
 			System.out.println("Es un usuario, tokenizando");
 			
 			
 		} else if(data.charAt(0) == 'C') {
-			tokenizeAccount(data, user);
+			System.out.println("here:" + currentUser);
+			String name = sc.next().trim();
+			float balance = Float.parseFloat(sc.next().trim());
+			String currency = sc.next().trim();
+			tokenizeAccount( name, balance, currency, currentUser);
 			System.out.println("Es una cuenta, tokenizando");
 			
 		} else if(data.charAt(0) == 'T') {
-			tokenizeTransaction(data, user);
+			//System.out.println(sc.next().trim());
+			DateTimeFormatter df = new DateTimeFormatterBuilder()
+				    // case insensitive to parse JAN and FEB
+				    .parseCaseInsensitive()
+				    // add pattern
+				    .appendPattern("dd-MMM-yyyy")
+				    // create formatter (use English Locale to parse month names)
+				    .toFormatter(Locale.ENGLISH);
+			LocalDate dateOfTransaction = LocalDate.parse(sc.next().trim(),df);
+			String desc = sc.next().trim();
+			Categories cat = Categories.valueOf(sc.next().trim()) ;
+			float amount = Float.parseFloat(sc.next().trim());
+			Boolean isIngreso = Boolean.parseBoolean(sc.next().trim());
+			short accId = Short.valueOf(sc.next().trim());
+			tokenizeTransaction(dateOfTransaction, accId, desc, cat, amount, isIngreso, currentUser);
+
 			System.out.println("Es una transacción, tokenizando");
 			
 		} else {
@@ -103,20 +127,11 @@ public class readerWriter {
 
 	}
 
-	private User tokenizeUser(String data) {
+	private User tokenizeUser(String name, String password) {
 		
 
 		System.out.println("Tokenizando usuario");	
-
-		System.out.println("Tokenizando usuario");
-		
-		Scanner sc = new Scanner(data);
-		sc.useDelimiter(";");
-		
-		String name = sc.next().trim();
-		String password = sc.next().trim();
-		
-		sc.close();
+	
 		
 		User user = new User(name, password);
 		System.out.println("\n\tUsuario creado:\n\n" + "Name:" + name + " Password:" + password + "\n");
@@ -124,41 +139,22 @@ public class readerWriter {
 		return user;
 	}
 
-	private void tokenizeAccount(String data, User user) {
+	private void tokenizeAccount(String name, float balance, String currency, User currentUser) {
 		
 		System.out.println("Tokenizando cuenta");
-		
-		Scanner sc = new Scanner(data);
-		sc.useDelimiter(";");
-		
-		String name = sc.next().trim();
-		float balance = Float.parseFloat(sc.next().trim());
-		String currency = sc.next().trim();
-		
-		sc.close();
+	
 		
 		
 		//Hay que especificar a qué usuario se añade
-		user.addAccount(name, balance, currency);
+		currentUser.addAccount(name, balance, currency);
 		System.out.println("\n\tCuenta creada:\n\n" + "Name:" + name + " Balance:" + balance + " Currency:" + currency + "\n");
 		
 	}
 
-	private void tokenizeTransaction(String data, User user) {
+	private void tokenizeTransaction(LocalDate dateOfTransaction, short accId, String desc, Categories cat, float amount, boolean isIngreso,  User user) {
 		
 		System.out.println("Tokenizando transacción");
 		
-		Scanner sc = new Scanner(data);
-		sc.useDelimiter(";");
-		
-		LocalDate dateOfTransaction = LocalDate.parse(sc.next().trim());
-		String desc = sc.next().trim();
-		Categories cat = Categories.valueOf(sc.next().trim()) ;
-		float amount = Float.parseFloat(sc.next().trim());
-		Boolean isIngreso = Boolean.parseBoolean(sc.next().trim());
-		short accId = Short.valueOf(sc.next().trim());
-		
-		sc.close();
 		
 		
 		//Hay que especificar a qué usuario se añade

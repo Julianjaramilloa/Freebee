@@ -1,7 +1,0 @@
-U; Usuario1; passwordTest
-C; Cuenta1; 304592; USD
-C; Cuenta2(Nequi); 20400; COP
-T; 01/01/2020; Compra en Amazon; Compras; 460000; False; Cuenta1
-T; 01/02/2020; Sandwich en Tostao; Comida fuera; 5600; False; Cuenta1
-T; 01/05/2020; Pago por servicio comunitario; Ingresos; 50000; True, Cuenta1
-T; 11/07/2020; Arriendo parqueadero; Arriendo; 280000; False, Cuenta1

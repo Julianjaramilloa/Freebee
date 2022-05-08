@@ -40,6 +40,7 @@ public class readerWriter {
 		    if (textfile.createNewFile()) {
 		      System.out.println("Nuevo archivo " + fileName + " creado");   
 		    // Si ya existe, lee los datos y crea usuarios, cuentas y transacciones
+
 		    } else {
 		      System.out.println("El archivo " + fileName + " ya existe");
 		      // Lee el archivo y crea los objetos
@@ -59,12 +60,9 @@ public class readerWriter {
 		File f = new File(fileName);
 		try {
 			Scanner sc = new Scanner(f);
-			System.out.print(sc.hasNextLine());
 
 			while (sc.hasNextLine()) {
-
-				String line = sc.next();
-				System.out.print(line);
+				String line = sc.nextLine();			
 				tokenize(line);
 			}
 			sc.close();
@@ -83,9 +81,10 @@ public class readerWriter {
 		
 		String data = sc.next().trim();
 		
-		if(data == "U") {
+		if(data.charAt(0) == 'U') {
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
-			User user = tokenizeUser(data);
+
+			User user = tokenizeUser(sc.next().trim(), sc.next().trim());
 			userList.addUser(user);
 			System.out.println("Es un usuario, tokenizando");
 			
@@ -106,17 +105,17 @@ public class readerWriter {
 
 	}
 
-	private User tokenizeUser(String data) {
+	private User tokenizeUser(String name, String password) {
 		
 		System.out.println("Tokenizando usuario");
 		
-		Scanner sc = new Scanner(data);
-		sc.useDelimiter(";");
+//		Scanner sc = new Scanner(data);
+//		sc.useDelimiter(";");
+//		
+//		String name = sc.next().trim();
+//		String password = sc.next().trim();
 		
-		String name = sc.next().trim();
-		String password = sc.next().trim();
-		
-		sc.close();
+//		sc.close();
 		
 		User user = new User(name, password);
 		System.out.println("\n\tUsuario creado:\n\n" + "Name:" + name + " Password:" + password + "\n");

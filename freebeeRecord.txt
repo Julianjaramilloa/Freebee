@@ -95,7 +95,7 @@ T; 01-07-2020; Pago por venta de accesorios; Ingresos; 50000; True; 17
 <<<<<<< Updated upstream
 T; 08-06-2021; Libros; Educacion; 20000; False; 18
 =======
-T; 08-06-2021; Libros; Educación; 20000; False; 18
+T; 08-06-2021; Libros; Educacion; 20000; False; 18
 >>>>>>> Stashed changes
 U; Usuario17; password17
 C; Cuenta19; 35514; EUR
@@ -106,7 +106,7 @@ T; 01-03-2020; Prestaciones sociales; Ingresos; 600000; True; 20
 <<<<<<< Updated upstream
 T; 08-02-2021; Tijeras; Educacion; 1000; False; 19
 =======
-T; 08-02-2021; Tijeras; Educación; 1000; False; 19
+T; 08-02-2021; Tijeras; Educacion; 1000; False; 19
 >>>>>>> Stashed changes
 U; Usuario18; password18
 C; Cuenta21; 25514; COP
@@ -117,7 +117,7 @@ T; 05-03-2020; Pago de rifas; Ingresos; 6000000; True; 22
 <<<<<<< Updated upstream
 T; 01-02-2021; ColbÃ³n; Educacion; 1000; False; 21
 =======
-T; 01-02-2021; Colbón; Educación; 1000; False; 21
+T; 01-02-2021; Colbón; Educacion; 1000; False; 21
 >>>>>>> Stashed changes
 U; Usuario19; password19
 C; Cuenta23; 35544; EUR

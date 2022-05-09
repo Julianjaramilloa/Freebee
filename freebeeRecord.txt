@@ -59,7 +59,7 @@ C; Cuenta12; 204000; COP
 T; 04-01-2020; Jabón en polvo en Exito; Compras; 90000; False; 11
 T; 05-02-2020; Burger King; ComidasFuera; 20000; False; 11
 T; 04-05-2020; Salario básico; Ingresos; 6000000; True; 12
-T; 15-07-2021; Arriendo; 280000; False; 12
+T; 15-07-2021; Arriendo; Arriendo; 280000; False; 12
 U; Usuario12; password12
 C; Cuenta 22; 200001; COP
 T; 05-06-2021; Ticket Satena; Transporte; 52000; False; 22

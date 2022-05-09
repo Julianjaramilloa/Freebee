@@ -29,4 +29,11 @@ public class Transaction {
 	this.isIngreso = isIngreso;		
 	}
 	
+	public boolean id(short id) {
+		if(this.accId == id) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }

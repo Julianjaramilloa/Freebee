@@ -18,5 +18,21 @@ public class Account{
 		this.currency = currency;
 	}
 	
+	protected void setBalance(float balance) {
+		this.balance = balance;
+	}
+	
+	protected boolean id(short id) {
+		if (this.id == id) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return id + " " + name + "balance: " + balance + " " + currency;
+	}
 	
 }

@@ -2,7 +2,9 @@ package logic;
 
 import java.time.LocalDate;
 
+import dataStructures.DArrayIterator;
 import dataStructures.DynamicArray;
+import dataStructures.LinkedLIterator;
 import dataStructures.LinkedList;
 
 //Esta clase es el alma de la aplicación.
@@ -12,16 +14,12 @@ public class User {
 	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
 	private LinkedList<Transaction> transactions = new LinkedList<Transaction>();
 	@SuppressWarnings("unused")
-	private LinkedList <Transaction> incomingTransactions = new LinkedList<Transaction>(); //Implementación a futuro
+	private IncomingTransactions inc;//Implementación a futuro
 	private short idProvider = 0;
 	
 	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
-	};
-	
-	protected void editAccounts() {
-		
 	};
 	
 	public void addAccount(String name, float balance, String currency) {
@@ -70,9 +68,39 @@ public class User {
 		return "Us: " + userName;
 	}
 	
-	public String accountsInfo()
+	public void setBalance(short id) {
+		
+	}
+	
+	public String accountsInfo(short id)
 	{
-		return null;
+		Account display = null;
+		DArrayIterator<Account> it = new DArrayIterator(accounts);
+		Account aux;
+		while(it.hasNext()) {
+			aux = it.next();
+			if(aux.id(id)) {
+				display=aux;
+				break;
+			}
+		}
+		if(display != null) {
+			return display.toString();
+		}else {
+			return "La cuenta no existe";
+		}
+	}
+	
+	public void transactionsInfo(short id) {
+		System.out.println("Transacciones de la cuenta:");
+		LinkedLIterator<Transaction> it = new LinkedLIterator(transactions);
+		Transaction aux;
+		while(it.hasNext()) {
+			aux = it.next();
+			if(aux.id(id)) {
+				System.out.println(aux.toString());
+			}
+		}
 	}
 	
 	public String completeUserInfo() {

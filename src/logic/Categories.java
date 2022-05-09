@@ -4,9 +4,10 @@ public enum Categories {
 	Vivienda,
 	Salud,
 	Compras,
-	ComidasFuera,
+	Comidas,
 	Transporte,
 	Educacion,
 	Ocio,
-	Ingresos;
+	Ingresos,
+	Trabajo;
 }

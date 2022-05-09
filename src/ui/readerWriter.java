@@ -81,7 +81,6 @@ public class readerWriter {
 		sc.useDelimiter(";");
 		
 		String data = sc.next().trim();
-		System.out.println(data);
 		
 		if(data.charAt(0) == 'U') {
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
@@ -93,7 +92,6 @@ public class readerWriter {
 			
 			
 		} else if(data.charAt(0) == 'C') {
-			System.out.println("here:" + currentUser);
 			String name = sc.next().trim();
 			float balance = Float.parseFloat(sc.next().trim());
 			String currency = sc.next().trim();

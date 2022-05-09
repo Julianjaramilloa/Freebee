@@ -104,7 +104,7 @@ public class readerWriter {
 				    // case insensitive to parse JAN and FEB
 				    .parseCaseInsensitive()
 				    // add pattern
-				    .appendPattern("dd-MMM-yyyy")
+				    .appendPattern("dd-MM-yyyy")
 				    // create formatter (use English Locale to parse month names)
 				    .toFormatter(Locale.ENGLISH);
 			LocalDate dateOfTransaction = LocalDate.parse(sc.next().trim(),df);

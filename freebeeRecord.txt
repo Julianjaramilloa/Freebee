@@ -111,6 +111,6 @@ U; Usuario19; password19
 C; Cuenta23; 35544; EUR
 C; Cuenta24; 254413; USD
 T; 01-05-2020; Juguetes; Compras; 460000; False; 23
-T; 01-04-2020; Cuadernos; Educación; 254000; False; 23
+
 T; 01-03-2019; Salario; Ingresos; 5500000; True; 24
 T; 08-02-2021; Patacón mixto;ComidasFuera; 50000; False; 24

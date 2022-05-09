@@ -120,7 +120,7 @@ public class readerWriter {
 		} else {
 			System.err.println("Algo falló con la tokenización");
 		}
-		
+		System.out.println("\n\nLos datos han sido cargados");
 		sc.close();
 
 	}

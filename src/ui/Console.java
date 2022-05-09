@@ -26,6 +26,7 @@ public class Console {
 	
 	public void mainMenu() {
 		
+		System.out.println("----------------------------------------------------");
 		System.out.println("\n          Hola de nuevo. Bienvenido a freebee");
 		System.out.println("       El mejor gestor de tus finanzas personales\n");
 		

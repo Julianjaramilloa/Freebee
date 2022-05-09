@@ -1,9 +1,5 @@
-/**
- * 
- */
 package runner;
 
-import logic.UserList;
 import ui.Console;
 
 /**

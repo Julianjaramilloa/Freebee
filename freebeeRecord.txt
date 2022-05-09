@@ -15,7 +15,7 @@ C; Cuenta4; 18400; EUR
 T; 01-03-2020; Compra en Homecenter;Vivienda; 465000; False; 3
 T; 01-03-2020; Pollo KFC; ComidasFuera; 16000; False; 4
 T; 01-07-2020; Pago por arrendamiento local; Ingresos; 500000; True; 3
-T; 11-04-2020; Compra de computador; Educación; 2800000; False; 3
+T; 11-04-2020; Compra de computador; Educacion; 2800000; False; 3
 U; Usuario4; password4
 C; Cuenta 18; 250000; COP
 T; 05-04-2020; Transmilenio; Transporte; 2750; False; 18

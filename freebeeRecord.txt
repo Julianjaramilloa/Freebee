@@ -92,21 +92,21 @@ C; Cuenta18; 264003; COP
 T; 01-04-2020; Compra de armario; Vivienda; 460000; False; 17
 T; 01-05-2020; Postres Magolita; ComidasFuera; 21100; False; 18
 T; 01-07-2020; Pago por venta de accesorios; Ingresos; 50000; True; 17
-T; 08-06-2021; Libros; Educación; 20000; False; 18
+T; 08-06-2021; Libros; Educacion; 20000; False; 18
 U; Usuario17; password17
 C; Cuenta19; 35514; EUR
 C; Cuenta20; 254013; USD
 T; 01-05-2020; Compra de armario; Vivienda; 460000; False; 19
 T; 01-04-2020; Burritos; ComidasFuera; 11100; False; 20
 T; 01-03-2020; Prestaciones sociales; Ingresos; 600000; True; 20
-T; 08-02-2021; Tijeras; Educación; 1000; False; 19
+T; 08-02-2021; Tijeras; Educacion; 1000; False; 19
 U; Usuario18; password18
 C; Cuenta21; 25514; COP
 C; Cuenta22; 154013; USD
 T; 01-05-2020; resinas para dientes; Salud; 790000; False; 21
 T; 05-04-2020; Burritos; ComidasFuera; 11100; False; 21
 T; 05-03-2020; Pago de rifas; Ingresos; 6000000; True; 22
-T; 01-02-2021; Colbón; Educación; 1000; False; 21
+T; 01-02-2021; Colbón; Educacion; 1000; False; 21
 U; Usuario19; password19
 C; Cuenta23; 35544; EUR
 C; Cuenta24; 254413; USD

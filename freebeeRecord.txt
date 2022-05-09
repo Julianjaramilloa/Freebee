@@ -59,7 +59,7 @@ C; Cuenta12; 204000; COP
 T; 04-01-2020; Jabón en polvo en Exito; Compras; 90000; False; 11
 T; 05-02-2020; Burger King; ComidasFuera; 20000; False; 11
 T; 04-05-2020; Salario básico; Ingresos; 6000000; True; 12
-T; 15-07-2021; ;Arriendo; 280000; False; 12
+T; 15-07-2021; Arriendo; 280000; False; 12
 U; Usuario12; password12
 C; Cuenta 22; 200001; COP
 T; 05-06-2021; Ticket Satena; Transporte; 52000; False; 22
@@ -114,51 +114,3 @@ T; 01-05-2020; Juguetes; Compras; 460000; False; 23
 T; 01-04-2020; Cuadernos; Educación; 254000; False; 23
 T; 01-03-2019; Salario; Ingresos; 5500000; True; 24
 T; 08-02-2021; Patacón mixto;ComidasFuera; 50000; False; 24
-T; 01/04/2021; Cuenta de Netflix ; Ocio; 12000; False; 7
-T; 01/05/2021; Compra penicilina; Salud; 5000; False; 8
-T; 01/05/2022; Pago por productos Natura; Ingresos; 50000; True;7
-T; 11/06/2022; Arriendo maquinaria; Arriendo; 28000000; False; 7
-U; Usuario8; password8
-C; Cuenta 20; 566000; EUR
-T; 05/06/2021; Mío; Transporte; 2200; False; 20
-T; 10/12/2020; Almuerzo; Comida fuera; 9000; False; 20
-U; Usuario9; password9
-C; Cuenta9; 304502; USD
-C; Cuenta10; 20400; COP
-T; 01/01/2020; Compra de Lavadora LG; Compras; 490000; False; 10
-T; 01/02/2021; Arroz chino; Comida fuera; 8600; False; 10
-T; 01/07/2021; Pago por elaboración de planos; Ingresos; 800000; True; 9
-T; 11/08/2020; Electricidad; Vivienda; 280000; False; 10
-U; Usuario10; password10
-C; Cuenta21; 20000; COP
-T; 05/06/2020; Taxi; Transporte; 5800; False; 21
-T; 10/12/2020; Cena; Comida fuera; 8000; False; 21
-U; Usuario11; password11
-C; Cuenta11; 304592; EUR
-C; Cuenta12; 204000; COP
-T; 04/01/2020; Jabón en polvo en Exito; Compras; 90000; False; 11
-T; 05/02/2020; Burger King; Comida fuera; 20000; False; 11
-T; 04/05/2020; Salario básico; Ingresos; 6000000; True; 12
-T; 15/07/2021; ;Arriendo; 280000; False; 12
-U; Usuario12; password12
-C; Cuenta 22; 200001; COP
-T; 05/06/2021; Ticket Satena; Transporte; 52000; False; 22
-T; 10/11/2021; Kartz; Ocio; 24000; False; 22
-U; Usuario13; password13
-C; Cuenta13; 204392; USD
-C; Cuenta14; 20400; COP
-T; 02/01/2020; Compra en Electromillonaria; Compras; 4600000; False; 13
-T; 03/02/2020; Arroz mixto; Comida fuera; 5600; False; 14
-T; 02/05/2020; Ensayo de tensión; Ingresos; 500000; True; 13
-T; 11/07/2020; Arriendo parqueadero; Arriendo; 280900; False; 14
-U; Usuario14; password14
-C; Cuenta 23; 200080; COP
-T; 05/06/2020; Didi; Transporte; 50000; False; 23
-T; 10/12/2020; Desayuno; Comida fuera; 7500; False; 23
-U; Usuario15; password15
-C; Cuenta15; 304593; USD
-C; Cuenta16; 20400; COP
-T; 01/04/2020; Compra en Ford; Compras; 46000000; False; 15
-T; 01/06/2020; Pollo en Frisby; Comida fuera; 21100; False; 16
-T; 01/08/2020; Pago por servicio comunitario; Ingresos; 50000; True; 15
-T; 08/06/2022; Arriendo de local; Ocio; 1080000; False; 15

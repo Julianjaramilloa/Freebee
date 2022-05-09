@@ -75,7 +75,7 @@ public class User {
 	public String accountsInfo(short id)
 	{
 		Account display = null;
-		DArrayIterator<Account> it = new DArrayIterator(accounts);
+		DArrayIterator<Account> it = new DArrayIterator<Account>(accounts);
 		Account aux;
 		while(it.hasNext()) {
 			aux = it.next();
@@ -87,13 +87,13 @@ public class User {
 		if(display != null) {
 			return display.toString();
 		}else {
-			return "La cuenta no existe";
+			return "La cuenta no existe(Corregir error)";
 		}
 	}
 	
 	public void transactionsInfo(short id) {
 		System.out.println("Transacciones de la cuenta:");
-		LinkedLIterator<Transaction> it = new LinkedLIterator(transactions);
+		LinkedLIterator<Transaction> it = new LinkedLIterator<Transaction>(transactions);
 		Transaction aux;
 		while(it.hasNext()) {
 			aux = it.next();

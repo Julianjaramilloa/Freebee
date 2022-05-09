@@ -7,13 +7,12 @@ import logic.UserList;
 
 public class Console {
 	private UserList userList;
-	Scanner sc = new Scanner(System.in);//Para prevenir problemas con Scanners multiples
+	Scanner sc = new Scanner(System.in);//Para prevenir problemas con Scanners multiples, solo uno para toda la clase
 	final String cont = "¿Quieres seguir en la app?";
 	User user = null;
 	
 	public Console(boolean loadData) {
 		userList = new UserList();
-		loadData = true;
 		if(loadData) {
 			readAndLoadData(userList);
 		}
@@ -64,6 +63,7 @@ public class Console {
 				break;
 			case 4:
 				System.out.println("Gracias por usar freebee");
+				sc.close();
 				System.exit(0);
 				break;
 			case 5:
@@ -74,14 +74,14 @@ public class Console {
 			}
 		}
 		
-		sc.close();
 		System.out.println("Gracias por usar freebee\n"
 				+ "Programa cerrado");
+		sc.close();
 		System.exit(0);
 	};
 	
 	private void appInfo() {
-		System.out.println("FREEBIE v1.1, programa para la gestión de las finanzas personales.\n"
+		System.out.println("FREEBE, programa para la gestión de las finanzas personales.\n"
 				+ "Proyecto Estructuras de Datos, Joseph Gallego, G3 Universidad Nacional 2022-1.\n"
 				+ "Equipo 1. Conformado por:\n"
 				+ "	Marcos Pinzón Pardo.\n"
@@ -235,7 +235,7 @@ public class Console {
 	private void accountsOptions() {
 		System.out.println("\nOpciones:\n"
 				+"   1.Crear Nueva Cuenta"
-				+ "   2.Añadir transacción"
+				+ "   2.Añadir transacción(No disponible por ahora)"
 				+ "   3.Consultar Cuentas"
 				+ "   4.Volver"
 				+ "   5.Salir");

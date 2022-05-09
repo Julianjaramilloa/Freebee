@@ -1,39 +1,119 @@
 U; Usuario1; passwordTest
 C; Cuenta1; 304592; USD
 C; Cuenta2; 20400; COP
-T; 01/01/2020; Compra en Amazon; Compras; 460000; False; 1
-T; 01/02/2020; Sandwich en Tostao; Comidas fuera; 5600; False; 2
-T; 01/05/2020; Pago por servicio comunitario; Ingresos; 50000; True; 1
-T; 11/07/2020; Arriendo parqueadero; Vivienda; 280000; False; 2
+T; 01-01-2020; Compra en Amazon; Compras; 460000; False; 1
+T; 01-02-2020; Sandwich en Tostao; ComidasFuera; 5600; False; 2
+T; 01-05-2020; Pago por servicio comunitario; Ingresos; 50000; True; 1
+T; 11-07-2020; Arriendo parqueadero; Vivienda; 280000; False; 2
 U; Usuario2; password2
 C; Cuenta 17; 20000; COP
-T; 05/06/2020; Taxi; Transporte; 52000; False; 17
-T; 10/12/2020; Almuerzo; Comidas fuera; 8000; False; 7
+T; 05-06-2020; Taxi; Transporte; 52000; False; 17
+T; 10-12-2020; Almuerzo; ComidasFuera; 8000; False; 7
 U; Usuario3; password3
 C; Cuenta3; 304578; USD
 C; Cuenta4; 18400; EUR
-T; 01/03/2020; Compra en Homecenter;Vivienda; 465000; False; 3
-T; 01/03/2020; Pollo KFC; Comida fuera; 16000; False; 4
-T; 01/07/2020; Pago por arrendamiento local; Ingresos; 500000; True; 3
-T; 11/04/2020; Compra de computador; Educación; 2800000; False; 3
+T; 01-03-2020; Compra en Homecenter;Vivienda; 465000; False; 3
+T; 01-03-2020; Pollo KFC; ComidasFuera; 16000; False; 4
+T; 01-07-2020; Pago por arrendamiento local; Ingresos; 500000; True; 3
+T; 11-04-2020; Compra de computador; Educación; 2800000; False; 3
 U; Usuario4; password4
 C; Cuenta 18; 250000; COP
-T; 05/04/2020; Transmilenio; Transporte; 2750; False; 18
-T; 10/09/2020; Hamburguesa; Comida fuera; 10000; False; 18
+T; 05-04-2020; Transmilenio; Transporte; 2750; False; 18
+T; 10-09-2020; Hamburguesa; ComidasFuera; 10000; False; 18
 U; Usuario5; password5
 C; Cuenta5; 304595; EUR
 C; Cuenta6; 25400; COP
-T; 03/01/2020; Compra en Amazon; Compras; 460000; False; 5
-T; 03/02/2020; Sandwich en Qbanitos; Comida fuera; 7600; False; 6
-T; 04/05/2020; Pago por venta de zapatos; Ingresos; 300004; True; 6
-T; 11/07/2020; Arriendo parqueadero; Arriendo; 280000; False; 5
+T; 03-01-2020; Compra en Amazon; Compras; 460000; False; 5
+T; 03-02-2020; Sandwich en Qbanitos; ComidasFuera; 7600; False; 6
+T; 04-05-2020; Pago por venta de zapatos; Ingresos; 300004; True; 6
+T; 11-07-2020; Arriendo parqueadero; Arriendo; 280000; False; 5
 U; Usuario6; password6
 C; Cuenta 19; 40000; COP
-T; 05/06/2022; Uber; Transporte; 52040; False; 19
-T; 10/12/2022; Almuerzo; Comida fuera; 8000; False; 19
+T; 05-06-2022; Uber; Transporte; 52040; False; 19
+T; 10-12-2022; Almuerzo; ComidasFuera; 8000; False; 19
 U; Usuario7; password7
 C; Cuenta7; 305690; USD
 C; Cuenta8; 25400; USD
+T; 01-04-2021; Cuenta de Netflix ; Ocio; 12000; False; 7
+T; 01-05-2021; Compra penicilina; Salud; 5000; False; 8
+T; 01-05-2022; Pago por productos Natura; Ingresos; 50000; True;7
+T; 11-06-2022; Arriendo maquinaria; Arriendo; 28000000; False; 7
+U; Usuario8; password8
+C; Cuenta 20; 566000; EUR
+T; 05-06-2021; Mío; Transporte; 2200; False; 20
+T; 10-12-2020; Almuerzo; ComidasFuera; 9000; False; 20
+U; Usuario9; password9
+C; Cuenta9; 304502; USD
+C; Cuenta10; 20400; COP
+T; 01-01-2020; Compra de Lavadora LG; Compras; 490000; False; 10
+T; 01-02-2021; Arroz chino; ComidasFuera; 8600; False; 10
+T; 01-07-2021; Pago por elaboración de planos; Ingresos; 800000; True; 9
+T; 11-08-2020; Electricidad; Vivienda; 280000; False; 10
+U; Usuario10; password10
+C; Cuenta21; 20000; COP
+T; 05-06-2020; Taxi; Transporte; 5800; False; 21
+T; 10-12-2020; Cena; ComidasFuera; 8000; False; 21
+U; Usuario11; password11
+C; Cuenta11; 304592; EUR
+C; Cuenta12; 204000; COP
+T; 04-01-2020; Jabón en polvo en Exito; Compras; 90000; False; 11
+T; 05-02-2020; Burger King; ComidasFuera; 20000; False; 11
+T; 04-05-2020; Salario básico; Ingresos; 6000000; True; 12
+T; 15-07-2021; ;Arriendo; 280000; False; 12
+U; Usuario12; password12
+C; Cuenta 22; 200001; COP
+T; 05-06-2021; Ticket Satena; Transporte; 52000; False; 22
+T; 10-11-2021; Kartz; Ocio; 24000; False; 22
+U; Usuario13; password13
+C; Cuenta13; 204392; USD
+C; Cuenta14; 20400; COP
+T; 02-01-2020; Compra en Electromillonaria; Compras; 4600000; False; 13
+T; 03-02-2020; Arroz mixto; ComidasFuera; 5600; False; 14
+T; 02-05-2020; Ensayo de tensión; Ingresos; 500000; True; 13
+T; 11-07-2020; Arriendo parqueadero; Arriendo; 280900; False; 14
+U; Usuario14; password14
+C; Cuenta 23; 200080; COP
+T; 05-06-2020; Didi; Transporte; 50000; False; 23
+T; 10-12-2020; Desayuno; ComidasFuera; 7500; False; 23
+U; Usuario15; password15
+C; Cuenta15; 304593; USD
+C; Cuenta16; 20400; COP
+T; 01-04-2020; Compra en Ford; Compras; 46000000; False; 15
+T; 01-06-2020; Pollo en Frisby; ComidasFuera; 21100; False; 16
+T; 01-08-2020; Pago por servicio comunitario; Ingresos; 50000; True; 15
+T; 08-06-2022; Arriendo de local; Ingresos; 1080000; False; 15
+U; Usuario14; password14
+C; Cuenta 23; 200084; COP
+T; 05-06-2020; Transmilenio; Transporte; 50000; False; 23
+T; 10-12-2020; Almuerzo; ComidasFuera; 7700; False; 23
+U; Usuario16; password15
+C; Cuenta17; 33594; USD
+C; Cuenta18; 264003; COP
+T; 01-04-2020; Compra de armario; Vivienda; 460000; False; 17
+T; 01-05-2020; Postres Magolita; ComidasFuera; 21100; False; 18
+T; 01-07-2020; Pago por venta de accesorios; Ingresos; 50000; True; 17
+T; 08-06-2021; Libros; Educación; 20000; False; 18
+U; Usuario17; password17
+C; Cuenta19; 35514; EUR
+C; Cuenta20; 254013; USD
+T; 01-05-2020; Compra de armario; Vivienda; 460000; False; 19
+T; 01-04-2020; Burritos; ComidasFuera; 11100; False; 20
+T; 01-03-2020; Prestaciones sociales; Ingresos; 600000; True; 20
+T; 08-02-2021; Tijeras; Educación; 1000; False; 19
+U; Usuario18; password18
+C; Cuenta21; 25514; COP
+C; Cuenta22; 154013; USD
+T; 01-05-2020; resinas para dientes; Salud; 790000; False; 21
+T; 05-04-2020; Burritos; ComidasFuera; 11100; False; 21
+T; 05-03-2020; Pago de rifas; Ingresos; 6000000; True; 22
+T; 01-02-2021; Colbón; Educación; 1000; False; 21
+U; Usuario19; password19
+C; Cuenta23; 35544; EUR
+C; Cuenta24; 254413; USD
+T; 01-05-2020; Juguetes; Compras; 460000; False; 23
+T; 01-04-2020; Cuadernos; Educación; 254000; False; 23
+T; 01-03-2019; Salario; Ingresos; 5500000; True; 24
+T; 08-02-2021; Patacón mixto;ComidasFuera; 50000; False; 24
 T; 01/04/2021; Cuenta de Netflix ; Ocio; 12000; False; 7
 T; 01/05/2021; Compra penicilina; Salud; 5000; False; 8
 T; 01/05/2022; Pago por productos Natura; Ingresos; 50000; True;7

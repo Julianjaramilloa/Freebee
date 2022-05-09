@@ -147,10 +147,10 @@ public class Console {
 		
 		//Todo esto se abre siempre que uno haya hecho un login exitoso
 		System.out.println("\n          ¡Hola estimado " + user.getUserName() + "!");
-		accountsOptions();
 		boolean finished = false;
 		while(!finished) {
-		String option = sc.nextLine();
+			accountsOptions();
+			String option = sc.nextLine();
 		int opt;
 			try{
 				 opt = Integer.parseInt(option);
@@ -243,9 +243,9 @@ public class Console {
 	
 	private void createAccount() {
 		System.out.println("Entrega los datos de la cuenta que vas a introducir:");
-		System.out.println("Nombre");
+		System.out.println("Nombre:");
 		String name = sc.nextLine();
-		System.out.println("Balance(float)");
+		System.out.println("Balance(debe ser float):");
 		float balance = 0;
 		try{
 			balance = Float.parseFloat(sc.nextLine());
@@ -253,9 +253,10 @@ public class Console {
 			System.err.println("No se ingresó un valor numérico. Operación fallida");
 			return;
 		}
-		System.out.println("Divisa");
+		System.out.println("Divisa;");
 		String currency = sc.nextLine();
 		user.addAccount(name,balance,currency);
+		System.out.println("Cuenta añadida");
 	}
 	
 	private void addTransaction() {
@@ -278,7 +279,7 @@ public class Console {
 			return;
 		}
 		System.out.println(user.accountsInfo(id));
-		
+		user.transactionsInfo(id);
 	}
 	
 	private boolean choice(String choice) {

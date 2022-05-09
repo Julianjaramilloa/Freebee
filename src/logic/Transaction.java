@@ -36,4 +36,12 @@ public class Transaction {
 			return false;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Transaction [date=" + date + ", accId=" + accId + ", Description=" + Description + ", type=" + type
+				+ ", amount=" + amount + ", isIngreso=" + isIngreso + "]";
+	}
+	
+	
 }

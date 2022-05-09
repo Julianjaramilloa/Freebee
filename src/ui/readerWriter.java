@@ -160,7 +160,7 @@ public class readerWriter {
 		
 		System.out.println("\n\tTransacción creada:\n\n" + 
 		"Fecha:" + dateOfTransaction + " Descripción:" + desc + " Category:" + cat +
-		"Cantidad:" + amount + " Es un ingreso:" + isIngreso + " Cuenta:" + accId + "\n");
+		"Cantidad:" + amount + " Es un ingreso:" + isIngreso + " Cuenta Asociada:" + accId + "\n");
 		
 	}
 

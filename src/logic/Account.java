@@ -32,7 +32,7 @@ public class Account{
 	
 	@Override
 	public String toString() {
-		return id + " " + name + "balance: " + balance + " " + currency;
+		return "idCuenta: " + id + " " + name + ", balance: " + balance + ", " + currency;
 	}
 	
 }

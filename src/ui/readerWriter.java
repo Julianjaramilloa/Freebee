@@ -15,6 +15,9 @@ import java.util.Scanner;
 import java.util.Locale;
 import java.util.Locale.Category;
 
+import dataStructures.DynamicArray;
+import dataStructures.LinkedList;
+
 /*
  * freebee
  * @author Marcos Pinzón Pardo
@@ -169,24 +172,24 @@ public class readerWriter {
 	
 	// De aquí en adelante saveChanges()
 	
-	/*public void saveChanges() {
+	public void saveChanges() {
 		
 		// Para que esta función correctamente, se debe modificar el get, de manera que quede
 		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
 		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
 		
-		try (FileWriter f = new FileWriter(fileName, true);
+		try (FileWriter f = new FileWriter("testSave5.txt", true);
 				BufferedWriter b = new BufferedWriter(f);
 				PrintWriter p = new PrintWriter(b);) {
 			
 			// Recorre la lista de usuarios (lo llamé userList)
-			for (int u = 0; u < UserList.size(); u++) {
+			for (int u = 0; u < userList.size(); u++) {
 				
-				f.write("U; " + UserList.get(u) + "\n");
+				f.write("U; " + userList.get(u).getUserName() + "; " + userList.get(u).getUserPassword() +"\n");
 				
 				// Demostrativo, hay que implementar bien:
-				listaDeCuentas = u.getAccounts; 
-				listaDeTrans = u.getTransactions;
+				DynamicArray<Account> listaDeCuentas = userList.get(u).getAccounts(); 
+				LinkedList<Transaction> listaDeTrans = userList.get(u).getTransactions();
 						
 				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
 				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
@@ -196,7 +199,7 @@ public class readerWriter {
 		} catch (IOException i1) {i1.printStackTrace();}
 		
 	}
-	*/
+	
 	
 
 }

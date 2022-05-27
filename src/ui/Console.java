@@ -24,6 +24,12 @@ public class Console {
 		
 	}
 	
+	public void saveData(UserList userlist) {
+		readerWriter save = new readerWriter(userlist);
+		save.saveChanges();
+		
+	}
+	
 	public void mainMenu() {
 		
 		System.out.println("----------------------------------------------------");
@@ -63,6 +69,7 @@ public class Console {
 				}
 				break;
 			case 4:
+				saveData(userList);
 				System.out.println("Gracias por usar freebee");
 				sc.close();
 				System.exit(0);

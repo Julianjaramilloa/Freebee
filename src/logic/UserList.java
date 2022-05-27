@@ -8,7 +8,7 @@ import dataStructures.LinkedLIterator;
 import dataStructures.LinkedList;
 
 public class UserList {
-	public DynamicArray<User> users = new DynamicArray<User>();
+	public static DynamicArray<User> users = new DynamicArray<User>();
 	private int currentUser;
 	
 	public UserList() {};
@@ -80,13 +80,19 @@ public class UserList {
 			throw new NoSuchElementException("La posición donde estaba el usuario ya no existe");
 		}
 		
+	}
+
+	public static int size() {
+		return users.size();
+	}
+
+	public static User get(int u) {
+		return users.get(u);
 	};
 	
-	public void selectUser(String userName, String password) {
-		
-	};
-	
-	public void readAndLoadData() {
-		
-	};
+
+
+
+
+
 }

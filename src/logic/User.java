@@ -17,6 +17,14 @@ public class User {
 	private IncomingTransactions inc;//Implementación a futuro
 	private short idProvider = 0;
 	
+	public DynamicArray<Account> getAccounts() {
+		return this.accounts;
+	}
+	
+	public LinkedList<Transaction> getTransactions() {
+		return this.transactions;
+	}
+	
 	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
@@ -108,5 +116,10 @@ public class User {
 		
 			
 		
+	}
+
+	public String getUserPassword() {
+		// TODO Auto-generated method stub
+		return this.password;
 	}
 }

@@ -178,7 +178,7 @@ public class readerWriter {
 		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
 		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
 		
-		try (FileWriter f = new FileWriter("testSave5.txt", true);
+		try (FileWriter f = new FileWriter("testSave7.txt", true);
 				BufferedWriter b = new BufferedWriter(f);
 				PrintWriter p = new PrintWriter(b);) {
 			

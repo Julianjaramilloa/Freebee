@@ -1,4 +1,4 @@
-package dataStructures;
+package seqDataStructures;
 
 public class DArrayIterator<T> implements Iterator<T> {
 

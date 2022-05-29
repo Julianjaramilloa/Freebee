@@ -1,4 +1,4 @@
-package dataStructures;
+package seqDataStructures;
 
 public class Node<T>{
 		protected T data;

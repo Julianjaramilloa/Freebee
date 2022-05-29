@@ -1,4 +1,4 @@
-package dataStructures;
+package seqDataStructures;
 
 public class LinkedLIterator<T> implements Iterator<T> {
 

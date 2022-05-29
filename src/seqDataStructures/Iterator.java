@@ -1,4 +1,4 @@
-package dataStructures;
+package seqDataStructures;
 
 public interface Iterator<T> {
 	public boolean hasNext();

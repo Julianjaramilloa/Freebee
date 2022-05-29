@@ -2,10 +2,10 @@ package logic;
 
 import java.time.LocalDate;
 
-import dataStructures.DArrayIterator;
-import dataStructures.DynamicArray;
-import dataStructures.LinkedLIterator;
-import dataStructures.LinkedList;
+import seqDataStructures.DArrayIterator;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.LinkedLIterator;
+import seqDataStructures.LinkedList;
 
 //Esta clase es el alma de la aplicación.
 public class User {

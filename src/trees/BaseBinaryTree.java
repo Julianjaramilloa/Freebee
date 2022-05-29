@@ -6,7 +6,7 @@ public class BaseBinaryTree implements BinaryTree {
 
 	  @Override
 	  public Node getRoot() {
-	    return root;
+		  return root;
 	  }
 
 	  @Override
@@ -17,7 +17,8 @@ public class BaseBinaryTree implements BinaryTree {
 	  }
 
 	  private void appendNodeToStringRecursive(Node node, StringBuilder builder) {
-	    appendNodeToString(node, builder);
+	    //appendNodeToString(node, builder);
+		builder.append(node.data);
 	    if (node.left != null) {
 	      builder.append(" L{");
 	      appendNodeToStringRecursive(node.left, builder);

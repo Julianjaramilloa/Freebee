@@ -12,7 +12,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	      if (key == node.data) {
 	        return node;
 	      } else if (key < node.data) {
-	        node = node.left;
+	        node =  node.left;
 	      } else {
 	        node = node.right;
 	      }

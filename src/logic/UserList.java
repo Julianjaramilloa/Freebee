@@ -2,10 +2,10 @@ package logic;
 
 import java.util.NoSuchElementException;
 
-import dataStructures.DArrayIterator;
-import dataStructures.DynamicArray;
-import dataStructures.LinkedLIterator;
-import dataStructures.LinkedList;
+import seqDataStructures.DArrayIterator;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.LinkedLIterator;
+import seqDataStructures.LinkedList;
 
 public class UserList {
 	public static DynamicArray<User> users = new DynamicArray<User>();

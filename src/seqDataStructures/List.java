@@ -1,4 +1,4 @@
-package dataStructures;
+package seqDataStructures;
 
 public interface List<T> {
 	public void add(T data, int index);

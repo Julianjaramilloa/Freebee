@@ -7,9 +7,19 @@ public class Node {
 	  Node right;
 	  Node parent;
 
-	  boolean color;
+	  //Hay que resolver cómo hacer nodos diferentes para
+	  //el AVL y el Rojo-Negro
+	  int height = 0; //Avl
+	  boolean color; //Rojo Negro
 
 	  public Node(int data) {
 	    this.data = data;
 	  }
+	  
+	  //Hago aquí el toString() para debuggear
+	  @Override
+	  public String toString() {
+		  return String.valueOf(data);
+	  }
+	  
 	}

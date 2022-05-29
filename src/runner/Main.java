@@ -22,6 +22,19 @@ public class Main {
 		//True en el constructor: Cargar datos guardados.
 		Console c = new Console(true);
 		c.mainMenu();
+		
+		
+		/*
+		ProveClasses pc = new ProveClasses();
+		pc.avlTree();
+		
+		
+		ProveClasses pc = new ProveClasses();
+		pc.rbTree();
+		*/
+		
+		
+		
 	}
 
 }

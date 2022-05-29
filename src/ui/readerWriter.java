@@ -1,5 +1,7 @@
 package ui;
 import logic.*;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.LinkedList;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,9 +16,6 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.util.Scanner;
 import java.util.Locale;
 import java.util.Locale.Category;
-
-import dataStructures.DynamicArray;
-import dataStructures.LinkedList;
 
 /*
  * freebee

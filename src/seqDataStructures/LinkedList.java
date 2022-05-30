@@ -2,6 +2,7 @@ package seqDataStructures;
 
 import java.util.NoSuchElementException;
 
+
 //Implementación de Listas Enlazadas
 public class LinkedList<T> implements List<T> {
 	
@@ -28,12 +29,37 @@ public class LinkedList<T> implements List<T> {
 	@Override
 	public void add(T data, int index) 
 	{
-		checkIndex(index);
-		Node<T> aux = head;
-		for(int i=0; i<index;i++) {
-			aux = aux.next;
+		if(size < index) {
+			throw new IndexOutOfBoundsException("No se puede introducir un Nodo en ese índice porque el tamaño de la lista ("+ size() +") no alcanza");
 		}
-		aux.data = data;
+		
+		Node<T> toInsert = new Node<T>(data);
+		
+		if((size == 0 && index == 0) || size == index){
+			pushBack(data);
+			return;
+		}else if(index==0){
+			toInsert.next = head;
+			head = toInsert;
+		}else{
+	        Node<T> temp = head;	       
+	        Node<T> prev = new Node<T>(null);
+	        int remainingIterations = index;
+	        
+	        while (remainingIterations-1 > -1) {
+	            prev = temp;
+	            temp = temp.next;
+	            remainingIterations--;
+	        }
+	        
+	        if(index == (size-1)) {
+	        	
+	        }
+	        prev.next = toInsert;
+	        prev.next.next = temp;
+		}
+		
+		size++;
 	}
 	
 	@Override
@@ -108,6 +134,7 @@ public class LinkedList<T> implements List<T> {
         }
         
         prev.next = next;
+        size--;
         
 	}
 	
@@ -168,27 +195,20 @@ public class LinkedList<T> implements List<T> {
         
 	}
 
-	//Es necesario buscar una buena forma de hacer este método de tal manera que
-	//sea rápido. He intentado con StringBuilder pero por alguna razón el programa
-	//parecía ser excesivamente lento.
-	@Override
+	@Override	
 	public String toString() {
-		String rep = "";
+		if(head == null) 
+			return "[Empty]";
 		
-		if(size==0) {
-			rep += "Lista Vacía";
-		}else if (size==1) {
-			rep += "head: " + "tail: " + head.data.toString();
-		}else{
-			System.out.println("Auxilio");
-			rep += "head: " + head.data.toString();
-			Node<T> aux = head;
-			while(aux.next != null) {
-				rep += "->" + aux.data.toString();
-			}
-			rep+= tail.data.toString() + ": tail";
+		String toShow = "[Head: ";
+		Iterator<T> it = new LinkedLIterator<T>(this);
+		for(int i=0; i<size; i++) {
+			String data = it.next().toString();
+			toShow += (data + " -> ");
 		}
-		return rep;
+		toShow = toShow.substring(0, toShow.length() - 4);
+		toShow += ": Tail]";
+		return toShow;
 	}
 
 

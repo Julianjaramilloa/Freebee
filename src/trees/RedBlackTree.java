@@ -2,6 +2,8 @@ package trees;
 
 public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
+	
+	
 	  static final boolean RED = false;
 	  static final boolean BLACK = true;
 

@@ -17,8 +17,8 @@ public class BaseBinaryTree implements BinaryTree {
 	  }
 
 	  private void appendNodeToStringRecursive(Node node, StringBuilder builder) {
-	    //appendNodeToString(node, builder);
-		builder.append(node.data);
+	    appendNodeToString(node, builder);
+		//builder.append(node.data);
 	    if (node.left != null) {
 	      builder.append(" L{");
 	      appendNodeToStringRecursive(node.left, builder);

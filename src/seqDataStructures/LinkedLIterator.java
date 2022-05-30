@@ -2,11 +2,9 @@ package seqDataStructures;
 
 public class LinkedLIterator<T> implements Iterator<T> {
 
-	private LinkedList<T> list;
 	private Node<T> current;
 	
 	public LinkedLIterator(LinkedList<T> list) {
-		this.list = list;
 		current = list.head;
 	}
 	

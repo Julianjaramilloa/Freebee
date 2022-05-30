@@ -21,9 +21,11 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 	@Override
 	public void insertNode(int key) {
 		Node candidate = root;
+		Node parent = null;
 		Node toInsert = new Node(key);
 		
 		while(candidate != null) {
+			parent = candidate;
 			if(key < candidate.data ) {
 				candidate = candidate.left;
 			}else if(key > candidate.data) {
@@ -33,6 +35,16 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 			}
 		}
 		candidate = toInsert;
+		
+		if (parent == null) {
+		      root = toInsert;
+		    } else if (key < parent.data) {
+		      parent.left = toInsert;
+		    } else {
+		      parent.right = toInsert;
+		    }
+		    toInsert.parent = parent;
+		
 		//updateAndCheckBalance(candidate);
 	}
 	

@@ -16,6 +16,7 @@ public class Node {
 	    this.data = data;
 	  }
 	  
+	  
 	  //Hago aquí el toString() para debuggear
 	  @Override
 	  public String toString() {

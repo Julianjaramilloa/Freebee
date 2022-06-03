@@ -9,7 +9,7 @@ public class Node {
 
 	  //Hay que resolver cómo hacer nodos diferentes para
 	  //el AVL y el Rojo-Negro
-	  int height = 0; //Avl
+	  int height; //Avl
 	  boolean color; //Rojo Negro
 
 	  public Node(int data) {

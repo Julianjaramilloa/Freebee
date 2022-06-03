@@ -17,6 +17,8 @@ public class ProveClasses {
 		avl.insertNode(01);
 		avl.insertNode(36);
 		avl.insertNode(789);
+		avl.insertNode(41);
+		avl.insertNode(2);
 		
 		System.out.println(avl.toString());
 	}

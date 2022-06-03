@@ -34,26 +34,40 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 				throw new IllegalArgumentException("El árbol ya contiene el dato " + key);
 			}
 		}
-		candidate = toInsert;
 		
 		if (parent == null) {
 		      root = toInsert;
-		    } else if (key < parent.data) {
+		}else if(key < parent.data) {
 		      parent.left = toInsert;
-		    } else {
+		}else{
 		      parent.right = toInsert;
-		    }
+		}
 		    toInsert.parent = parent;
+		    
 		
-		//updateAndCheckBalance(candidate);
+
+		
+		updateAndCheckBalance(toInsert);
 	}
 	
 	private void updateAndCheckBalance(Node child) {
-		while(child.parent != null) {
-			if(child.parent.height == child.height) {
-				child.parent.height = child.height;
-			}
+		System.out.println("Inserted: " + child.data);
+		while(child != null) {
+			updateHeight(child);
+			System.out.println(child.data + ": " +height(child));
 			child = child.parent;
+		}
+	}
+	
+	private void updateHeight(Node n) {
+		n.height = 1 + Math.max(height(n.left), height(n.right));
+	}
+	
+	private int height(Node n) {
+		if(n == null) {
+			return -1;
+		}else {
+			return (n.height);
 		}
 	}
 	

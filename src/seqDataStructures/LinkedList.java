@@ -29,7 +29,7 @@ public class LinkedList<T> implements List<T> {
 	@Override
 	public void add(T data, int index) 
 	{
-		if(size < index) {
+		if(size < index || index < 0) {
 			throw new IndexOutOfBoundsException("No se puede introducir un Nodo en ese índice porque el tamaño de la lista ("+ size() +") no alcanza");
 		}
 		

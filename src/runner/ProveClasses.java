@@ -10,7 +10,7 @@ public class ProveClasses {
 	
 	
 	void avlTree () {
-		AVLTree avl = new AVLTree();
+		/*AVLTree avl = new AVLTree();
 		avl.insertNode(89);
 		avl.insertNode(60);
 		avl.insertNode(27);
@@ -20,7 +20,19 @@ public class ProveClasses {
 		avl.insertNode(41);
 		avl.insertNode(2);
 		
-		System.out.println(avl.toString());
+		System.out.println(avl.toString());*/
+		
+		AVLTree avl = new AVLTree();
+		avl.insertNode(98);
+		avl.insertNode(156);
+		avl.insertNode(27);
+		avl.insertNode(35);
+		avl.insertNode(234);
+		avl.insertNode(350);
+		avl.insertNode(32);
+		//avl.insertNode(12);
+		//System.out.println(avl.toString());
+		 		
 	}
 	
 	void rbTree() {

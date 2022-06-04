@@ -43,24 +43,39 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 		      parent.right = toInsert;
 		}
 		    toInsert.parent = parent;
-		    
 		
-
-		
-		updateAndCheckBalance(toInsert);
+		updateHeightsAndGuaranteeBalance(toInsert);
 	}
 	
-	private void updateAndCheckBalance(Node child) {
-		System.out.println("Inserted: " + child.data);
-		while(child != null) {
-			updateHeight(child);
-			System.out.println(child.data + ": " +height(child));
-			child = child.parent;
+	@Override
+	public void deleteNode(int key) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	private void updateHeightsAndGuaranteeBalance(Node current) {
+		System.out.println("Inserted: " + current.data);
+		while(current != null) {
+			updateHeight(current);
+			int bf = balanceFactor(current);
+			if( bf <-1 || bf> 1 ) {
+				System.out.println("bf: " + bf);
+				balance(current, bf);
+				current = current.parent.parent;
+				System.out.println("Nuevo Current: " + current);
+			}else {
+				current = current.parent;
+			}
+			//System.out.println(current.data + ": " +height(current));
+			//System.out.println("Balance Factor: " + balanceFactor(current));
+			
 		}
+		//System.out.println("Balance Factor Tree: " + balanceFactor(root));
+		System.out.println(toString());
 	}
 	
 	private void updateHeight(Node n) {
-		n.height = 1 + Math.max(height(n.left), height(n.right));
+		n.height = (1 + Math.max(height(n.left), height(n.right)));
 	}
 	
 	private int height(Node n) {
@@ -71,16 +86,94 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 		}
 	}
 	
-	private void balance(int key) {
-		
+	private int balanceFactor(Node n) {
+		if(n == null) {
+			return 0;
+		}else {
+			return (height(n.right) - height(n.left));
+		}
 	}
-
-	@Override
-	public void deleteNode(int key) {
-		// TODO Auto-generated method stub
+	
+	private void balance(Node toBalance, int balanceFactor) {
+		if(balanceFactor > 1) {
+			rightBalance(toBalance);
+		}else if(balanceFactor < -1){
+			leftBalance(toBalance);
+		}else{
+			throw new RuntimeException ("El árbol actual no necesita ser desbalanceado");
+		}
 		
 	}
 	
-
-
+	private void rightBalance(Node toBalance) {
+		Node subTreeParent = toBalance.parent;
+		if(height(toBalance.right.right) > height(toBalance.right.left)) {
+			Node rotated = rotateLeft(toBalance);
+			subTreeParent.right = rotated;
+			rotated.parent = subTreeParent;
+		}else {
+			toBalance.right = rotateRight(toBalance.right);
+			toBalance.right.parent = toBalance;
+			
+			Node rotated = rotateLeft(toBalance);
+			subTreeParent.left = rotated;
+			rotated.parent = subTreeParent;
+		}
+	}
+	
+	private void leftBalance(Node toBalance) {
+		Node subTreeParent = toBalance.parent;
+		if(height(toBalance.left.left) > height(toBalance.left.right)) {
+			Node rotated = rotateRight(toBalance);
+			subTreeParent.left = rotated;
+			rotated.parent = subTreeParent;
+		}else {
+			toBalance.left = rotateLeft(toBalance.left);
+			toBalance.left.parent = toBalance;
+			
+			Node rotated = rotateRight(toBalance);
+			subTreeParent.right = rotated;
+			rotated.parent = subTreeParent;
+		}
+	}
+	
+	/*
+	 *Las palabras "oldRoot" y "newRoot" se refieren aquí a la raíz del subárbol que estamos balanceando,
+	 *          no tienen necesariamente que ser la raíz de todo el árbol 
+	 */
+	
+	public Node rotateRight(Node oldRoot) {
+		Node newRoot = oldRoot.left;
+		Node toAdjust = newRoot.right;
+		
+		newRoot.right = oldRoot;
+		oldRoot.parent = newRoot;
+		oldRoot.left = toAdjust;
+				
+		if(toAdjust != null) {
+			toAdjust.parent = oldRoot;
+		}
+		
+		updateHeight(oldRoot);
+		updateHeight(newRoot);
+		
+		return(newRoot);
+	}
+	
+	public Node rotateLeft(Node oldRoot) {
+		Node newRoot = oldRoot.right;
+		Node toAdjust = newRoot.left;
+		
+		newRoot.left = oldRoot;
+		oldRoot.parent = newRoot;
+		oldRoot.right = toAdjust;			
+		if(toAdjust != null) {
+			toAdjust.parent = oldRoot;
+		}
+		
+		updateHeight(oldRoot);
+		updateHeight(newRoot);
+		
+		return(newRoot);
+	}
 }

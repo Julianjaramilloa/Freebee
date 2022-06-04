@@ -18,7 +18,6 @@ public class BaseBinaryTree implements BinaryTree {
 
 	  private void appendNodeToStringRecursive(Node node, StringBuilder builder) {
 	    appendNodeToString(node, builder);
-		//builder.append(node.data);
 	    if (node.left != null) {
 	      builder.append(" L{");
 	      appendNodeToStringRecursive(node.left, builder);
@@ -32,6 +31,6 @@ public class BaseBinaryTree implements BinaryTree {
 	  }
 
 	  protected void appendNodeToString(Node node, StringBuilder builder) {
-	    builder.append(node.data);
+	    builder.append(node.data + "-" + node.height);
 	  }
 	}

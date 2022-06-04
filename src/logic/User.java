@@ -2,10 +2,10 @@ package logic;
 
 import java.time.LocalDate;
 
-import seqDataStructures.DArrayIterator;
 import seqDataStructures.DynamicArray;
-import seqDataStructures.LinkedLIterator;
+import seqDataStructures.DynamicArrayIterator;
 import seqDataStructures.LinkedList;
+import seqDataStructures.LinkedListIterator;
 
 //Esta clase es el alma de la aplicación.
 public class User {
@@ -83,7 +83,7 @@ public class User {
 	public String accountsInfo(short id)
 	{
 		Account display = null;
-		DArrayIterator<Account> it = new DArrayIterator<Account>(accounts);
+		DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(accounts);
 		Account aux;
 		while(it.hasNext()) {
 			aux = it.next();
@@ -101,7 +101,7 @@ public class User {
 	
 	public void transactionsInfo(short id) {
 		System.out.println("Transacciones de la cuenta:");
-		LinkedLIterator<Transaction> it = new LinkedLIterator<Transaction>(transactions);
+		LinkedListIterator<Transaction> it = new LinkedListIterator<Transaction>(transactions);
 		Transaction aux;
 		while(it.hasNext()) {
 			aux = it.next();

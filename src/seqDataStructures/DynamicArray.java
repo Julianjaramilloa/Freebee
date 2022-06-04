@@ -104,8 +104,8 @@ public class DynamicArray<T> implements List<T> {
 		size = 0;
 	}
 	
-	public DArrayIterator<T> iterate(){
-		return new DArrayIterator<T>(this);
+	public DynamicArrayIterator<T> iterate(){
+		return new DynamicArrayIterator<T>(this);
 	}
 	
 	@Override

@@ -11,9 +11,13 @@ public class BaseBinaryTree implements BinaryTree {
 
 	  @Override
 	  public String toString() {
-	    StringBuilder builder = new StringBuilder();
-	    appendNodeToStringRecursive(getRoot(), builder);
-	    return builder.toString();
+	    if(root == null) {
+	    	return "Árbol Vacío";
+	    }else {
+	    	StringBuilder builder = new StringBuilder();
+	  	    appendNodeToStringRecursive(getRoot(), builder);
+	  	    return builder.toString();
+	    }
 	  }
 
 	  private void appendNodeToStringRecursive(Node node, StringBuilder builder) {

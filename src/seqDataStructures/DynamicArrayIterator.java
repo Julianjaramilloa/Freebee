@@ -1,12 +1,12 @@
 package seqDataStructures;
 
-public class DArrayIterator<T> implements Iterator<T> {
+public class DynamicArrayIterator<T> implements Iterator<T> {
 
 	private DynamicArray<T> list;
 	private int current;
 	
 	
-	public DArrayIterator(DynamicArray<T> list) {
+	public DynamicArrayIterator(DynamicArray<T> list) {
 		this.list = list;
 		current = 0;
 	}

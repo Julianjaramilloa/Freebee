@@ -30,11 +30,8 @@ public class Main {
 		pc.avlTree();
 		
 		
-		//ProveClasses pc = new ProveClasses();
 		//pc.rbTree();
 		
-		
-		//ProveClasses pc = new ProveClasses();
 		//pc.linkedListInsertions();
 		
 		

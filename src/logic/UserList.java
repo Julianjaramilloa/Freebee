@@ -2,11 +2,8 @@ package logic;
 
 import java.util.NoSuchElementException;
 
-import seqDataStructures.DArrayIterator;
 import seqDataStructures.DynamicArray;
-import seqDataStructures.LinkedLIterator;
-import seqDataStructures.LinkedList;
-
+import seqDataStructures.DynamicArrayIterator;
 public class UserList {
 	public static DynamicArray<User> users = new DynamicArray<User>();
 	private int currentUser;
@@ -42,7 +39,7 @@ public class UserList {
 	 */
 	private boolean exists(String username) {
 		boolean exists = false;
-		DArrayIterator<User> it = users.iterate();
+		DynamicArrayIterator<User> it = users.iterate();
 		while(it.hasNext()) {
 			User aux = it.next();
 			if(aux.getUserName() == username) {
@@ -56,7 +53,7 @@ public class UserList {
 	
 	public User login(String username, String password) {
 		User user = null;
-		DArrayIterator<User> it = users.iterate();
+		DynamicArrayIterator<User> it = users.iterate();
 		User aux;
 		for(int i=0; i<users.size(); i++) {
 			aux = it.next();

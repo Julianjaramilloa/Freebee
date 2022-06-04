@@ -1,7 +1,9 @@
 package runner;
 
 
+import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
+import seqDataStructures.LinkedListIterator;
 import trees.AVLTree;
 import trees.RedBlackTree;
 //Esta clase la cree para ir probando que las cosas que vamos creando funcionan
@@ -10,28 +12,61 @@ public class ProveClasses {
 	
 	
 	void avlTree () {
-		/*AVLTree avl = new AVLTree();
-		avl.insertNode(89);
-		avl.insertNode(60);
-		avl.insertNode(27);
-		avl.insertNode(01);
-		avl.insertNode(36);
-		avl.insertNode(789);
-		avl.insertNode(41);
-		avl.insertNode(2);
-		
-		System.out.println(avl.toString());*/
-		
 		AVLTree avl = new AVLTree();
+		LinkedList<Integer> treeNodes = new LinkedList<Integer>();
+		
+		treeNodes.pushBack(89);
+		treeNodes.pushBack(60);
+		treeNodes.pushBack(27);
+		treeNodes.pushBack(01);
+		treeNodes.pushBack(36);
+		treeNodes.pushBack(789);
+		treeNodes.pushBack(41);
+		treeNodes.pushBack(2);
+		treeNodes.pushBack(40);
+		treeNodes.pushBack(9);
+		treeNodes.pushBack(81);
+		treeNodes.pushBack(79);
+		
+		System.out.println("Orden de inserción:\n" + treeNodes.toString() + "\n");
+		
+		Iterator<Integer> it = new LinkedListIterator<Integer>(treeNodes);
+		while(it.hasNext()) {
+			int toInsert = it.next();
+			avl.insertNode(toInsert);
+		}
+		System.out.println("Árbol:\n" + avl.toString());
+		
+		
+		
+		/*AVLTree avl = new AVLTree();
 		avl.insertNode(98);
 		avl.insertNode(156);
 		avl.insertNode(27);
 		avl.insertNode(35);
 		avl.insertNode(234);
 		avl.insertNode(350);
-		avl.insertNode(32);
+		avl.insertNode(32);*/
 		//avl.insertNode(12);
-		//System.out.println(avl.toString());
+
+		
+		/*AVLTree avl = new AVLTree();
+		avl.insertNode(98);
+		avl.insertNode(156);
+		avl.insertNode(273);
+		avl.insertNode(74);
+		avl.insertNode(78);
+		avl.insertNode(789);
+		avl.insertNode(56);
+		avl.insertNode(898);
+		avl.insertNode(67);
+		avl.insertNode(92);
+		avl.insertNode(4);
+		avl.insertNode(31);
+		avl.insertNode(15);
+		avl.insertNode(19);
+		avl.insertNode(79);
+		*/
 		 		
 	}
 	

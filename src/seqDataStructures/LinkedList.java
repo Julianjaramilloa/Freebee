@@ -92,8 +92,8 @@ public class LinkedList<T> implements List<T> {
 		}
 	}
 	
-	public LinkedLIterator<T> iterate(){
-		return new LinkedLIterator<T>(this);
+	public LinkedListIterator<T> iterate(){
+		return new LinkedListIterator<T>(this);
 	}
 	
 	@Override
@@ -201,7 +201,7 @@ public class LinkedList<T> implements List<T> {
 			return "[Empty]";
 		
 		String toShow = "[Head: ";
-		Iterator<T> it = new LinkedLIterator<T>(this);
+		Iterator<T> it = new LinkedListIterator<T>(this);
 		for(int i=0; i<size; i++) {
 			String data = it.next().toString();
 			toShow += (data + " -> ");

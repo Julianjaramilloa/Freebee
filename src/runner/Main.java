@@ -1,6 +1,8 @@
 package runner;
 
-import ui.Console;
+import logic.UserList;
+import ui.ConsoleVersion;
+import ui.LogIn;
 
 /**
  * 
@@ -15,7 +17,7 @@ import ui.Console;
  */
 public class Main {
 
-	/**
+	/**|
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -26,14 +28,20 @@ public class Main {
 		*/
 		
 		
-		ProveClasses pc = new ProveClasses();
-		pc.avlTree();
+//		ProveClasses pc = new ProveClasses();
+//		pc.avlTree();
 		
 		
 		//pc.rbTree();
 		
 		//pc.linkedListInsertions();
 		
+		UserList ul = new UserList();
+		
+		LogIn lg = new LogIn(ul);
+		lg.credentialsIn();
+//		NewUser nw = new NewUser(); 
+//		nw.createUser();
 		
 	}
 

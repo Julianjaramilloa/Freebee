@@ -1,4 +1,4 @@
-package userInterface;
+package ui;
 
 /*
  * Freebe
@@ -26,6 +26,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import logic.UserList;
+
 
 public class LogIn extends JFrame implements ActionListener {
 
@@ -41,6 +43,12 @@ public class LogIn extends JFrame implements ActionListener {
 	
 	String username;
 	String password;
+	
+	UserList ul;
+	
+	public LogIn(UserList ul) {
+		this.ul = ul;
+	}
 	
 	
 	public void credentialsIn(){
@@ -179,22 +187,16 @@ public class LogIn extends JFrame implements ActionListener {
 			System.out.println("Username input: " + username + " Password input: " + password);
 			
 			
-			// Encontrar usuario
-//			if () {
-//				System.out.println("Username input: " + username + " Password input: " + password);
-//				this.dispose();
-//				new MainMenu();
-//			} else {
-//				System.out.println("Usuario no encontrado");
-//				JOptionPane.showMessageDialog(null, "Este usuario no ha sido registrado", "Error", JOptionPane.WARNING_MESSAGE);
-//			}		
-			// Verificar contraseña
-//			if () {
-//				System.out.println("Contraseña correcta, " + username + " ha iniciado sesión ");
-//			} else {
-//				System.out.println("La contraseña es incorrecta");
-//				JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error", JOptionPane.WARNING_MESSAGE);
-//			}
+			//Encontrar usuario
+			String login = ul.login(username, password);
+			if (login.equals("alright")) {
+				System.out.println("Username input: " + username + " Password input: " + password);
+				new MainMenu();
+			} else {
+				System.out.println(login);
+				JOptionPane.showMessageDialog(null, login, "Error", JOptionPane.WARNING_MESSAGE);
+			}		
+
 					
 		}
 		

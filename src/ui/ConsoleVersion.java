@@ -5,13 +5,13 @@ import java.util.Scanner;
 import logic.User;
 import logic.UserList;
 
-public class Console {
+public class ConsoleVersion {
 	private UserList userList;
 	Scanner sc = new Scanner(System.in);//Para prevenir problemas con Scanners multiples, solo uno para toda la clase
 	final String cont = "¿Quieres seguir en la app?";
 	User user = null;
 	
-	public Console(boolean loadData) {
+	public ConsoleVersion(boolean loadData) {
 		userList = new UserList();
 		if(loadData) {
 			readAndLoadData(userList);
@@ -154,7 +154,7 @@ public class Console {
 		}
 		
 		//Todo esto se abre siempre que uno haya hecho un login exitoso
-		System.out.println("\n          ¡Hola estimado " + user.getUserName() + "!");
+		System.out.println("\n          ¡Hola estimado " + user.getUsername() + "!");
 		boolean finished = false;
 		while(!finished) {
 			accountsOptions();
@@ -221,7 +221,8 @@ public class Console {
 			System.out.println("Contraseña:");
 			String pass = sc.nextLine();
 			
-			user = userList.login(userN, pass);
+			//user = userList.login(userN, pass);
+			user = userList.getUser();
 			if(user == null) {
 				System.out.println("Usuario o Contraseña Incorrectos");
 				if(choice("¿Volver a intentarlo?")) {

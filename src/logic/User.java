@@ -9,7 +9,7 @@ import seqDataStructures.LinkedListIterator;
 
 //Esta clase es el alma de la aplicación.
 public class User {
-	private String userName;
+	private String username;
 	private String password;
 	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
 	private LinkedList<Transaction> transactions = new LinkedList<Transaction>();
@@ -26,7 +26,7 @@ public class User {
 	}
 	
 	public User(String userName, String password) {
-		this.userName = userName;
+		this.username = userName;
 		this.password = password;
 	};
 	
@@ -54,14 +54,14 @@ public class User {
 		transactions.pushBack(trans); //Toca hacer una verificación de si la cuenta existe
 	}
 	
-	public String getUserName() {
-		return this.userName;
+	public String getUsername() {
+		return this.username;
 	}
 	
-	protected boolean right(String userName, String password) {
+	protected boolean areRightCredentials(String userName, String password) {
 		boolean right = false;
 		
-		if(this.userName.equals(userName)) {
+		if(this.username.equals(userName)) {
 			if(this.password.equals(password)) {
 				right = true;
 			}
@@ -73,7 +73,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "Us: " + userName;
+		return username;
 	}
 	
 	public void setBalance(short id) {
@@ -122,4 +122,5 @@ public class User {
 		// TODO Auto-generated method stub
 		return this.password;
 	}
+
 }

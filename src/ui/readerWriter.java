@@ -184,7 +184,9 @@ public class readerWriter {
 			// Recorre la lista de usuarios (lo llamé userList)
 			for (int u = 0; u < userList.size(); u++) {
 				
-				f.write("U; " + userList.get(u).getUserName() + "; " + userList.get(u).getUserPassword() +"\n");
+				//No tendría por qué haber acceso a las passwords
+				
+				f.write("U; " + userList.get(u).getUsername() + "; " + userList.get(u).getUserPassword() +"\n");
 				
 				// Demostrativo, hay que implementar bien:
 				DynamicArray<Account> listaDeCuentas = userList.get(u).getAccounts(); 

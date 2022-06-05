@@ -53,7 +53,6 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 	}
 	
 	private void updateHeightsAndGuaranteeBalance(Node current) {
-		//System.out.println("Inserted: " + current.data);
 		while(current != null) {
 			updateHeight(current);
 			int bf = balanceFactor(current);
@@ -62,7 +61,6 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 			}
 			current = current.parent;
 		}
-		//System.out.println(toString());
 	}
 	
 	private void updateHeight(Node n) {

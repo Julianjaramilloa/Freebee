@@ -4,8 +4,7 @@ public class DynamicArrayIterator<T> implements Iterator<T> {
 
 	private DynamicArray<T> list;
 	private int current;
-	
-	
+		
 	public DynamicArrayIterator(DynamicArray<T> list) {
 		this.list = list;
 		current = 0;

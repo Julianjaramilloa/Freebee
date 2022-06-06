@@ -1,4 +1,4 @@
-package trees;
+package avlTree;
 
 public interface BinarySearchTree extends BinaryTree {
 	  Node searchNode(int key);

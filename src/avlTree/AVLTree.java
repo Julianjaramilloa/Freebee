@@ -1,4 +1,4 @@
-package trees;
+package avlTree;
 
 public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 

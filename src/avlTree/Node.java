@@ -1,4 +1,4 @@
-package trees;
+package avlTree;
 
 public class Node {
 	  int data;

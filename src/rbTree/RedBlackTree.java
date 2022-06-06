@@ -1,19 +1,20 @@
-package trees;
+package rbTree;
+
+import java.time.LocalDate;
 
 public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
-	
 	
 	  static final boolean RED = false;
 	  static final boolean BLACK = true;
 
 	  @Override
-	  public Node searchNode(int key) {
-	    Node node = root;
+	  public RbNode searchNode(LocalDate key) {
+	    RbNode node = root;
 	    while (node != null) {
-	      if (key == node.data) {
+	      if (key == node.date) {
 	        return node;
-	      } else if (key < node.data) {
+	      } else if (key.compareTo(node.date) < 0) {
 	        node =  node.left;
 	      } else {
 	        node = node.right;
@@ -26,16 +27,16 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	  // -- Insertion ----------------------------------------------------------------------------------
 
 	  @Override
-	  public void insertNode(int key) {
-	    Node node = root;
-	    Node parent = null;
+	  public void insertNode(LocalDate key) {
+	    RbNode node = root;
+	    RbNode parent = null;
 
 	    // Traverse the tree to the left or right depending on the key
 	    while (node != null) {
 	      parent = node;
-	      if (key < node.data) {
+	      if (key.compareTo(node.date) < 0) {
 	        node = node.left;
-	      } else if (key > node.data) {
+	      } else if (key.compareTo(node.date) > 0) {
 	        node = node.right;
 	      } else {
 	        throw new IllegalArgumentException("BST already contains a node with key " + key);
@@ -43,11 +44,11 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 
 	    // Insert new node
-	    Node newNode = new Node(key);
+	    RbNode newNode = new RbNode(key);
 	    newNode.color = RED;
 	    if (parent == null) {
 	      root = newNode;
-	    } else if (key < parent.data) {
+	    } else if (key.compareTo(parent.date) < 0) {
 	      parent.left = newNode;
 	    } else {
 	      parent.right = newNode;
@@ -58,8 +59,8 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	  }
 
 	  @SuppressWarnings("squid:S125") // Ignore SonarCloud complains about commented code line 70.
-	  private void fixRedBlackPropertiesAfterInsert(Node node) {
-	    Node parent = node.parent;
+	  private void fixRedBlackPropertiesAfterInsert(RbNode node) {
+	    RbNode parent = node.parent;
 
 	    // Case 1: Parent is null, we've reached the root, the end of the recursion
 	    if (parent == null) {
@@ -74,7 +75,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 
 	    // From here on, parent is red
-	    Node grandparent = parent.parent;
+	    RbNode grandparent = parent.parent;
 
 	    // Case 2:
 	    // Not having a grandparent means that parent is the root. If we enforce black roots
@@ -88,7 +89,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 
 	    // Get the uncle (may be null/nil, in which case its color is BLACK)
-	    Node uncle = getUncle(parent);
+	    RbNode uncle = getUncle(parent);
 
 	    // Case 3: Uncle is red -> recolor parent, grandparent and uncle
 	    if (uncle != null && uncle.color == RED) {
@@ -146,8 +147,8 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 	  }
 
-	  private Node getUncle(Node parent) {
-	    Node grandparent = parent.parent;
+	  private RbNode getUncle(RbNode parent) {
+	    RbNode grandparent = parent.parent;
 	    if (grandparent.left == parent) {
 	      return grandparent.right;
 	    } else if (grandparent.right == parent) {
@@ -161,13 +162,13 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	  @SuppressWarnings("squid:S2259") // SonarCloud issues an incorrect potential NPE warning
 	  @Override
-	  public void deleteNode(int key) {
-	    Node node = root;
+	  public void deleteNode(LocalDate key) {
+	    RbNode node = root;
 
 	    // Find the node to be deleted
-	    while (node != null && node.data != key) {
+	    while (node != null && node.date.compareTo(key) != 0) {
 	      // Traverse the tree to the left or right depending on the key
-	      if (key < node.data) {
+	      if (key.compareTo(node.date) < 0) {
 	        node = node.left;
 	      } else {
 	        node = node.right;
@@ -183,7 +184,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	    // In this variable, we'll store the node at which we're going to start to fix the R-B
 	    // properties after deleting a node.
-	    Node movedUpNode;
+	    RbNode movedUpNode;
 	    boolean deletedNodeColor;
 
 	    // Node has zero or one child
@@ -195,10 +196,10 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    // Node has two children
 	    else {
 	      // Find minimum node of right subtree ("inorder successor" of current node)
-	      Node inOrderSuccessor = findMinimum(node.right);
+	      RbNode inOrderSuccessor = findMinimum(node.right);
 
 	      // Copy inorder successor's data to current node (keep its color!)
-	      node.data = inOrderSuccessor.data;
+	      node.date = inOrderSuccessor.date;
 
 	      // Delete inorder successor just as we would delete a node with 0 or 1 child
 	      movedUpNode = deleteNodeWithZeroOrOneChild(inOrderSuccessor);
@@ -215,7 +216,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 	  }
 
-	  private Node deleteNodeWithZeroOrOneChild(Node node) {
+	  private RbNode deleteNodeWithZeroOrOneChild(RbNode node) {
 	    // Node has ONLY a left child --> replace by its left child
 	    if (node.left != null) {
 	      replaceParentsChild(node.parent, node, node.left);
@@ -232,13 +233,13 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    // * node is red --> just remove it
 	    // * node is black --> replace it by a temporary NIL node (needed to fix the R-B rules)
 	    else {
-	      Node newChild = node.color == BLACK ? new NilNode() : null;
+	      RbNode newChild = node.color == BLACK ? new NilNode() : null;
 	      replaceParentsChild(node.parent, node, newChild);
 	      return newChild;
 	    }
 	  }
 
-	  private Node findMinimum(Node node) {
+	  private RbNode findMinimum(RbNode node) {
 	    while (node.left != null) {
 	      node = node.left;
 	    }
@@ -246,7 +247,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	  }
 
 	  @SuppressWarnings("squid:S125") // Ignore SonarCloud complains about commented code line 256.
-	  private void fixRedBlackPropertiesAfterDelete(Node node) {
+	  private void fixRedBlackPropertiesAfterDelete(RbNode node) {
 	    // Case 1: Examined node is root, end of recursion
 	    if (node == root) {
 	      // Uncomment the following line if you want to enforce black roots (rule 2):
@@ -254,7 +255,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	      return;
 	    }
 
-	    Node sibling = getSibling(node);
+	    RbNode sibling = getSibling(node);
 
 	    // Case 2: Red sibling
 	    if (sibling.color == RED) {
@@ -283,7 +284,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 	  }
 
-	  private void handleRedSibling(Node node, Node sibling) {
+	  private void handleRedSibling(RbNode node, RbNode sibling) {
 	    // Recolor...
 	    sibling.color = BLACK;
 	    node.parent.color = RED;
@@ -296,7 +297,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 	  }
 
-	  private void handleBlackSiblingWithAtLeastOneRedChild(Node node, Node sibling) {
+	  private void handleBlackSiblingWithAtLeastOneRedChild(RbNode node, RbNode sibling) {
 	    boolean nodeIsLeftChild = node == node.parent.left;
 
 	    // Case 5: Black sibling with at least one red child + "outer nephew" is black
@@ -328,8 +329,8 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 	  }
 
-	  private Node getSibling(Node node) {
-	    Node parent = node.parent;
+	  private RbNode getSibling(RbNode node) {
+	    RbNode parent = node.parent;
 	    if (node == parent.left) {
 	      return parent.right;
 	    } else if (node == parent.right) {
@@ -339,11 +340,11 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 	  }
 
-	  private boolean isBlack(Node node) {
+	  private boolean isBlack(RbNode node) {
 	    return node == null || node.color == BLACK;
 	  }
 
-	  private static class NilNode extends Node {
+	  private static class NilNode extends RbNode {
 	    private NilNode() {
 	      super(0);
 	      this.color = BLACK;
@@ -352,9 +353,9 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	  // -- Helpers for insertion and deletion ---------------------------------------------------------
 
-	  private void rotateRight(Node node) {
-	    Node parent = node.parent;
-	    Node leftChild = node.left;
+	  private void rotateRight(RbNode node) {
+	    RbNode parent = node.parent;
+	    RbNode leftChild = node.left;
 
 	    node.left = leftChild.right;
 	    if (leftChild.right != null) {
@@ -367,9 +368,9 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    replaceParentsChild(parent, node, leftChild);
 	  }
 
-	  private void rotateLeft(Node node) {
-	    Node parent = node.parent;
-	    Node rightChild = node.right;
+	  private void rotateLeft(RbNode node) {
+	    RbNode parent = node.parent;
+	    RbNode rightChild = node.right;
 
 	    node.right = rightChild.left;
 	    if (rightChild.left != null) {
@@ -382,7 +383,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    replaceParentsChild(parent, node, rightChild);
 	  }
 
-	  private void replaceParentsChild(Node parent, Node oldChild, Node newChild) {
+	  private void replaceParentsChild(RbNode parent, RbNode oldChild, RbNode newChild) {
 	    if (parent == null) {
 	      root = newChild;
 	    } else if (parent.left == oldChild) {
@@ -401,7 +402,9 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	  // -- For toString() -----------------------------------------------------------------------------
 
 	  @Override
-	  protected void appendNodeToString(Node node, StringBuilder builder) {
-	    builder.append(node.data).append(node.color == RED ? "[R]" : "[B]");
+	  protected void appendNodeToString(RbNode node, StringBuilder builder) {
+	    builder.append(node.date).append(node.color == RED ? "[R]" : "[B]");
 	  }
+
+
 	}

@@ -1,11 +1,11 @@
-package trees;
+package rbTree;
 
 public class BaseBinaryTree implements BinaryTree {
 
-	  protected Node root;
+	  protected RbNode root;
 
 	  @Override
-	  public Node getRoot() {
+	  public RbNode getRoot() {
 		  return root;
 	  }
 
@@ -20,7 +20,7 @@ public class BaseBinaryTree implements BinaryTree {
 	    }
 	  }
 
-	  private void appendNodeToStringRecursive(Node node, StringBuilder builder) {
+	  private void appendNodeToStringRecursive(RbNode node, StringBuilder builder) {
 	    appendNodeToString(node, builder);
 	    if (node.left != null) {
 	      builder.append(" L{");
@@ -34,7 +34,7 @@ public class BaseBinaryTree implements BinaryTree {
 	    }
 	  }
 
-	  protected void appendNodeToString(Node node, StringBuilder builder) {
-	    builder.append(node.data + "-" + node.height);
+	  protected void appendNodeToString(RbNode node, StringBuilder builder) {
+	    builder.append(node.date + "-" + node.height);
 	  }
 	}

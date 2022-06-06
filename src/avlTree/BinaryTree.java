@@ -1,4 +1,4 @@
-package trees;
+package avlTree;
 
 public interface BinaryTree {
 	  Node getRoot();

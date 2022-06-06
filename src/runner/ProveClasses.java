@@ -4,8 +4,8 @@ package runner;
 import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
-import trees.AVLTree;
-import trees.RedBlackTree;
+import avlTree.AVLTree;
+import rbTree.RedBlackTree;
 //Esta clase la cree para ir probando que las cosas que vamos creando funcionan
 
 public class ProveClasses {
@@ -73,12 +73,12 @@ public class ProveClasses {
 	void rbTree() {
 		RedBlackTree rbt = new RedBlackTree();
 		
-		rbt.insertNode(89);
-		rbt.insertNode(60);
-		rbt.insertNode(27);
-		rbt.insertNode(01);
-		rbt.insertNode(36);
-		rbt.insertNode(789);
+//		rbt.insertNode(89);
+//		rbt.insertNode(60);
+//		rbt.insertNode(27);
+//		rbt.insertNode(01);
+//		rbt.insertNode(36);
+//		rbt.insertNode(789);
 		
 		System.out.println(rbt.toString());
 	}

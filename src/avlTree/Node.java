@@ -7,10 +7,7 @@ public class Node {
 	  Node right;
 	  Node parent;
 
-	  //Hay que resolver cómo hacer nodos diferentes para
-	  //el AVL y el Rojo-Negro
 	  int height; //Avl
-	  boolean color; //Rojo Negro
 
 	  public Node(int data) {
 	    this.data = data;

@@ -35,6 +35,6 @@ public class BaseBinaryTree implements BinaryTree {
 	  }
 
 	  protected void appendNodeToString(RbNode node, StringBuilder builder) {
-	    builder.append(node.date + "-" + node.height);
+	    builder.append(node.date + "-" );
 	  }
 	}

@@ -2,6 +2,8 @@ package rbTree;
 
 import java.time.LocalDate;
 
+import logic.Transaction;
+
 public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	
@@ -27,7 +29,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	  // -- Insertion ----------------------------------------------------------------------------------
 
 	  @Override
-	  public void insertNode(LocalDate key) {
+	  public void insertNode(LocalDate key, Transaction transaction) {
 	    RbNode node = root;
 	    RbNode parent = null;
 
@@ -44,7 +46,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 
 	    // Insert new node
-	    RbNode newNode = new RbNode(key);
+	    RbNode newNode = new RbNode(key,transaction);
 	    newNode.color = RED;
 	    if (parent == null) {
 	      root = newNode;

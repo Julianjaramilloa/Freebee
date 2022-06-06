@@ -2,27 +2,29 @@ package rbTree;
 
 import java.time.LocalDate;
 
+import logic.Transaction;
+
 public class RbNode {
 	  LocalDate date;
 	  int data;
+	  Transaction transaction;
 	  RbNode left;
 	  RbNode right;
 	  RbNode parent;
 
-	  //Hay que resolver cómo hacer nodos diferentes para
-	  //el AVL y el Rojo-Negro
-	  int height; //Avl
-	  boolean color; //Rojo Negro
+
+	  boolean color; 
 
 
-	  public RbNode(LocalDate date) {
+	  public RbNode(LocalDate date,Transaction transaction ) {
 	    this.date = date;
+	    this.transaction = transaction;
 	  }
 	  
 
-	public RbNode(int i) {
+	  public RbNode(int i) {
 		this.data = i;
-	}
+	  }
 
 
 	//Hago aquí el toString() para debuggear

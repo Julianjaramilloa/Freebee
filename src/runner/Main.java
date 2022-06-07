@@ -28,18 +28,18 @@ public class Main {
 		*/
 		
 		
-//		ProveClasses pc = new ProveClasses();
-//		pc.avlTree();
+		ProveClasses pc = new ProveClasses();
+		pc.avlTree();
 		
 		
 		//pc.rbTree();
 		
 		//pc.linkedListInsertions();
 		
-		UserList ul = new UserList();
+//		UserList ul = new UserList();
 		
-		LogIn lg = new LogIn(ul);
-		lg.credentialsIn();
+//		LogIn lg = new LogIn(ul);
+//		lg.credentialsIn();
 //		NewUser nw = new NewUser(); 
 //		nw.createUser();
 		

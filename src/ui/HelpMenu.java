@@ -1,4 +1,4 @@
-package userInterface;
+package ui;
 
 import java.awt.Color;
 import java.awt.Font;

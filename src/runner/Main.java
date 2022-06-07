@@ -1,6 +1,7 @@
 package runner;
 
 import logic.UserList;
+import ui.Categories;
 import ui.ConsoleVersion;
 import ui.LogIn;
 
@@ -31,6 +32,8 @@ public class Main {
 		ProveClasses pc = new ProveClasses();
 		pc.avlTree();
 		
+		Categories ct = new Categories();
+		ct.categories();
 		
 		//pc.rbTree();
 		

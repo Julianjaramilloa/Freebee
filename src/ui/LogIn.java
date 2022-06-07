@@ -1,4 +1,4 @@
-package userInterface;
+package ui;
 
 /*
  * Freebe
@@ -26,7 +26,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import ui.MainMenu;
+import logic.UserList;
 
 
 public class LogIn extends JFrame implements ActionListener {
@@ -44,6 +44,11 @@ public class LogIn extends JFrame implements ActionListener {
 	String username;
 	String password;
 	
+	UserList ul;
+	
+	public LogIn(UserList ul) {
+		this.ul = ul;
+	}
 	
 	public void credentialsIn(){
 		

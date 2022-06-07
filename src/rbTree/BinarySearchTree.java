@@ -1,11 +1,9 @@
 package rbTree;
 
-import java.time.LocalDate;
-
-import logic.Transaction;
+import logic.User;
 
 public interface BinarySearchTree extends BinaryTree {
-	  RbNode searchNode(LocalDate key);
-	  void insertNode(LocalDate key,Transaction transaction);
-	  void deleteNode(LocalDate key);
+	  RbNode searchNode(String key);
+	  void insertNode(String key,User user);
+	  void deleteNode(String key);
 	}

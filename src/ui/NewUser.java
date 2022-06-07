@@ -52,7 +52,7 @@ public class NewUser extends JFrame implements ActionListener {
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
-		welcomeLabel.setBounds(60,30,400,60); // Tamaño
+		welcomeLabel.setBounds(50,20,400,60); // Tamaño
 		welcomeLabel.setText("Creación de usuario"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
@@ -185,10 +185,10 @@ public class NewUser extends JFrame implements ActionListener {
 			if (password.equals(cpass)) {
 				System.out.println("Nuevo usuario obtenido: " + username + " " + password + "," + cpass);
 				JOptionPane.showMessageDialog(null, "El usuario " + username + " se ha \nguardado correctamente", "Usuario registrado", JOptionPane.INFORMATION_MESSAGE);
-				// Crear y escribir nuevo usuario en registros
+				// Crear usuario
 				saveUser.setEnabled(false); // Desabilita el botón
 				this.dispose();
-				new MainMenu();
+				new Categories();
 			} else {
 				System.out.println("¡Las contraseñas no coinciden!");
 				JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Intentelo de nuevo", JOptionPane.WARNING_MESSAGE);

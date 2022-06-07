@@ -7,7 +7,7 @@ public class Transaction {
 	LocalDate date;
 	short accId;
 	String Description;
-	Categories type;
+	TransactionCategory type;
 	float amount;
 	boolean isIngreso;
 
@@ -16,7 +16,7 @@ public class Transaction {
 			LocalDate date,
 			short accId,
 			String desc,
-			Categories type, 
+			TransactionCategory type, 
 			float amount,
 			boolean isIngreso
 			)

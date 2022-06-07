@@ -111,7 +111,7 @@ public class readerWriter {
 				    .toFormatter(Locale.ENGLISH);
 			LocalDate dateOfTransaction = LocalDate.parse(sc.next().trim(),df);
 			String desc = sc.next().trim();
-			Categories cat = Categories.valueOf(sc.next().trim()) ;
+			TransactionCategory cat = TransactionCategory.valueOf(sc.next().trim()) ;
 			float amount = Float.parseFloat(sc.next().trim());
 			Boolean isIngreso = Boolean.parseBoolean(sc.next().trim());
 			short accId = Short.valueOf(sc.next().trim());
@@ -151,7 +151,7 @@ public class readerWriter {
 		
 	}
 
-	private void tokenizeTransaction(LocalDate dateOfTransaction, short accId, String desc, Categories cat, float amount, boolean isIngreso,  User user) {
+	private void tokenizeTransaction(LocalDate dateOfTransaction, short accId, String desc, TransactionCategory cat, float amount, boolean isIngreso,  User user) {
 		
 		System.out.println("Tokenizando transacción");
 		

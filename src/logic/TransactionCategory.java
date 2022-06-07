@@ -1,6 +1,6 @@
 package logic;
 
-public enum Categories {
+public enum TransactionCategory {
 	Vivienda,
 	Salud,
 	Compras,

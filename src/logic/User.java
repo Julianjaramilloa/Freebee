@@ -41,7 +41,7 @@ public class User {
 			LocalDate date,
 			short accId,
 			String desc,
-			Categories type, 
+			TransactionCategory type, 
 			float amount,
 			boolean isIngreso) {
 		Transaction trans = new Transaction(

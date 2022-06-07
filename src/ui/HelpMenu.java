@@ -17,6 +17,53 @@ public class HelpMenu extends JFrame implements ActionListener {
 	JLabel help2;
 	JButton support;
 	
+	private void displaySupportAndContactHelp() {
+		
+		System.out.println("Ventana displaySupportAndContactHelp");
+			
+		// ------------------- Label ------------------------
+		
+		// Título
+		title = new JLabel(); 
+		title.setBounds(30,30,200,40); // Tamaño
+		title.setText("SOPORTE"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 20)); // Fuente
+		title.setForeground(Color.BLACK); // Color del texto
+		title.setVisible(true); // Visibilidad
+				
+		// Ayuda 1
+		help1 = new JLabel(); 
+		help1.setBounds(30,120,550,30); // Tamaño
+		help1.setText("Si tienes algún problema con la app, reportalo o pide ayuda en:"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
+		help1.setForeground(Color.BLACK); // Color del texto
+		help1.setVisible(true); // Visibilidad
+				
+		// Ayuda 2
+		help2 = new JLabel(); 
+		help2.setBounds(30,150,500,30); // Tamaño
+		help2.setText("contacto@freebee.com   o al   +57 3145009475"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
+		help2.setForeground(Color.BLACK); // Color del texto
+		help2.setVisible(true); // Visibilidad
+		
+		// ----------------- Frame ------------------------
+		
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setTitle("Freebe / Soporte y contacto"); // Título
+		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
+		this.setIconImage(logo.getImage()); // Poner logo
+		this.setLocationRelativeTo(null);
+		this.setSize(500,300);
+		this.setResizable(false); // No cambia de tamaño
+		this.setLayout(null);
+		this.setVisible(true);
+		this.add(title);
+		this.add(help1);
+		this.add(help2);
+		
+	}
+	
 	public void displayLogInHelp(){
 		
 		System.out.println("Ventana displayLogInHelp");
@@ -52,7 +99,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("Si aún no has creado tu usuario u olvidaste la contraseña, por favor crea un usuario nuevo"); // Texto
+		help2.setText("Si aún no has creado tu usuario u olvidaste la contraseña, crea un usuario nuevo"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
@@ -135,40 +182,50 @@ public class HelpMenu extends JFrame implements ActionListener {
 		
 	}
 	
-	private void displaySupportAndContact() {
+	public void displaySettingsHelp() {
 		
-		System.out.println("Ventana displaySupportAndContact");
-			
+		System.out.println("Ventana displaySettingsHelp");
+		
+		// ----------------- Botón: Ayuda y soporte -----------
+		support = new JButton();
+		support.setBounds(330,40,125,25); // Tamaño
+		support.setText("Soporte y contacto"); // Texto
+		support.setFont(new Font("Liberation Mono", Font.ITALIC, 11)); // Fuente
+		support.setForeground(Color.WHITE); // Color del texto
+		support.setBackground(Color.BLACK); // Color del fondo
+		support.setFocusable(false); // Quitar cuadro alrededor
+		support.addActionListener(this); // Añadir ActionListener
+		
 		// ------------------- Label ------------------------
 		
 		// Título
 		title = new JLabel(); 
-		title.setBounds(30,30,200,40); // Tamaño
-		title.setText("SOPORTE"); // Texto
-		title.setFont(new Font("Nunito", Font.BOLD, 20)); // Fuente
+		title.setBounds(30,30,250,40); // Tamaño
+		title.setText("Ayuda - Ajustes"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
 		title.setForeground(Color.BLACK); // Color del texto
 		title.setVisible(true); // Visibilidad
 		
 		// Ayuda 1
 		help1 = new JLabel(); 
-		help1.setBounds(30,120,550,30); // Tamaño
-		help1.setText("Si tienes algún problema con la app, reportalo o pide ayuda en:"); // Texto
-		help1.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
+		help1.setBounds(30,120,550,60); // Tamaño
+		help1.setText("Selecciona alguna de las cuatro categorías para hacer ajustes sobre tu usuario,"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
 		
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("contacto@freebee.com   o al   +57 3145009475"); // Texto
-		help2.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
+		help2.setText("tus cuentas, la app o para conocer los datos de los creadores de la app"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
 		
 		// ----------------- Frame ------------------------
 		
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		this.setTitle("Freebe / Soporte y contacto"); // Título
+		this.setTitle("Freebee / Ayuda en ajustes"); // Título
 		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
 		this.setIconImage(logo.getImage()); // Poner logo
 		this.setLocationRelativeTo(null);
@@ -179,9 +236,305 @@ public class HelpMenu extends JFrame implements ActionListener {
 		this.add(title);
 		this.add(help1);
 		this.add(help2);
+		this.add(support);
+		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
+		
+	}
+	
+	public void displayCategoriesHelp() {
+		
+		System.out.println("Ventana displayCategoriesHelp");
+		
+		// ----------------- Botón: Ayuda y soporte -----------
+		support = new JButton();
+		support.setBounds(330,40,125,25); // Tamaño
+		support.setText("Soporte y contacto"); // Texto
+		support.setFont(new Font("Liberation Mono", Font.ITALIC, 11)); // Fuente
+		support.setForeground(Color.WHITE); // Color del texto
+		support.setBackground(Color.BLACK); // Color del fondo
+		support.setFocusable(false); // Quitar cuadro alrededor
+		support.addActionListener(this); // Añadir ActionListener
+		
+		// ------------------- Label ------------------------
+		
+		// Título
+		title = new JLabel(); 
+		title.setBounds(30,30,250,40); // Tamaño
+		title.setText("Ayuda - Categorias"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
+		title.setForeground(Color.BLACK); // Color del texto
+		title.setVisible(true); // Visibilidad
+		
+		// Ayuda 1
+		help1 = new JLabel(); 
+		help1.setBounds(30,120,550,60); // Tamaño
+		help1.setText("Por terminar"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help1.setForeground(Color.BLACK); // Color del texto
+		help1.setVisible(true); // Visibilidad
+		
+		// Ayuda 2
+		help2 = new JLabel(); 
+		help2.setBounds(30,150,500,30); // Tamaño
+		help2.setText("Por terminar"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help2.setForeground(Color.BLACK); // Color del texto
+		help2.setVisible(true); // Visibilidad
+		
+		// ----------------- Frame ------------------------
+		
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setTitle("Freebee / Ayuda en categorías"); // Título
+		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
+		this.setIconImage(logo.getImage()); // Poner logo
+		this.setLocationRelativeTo(null);
+		this.setSize(500,300);
+		this.setResizable(false); // No cambia de tamaño
+		this.setLayout(null);
+		this.setVisible(true);
+		this.add(title);
+		this.add(help1);
+		this.add(help2);
+		this.add(support);
+		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
+		
+	}
+	
+	public void displayAccountsHelp() {
+		
+		System.out.println("Ventana displayAccountsHelp");
+		
+		// ----------------- Botón: Ayuda y soporte -----------
+		support = new JButton();
+		support.setBounds(330,40,125,25); // Tamaño
+		support.setText("Soporte y contacto"); // Texto
+		support.setFont(new Font("Liberation Mono", Font.ITALIC, 11)); // Fuente
+		support.setForeground(Color.WHITE); // Color del texto
+		support.setBackground(Color.BLACK); // Color del fondo
+		support.setFocusable(false); // Quitar cuadro alrededor
+		support.addActionListener(this); // Añadir ActionListener
+		
+		// ------------------- Label ------------------------
+		
+		// Título
+		title = new JLabel(); 
+		title.setBounds(30,30,250,40); // Tamaño
+		title.setText("Ayuda - Cuentas"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
+		title.setForeground(Color.BLACK); // Color del texto
+		title.setVisible(true); // Visibilidad
+		
+		// Ayuda 1
+		help1 = new JLabel(); 
+		help1.setBounds(30,120,550,60); // Tamaño
+		help1.setText("Por terminar"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help1.setForeground(Color.BLACK); // Color del texto
+		help1.setVisible(true); // Visibilidad
+		
+		// Ayuda 2
+		help2 = new JLabel(); 
+		help2.setBounds(30,150,500,30); // Tamaño
+		help2.setText("Por terminar"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help2.setForeground(Color.BLACK); // Color del texto
+		help2.setVisible(true); // Visibilidad
+		
+		// ----------------- Frame ------------------------
+		
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setTitle("Freebee / Ayuda en cuentas"); // Título
+		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
+		this.setIconImage(logo.getImage()); // Poner logo
+		this.setLocationRelativeTo(null);
+		this.setSize(500,300);
+		this.setResizable(false); // No cambia de tamaño
+		this.setLayout(null);
+		this.setVisible(true);
+		this.add(title);
+		this.add(help1);
+		this.add(help2);
+		this.add(support);
+		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
 		
 	}
 
+	public void displaySavingsHelp() {
+		
+		System.out.println("Ventana displaySavesHelp");
+		
+		// ----------------- Botón: Ayuda y soporte -----------
+		support = new JButton();
+		support.setBounds(330,40,125,25); // Tamaño
+		support.setText("Soporte y contacto"); // Texto
+		support.setFont(new Font("Liberation Mono", Font.ITALIC, 11)); // Fuente
+		support.setForeground(Color.WHITE); // Color del texto
+		support.setBackground(Color.BLACK); // Color del fondo
+		support.setFocusable(false); // Quitar cuadro alrededor
+		support.addActionListener(this); // Añadir ActionListener
+		
+		// ------------------- Label ------------------------
+		
+		// Título
+		title = new JLabel(); 
+		title.setBounds(30,30,250,40); // Tamaño
+		title.setText("Ayuda - Ahorro"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
+		title.setForeground(Color.BLACK); // Color del texto
+		title.setVisible(true); // Visibilidad
+		
+		// Ayuda 1
+		help1 = new JLabel(); 
+		help1.setBounds(30,120,550,60); // Tamaño
+		help1.setText("Por terminar"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help1.setForeground(Color.BLACK); // Color del texto
+		help1.setVisible(true); // Visibilidad
+		
+		// Ayuda 2
+		help2 = new JLabel(); 
+		help2.setBounds(30,150,500,30); // Tamaño
+		help2.setText("Por terminar"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help2.setForeground(Color.BLACK); // Color del texto
+		help2.setVisible(true); // Visibilidad
+		
+		// ----------------- Frame ------------------------
+		
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setTitle("Freebee / Ayuda en categorías"); // Título
+		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
+		this.setIconImage(logo.getImage()); // Poner logo
+		this.setLocationRelativeTo(null);
+		this.setSize(500,300);
+		this.setResizable(false); // No cambia de tamaño
+		this.setLayout(null);
+		this.setVisible(true);
+		this.add(title);
+		this.add(help1);
+		this.add(help2);
+		this.add(support);
+		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
+		
+	}
+	
+	public void displayStatsHelp() {
+		
+		System.out.println("Ventana displayStatsHelp");
+		
+		// ----------------- Botón: Ayuda y soporte -----------
+		support = new JButton();
+		support.setBounds(330,40,125,25); // Tamaño
+		support.setText("Soporte y contacto"); // Texto
+		support.setFont(new Font("Liberation Mono", Font.ITALIC, 11)); // Fuente
+		support.setForeground(Color.WHITE); // Color del texto
+		support.setBackground(Color.BLACK); // Color del fondo
+		support.setFocusable(false); // Quitar cuadro alrededor
+		support.addActionListener(this); // Añadir ActionListener
+		
+		// ------------------- Label ------------------------
+		
+		// Título
+		title = new JLabel(); 
+		title.setBounds(30,30,250,40); // Tamaño
+		title.setText("Ayuda - Estadísticas"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
+		title.setForeground(Color.BLACK); // Color del texto
+		title.setVisible(true); // Visibilidad
+		
+		// Ayuda 1
+		help1 = new JLabel(); 
+		help1.setBounds(30,120,550,60); // Tamaño
+		help1.setText("Por terminar"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help1.setForeground(Color.BLACK); // Color del texto
+		help1.setVisible(true); // Visibilidad
+		
+		// Ayuda 2
+		help2 = new JLabel(); 
+		help2.setBounds(30,150,500,30); // Tamaño
+		help2.setText("Por terminar"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help2.setForeground(Color.BLACK); // Color del texto
+		help2.setVisible(true); // Visibilidad
+		
+		// ----------------- Frame ------------------------
+		
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setTitle("Freebee / Ayuda en categorías"); // Título
+		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
+		this.setIconImage(logo.getImage()); // Poner logo
+		this.setLocationRelativeTo(null);
+		this.setSize(500,300);
+		this.setResizable(false); // No cambia de tamaño
+		this.setLayout(null);
+		this.setVisible(true);
+		this.add(title);
+		this.add(help1);
+		this.add(help2);
+		this.add(support);
+		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
+		
+	}
+	
+	public void displayNewTransHelp() {
+		
+		System.out.println("Ventana displayNewTransHelp");
+		
+		// ----------------- Botón: Ayuda y soporte -----------
+		support = new JButton();
+		support.setBounds(330,40,125,25); // Tamaño
+		support.setText("Soporte y contacto"); // Texto
+		support.setFont(new Font("Liberation Mono", Font.ITALIC, 11)); // Fuente
+		support.setForeground(Color.WHITE); // Color del texto
+		support.setBackground(Color.BLACK); // Color del fondo
+		support.setFocusable(false); // Quitar cuadro alrededor
+		support.addActionListener(this); // Añadir ActionListener
+		
+		// ------------------- Label ------------------------
+		
+		// Título
+		title = new JLabel(); 
+		title.setBounds(30,30,250,40); // Tamaño
+		title.setText("Ayuda - Crear transacción"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
+		title.setForeground(Color.BLACK); // Color del texto
+		title.setVisible(true); // Visibilidad
+		
+		// Ayuda 1
+		help1 = new JLabel(); 
+		help1.setBounds(30,120,550,60); // Tamaño
+		help1.setText("Por terminar"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help1.setForeground(Color.BLACK); // Color del texto
+		help1.setVisible(true); // Visibilidad
+		
+		// Ayuda 2
+		help2 = new JLabel(); 
+		help2.setBounds(30,150,500,30); // Tamaño
+		help2.setText("Por terminar"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help2.setForeground(Color.BLACK); // Color del texto
+		help2.setVisible(true); // Visibilidad
+		
+		// ----------------- Frame ------------------------
+		
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setTitle("Freebee / Ayuda en categorías"); // Título
+		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
+		this.setIconImage(logo.getImage()); // Poner logo
+		this.setLocationRelativeTo(null);
+		this.setSize(500,300);
+		this.setResizable(false); // No cambia de tamaño
+		this.setLayout(null);
+		this.setVisible(true);
+		this.add(title);
+		this.add(help1);
+		this.add(help2);
+		this.add(support);
+		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
+		
+	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -189,10 +542,8 @@ public class HelpMenu extends JFrame implements ActionListener {
 			System.out.println("Entrando a soporte general");
 			this.dispose();
 			HelpMenu hm = new HelpMenu();
-			hm.displaySupportAndContact();
+			hm.displaySupportAndContactHelp();
 		}	
 	}
 	
-}
-
-	
+}	

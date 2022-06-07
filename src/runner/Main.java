@@ -1,6 +1,7 @@
 package runner;
 
 import logic.UserList;
+import ui.Categories;
 import ui.ConsoleVersion;
 import ui.LogIn;
 
@@ -28,18 +29,20 @@ public class Main {
 		*/
 		
 		
-//		ProveClasses pc = new ProveClasses();
-//		pc.avlTree();
+		ProveClasses pc = new ProveClasses();
+		pc.avlTree();
 		
+//		Categories ct = new Categories();
+//		ct.categories();
 		
 		//pc.rbTree();
 		
 		//pc.linkedListInsertions();
 		
-		UserList ul = new UserList();
+//		UserList ul = new UserList();
 		
-		LogIn lg = new LogIn(ul);
-		lg.credentialsIn();
+//		LogIn lg = new LogIn(ul);
+//		lg.credentialsIn();
 //		NewUser nw = new NewUser(); 
 //		nw.createUser();
 		

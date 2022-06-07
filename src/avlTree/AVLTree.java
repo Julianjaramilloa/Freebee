@@ -35,15 +35,19 @@ public class AVLTree implements BinarySearchTree{
 	
 	@Override
 	public void deleteNode(int key) {
+		System.out.println("xd");
 		Node toDelete = null;
 		try {
 			toDelete = searchNode(key);
 		}catch (NullPointerException npe) {
 			System.err.println("El dato que está intentado eliminar no está presente en el árbol");
-		}			
-		Node parent = toDelete.parent;
+			npe.printStackTrace();
+		}
 		
+//		Node toDelete = searchNode(key);
+		Node parent = toDelete.parent;
 		if(height(toDelete) == 0) {
+			System.out.println("a");
 			if(parent.right == toDelete) {
 				parent.right = null;
 			}else {
@@ -51,6 +55,7 @@ public class AVLTree implements BinarySearchTree{
 			}
 			updateHeightsAndGuaranteeBalance(parent);
 		}else if(toDelete.right == null){
+			System.out.println("b");
 			Node replacement = toDelete.left;
 			if(parent.right == toDelete) {
 				parent.right = replacement;
@@ -61,6 +66,7 @@ public class AVLTree implements BinarySearchTree{
 			updateHeightsAndGuaranteeBalance(replacement);
 		}
 		else if(toDelete.left == null){
+			System.out.println("c");
 			Node replacement = toDelete.right;
 			if(parent.right == toDelete) {
 				parent.right = replacement;
@@ -70,9 +76,10 @@ public class AVLTree implements BinarySearchTree{
 			replacement.parent = parent;
 			updateHeightsAndGuaranteeBalance(replacement);
 		}else{
-			Node replacement = toDelete.right;
-			while(replacement.left != null) {
-				replacement = replacement.left;
+			System.out.println("d");
+			Node replacement = toDelete.left;
+			while(replacement.right != null) {
+				replacement = replacement.right;
 			}
 			Node repParent = replacement.parent;
 			if(parent.right == toDelete) {
@@ -89,17 +96,21 @@ public class AVLTree implements BinarySearchTree{
 	@Override
 	public Node searchNode(int key) {
 		Node aux = root;
-		boolean found = false;
-		while(aux != null ||  found == false) {	
+		Node toReturn = null;
+		while(aux != null) {	
+			System.out.println(aux.toString());
 			if(aux.data == key) {
-				found = true;
+				toReturn = aux;
+				break;
 			}else if(key > aux.data) {
 				aux = aux.right;
 			}else{
 				aux = aux.left;
 			}
+			System.out.println(aux.toString());
 		}
-		return aux;
+		return toReturn;
+		
 	}
 	
 	private void updateHeightsAndGuaranteeBalance(Node current) {

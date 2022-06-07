@@ -31,7 +31,7 @@ public class Main {
 		
 		ProveClasses pc = new ProveClasses();
 		pc.avlTree();
-		
+				
 //		Categories ct = new Categories();
 //		ct.categories();
 		

@@ -38,6 +38,16 @@ public class ProveClasses {
 		}
 		System.out.println("Árbol:\n" + avl.toString());
 		
+		LinkedList<Integer> deletions = new LinkedList<Integer>();
+		deletions.pushBack(89);
+//		deletions.pushBack(27);
+		
+		Iterator<Integer> dl = new LinkedListIterator<Integer>(deletions);
+		while(dl.hasNext()) {
+			int toInsert = dl.next();
+			avl.deleteNode(toInsert);
+		}
+		System.out.println("Árbol:\n" + avl.toString());
 		
 		
 		/*AVLTree avl = new AVLTree();

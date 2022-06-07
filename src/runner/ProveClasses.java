@@ -27,6 +27,7 @@ public class ProveClasses {
 		treeNodes.pushBack(9);
 		treeNodes.pushBack(81);
 		treeNodes.pushBack(79);
+		treeNodes.pushBack(51);
 		
 		System.out.println("Orden de inserción:\n" + treeNodes.toString() + "\n");
 		

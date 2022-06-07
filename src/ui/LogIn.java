@@ -1,4 +1,4 @@
-package ui;
+package userInterface;
 
 /*
  * Freebe
@@ -26,7 +26,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import logic.UserList;
+import ui.MainMenu;
 
 
 public class LogIn extends JFrame implements ActionListener {
@@ -44,12 +44,6 @@ public class LogIn extends JFrame implements ActionListener {
 	String username;
 	String password;
 	
-	UserList ul;
-	
-	public LogIn(UserList ul) {
-		this.ul = ul;
-	}
-	
 	
 	public void credentialsIn(){
 		
@@ -58,7 +52,7 @@ public class LogIn extends JFrame implements ActionListener {
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
-		welcomeLabel.setBounds(60,30,400,60); // Tamaño
+		welcomeLabel.setBounds(50,20,400,60); // Tamaño
 		welcomeLabel.setText("Inicio de sesión"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
@@ -191,12 +185,13 @@ public class LogIn extends JFrame implements ActionListener {
 			String login = ul.login(username, password);
 			if (login.equals("alright")) {
 				System.out.println("Username input: " + username + " Password input: " + password);
-				new MainMenu();
+				Categories ct = new Categories();
+				ct.categories();
+				this.dispose();
 			} else {
 				System.out.println(login);
 				JOptionPane.showMessageDialog(null, login, "Error", JOptionPane.WARNING_MESSAGE);
-			}		
-
+			}					
 					
 		}
 		

@@ -4,6 +4,7 @@ import logic.UserList;
 import ui.Categories;
 import ui.ConsoleVersion;
 import ui.LogIn;
+import ui.Savings;
 
 /**
  * 
@@ -31,6 +32,9 @@ public class Main {
 		
 		ProveClasses pc = new ProveClasses();
 		pc.avlTree();
+		
+		Savings sv = new Savings();
+		sv.savings();
 				
 //		Categories ct = new Categories();
 //		ct.categories();

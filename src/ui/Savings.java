@@ -11,6 +11,11 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Random;
+import java.util.Scanner;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,6 +23,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
+
+import seqDataStructures.DynamicArray;
+import seqDataStructures.Pila;
 
 public class Savings extends JFrame implements ActionListener {
 
@@ -29,9 +37,13 @@ public class Savings extends JFrame implements ActionListener {
 	JButton addTrans;
 	JButton getHelp;
 
-	JLabel welcomeLabel;	
+	JLabel welcomeLabel;
 	
+	DynamicArray<String> citas = new DynamicArray<String>();
+	Pila<String> tipsToShow = new Pila<String>();	
 	public void savings(){
+		
+		tipsReader();
 		
 		System.out.println("Ventana Savings");
 		
@@ -169,7 +181,59 @@ public class Savings extends JFrame implements ActionListener {
 	}
 	
 	public void tipsReader() {
-		// Leer tips.txt, llenar array mostrar i-ésimo al azar
+		File f = new File("tips.txt");
+		try {
+			Scanner sc = new Scanner(f);
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				tokenize(line);
+			}
+			sc.close();
+			} catch (FileNotFoundException e) {
+			System.err.println("Error leyendo archivo tips.txt");
+			e.printStackTrace();
+		}
+		
+		fillPileWithRandomOrderTips();
+	}
+	
+	private void tokenize(String line) {
+		
+		System.out.println("Tokenizando línea");
+		Scanner sc = new Scanner(line);
+		sc.useDelimiter(";");
+		
+		String cita = sc.next().trim();
+		String autor = sc.next().trim();
+		
+		String tip = cita + " -" + autor;
+		
+		this.citas.pushBack(tip);
+		
+		sc.close();
+
+	}
+	
+	private void fillPileWithRandomOrderTips() {
+		Random rdm = new Random();
+		int initialCitasSize = citas.size();
+		for(int i=0; i< initialCitasSize; i++) {
+			int choice = rdm.nextInt(citas.size());
+			String insert = citas.get(choice);
+			citas.remove(choice);
+			tipsToShow.push(insert);
+		}
+	}
+	
+	private void printRandomTip() {
+		if(tipsToShow.isEmpty()) {
+			fillPileWithRandomOrderTips();
+		}
+		String tipToShow = this.tipsToShow.pop();
+		citas.pushBack(tipToShow);
+		
+		//Lo que viene acá sería, me imagino, para desplegar el mensaje en la pantalla de ayuda
+		System.out.println(tipToShow);
 	}
 	
 	// Criterio al presionar el botón
@@ -218,8 +282,9 @@ public class Savings extends JFrame implements ActionListener {
 			NewTrans nt = new NewTrans();
 			nt.createTrans();
 		}
-				
+		
 		if (pressed.getSource() == getHelp) {
+			printRandomTip();
 			System.out.println("Abriendo ayuda");
 			HelpMenu hm = new HelpMenu();
 			hm.displaySavingsHelp();

@@ -114,7 +114,7 @@ public class DynamicArray<T> implements List<T> {
 		sb.append("[");
 		for(int i=0; i<size; i++) {
 			sb.append(arr[i].toString());
-			sb.append("; ");
+			sb.append(";\n ");
 		}
 		sb.append("]");		
 		return sb.toString();

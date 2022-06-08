@@ -15,7 +15,7 @@ public class Transaction {
 	public Transaction(
 			LocalDate date,
 			short accId,
-			String desc,
+			String description,
 			TransactionCategory type, 
 			float amount,
 			boolean isIngreso
@@ -23,7 +23,7 @@ public class Transaction {
 	{
 	this.date = date;
 	this.accId = accId;
-	this.Description = desc;
+	this.Description = description;
 	this.type = type;
 	this.amount = amount;
 	this.isIngreso = isIngreso;		

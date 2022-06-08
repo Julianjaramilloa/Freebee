@@ -189,7 +189,6 @@ public class LogIn extends JFrame implements ActionListener {
 			//Encontrar usuario
 			String login = ul.login(username, password);
 			if (login.equals("alright")) {
-				System.out.println("Username input: " + username + " Password input: " + password);
 				Categories ct = new Categories();
 				ct.categories();
 				this.dispose();

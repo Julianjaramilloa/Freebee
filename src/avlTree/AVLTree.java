@@ -3,6 +3,7 @@ package avlTree;
 public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 
 	protected Node<T> root;
+	private int size = 0;
 	
 	@Override
 	public void insertNode(T key) {
@@ -17,7 +18,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 			}else if(key.compareTo(candidate.data) > 0) {
 				candidate = candidate.right;
 			}else {
-				throw new IllegalArgumentException("El ·rbol ya contiene el dato " + key);
+				throw new IllegalArgumentException("El √°rbol ya contiene el dato " + key);
 			}
 		}
 		
@@ -31,6 +32,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		    toInsert.parent = parent;
 		
 		updateHeightsAndGuaranteeBalance(toInsert);
+		size++;
 	}
 	
 	@Override
@@ -39,7 +41,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		try {
 			toDelete = searchNode(key);
 		}catch (NullPointerException npe) {
-			System.err.println("El dato que est· intentado eliminar no est· presente en el ·rbol");
+			System.err.println("El dato que est√° intentado eliminar no est√° presente en el ÔøΩrbol");
 			npe.printStackTrace();
 		}
 		
@@ -126,6 +128,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 			updateHeightsAndGuaranteeBalance(replacementParent);
 
 		}
+		size--;
 		
 	}
 	
@@ -192,7 +195,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		}else if(balanceFactor < -1){
 			leftBalance(toBalance);
 		}else{
-			throw new RuntimeException ("El ·rbol actual no necesita ser desbalanceado");
+			throw new RuntimeException ("El ÔøΩrbol actual no necesita ser desbalanceado");
 		}
 		
 	}
@@ -255,8 +258,8 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 	}
 	
 	/*
-	 *Las palabras "oldRoot" y "newRoot" se refieren aquÌ a la raÌz del sub·rbol que estamos balanceando,
-	 *          no tienen necesariamente que ser la raÌz de todo el ·rbol 
+	 *Las palabras "oldRoot" y "newRoot" se refieren aquÔøΩ a la raÔøΩz del subÔøΩrbol que estamos balanceando,
+	 *          no tienen necesariamente que ser la raÔøΩz de todo el ÔøΩrbol 
 	 */
 	
 	public Node<T> rotateRight(Node<T> oldRoot) {
@@ -298,34 +301,76 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 	public Node<T> getRoot() {
 	  	  return root;
 	}
+	
+	public int size() {
+		return size;
+	}
+	
+	//Los mÔøΩtodos de acÔøΩ en adelante sirven para el propÔøΩsito de mostrar la informaciÔøΩn del arbol
 
 	  @Override
 	  public String toString() {
 	    if(root == null) {
-	    	return "¡rbol VacÌo";
+	    	return "√Årbol Vac√≠o";
 	    }else {
 	    	StringBuilder builder = new StringBuilder();
-	  	    appendNodeToStringRecursive(getRoot(), builder);
+	  	    appendNodeToStringRecursive(getRoot(), builder, false);
 	  	    return builder.toString();
 	    }
 	  }
+	  
+	  public String showHeights() {
+		if(root == null) {
+		  	return "√Årbol Vac√≠o";
+		}else {
+		   	StringBuilder builder = new StringBuilder();
+		    appendNodeToStringRecursive(getRoot(), builder, true);
+		    return builder.toString();
+		}	  	  
+	  }
+	  
+	  public String preorderTraverse() {
+			if(root == null) {
+			  	return "No data";
+			}else {
+			   	StringBuilder builder = new StringBuilder();
+			   	appendNodesInPreorder(getRoot(), builder, false);
+			    return builder.toString();
+			}	 
+	  }
 
-	  private void appendNodeToStringRecursive(Node<T> node, StringBuilder builder) {
-	    appendNodeToString(node, builder);
+	  private void appendNodeToStringRecursive(Node<T> node, StringBuilder builder, boolean showHeight) {
+	    appendNodeToString(node, builder, showHeight);
 	    if (node.left != null) {
 	      builder.append(" L{");
-	      appendNodeToStringRecursive(node.left, builder);
+	      appendNodeToStringRecursive(node.left, builder, showHeight);
 	      builder.append('}');
 	    }
 	    if (node.right != null) {
 	      builder.append(" R{");
-	      appendNodeToStringRecursive(node.right, builder);
+	      appendNodeToStringRecursive(node.right, builder, showHeight);
 	      builder.append('}');
 	    }
 	  }
+	  
+	  private void appendNodesInPreorder(Node<T> node, StringBuilder builder, boolean showHeight) {
+		    appendNodeToString(node, builder, showHeight);
+		    builder.append('\n');
+		    if (node.left != null) {
+		      appendNodesInPreorder(node.left, builder, showHeight);
+		    }
+		    if (node.right != null) {
+		      appendNodesInPreorder(node.right, builder, showHeight);
+		    }
+	  }
 
-	  protected void appendNodeToString(Node<T> node, StringBuilder builder) {
-	    builder.append(node.data + "-" + node.height);
+	  protected void appendNodeToString(Node<T> node, StringBuilder builder, boolean showHeight) {
+	    if(showHeight) {
+	    	builder.append(node.data + "-" + node.height);
+	    }else {
+	    	builder.append(node.data);	
+	    }
+	    
 	  }
 
 	  

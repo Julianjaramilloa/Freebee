@@ -1,7 +1,5 @@
 package ui;
 import logic.*;
-import seqDataStructures.DynamicArray;
-import seqDataStructures.LinkedList;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -11,7 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Scanner;
@@ -31,7 +28,7 @@ public class readerWriter {
 	final String fileName = "freebeeRecord.txt";
 	User currentUser = null;
 	
-	// "user" es el usuario que se está llenando de cuentas y transacciones en cada momento
+	// "user" es el usuario que se estï¿½ llenando de cuentas y transacciones en cada momento
 	User user = null;
 
 	// Constructor
@@ -76,7 +73,7 @@ public class readerWriter {
 			e.printStackTrace();
 		}
 	}
-	//Este método, como se puede ver en readData(), se aplica sobre cada renglón del txt
+	//Este mï¿½todo, como se puede ver en readData(), se aplica sobre cada renglï¿½n del txt
 	private void tokenize(String line) {
 		
 		System.out.println("Tokenizando línea");
@@ -96,7 +93,7 @@ public class readerWriter {
 			
 		} else if(data.charAt(0) == 'C') {
 			String name = sc.next().trim();
-			float balance = Float.parseFloat(sc.next().trim());
+			float balance =  Float.parseFloat(sc.next().trim());
 			String currency = sc.next().trim();
 			tokenizeAccount( name, balance, currency, currentUser);
 			System.out.println("Es una cuenta, tokenizando");
@@ -146,7 +143,7 @@ public class readerWriter {
 	
 		
 		
-		//Hay que especificar a qué usuario se añade
+		//Hay que especificar a quï¿½ usuario se aï¿½ade
 		currentUser.addAccount(name, balance, currency);
 		System.out.println("\n\tCuenta creada:\n\n" + "Name:" + name + " Balance:" + balance + " Currency:" + currency + "\n");
 		
@@ -158,36 +155,36 @@ public class readerWriter {
 		
 		
 		
-		//Hay que especificar a qué usuario se añade
+		//Hay que especificar a quï¿½ usuario se aï¿½ade
 		user.addTransaction(dateOfTransaction, accId, desc, cat, amount, isIngreso);
 		
-		System.out.println("\n\tTransacción creada:\n\n" + 
+		System.out.println("\n\ttransacción creada:\n\n" + 
 		"Fecha:" + dateOfTransaction + " Descripción:" + desc + " Category:" + cat +
 		"Cantidad:" + amount + " Es un ingreso:" + isIngreso + " Cuenta Asociada:" + accId + "\n");
 		
 	}
 
 	
-	// Hasta aquí la parte de lectura del .txt
+	// Hasta aquï¿½ la parte de lectura del .txt
 	
-	// De aquí en adelante saveChanges()
+	// De aquï¿½ en adelante saveChanges()
 	
 	/*como cambiamos userlist a Rbtree toca crear un iterador para que savechanges funcione*/
 	
 //	public void saveChanges() {
 //		
-//		// Para que esta función correctamente, se debe modificar el get, de manera que quede
-//		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
+//		// Para que esta funciï¿½n correctamente, se debe modificar el get, de manera que quede
+//		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimiï¿½ bien)
 //		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
 //		
 //		try (FileWriter f = new FileWriter("testSave7.txt", true);
 //				BufferedWriter b = new BufferedWriter(f);
 //				PrintWriter p = new PrintWriter(b);) {
 //			
-//			// Recorre la lista de usuarios (lo llamé userList)
+//			// Recorre la lista de usuarios (lo llamï¿½ userList)
 //			for (int u = 0; u < userList.size(); u++) {
 //				
-//				//No tendría por qué haber acceso a las passwords
+//				//No tendrï¿½a por quï¿½ haber acceso a las passwords
 //				
 //				f.write("U; " + userList.get(u).getUsername() + "; " + userList.get(u).getUserPassword() +"\n");
 //				

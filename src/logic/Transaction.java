@@ -40,9 +40,9 @@ public class Transaction implements Comparable<Transaction>{
 	public String toString() {
 		String ingreso = null;
 		if(isIngreso) {
-			ingreso += "Ingreso";
+			ingreso = "Ingreso";
 		}else {
-			ingreso += "Egreso";
+			ingreso = "Egreso";
 		}
 		return  "Transacción: " + date + "; " + Description + "; " + type + "; " + amount + "; " + ingreso + "; " + accountId;
 	}

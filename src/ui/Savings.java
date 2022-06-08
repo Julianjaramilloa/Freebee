@@ -27,6 +27,7 @@ import javax.swing.border.LineBorder;
 
 
 import seqDataStructures.DynamicArray;
+import seqDataStructures.LinkedList;
 import seqDataStructures.Pila;
 
 public class Savings extends JFrame implements ActionListener {
@@ -42,7 +43,7 @@ public class Savings extends JFrame implements ActionListener {
 
 	JLabel welcomeLabel;
 	
-	DynamicArray<String> citas = new DynamicArray<String>();
+	LinkedList<String> citas = new LinkedList<String>();
 	Pila<String> tipsToShow = new Pila<String>();	
 	public void savings(){
 		

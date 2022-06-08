@@ -4,7 +4,16 @@ package runner;
 import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
+import ui.readerWriter;
+
+import java.time.LocalDate;
+
 import avlTree.AVLTree;
+import logic.Transaction;
+import logic.TransactionCategory;
+import logic.User;
+import logic.UserList;
+import rbTree.RbNode;
 import rbTree.RedBlackTree;
 //Esta clase la cree para ir probando que las cosas que vamos creando funcionan
 
@@ -89,8 +98,27 @@ public class ProveClasses {
 		 		
 	}
 	
+	private TransactionCategory ts(String toParse) {
+		return TransactionCategory.valueOf(toParse);
+	}
+	
 	public void userTransactions() {
-		User us = new User()
+		User us = new User("cesar", "1234");
+		UserList ul = new UserList();
+		
+		us.addTransaction(LocalDate.of(2002, 10, 19), 1, "Pago del inmueble", ts("Vivienda"), 40500000, false);
+		AVLTree<Transaction> av = us.getTransactions();
+		System.out.println(av.toString());
+		
+		readerWriter rd = new readerWriter(ul);
+		rd.readFile(); 
+		RedBlackTree rbt = UserList.users;
+		RbNode rb = rbt.searchNode("Usuario11");
+		User xd = rb.getUser();
+		System.out.println(xd.completeUserInfo());
+		
+		//AVLTree<Transaction> xdUs = xd.getTransactions();
+		//System.out.println(xdUs.preorderTraverse());
 	}
 	
 }

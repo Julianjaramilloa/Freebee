@@ -112,10 +112,7 @@ public class User {
 	}
 	
 	public String completeUserInfo() {
-		return null;	
-		
-			
-		
+		return null;			
 	}
 
 	public String getUserPassword() {

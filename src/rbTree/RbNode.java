@@ -3,11 +3,13 @@ package rbTree;
 import java.time.LocalDate;
 
 import logic.Transaction;
+import logic.User;
 
 public class RbNode {
 	  LocalDate date;
+	  String username;
 	  int data;
-	  Transaction transaction;
+	  User user;
 	  RbNode left;
 	  RbNode right;
 	  RbNode parent;
@@ -16,9 +18,9 @@ public class RbNode {
 	  boolean color; 
 
 
-	  public RbNode(LocalDate date,Transaction transaction ) {
-	    this.date = date;
-	    this.transaction = transaction;
+	  public RbNode(User user) {
+	    this.username = user.getUsername();
+	    this.user = user;
 	  }
 	  
 
@@ -26,11 +28,14 @@ public class RbNode {
 		this.data = i;
 	  }
 
+	  public User getUser() {
+		  return user;
+	  }
 
 	//Hago aquí el toString() para debuggear
 	  @Override
 	  public String toString() {
-		  return String.valueOf(date);
+		  return String.valueOf(data);
 	  }
 	  
 	}

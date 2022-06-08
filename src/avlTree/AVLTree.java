@@ -1,7 +1,9 @@
 package avlTree;
 
-public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
+public class AVLTree implements BinarySearchTree{
 
+	protected Node root;
+	
 	@Override
 	public void insertNode(int key) {
 		Node candidate = root;
@@ -33,23 +35,124 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 	
 	@Override
 	public void deleteNode(int key) {
-		// TODO Auto-generated method stub
+		Node toDelete = null;
+		try {
+			toDelete = searchNode(key);
+		}catch (NullPointerException npe) {
+			System.err.println("El dato que está intentado eliminar no está presente en el árbol");
+			npe.printStackTrace();
+		}
 		
+		Node parent = toDelete.parent;
+		if(height(toDelete) == 0) {
+			if(parent.right == toDelete) {
+				parent.right = null;
+			}else {
+				parent.left = null;
+
+			}
+			updateHeightsAndGuaranteeBalance(parent);
+		}else if(toDelete.right == null){
+			System.out.println("b");
+			Node replacement = toDelete.left;
+			if(parent.right == toDelete) {
+				parent.right = replacement;
+			}else {
+				parent.left = replacement;
+			}
+			replacement.parent = parent;
+			updateHeightsAndGuaranteeBalance(replacement);
+		}
+		else if(toDelete.left == null){
+			System.out.println("c");
+			Node replacement = toDelete.right;
+			if(parent.right == toDelete) {
+				parent.right = replacement;
+			}else {
+				parent.left = replacement;
+			}
+			replacement.parent = parent;
+			updateHeightsAndGuaranteeBalance(replacement);
+		}else{
+			Node replacement = inorderPredecessor(toDelete);
+			Node replacementParent = replacement.parent;
+			
+			boolean adjustReplacementParent;
+			if(replacementParent == toDelete) {
+				adjustReplacementParent = false;
+			}else {
+				adjustReplacementParent = true;
+			}
+			boolean deletingRoot;
+			if(toDelete == root) {
+				deletingRoot = true;
+			}else {
+				deletingRoot = false;
+			}
+			
+			Node preserveRight = toDelete.right;
+			Node preserveLeft = toDelete.left;
+
+			if(deletingRoot) {
+				replacement.parent = null;
+				this.root = replacement;
+			}else {
+				replacement.parent = parent;
+					
+				if(parent.right == toDelete) {
+					parent.right = replacement;
+				}else{
+					parent.left = replacement;
+				}
+			}
+			
+			if(preserveRight != replacement) {
+				replacement.right = preserveRight;
+				if(preserveRight != null) {
+					preserveRight.parent = replacement;
+				}
+			}
+			
+			if(preserveLeft != replacement) {
+				replacement.left = preserveLeft;
+				if(preserveLeft != null) {
+					preserveLeft.parent = replacement;
+				}
+			}
+			
+			if(adjustReplacementParent) {
+				replacementParent.right = null;
+			}
+			updateHeightsAndGuaranteeBalance(replacementParent);
+
+		}
+		
+	}
+	
+	private Node inorderPredecessor (Node succesor) {
+		Node inorderPredecessor = succesor.left;
+		while(inorderPredecessor.right != null) {
+			inorderPredecessor = inorderPredecessor.right;
+		}
+		return inorderPredecessor;
 	}
 	
 	@Override
 	public Node searchNode(int key) {
 		Node aux = root;
+		Node toReturn = null;
 		while(aux != null) {	
 			if(aux.data == key) {
-				return aux;
+				toReturn = aux;
+				break;
 			}else if(key > aux.data) {
 				aux = aux.right;
 			}else{
-				aux = aux.right;
+				aux = aux.left;
 			}
 		}
-		return null;
+		return toReturn;
+		
 	}
 	
 	private void updateHeightsAndGuaranteeBalance(Node current) {
@@ -116,6 +219,7 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 			Node balanced = rotateRight(toBalance);
 			adjustParentOfBalancedSubtree(balanced, subTreeParent, treeComesFromLeft);
 		}else {
+			System.out.println("Sha ca toy");
 			toBalance.left = rotateLeft(toBalance.left);
 			toBalance.left.parent = toBalance;
 			
@@ -189,4 +293,50 @@ public class AVLTree extends BaseBinaryTree implements BinarySearchTree{
 		
 		return(newRoot);
 	}
+	
+	@Override  
+	public Node getRoot() {
+	  	  return root;
+	}
+
+	  @Override
+	  public String toString() {
+	    if(root == null) {
+	    	return "Árbol Vacío";
+	    }else {
+	    	StringBuilder builder = new StringBuilder();
+	  	    appendNodeToStringRecursive(getRoot(), builder);
+	  	    return builder.toString();
+	    }
+	  }
+
+	  private void appendNodeToStringRecursive(Node node, StringBuilder builder) {
+	    appendNodeToString(node, builder);
+	    if (node.left != null) {
+	      builder.append(" L{");
+	      appendNodeToStringRecursive(node.left, builder);
+	      builder.append('}');
+	    }
+	    if (node.right != null) {
+	      builder.append(" R{");
+	      appendNodeToStringRecursive(node.right, builder);
+	      builder.append('}');
+	    }
+	  }
+
+	  protected void appendNodeToString(Node node, StringBuilder builder) {
+	    builder.append(node.data + "-" + node.height);
+	  }
+	  
+	  //JUst to debug:
+	  /*protected void appendNodeToString(Node node, StringBuilder builder) {
+		  String parent;
+		  try {
+			  parent = node.parent.toString();
+		  }catch(NullPointerException npe) {
+			  parent = "No parent";
+		  }
+		  builder.append(node.data + "-" + parent);
+	  }*/
+	
 }

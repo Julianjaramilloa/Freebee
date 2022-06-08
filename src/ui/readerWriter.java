@@ -111,7 +111,7 @@ public class readerWriter {
 				    .toFormatter(Locale.ENGLISH);
 			LocalDate dateOfTransaction = LocalDate.parse(sc.next().trim(),df);
 			String desc = sc.next().trim();
-			Categories cat = Categories.valueOf(sc.next().trim()) ;
+			TransactionCategory cat = TransactionCategory.valueOf(sc.next().trim()) ;
 			float amount = Float.parseFloat(sc.next().trim());
 			Boolean isIngreso = Boolean.parseBoolean(sc.next().trim());
 			short accId = Short.valueOf(sc.next().trim());
@@ -151,7 +151,7 @@ public class readerWriter {
 		
 	}
 
-	private void tokenizeTransaction(LocalDate dateOfTransaction, short accId, String desc, Categories cat, float amount, boolean isIngreso,  User user) {
+	private void tokenizeTransaction(LocalDate dateOfTransaction, short accId, String desc, TransactionCategory cat, float amount, boolean isIngreso,  User user) {
 		
 		System.out.println("Tokenizando transacción");
 		
@@ -171,35 +171,37 @@ public class readerWriter {
 	
 	// De aquí en adelante saveChanges()
 	
-	public void saveChanges() {
-		
-		// Para que esta función correctamente, se debe modificar el get, de manera que quede
-		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
-		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
-		
-		try (FileWriter f = new FileWriter("testSave7.txt", true);
-				BufferedWriter b = new BufferedWriter(f);
-				PrintWriter p = new PrintWriter(b);) {
-			
-			// Recorre la lista de usuarios (lo llamé userList)
-			for (int u = 0; u < userList.size(); u++) {
-				
-				//No tendría por qué haber acceso a las passwords
-				
-				f.write("U; " + userList.get(u).getUsername() + "; " + userList.get(u).getUserPassword() +"\n");
-				
-				// Demostrativo, hay que implementar bien:
-				DynamicArray<Account> listaDeCuentas = userList.get(u).getAccounts(); 
-				LinkedList<Transaction> listaDeTrans = userList.get(u).getTransactions();
-						
-				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
-				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
-				
-	        }
-			
-		} catch (IOException i1) {i1.printStackTrace();}
-		
-	}
+	/*como cambiamos userlist a Rbtree toca crear un iterador para que savechanges funcione*/
+	
+//	public void saveChanges() {
+//		
+//		// Para que esta función correctamente, se debe modificar el get, de manera que quede
+//		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
+//		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
+//		
+//		try (FileWriter f = new FileWriter("testSave7.txt", true);
+//				BufferedWriter b = new BufferedWriter(f);
+//				PrintWriter p = new PrintWriter(b);) {
+//			
+//			// Recorre la lista de usuarios (lo llamé userList)
+//			for (int u = 0; u < userList.size(); u++) {
+//				
+//				//No tendría por qué haber acceso a las passwords
+//				
+//				f.write("U; " + userList.get(u).getUsername() + "; " + userList.get(u).getUserPassword() +"\n");
+//				
+//				// Demostrativo, hay que implementar bien:
+//				DynamicArray<Account> listaDeCuentas = userList.get(u).getAccounts(); 
+//				LinkedList<Transaction> listaDeTrans = userList.get(u).getTransactions();
+//						
+//				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
+//				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
+//				
+//	        }
+//			
+//		} catch (IOException i1) {i1.printStackTrace();}
+//		
+//	}
 	
 	
 

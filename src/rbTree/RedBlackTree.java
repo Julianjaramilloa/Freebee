@@ -3,42 +3,46 @@ package rbTree;
 import java.time.LocalDate;
 
 import logic.Transaction;
+import logic.User;
 
 public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
-	
+	  int size;
 	  static final boolean RED = false;
 	  static final boolean BLACK = true;
+	  
+	  public int getSize() {
+		  return size;
+	  }
 
 	  @Override
-	  public RbNode searchNode(LocalDate key) {
-	    RbNode node = root;
+	  public RbNode searchNode(String key) {
+		RbNode node = root;
 	    while (node != null) {
-	      if (key == node.date) {
+	    	if (key.compareToIgnoreCase(node.username) == 0) {
 	        return node;
-	      } else if (key.compareTo(node.date) < 0) {
+	      } else if (key.compareToIgnoreCase(node.username) < 0) {
 	        node =  node.left;
 	      } else {
 	        node = node.right;
 	      }
 	    }
-
 	    return null;
 	  }
 
 	  // -- Insertion ----------------------------------------------------------------------------------
 
 	  @Override
-	  public void insertNode(LocalDate key, Transaction transaction) {
+	  public void insertNode(String key, User user) {
 	    RbNode node = root;
 	    RbNode parent = null;
 
 	    // Traverse the tree to the left or right depending on the key
 	    while (node != null) {
 	      parent = node;
-	      if (key.compareTo(node.date) < 0) {
+	      if (key.compareToIgnoreCase(node.username) < 0) {
 	        node = node.left;
-	      } else if (key.compareTo(node.date) > 0) {
+	      } else if (key.compareToIgnoreCase(node.username) > 0) {
 	        node = node.right;
 	      } else {
 	        throw new IllegalArgumentException("BST already contains a node with key " + key);
@@ -46,11 +50,11 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    }
 
 	    // Insert new node
-	    RbNode newNode = new RbNode(key,transaction);
+	    RbNode newNode = new RbNode(user);
 	    newNode.color = RED;
 	    if (parent == null) {
-	      root = newNode;
-	    } else if (key.compareTo(parent.date) < 0) {
+	    	root = newNode;
+	    } else if (key.compareToIgnoreCase(parent.username) < 0) {
 	      parent.left = newNode;
 	    } else {
 	      parent.right = newNode;
@@ -58,6 +62,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    newNode.parent = parent;
 
 	    fixRedBlackPropertiesAfterInsert(newNode);
+	    size++;
 	  }
 
 	  @SuppressWarnings("squid:S125") // Ignore SonarCloud complains about commented code line 70.
@@ -164,13 +169,13 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	  @SuppressWarnings("squid:S2259") // SonarCloud issues an incorrect potential NPE warning
 	  @Override
-	  public void deleteNode(LocalDate key) {
+	  public void deleteNode(String key) {
 	    RbNode node = root;
 
 	    // Find the node to be deleted
-	    while (node != null && node.date.compareTo(key) != 0) {
+	    while (node != null && node.username.compareToIgnoreCase(key) != 0) {
 	      // Traverse the tree to the left or right depending on the key
-	      if (key.compareTo(node.date) < 0) {
+	      if (key.compareToIgnoreCase(node.username) < 0) {
 	        node = node.left;
 	      } else {
 	        node = node.right;
@@ -186,6 +191,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	    // In this variable, we'll store the node at which we're going to start to fix the R-B
 	    // properties after deleting a node.
+	    size--;
 	    RbNode movedUpNode;
 	    boolean deletedNodeColor;
 

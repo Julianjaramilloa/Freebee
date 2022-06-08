@@ -43,7 +43,7 @@ public class Savings extends JFrame implements ActionListener {
 		
 		welcomeLabel = new JLabel(); 
 		welcomeLabel.setBounds(50,20,400,60); // Tamaño
-		welcomeLabel.setText("Ahorro"); // Texto
+		welcomeLabel.setText("Ahorro / Tips"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad

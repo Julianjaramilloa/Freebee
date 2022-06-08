@@ -1,8 +1,9 @@
 package ui;
 
+
 /*
  * Freebie
- * @author Marcos Pinzón Pardo
+ * @author Marcos PinzÃ³n Pardo
  */
 
 import java.awt.Color;
@@ -24,6 +25,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+
 import seqDataStructures.DynamicArray;
 import seqDataStructures.Pila;
 
@@ -37,6 +39,7 @@ public class Savings extends JFrame implements ActionListener {
 	JButton addTrans;
 	JButton getHelp;
 
+
 	JLabel welcomeLabel;
 	
 	DynamicArray<String> citas = new DynamicArray<String>();
@@ -44,13 +47,14 @@ public class Savings extends JFrame implements ActionListener {
 	public void savings(){
 		
 		tipsReader();
-		
+
 		System.out.println("Ventana Savings");
 		
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
-		welcomeLabel.setBounds(50,20,400,60); // Tamaño
+		welcomeLabel.setBounds(50,20,400,60); // TamaÃ±o
+
 		welcomeLabel.setText("Ahorro"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
@@ -58,96 +62,96 @@ public class Savings extends JFrame implements ActionListener {
 		
 		// ================= BOTONES FIJOS =============================
 		
-		// ------------ Botón: Pagina categorías -------------------
+		// ------------ BotÃ³n: Pagina categorÃ­as -------------------
 		
 		catPage = new JButton();
-        catPage.setBounds(22,495,110,40); // Tamaño
-        catPage.setText("Categorías"); // Texto
+        catPage.setBounds(22,495,110,40); // TamaÃ±o
+        catPage.setText("CategorÃ­as"); // Texto
         catPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         catPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         catPage.setForeground(Color.BLACK); // Color del texto
         catPage.setBackground(Color.WHITE); // Color del fondo
         catPage.setFocusable(false); // Quitar cuadro alrededor
-        catPage.addActionListener(this); // Añadir ActionListener 
+        catPage.addActionListener(this); // AÃ±adir ActionListener 
         catPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
      
-        // ------------ Botón: Pagina cuentas -------------------
+        // ------------ BotÃ³n: Pagina cuentas -------------------
 		
      	accPage = new JButton();
-        accPage.setBounds(147,495,110,40); // Tamaño
+        accPage.setBounds(147,495,110,40); // TamaÃ±o
         accPage.setText("Cuentas"); // Texto
         accPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         accPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         accPage.setForeground(Color.BLACK); // Color del texto
         accPage.setBackground(Color.WHITE); // Color del fondo
         accPage.setFocusable(false); // Quitar cuadro alrededor
-        accPage.addActionListener(this); // Añadir ActionListener
+        accPage.addActionListener(this); // AÃ±adir ActionListener
         accPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ Botón: Pagina ahorro -------------------
+        // ------------ BotÃ³n: Pagina ahorro -------------------
 		
      	savesPage = new JButton();
-        savesPage.setBounds(272,495,110,40); // Tamaño
+        savesPage.setBounds(272,495,110,40); // TamaÃ±o
         savesPage.setText("Ahorro"); // Texto
         savesPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         savesPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         savesPage.setForeground(Color.BLACK); // Color del texto
         savesPage.setBackground(Color.LIGHT_GRAY); // Color del fondo
         savesPage.setFocusable(false); // Quitar cuadro alrededor
-        savesPage.addActionListener(this); // Añadir ActionListener 
+        savesPage.addActionListener(this); // AÃ±adir ActionListener 
         savesPage.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.GRAY)); // Borde
-        savesPage.setEnabled(false); // Desabilita el botón
+        savesPage.setEnabled(false); // Desabilita el botÃ³n
         
-        // ------------ Botón: Pagina estadísticas -------------------
+        // ------------ BotÃ³n: Pagina estadÃ­sticas -------------------
 		
      	statsPage = new JButton();
-        statsPage.setBounds(397,495,110,40); // Tamaño
+        statsPage.setBounds(397,495,110,40); // TamaÃ±o
         statsPage.setText("Resumen"); // Texto
         statsPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         statsPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         statsPage.setForeground(Color.BLACK); // Color del texto
         statsPage.setBackground(Color.WHITE); // Color del fondo
         statsPage.setFocusable(false); // Quitar cuadro alrededor
-        statsPage.addActionListener(this); // Añadir ActionListener
+        statsPage.addActionListener(this); // AÃ±adir ActionListener
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ Botón: Pagina ajustes -------------------
+        // ------------ BotÃ³n: Pagina ajustes -------------------
 		
      	settPage = new JButton();
-        settPage.setBounds(522,495,40,40); // Tamaño
+        settPage.setBounds(522,495,40,40); // TamaÃ±o
         settPage.setText("="); // Texto
         settPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         settPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         settPage.setForeground(Color.BLACK); // Color del texto
         settPage.setBackground(Color.WHITE); // Color del fondo
         settPage.setFocusable(false); // Quitar cuadro alrededor
-        settPage.addActionListener(this); // Añadir ActionListener
+        settPage.addActionListener(this); // AÃ±adir ActionListener
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
 		
-		// ------------ Botón: Crear transacción -------------------
+		// ------------ BotÃ³n: Crear transacciÃ³n -------------------
 	
 		addTrans = new JButton();
-		addTrans.setBounds(505,440,25,25); // Tamaño
+		addTrans.setBounds(505,440,25,25); // TamaÃ±o
 		addTrans.setText("+"); // Texto
 		addTrans.setBorder(new LineBorder(Color.BLACK)); // Borde
 		addTrans.setFont(new Font("Consolas", Font.BOLD, 14)); // Fuente
 		addTrans.setForeground(Color.ORANGE); // Color del texto
 		addTrans.setBackground(Color.WHITE); // Color del fondo
 		addTrans.setFocusable(false); // Quitar cuadro alrededor
-		addTrans.addActionListener(this); // Añadir ActionListener
+		addTrans.addActionListener(this); // AÃ±adir ActionListener
 		addTrans.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
-		// ------------ Botón: Obtener ayuda -----------------------
+		// ------------ BotÃ³n: Obtener ayuda -----------------------
 		
 		getHelp = new JButton();
-		getHelp.setBounds(50,440,25,25); // Tamaño
+		getHelp.setBounds(50,440,25,25); // TamaÃ±o
 		getHelp.setText("?"); // Texto
 		getHelp.setBorder(new LineBorder(Color.BLACK)); // Borde
 		getHelp.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
 		getHelp.setForeground(Color.BLACK); // Color del texto
 		getHelp.setBackground(Color.WHITE); // Color del fondo
 		getHelp.setFocusable(false); // Quitar cuadro alrededor
-		getHelp.addActionListener(this); // Añadir ActionListener
+		getHelp.addActionListener(this); // AÃ±adir ActionListener
 		getHelp.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
 					
@@ -166,11 +170,11 @@ public class Savings extends JFrame implements ActionListener {
 
 
 		
-		this.setTitle("Freebee"); // Título
+		this.setTitle("Freebee"); // TÃ­tulo
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null); // Layout
 		this.setSize(600,600); // Dimensiones
-		this.setResizable(false); // No cambia de tamaño
+		this.setResizable(false); // No cambia de tamaÃ±o
 		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
 		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
 		this.setIconImage(logo.getImage()); // Poner logo
@@ -180,7 +184,9 @@ public class Savings extends JFrame implements ActionListener {
 		
 	}
 	
-	public void tipsReader() {
+
+	private void readData() {
+
 		File f = new File("tips.txt");
 		try {
 			Scanner sc = new Scanner(f);
@@ -190,6 +196,7 @@ public class Savings extends JFrame implements ActionListener {
 			}
 			sc.close();
 			} catch (FileNotFoundException e) {
+
 			System.err.println("Error leyendo archivo tips.txt");
 			e.printStackTrace();
 		}
@@ -199,7 +206,8 @@ public class Savings extends JFrame implements ActionListener {
 	
 	private void tokenize(String line) {
 		
-		System.out.println("Tokenizando línea");
+
+		System.out.println("Tokenizando lÃ­nea");
 		Scanner sc = new Scanner(line);
 		sc.useDelimiter(";");
 		
@@ -208,12 +216,14 @@ public class Savings extends JFrame implements ActionListener {
 		
 		String tip = cita + " -" + autor;
 		
+
 		this.citas.pushBack(tip);
 		
 		sc.close();
 
 	}
 	
+
 	private void fillPileWithRandomOrderTips() {
 		Random rdm = new Random();
 		int initialCitasSize = citas.size();
@@ -225,18 +235,18 @@ public class Savings extends JFrame implements ActionListener {
 		}
 	}
 	
-	private void printRandomTip() {
+	String void printRandomTip() {
 		if(tipsToShow.isEmpty()) {
 			fillPileWithRandomOrderTips();
 		}
 		String tipToShow = this.tipsToShow.pop();
 		citas.pushBack(tipToShow);
-		
-		//Lo que viene acá sería, me imagino, para desplegar el mensaje en la pantalla de ayuda
+    
 		System.out.println(tipToShow);
+    return tipToShow;
 	}
 	
-	// Criterio al presionar el botón
+	// Criterio al presionar el botÃ³n
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		
@@ -282,6 +292,7 @@ public class Savings extends JFrame implements ActionListener {
 			NewTrans nt = new NewTrans();
 			nt.createTrans();
 		}
+
 		
 		if (pressed.getSource() == getHelp) {
 			printRandomTip();
@@ -289,8 +300,7 @@ public class Savings extends JFrame implements ActionListener {
 			HelpMenu hm = new HelpMenu();
 			hm.displaySavingsHelp();
 		}
-		
-		
+
 	}	
 
 }

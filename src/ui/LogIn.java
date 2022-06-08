@@ -27,6 +27,8 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 //import ui.MainMenu;
 
+import logic.UserList;
+
 
 public class LogIn extends JFrame implements ActionListener {
 

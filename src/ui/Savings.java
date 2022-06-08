@@ -46,7 +46,7 @@ public class Savings extends JFrame implements ActionListener {
 	Pila<String> tipsToShow = new Pila<String>();	
 	public void savings(){
 		
-		tipsReader();
+		readData();
 
 		System.out.println("Ventana Savings");
 		
@@ -235,7 +235,7 @@ public class Savings extends JFrame implements ActionListener {
 		}
 	}
 	
-	String void printRandomTip() {
+	private String printRandomTip() {
 		if(tipsToShow.isEmpty()) {
 			fillPileWithRandomOrderTips();
 		}

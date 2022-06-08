@@ -29,6 +29,9 @@ public class Main {
 		c.mainMenu();
 		*/
 		
+		String a = "as";
+		String b = "bro";
+		System.out.println(a.compareTo(b));
 		
 		ProveClasses pc = new ProveClasses();
 		pc.avlTree();

@@ -1,6 +1,7 @@
 package logic;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import seqDataStructures.DynamicArray;
 import seqDataStructures.DynamicArrayIterator;
@@ -39,7 +40,7 @@ public class User {
 	
 	public void addTransaction(
 			LocalDate date,
-			short accId,
+			int accId,
 			String desc,
 			TransactionCategory type, 
 			float amount,

@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Scanner;
@@ -114,8 +115,8 @@ public class readerWriter {
 			TransactionCategory cat = TransactionCategory.valueOf(sc.next().trim()) ;
 			float amount = Float.parseFloat(sc.next().trim());
 			Boolean isIngreso = Boolean.parseBoolean(sc.next().trim());
-			short accId = Short.valueOf(sc.next().trim());
-			tokenizeTransaction(dateOfTransaction, accId, desc, cat, amount, isIngreso, currentUser);
+			int accountId = Integer.valueOf(sc.next().trim());
+			tokenizeTransaction(dateOfTransaction, accountId, desc, cat, amount, isIngreso, currentUser);
 
 			System.out.println("Es una transacción, tokenizando");
 			
@@ -151,7 +152,7 @@ public class readerWriter {
 		
 	}
 
-	private void tokenizeTransaction(LocalDate dateOfTransaction, short accId, String desc, TransactionCategory cat, float amount, boolean isIngreso,  User user) {
+	private void tokenizeTransaction(LocalDate dateOfTransaction, int accId, String desc, TransactionCategory cat, float amount, boolean isIngreso,  User user) {
 		
 		System.out.println("Tokenizando transacción");
 		

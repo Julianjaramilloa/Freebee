@@ -43,12 +43,12 @@ public class Main {
 		
 		//pc.linkedListInsertions();
 		
-		UserList ul = new UserList();
+//		UserList ul = new UserList();
 		
-		ul.addUserCredentials("carlitosBacca", "789");
+//		ul.addUserCredentials("carlitosBacca", "789");
 		
-		LogIn lg = new LogIn(ul);
-		lg.credentialsIn();
+//		LogIn lg = new LogIn(ul);
+//		lg.credentialsIn();
 		
 		
 //		NewUser nw = new NewUser(); 

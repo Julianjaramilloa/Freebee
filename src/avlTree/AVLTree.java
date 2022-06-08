@@ -40,17 +40,20 @@ public class AVLTree implements BinarySearchTree{
 			toDelete = searchNode(key);
 		}catch (NullPointerException npe) {
 			System.err.println("El dato que está intentado eliminar no está presente en el árbol");
-		}			
-		Node parent = toDelete.parent;
+			npe.printStackTrace();
+		}
 		
+		Node parent = toDelete.parent;
 		if(height(toDelete) == 0) {
 			if(parent.right == toDelete) {
 				parent.right = null;
 			}else {
 				parent.left = null;
+
 			}
 			updateHeightsAndGuaranteeBalance(parent);
 		}else if(toDelete.right == null){
+			System.out.println("b");
 			Node replacement = toDelete.left;
 			if(parent.right == toDelete) {
 				parent.right = replacement;
@@ -61,6 +64,7 @@ public class AVLTree implements BinarySearchTree{
 			updateHeightsAndGuaranteeBalance(replacement);
 		}
 		else if(toDelete.left == null){
+			System.out.println("c");
 			Node replacement = toDelete.right;
 			if(parent.right == toDelete) {
 				parent.right = replacement;
@@ -70,36 +74,85 @@ public class AVLTree implements BinarySearchTree{
 			replacement.parent = parent;
 			updateHeightsAndGuaranteeBalance(replacement);
 		}else{
-			Node replacement = toDelete.right;
-			while(replacement.left != null) {
-				replacement = replacement.left;
-			}
-			Node repParent = replacement.parent;
-			if(parent.right == toDelete) {
-				parent.right = replacement;
+			Node replacement = inorderPredecessor(toDelete);
+			Node replacementParent = replacement.parent;
+			
+			boolean adjustReplacementParent;
+			if(replacementParent == toDelete) {
+				adjustReplacementParent = false;
 			}else {
-				parent.left = replacement;
+				adjustReplacementParent = true;
 			}
-			replacement.parent = parent;
-			updateHeightsAndGuaranteeBalance(repParent);
+			boolean deletingRoot;
+			if(toDelete == root) {
+				deletingRoot = true;
+			}else {
+				deletingRoot = false;
+			}
+			
+			Node preserveRight = toDelete.right;
+			Node preserveLeft = toDelete.left;
+
+			if(deletingRoot) {
+				replacement.parent = null;
+				this.root = replacement;
+			}else {
+				replacement.parent = parent;
+					
+				if(parent.right == toDelete) {
+					parent.right = replacement;
+				}else{
+					parent.left = replacement;
+				}
+			}
+			
+			if(preserveRight != replacement) {
+				replacement.right = preserveRight;
+				if(preserveRight != null) {
+					preserveRight.parent = replacement;
+				}
+			}
+			
+			if(preserveLeft != replacement) {
+				replacement.left = preserveLeft;
+				if(preserveLeft != null) {
+					preserveLeft.parent = replacement;
+				}
+			}
+			
+			if(adjustReplacementParent) {
+				replacementParent.right = null;
+			}
+			updateHeightsAndGuaranteeBalance(replacementParent);
+
 		}
 		
+	}
+	
+	private Node inorderPredecessor (Node succesor) {
+		Node inorderPredecessor = succesor.left;
+		while(inorderPredecessor.right != null) {
+			inorderPredecessor = inorderPredecessor.right;
+		}
+		return inorderPredecessor;
 	}
 	
 	@Override
 	public Node searchNode(int key) {
 		Node aux = root;
-		boolean found = false;
-		while(aux != null ||  found == false) {	
+		Node toReturn = null;
+		while(aux != null) {	
 			if(aux.data == key) {
-				found = true;
+				toReturn = aux;
+				break;
 			}else if(key > aux.data) {
 				aux = aux.right;
 			}else{
 				aux = aux.left;
 			}
 		}
-		return aux;
+		return toReturn;
+		
 	}
 	
 	private void updateHeightsAndGuaranteeBalance(Node current) {
@@ -166,6 +219,7 @@ public class AVLTree implements BinarySearchTree{
 			Node balanced = rotateRight(toBalance);
 			adjustParentOfBalancedSubtree(balanced, subTreeParent, treeComesFromLeft);
 		}else {
+			System.out.println("Sha ca toy");
 			toBalance.left = rotateLeft(toBalance.left);
 			toBalance.left.parent = toBalance;
 			
@@ -273,6 +327,16 @@ public class AVLTree implements BinarySearchTree{
 	  protected void appendNodeToString(Node node, StringBuilder builder) {
 	    builder.append(node.data + "-" + node.height);
 	  }
-	
+	  
+	  //JUst to debug:
+	  /*protected void appendNodeToString(Node node, StringBuilder builder) {
+		  String parent;
+		  try {
+			  parent = node.parent.toString();
+		  }catch(NullPointerException npe) {
+			  parent = "No parent";
+		  }
+		  builder.append(node.data + "-" + parent);
+	  }*/
 	
 }

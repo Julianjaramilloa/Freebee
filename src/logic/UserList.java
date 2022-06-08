@@ -1,20 +1,13 @@
 package logic;
 
-import java.util.NoSuchElementException;
-
 import rbTree.RbNode;
 import rbTree.RedBlackTree;
 import seqDataStructures.DynamicArray;
-import seqDataStructures.DynamicArrayIterator;
 
 public class UserList {
 	
-	//public static DynamicArray<User> users = new DynamicArray<User>();
 	public static RedBlackTree users = new RedBlackTree();
-//	private int currentUser;
 	private User currentUser;
-	
-	public UserList() {};
 	
 	//Métodos para crear un usuario:
 	
@@ -32,25 +25,14 @@ public class UserList {
 	
 	public void addUserCredentials(String userName, String password) {
 		User user = new User(userName, password);
-		//users.pushBack(user);
 		users.insertNode(userName, user);
 	};
 	
 	public void addUser(User user) {
-		//users.pushBack(user);
 		users.insertNode(user.getUsername(), user);
 	}
 	
 	private boolean exists(String username) {
-//		boolean exists = false;
-//		DynamicArrayIterator<User> it = users.iterate();
-//		while(it.hasNext()) {
-//			User aux = it.next();
-//			if(aux.getUsername() == username) {
-//				exists = true;
-//			}
-//		}
-//		return exists;
 		
 		boolean exists = false;
 		if (users.searchNode(username) != null) {
@@ -72,14 +54,12 @@ public class UserList {
 	}
 	
 	public boolean hasUsers() {
-		//return !users.isEmpty();
 		return users.getRoot() != null;
 	}
 	
 	private String credentialsInfoAfterLogin(String username, String password) {
 		String credentialsInfo = null;
-		
-		DynamicArray<Boolean> succesfulLogin = doLogin(username,password);
+		DynamicArray<Boolean> succesfulLogin = validateCredentials(username,password);
 		
 		if(!succesfulLogin.get(0)) {
 			credentialsInfo = "No existe un usuario con ese nombre";
@@ -91,47 +71,38 @@ public class UserList {
 		return credentialsInfo;
 	}
 	
-	private DynamicArray<Boolean> doLogin(String username, String password) {
+	private DynamicArray<Boolean> validateCredentials(String username, String password) {
 		DynamicArray<Boolean> succesfulLogin = new DynamicArray<Boolean>();
-		//DynamicArrayIterator<User> it = users.iterate();
 		
-		boolean rightUsername = false;
-		boolean rightPassword = false;
+		boolean isRightUsername = false;
+		boolean isRightPassword = false;
 		
 		RbNode auxNode = users.searchNode(username);
-		User aux = auxNode.getUser();
-//		while(it.hasNext()) {
-//			aux = it.next();
-//			if(aux.areRightCredentials(username, password)) {
-//				//Con esta sentencia asignamos se le abre la sesión al usuario
-//				this.currentUser = aux;
-//				rightUsername = true;
-//				rightPassword = true;
-//				break;
-//			}else if(aux.getUsername() == username){
-//				rightUsername = true;
-//				rightPassword = false;
-//				break;
-//			}
-//		}
-//		succesfulLogin.add(rightUsername, 0);
-//		succesfulLogin.add(rightPassword, 1);
-//		return succesfulLogin;
+
+		User aux;
+		try {
+			aux = auxNode.getUser();
+		}catch(NullPointerException npe) {
+			aux = null;
+		}
 						
-		if(aux.areRightCredentials(username, password)) {
+		if(aux == null) {
+			isRightUsername = false;
+			isRightPassword = false;
+		}else if(aux.areRightCredentials(username, password)) {
 			//Con esta sentencia asignamos se le abre la sesión al usuario
 			this.currentUser = aux;
-			rightUsername = true;
-			rightPassword = true;
+			isRightUsername = true;
+			isRightPassword = true;
 			
 		}else if(aux.getUsername() == username){
-			rightUsername = true;
-			rightPassword = false;
+			isRightUsername = true;
+			isRightPassword = false;
 			
 		}
 	
-		succesfulLogin.add(rightUsername, 0);
-		succesfulLogin.add(rightPassword, 1);
+		succesfulLogin.add(isRightUsername, 0);
+		succesfulLogin.add(isRightPassword, 1);
 		return succesfulLogin;
 	}
 	

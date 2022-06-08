@@ -17,9 +17,9 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	  @Override
 	  public RbNode searchNode(String key) {
-	    RbNode node = root;
+		RbNode node = root;
 	    while (node != null) {
-	      if (key == node.username) {
+	    	if (key.compareToIgnoreCase(node.username) == 0) {
 	        return node;
 	      } else if (key.compareToIgnoreCase(node.username) < 0) {
 	        node =  node.left;
@@ -27,7 +27,6 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	        node = node.right;
 	      }
 	    }
-
 	    return null;
 	  }
 
@@ -54,7 +53,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    RbNode newNode = new RbNode(user);
 	    newNode.color = RED;
 	    if (parent == null) {
-	      root = newNode;
+	    	root = newNode;
 	    } else if (key.compareToIgnoreCase(parent.username) < 0) {
 	      parent.left = newNode;
 	    } else {

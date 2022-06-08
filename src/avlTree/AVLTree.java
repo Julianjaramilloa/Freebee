@@ -35,7 +35,6 @@ public class AVLTree implements BinarySearchTree{
 	
 	@Override
 	public void deleteNode(int key) {
-		System.out.println("xd");
 		Node toDelete = null;
 		try {
 			toDelete = searchNode(key);
@@ -78,16 +77,23 @@ public class AVLTree implements BinarySearchTree{
 		}else{
 			System.out.println("d");
 			Node replacement = toDelete.left;
+			Node preserve = toDelete.right;
 			while(replacement.right != null) {
 				replacement = replacement.right;
 			}
+			System.out.println("replacement:" + replacement);
 			Node repParent = replacement.parent;
+			
 			if(parent.right == toDelete) {
 				parent.right = replacement;
-			}else {
+			}else{
 				parent.left = replacement;
 			}
 			replacement.parent = parent;
+			replacement.right = preserve;
+			System.out.println("Reparent: " + repParent);
+			System.out.println(this.toString());
+			repParent.right = null;
 			updateHeightsAndGuaranteeBalance(repParent);
 		}
 		
@@ -107,7 +113,6 @@ public class AVLTree implements BinarySearchTree{
 			}else{
 				aux = aux.left;
 			}
-			System.out.println(aux.toString());
 		}
 		return toReturn;
 		

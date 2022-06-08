@@ -33,8 +33,8 @@ public class Main {
 		ProveClasses pc = new ProveClasses();
 		pc.avlTree();
 		
-		Savings sv = new Savings();
-		sv.savings();
+//		Savings sv = new Savings();
+//		sv.savings();
 				
 //		Categories ct = new Categories();
 //		ct.categories();
@@ -43,10 +43,14 @@ public class Main {
 		
 		//pc.linkedListInsertions();
 		
-//		UserList ul = new UserList();
+		UserList ul = new UserList();
 		
-//		LogIn lg = new LogIn(ul);
-//		lg.credentialsIn();
+		ul.addUserCredentials("carlitosBacca", "789");
+		
+		LogIn lg = new LogIn(ul);
+		lg.credentialsIn();
+		
+		
 //		NewUser nw = new NewUser(); 
 //		nw.createUser();
 		

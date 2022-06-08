@@ -8,7 +8,7 @@ public class DynamicArray<T> implements List<T> {
 	int size = 0;
 	
 	public void checkIndex(int index) {
-		if(size <= index || index < 0) {
+		if(size < index || index < 0) {
 			throw new IndexOutOfBoundsException("El índice es inválido.");
 		}
 	}

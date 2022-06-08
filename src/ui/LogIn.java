@@ -208,7 +208,7 @@ public class LogIn extends JFrame implements ActionListener {
 		
 		if (pressed.getSource() == newUser) {
 			System.out.println("Abriendo creación de nuevo usuario");
-			NewUser nw = new NewUser(); 
+			NewUser nw = new NewUser(ul); 
 			nw.createUser();
 		}
 		

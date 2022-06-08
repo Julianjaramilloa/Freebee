@@ -44,16 +44,12 @@ public class Transaction implements Comparable<Transaction>{
 		}else {
 			ingreso += "Egreso";
 		}
-		return  "Transaction: " + date + "; " + Description + "; " + type + "; " + amount + "; " + ingreso + "; " + accountId;
+		return  "Transacción: " + date + "; " + Description + "; " + type + "; " + amount + "; " + ingreso + "; " + accountId;
 	}
 
 	@Override
 	public int compareTo(Transaction o) {
 		int comparison = this.date.compareTo(o.date);
-		
-		String a = "as";
-		String b = "bro";
-		System.out.println(a.compareTo(b));
 		
 		//Criterio de desempate:
 		if(comparison == 0) {

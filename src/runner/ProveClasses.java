@@ -12,7 +12,7 @@ public class ProveClasses {
 	
 	
 	void avlTree () {
-		AVLTree avl = new AVLTree();
+		/*AVLTree<Integer> avl = new AVLTree<Integer>();
 		LinkedList<Integer> treeNodes = new LinkedList<Integer>();
 		
 		treeNodes.pushBack(89);
@@ -53,6 +53,8 @@ public class ProveClasses {
 			avl.deleteNode(toInsert);
 			System.out.println("Árbol:\n" + avl.toString());
 		}
+		
+		*/
 //		System.out.println("Árbol:\n" + avl.toString());
 		
 		
@@ -87,37 +89,8 @@ public class ProveClasses {
 		 		
 	}
 	
-	void rbTree() {
-		RedBlackTree rbt = new RedBlackTree();
-		
-//		rbt.insertNode(89);
-//		rbt.insertNode(60);
-//		rbt.insertNode(27);
-//		rbt.insertNode(01);
-//		rbt.insertNode(36);
-//		rbt.insertNode(789);
-		
-		System.out.println(rbt.toString());
+	public void userTransactions() {
+		User us = new User()
 	}
 	
-	void linkedListInsertions() {
-		LinkedList<Integer> ll = new LinkedList<Integer>();
-		
-		System.out.println(ll.toString());
-		ll.add(85, 0);
-		System.out.println(ll.toString());
-		ll.add(44, 1);
-		ll.add(78, 1);
-		System.out.println(ll.toString());
-		ll.add(72, 0);
-		ll.add(65, 0);
-		ll.add(9, 0);
-		ll.add(12, 0);
-		ll.add(45, 2);
-		ll.add(77, 6);
-		ll.add(1034, 6);
-		System.out.println(ll);
-
-		
-	}
 }

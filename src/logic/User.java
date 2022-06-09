@@ -89,11 +89,16 @@ public class User {
 		
 		while(it.hasNext()) {
 			Transaction ts = it.next();
+			boolean doBalance = true;
 			try{
 				this.transactions.insertNode(ts);
 			}catch (IllegalArgumentException iae) {
 				System.err.println("Una transacción que estaba programada para ser incorporada ya existe actualmente: \n"
 						+ ts.toString() +" \nNo se hizo la inserción");
+				doBalance = false;
+			}
+			if(doBalance) {
+				setBalance(ts.accountId(), ts.amount());
 			}
 		}
 	}

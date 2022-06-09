@@ -6,7 +6,7 @@ import seqDataStructures.DynamicArrayIterator;
 import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
-import ui.readerWriter;
+import ui.ReaderWriter;
 
 import java.time.LocalDate;
 
@@ -149,11 +149,11 @@ public class ProveClasses {
 		User us = new User("cesar", "1234");
 		UserList ul = new UserList();
 		
-		us.addTransaction(LocalDate.of(2002, 10, 19), 1, "Pago del inmueble", ts("Vivienda"), 40500000, false);
+		us.addTransactionData(LocalDate.of(2002, 10, 19), 1, "Pago del inmueble", ts("Vivienda"), 40500000, false);
 		AVLTree<Transaction> av = us.getTransactions();
 		System.out.println(av.toString());
 		
-		readerWriter rd = new readerWriter(ul);
+		ReaderWriter rd = new ReaderWriter(ul);
 		rd.readFile(); 
 		RedBlackTree rbt = UserList.users;
 		RbNode rb = rbt.searchNode("Usuario11");

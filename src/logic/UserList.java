@@ -7,25 +7,26 @@ import seqDataStructures.DynamicArray;
 public class UserList {
 	
 	public static RedBlackTree users = new RedBlackTree();
-	private User currentUser;
+	private User currentUser; //Usuario con la sesión abierta
 	
 	//Métodos para crear un usuario:
 	
-	public String userCreation(String userName, String password, String auxPass) {
+	public String userCreation(String username, String password, String auxPass) {
 		String results = null;
 		if(password.equals(auxPass) == false) {
 			results = "La segunda contraseña no corresponde con la primera";
-		}else if(exists(userName)) {
+		}else if(exists(username)) {
 			results = "Ya existe un usuario con este nombre.";
 		}else {
-			addUserCredentials(userName, password);
+			User user = new User(username, password);
+			addUser(user);
 		}
 		return results;
 	}
 	
 	public void addUserCredentials(String userName, String password) {
 		User user = new User(userName, password);
-		users.insertNode(userName, user);
+		addUser(user);
 	};
 	
 	public void addUser(User user) {
@@ -36,8 +37,7 @@ public class UserList {
 		}
 	}
 	
-	private boolean exists(String username) {
-		
+	private boolean exists(String username) {		
 		boolean exists = false;
 		if (users.searchNode(username) != null) {
 			exists = true;
@@ -133,10 +133,5 @@ public class UserList {
 	public User getUser() {
 		return this.currentUser;
 	}
-	
-
-
-
-
 
 }

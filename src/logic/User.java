@@ -15,17 +15,9 @@ public class User {
 	private String password;
 	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
 	private AVLTree<Transaction> transactions = new AVLTree<Transaction>();
-	@SuppressWarnings("unused")
-	private IncomingTransactions inc;//Implementación a futuro
-	private short idProvider = 0;
-	
-	public DynamicArray<Account> getAccounts() {
-		return this.accounts;
-	}
-	
-	public AVLTree<Transaction> getTransactions() {
-		return this.transactions;
-	}
+	private IncomingTransactions incomingTransactions = new IncomingTransactions();
+	private int idAccountProvider = 0;//Asigna automáticamente un id a la cuenta que se vaya a incluir
+	private int idTransactionProvider = 0;//Asigna automáticamente un id a la transacción que se vaya a incluir
 	
 	public User(String userName, String password) {
 		this.username = userName;
@@ -33,30 +25,79 @@ public class User {
 	};
 	
 	public void addAccount(String name, float balance, String currency) {
-		short id = idProvider;
+		int id = idAccountProvider;
 		Account acc = new Account(id, name, balance, currency);
 		accounts.pushBack(acc);
-		idProvider ++;
+		idAccountProvider ++;
 	}
 	
-	public void addTransaction(
+	public DynamicArray<Account> getAccounts() {
+		return this.accounts;
+	}
+	
+	public void addTransactionData(
 			LocalDate date,
 			int accId,
 			String desc,
 			TransactionCategory type, 
 			float amount,
 			boolean isIngreso) {
+		int idTransaction = idTransactionProvider;
 		Transaction trans = new Transaction(
 				date,
 				accId,
+				idTransaction,
 				desc,
 				type,
 				amount,
 				isIngreso);
+		addTransaction(trans);
+	}
+	
+	public void addTransaction(Transaction transaction) {
 		try{
-			transactions.insertNode(trans); //Toca hacer una verificación de si la cuenta existe
+			transactions.insertNode(transaction); 
 		}catch(IllegalArgumentException iae) {
-			System.out.println("La transacción ya existe");
+			System.err.println("La transacción ya existe");
+		}
+		idTransactionProvider ++;
+		
+	}
+	
+	public AVLTree<Transaction> getTransactions() {
+		return this.transactions;
+	}
+	
+	public void addIncomingTransaction(
+			LocalDate date,
+			int accId,
+			String desc,
+			TransactionCategory type, 
+			float amount,
+			boolean isIngreso) {
+		Transaction incomingTransaction = new Transaction(date, accId, idTransactionProvider, desc, type, amount, isIngreso);
+		
+		LocalDate today = LocalDate.now();
+		LocalDate transactionDate = incomingTransaction.getDate();
+		if(today.compareTo(transactionDate) > 0) {
+			throw new IllegalArgumentException ("Está intentando ingresar una transacción para una fecha que ya pasó");
+		}
+		
+		incomingTransactions.addIncomingTransaction(incomingTransaction);
+	}
+	
+	protected void incorporateIncomingTransactions() {
+		LinkedList<Transaction> incoming = this.incomingTransactions.popTransaction();
+		LinkedListIterator<Transaction> it = new LinkedListIterator<Transaction>(incoming);
+		
+		while(it.hasNext()) {
+			Transaction ts = it.next();
+			try{
+				this.transactions.insertNode(ts);
+			}catch (IllegalArgumentException iae) {
+				System.err.println("Una transacción que estaba programada para ser incorporada ya existe actualmente: \n"
+						+ ts.toString());
+			}
 		}
 	}
 	

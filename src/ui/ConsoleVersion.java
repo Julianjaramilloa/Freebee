@@ -19,7 +19,7 @@ public class ConsoleVersion {
 	}
 	
 	public void readAndLoadData(UserList userlist) {
-		readerWriter read = new readerWriter(userlist);
+		ReaderWriter read = new ReaderWriter(userlist);
 		read.readFile();
 		
 	}

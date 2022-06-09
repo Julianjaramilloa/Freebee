@@ -20,7 +20,7 @@ import java.util.Locale.Category;
  * @author Marcos Pinzón Pardo
  */
 
-public class readerWriter {
+public class ReaderWriter {
 	
 	
 	// De aquí en adelante readAndLoad()
@@ -32,7 +32,7 @@ public class readerWriter {
 	User user = null;
 
 	// Constructor
-	public readerWriter(UserList userList) {
+	public ReaderWriter(UserList userList) {
 		this.userList = userList;
 	}
 	
@@ -155,8 +155,8 @@ public class readerWriter {
 		
 		
 		
-		//Hay que especificar a quï¿½ usuario se aï¿½ade
-		user.addTransaction(dateOfTransaction, accId, desc, cat, amount, isIngreso);
+		//Hay que especificar a qué usuario se añade
+		user.addTransactionData(dateOfTransaction, accId, desc, cat, amount, isIngreso);
 		
 		System.out.println("\n\ttransacción creada:\n\n" + 
 		"Fecha:" + dateOfTransaction + " Descripción:" + desc + " Category:" + cat +

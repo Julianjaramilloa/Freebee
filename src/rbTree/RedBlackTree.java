@@ -37,7 +37,6 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    RbNode node = root;
 	    RbNode parent = null;
 
-	    // Traverse the tree to the left or right depending on the key
 	    while (node != null) {
 	      parent = node;
 	      if (key.compareToIgnoreCase(node.username) < 0) {
@@ -65,90 +64,78 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    size++;
 	  }
 
-	  @SuppressWarnings("squid:S125") // Ignore SonarCloud complains about commented code line 70.
 	  private void fixRedBlackPropertiesAfterInsert(RbNode node) {
 	    RbNode parent = node.parent;
 
-	    // Case 1: Parent is null, we've reached the root, the end of the recursion
+	    // Case 1: padre es null, llegamos al root.
 	    if (parent == null) {
-	      // Uncomment the following line if you want to enforce black roots (rule 2):
-	      // node.color = BLACK;
 	      return;
 	    }
 
-	    // Parent is black --> nothing to do
+	    // si el padre es negro no hacemos nada
 	    if (parent.color == BLACK) {
 	      return;
 	    }
 
-	    // From here on, parent is red
+	    // Si el padre es rojo
 	    RbNode grandparent = parent.parent;
 
 	    // Case 2:
-	    // Not having a grandparent means that parent is the root. If we enforce black roots
-	    // (rule 2), grandparent will never be null, and the following if-then block can be
-	    // removed.
+	    //si no tenemos un abuelo entonces el padre es el root y por lo 
+	    //tanto lo volvemos negro
+	    
 	    if (grandparent == null) {
-	      // As this method is only called on red nodes (either on newly inserted ones - or -
-	      // recursively on red grandparents), all we have to do is to recolor the root black.
 	      parent.color = BLACK;
 	      return;
 	    }
 
-	    // Get the uncle (may be null/nil, in which case its color is BLACK)
 	    RbNode uncle = getUncle(parent);
 
-	    // Case 3: Uncle is red -> recolor parent, grandparent and uncle
+	    // Case 3: tio es rojo -> recoloreamos el padre, abuelo y tio
 	    if (uncle != null && uncle.color == RED) {
 	      parent.color = BLACK;
 	      grandparent.color = RED;
 	      uncle.color = BLACK;
 
-	      // Call recursively for grandparent, which is now red.
-	      // It might be root or have a red parent, in which case we need to fix more...
+	      //volvemos a llamar la funcion para el abuelo ya que ahora es rojo
+	      //Puede ser root or padre puede ser rojo por lo tanto hay mas
+	      //propiedades por arreglar
 	      fixRedBlackPropertiesAfterInsert(grandparent);
 	    }
 
-	    // Note on performance:
-	    // It would be faster to do the uncle color check within the following code. This way
-	    // we would avoid checking the grandparent-parent direction twice (once in getUncle()
-	    // and once in the following else-if). But for better understanding of the code,
-	    // I left the uncle color check as a separate step.
 
-	    // Parent is left child of grandparent
+	    //padre es el hijo izquiero del abuelo
 	    else if (parent == grandparent.left) {
 	      // Case 4a: Uncle is black and node is left->right "inner child" of its grandparent
+	      // Case 4a: tio es negro y el nodo es hijo derecho del abuelo
 	      if (node == parent.right) {
 	        rotateLeft(parent);
 
-	        // Let "parent" point to the new root node of the rotated sub-tree.
-	        // It will be recolored in the next step, which we're going to fall-through to.
+	        //el padre apunta al nuevo root del subarbol rotado.
+	        //el cual tiene que ser recoloreado
 	        parent = node;
 	      }
 
-	      // Case 5a: Uncle is black and node is left->left "outer child" of its grandparent
+	      // Case 5a: tio es negro y el node es hijo externo del abuelo
 	      rotateRight(grandparent);
 
-	      // Recolor original parent and grandparent
+	      // recoloreamos el padre y abuelo original
 	      parent.color = BLACK;
 	      grandparent.color = RED;
 	    }
 
-	    // Parent is right child of grandparent
+	    // padre es hijo derecho del abuelo
 	    else {
-	      // Case 4b: Uncle is black and node is right->left "inner child" of its grandparent
+	      // Case 4b: tio es negro y el nodo es hijo interno del abuelo	
 	      if (node == parent.left) {
 	        rotateRight(parent);
-
-	        // Let "parent" point to the new root node of the rotated sub-tree.
-	        // It will be recolored in the next step, which we're going to fall-through to.
 	        parent = node;
 	      }
 
-	      // Case 5b: Uncle is black and node is right->right "outer child" of its grandparent
+	      // Case 5b: tio es negro, nodo es hijo externo del abuelo
 	      rotateLeft(grandparent);
 
-	      // Recolor original parent and grandparent
+	      // recoloreamos el padre y abuelo
 	      parent.color = BLACK;
 	      grandparent.color = RED;
 	    }
@@ -167,14 +154,13 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	  // -- Deletion -----------------------------------------------------------------------------------
 
-	  @SuppressWarnings("squid:S2259") // SonarCloud issues an incorrect potential NPE warning
 	  @Override
 	  public void deleteNode(String key) {
 	    RbNode node = root;
 
-	    // Find the node to be deleted
+	    // buscamos el nodo que queremos eliminar
 	    while (node != null && node.username.compareToIgnoreCase(key) != 0) {
-	      // Traverse the tree to the left or right depending on the key
+	      // traversamos el arbol haciendo comparaciones lexicograficas
 	      if (key.compareToIgnoreCase(node.username) < 0) {
 	        node = node.left;
 	      } else {
@@ -182,34 +168,29 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	      }
 	    }
 
-	    // Node not found?
+	    // si no se encuentra el nodo
 	    if (node == null) {
 	      return;
 	    }
 
-	    // At this point, "node" is the node to be deleted
 
-	    // In this variable, we'll store the node at which we're going to start to fix the R-B
-	    // properties after deleting a node.
 	    size--;
 	    RbNode movedUpNode;
 	    boolean deletedNodeColor;
 
-	    // Node has zero or one child
+	    // nodo tiene 0 o 1 hijo
 	    if (node.left == null || node.right == null) {
 	      movedUpNode = deleteNodeWithZeroOrOneChild(node);
 	      deletedNodeColor = node.color;
 	    }
 
-	    // Node has two children
+	    // nodo tiene 2 hijos
 	    else {
-	      // Find minimum node of right subtree ("inorder successor" of current node)
+	      // buscamos el nodo minimo
 	      RbNode inOrderSuccessor = findMinimum(node.right);
 
-	      // Copy inorder successor's data to current node (keep its color!)
-	      node.date = inOrderSuccessor.date;
+	      node.username = inOrderSuccessor.username;
 
-	      // Delete inorder successor just as we would delete a node with 0 or 1 child
 	      movedUpNode = deleteNodeWithZeroOrOneChild(inOrderSuccessor);
 	      deletedNodeColor = inOrderSuccessor.color;
 	    }
@@ -217,7 +198,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    if (deletedNodeColor == BLACK) {
 	      fixRedBlackPropertiesAfterDelete(movedUpNode);
 
-	      // Remove the temporary NIL node
+	      // eliminamos el nodo temporal nil
 	      if (movedUpNode.getClass() == NilNode.class) {
 	        replaceParentsChild(movedUpNode.parent, movedUpNode, null);
 	      }
@@ -225,21 +206,19 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	  }
 
 	  private RbNode deleteNodeWithZeroOrOneChild(RbNode node) {
-	    // Node has ONLY a left child --> replace by its left child
+		// el nodo solo tiene un hijo izquierdo  
 	    if (node.left != null) {
 	      replaceParentsChild(node.parent, node, node.left);
 	      return node.left; // moved-up node
 	    }
 
-	    // Node has ONLY a right child --> replace by its right child
+	    // nodo solo tiene hijo derecho
 	    else if (node.right != null) {
 	      replaceParentsChild(node.parent, node, node.right);
 	      return node.right; // moved-up node
 	    }
 
-	    // Node has no children -->
-	    // * node is red --> just remove it
-	    // * node is black --> replace it by a temporary NIL node (needed to fix the R-B rules)
+	    // nodo no tiene hijos
 	    else {
 	      RbNode newChild = node.color == BLACK ? new NilNode() : null;
 	      replaceParentsChild(node.parent, node, newChild);
@@ -254,50 +233,46 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	    return node;
 	  }
 
-	  @SuppressWarnings("squid:S125") // Ignore SonarCloud complains about commented code line 256.
 	  private void fixRedBlackPropertiesAfterDelete(RbNode node) {
-	    // Case 1: Examined node is root, end of recursion
+	    // Case 1: si el nodo es root
 	    if (node == root) {
-	      // Uncomment the following line if you want to enforce black roots (rule 2):
-	      // node.color = BLACK;
+
 	      return;
 	    }
 
 	    RbNode sibling = getSibling(node);
 
-	    // Case 2: Red sibling
+	    // Case 2: hermano rojo
 	    if (sibling.color == RED) {
 	      handleRedSibling(node, sibling);
-	      sibling = getSibling(node); // Get new sibling for fall-through to cases 3-6
+	      sibling = getSibling(node); 
 	    }
 
-	    // Cases 3+4: Black sibling with two black children
+	    // Cases 3+4: hermano negro con dos hijos negros
 	    if (isBlack(sibling.left) && isBlack(sibling.right)) {
 	      sibling.color = RED;
 
-	      // Case 3: Black sibling with two black children + red parent
+	      //Case 3: hermano negro con dos hijos negros y padre rojo
 	      if (node.parent.color == RED) {
 	        node.parent.color = BLACK;
 	      }
 
-	      // Case 4: Black sibling with two black children + black parent
+	      // Caso 4: hermano negro con dos hijos negros y padre negro
 	      else {
 	        fixRedBlackPropertiesAfterDelete(node.parent);
 	      }
 	    }
 
-	    // Case 5+6: Black sibling with at least one red child
+	    // Case 5+6: hermano negro con al menos un hijo rojo
 	    else {
 	      handleBlackSiblingWithAtLeastOneRedChild(node, sibling);
 	    }
 	  }
 
 	  private void handleRedSibling(RbNode node, RbNode sibling) {
-	    // Recolor...
 	    sibling.color = BLACK;
 	    node.parent.color = RED;
 
-	    // ... and rotate
 	    if (node == node.parent.left) {
 	      rotateLeft(node.parent);
 	    } else {
@@ -308,8 +283,8 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	  private void handleBlackSiblingWithAtLeastOneRedChild(RbNode node, RbNode sibling) {
 	    boolean nodeIsLeftChild = node == node.parent.left;
 
-	    // Case 5: Black sibling with at least one red child + "outer nephew" is black
-	    // --> Recolor sibling and its child, and rotate around sibling
+	    // Case 5: hermano negro con al menos un hijo rojo, primo externo es negro
+
 	    if (nodeIsLeftChild && isBlack(sibling.right)) {
 	      sibling.left.color = BLACK;
 	      sibling.color = RED;
@@ -322,10 +297,8 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 	      sibling = node.parent.left;
 	    }
 
-	    // Fall-through to case 6...
 
-	    // Case 6: Black sibling with at least one red child + "outer nephew" is red
-	    // --> Recolor sibling + parent + sibling's child, and rotate around parent
+	    //Case 6: hermano negro con al menos un hijo rojo, primo externo es rojo
 	    sibling.color = node.parent.color;
 	    node.parent.color = BLACK;
 	    if (nodeIsLeftChild) {
@@ -411,7 +384,7 @@ public class RedBlackTree extends BaseBinaryTree implements BinarySearchTree {
 
 	  @Override
 	  protected void appendNodeToString(RbNode node, StringBuilder builder) {
-	    builder.append(node.date).append(node.color == RED ? "[R]" : "[B]");
+	    builder.append(node.username).append(node.color == RED ? "[R]" : "[B]");
 	  }
 
 

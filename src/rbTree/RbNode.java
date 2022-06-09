@@ -6,24 +6,20 @@ import logic.Transaction;
 import logic.User;
 
 public class RbNode {
-	  LocalDate date;
 	  String username;
-	  int data;
 	  User user;
 	  RbNode left;
 	  RbNode right;
 	  RbNode parent;
 
-
 	  boolean color; 
-
 
 	  public RbNode(User user) {
 	    this.username = user.getUsername();
 	    this.user = user;
 	  }
 	  
-
+	  int data;
 	  public RbNode(int i) {
 		this.data = i;
 	  }
@@ -35,7 +31,11 @@ public class RbNode {
 	//Hago aquí el toString() para debuggear
 	  @Override
 	  public String toString() {
+<<<<<<< Updated upstream
 		  return String.valueOf(user);
+=======
+		  return String.valueOf(username);
+>>>>>>> Stashed changes
 	  }
 	  
 	}

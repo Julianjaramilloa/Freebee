@@ -14,7 +14,29 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		}
 		arr[size] = data;
 		size++;
-		guaranteeHeapConditions(data);
+		readjustAfterInsertion(size-1);
+	}
+	
+	@Override
+	public T deleteMin() {
+		T min = arr[0];
+		arr[0] = arr[size-1];
+		arr[size-1] = null;
+		size--;
+		readjustAfterDeletion(0);
+		return min;
+	}
+	
+	public T peek() {
+		return arr[0];
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public void clear() {
+		this.arr = (T[]) new Comparable[1];
 	}
 	
 	private void expandArray() {
@@ -27,30 +49,70 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		arraySize = arraySize * 2;
 	}
 	
-	private void guaranteeHeapConditions(T data) {
-		
+	private void readjustAfterInsertion(int node) {
+		int parent = parent(node);
+		while (node > 0 && arr[parent].compareTo(arr[node]) > 0) {
+			T aux = arr[parent];
+			arr[parent] = arr[node];
+			arr[node] = aux;
+			
+			node = parent;
+			parent = parent(node);
+		}
 	}
 
-	@Override
-	public T deleteMin() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	private void readjustAfterDeletion(int node) {
+		while(node >= 0) {
+			int swap = -1;
+			int rightSon = rightSon(node);
+			
+			if(rightSon < size && arr[rightSon].compareTo(arr[node]) < 0) {
+				int leftSon = leftSon(node);
+				if(arr[leftSon].compareTo(arr[rightSon]) < 0) {
+					swap = leftSon;
+				}else {
+					swap = rightSon;
+				}
+			}else{
+				int leftSon = leftSon(node);
+				if(leftSon < size && arr[leftSon].compareTo(arr[node]) < 0) {
+					swap = leftSon;
+				}
+			}
+			
+			if(swap >= 0) {
+				T aux = arr[swap];
+				arr[swap] = arr[node];
+				arr[node] = aux;
+			}
+			
+			node = swap;
+		}
 	}
 	
-	public int size() {
-		return size;
-	}
+
 	
-	public int leftSon(int index) {
+	private int leftSon(int index) {
 		return 2*index + 1; 
 	}
 	
-	public int rightSon(int index) {
+	private int rightSon(int index) {
 		return 2*(index + 1); 
 	}
 	
-	public int parent(int index) {
-		return (index-1)/2 %2;
+	private int parent(int index) {
+		return (index-1)/2;
+	}
+	
+	//Para poder probar la estructura, pues en un minHeap no está está definida la posibilidad
+	//de observar u obtener datos que no sean la raíz
+	public String toString() {
+		String heapInfo = "Heap order: ";
+		for(int i=0; i<size; i++) {
+			heapInfo += (arr[i].toString() + ", ");
+		}
+		return heapInfo;
 	}
 
 }

@@ -96,10 +96,10 @@ public class User {
 	}
 	
 	public String completeUserInfo() {
-		String completeUserInfo = "                                                Info Completa del Usuario: \n";
+		String completeUserInfo = "                                Info Completa del Usuario: \n";
 		String userStats = "Username: " + username +"; #Cuentas: " + accounts.size() + "; #Transacciones: " + transactions.size() + '\n';
 		completeUserInfo += userStats;
-		completeUserInfo += accounts.toString();
+		completeUserInfo += accounts.verticalOrder();
 		completeUserInfo += '\n';
 		completeUserInfo += transactions.preorderTraverse();
 		

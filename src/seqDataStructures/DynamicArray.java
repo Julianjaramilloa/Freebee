@@ -114,6 +114,20 @@ public class DynamicArray<T> implements List<T> {
 		sb.append("[");
 		for(int i=0; i<size; i++) {
 			sb.append(arr[i].toString());
+			sb.append(", ");
+		}
+		sb.deleteCharAt(sb.length()-1);
+		sb.deleteCharAt(sb.length()-1);
+		sb.append("]");		
+		return sb.toString();
+		
+	}
+	
+	public String verticalOrder() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		for(int i=0; i<size; i++) {
+			sb.append(arr[i].toString());
 			sb.append(";\n ");
 		}
 		sb.append("]");		

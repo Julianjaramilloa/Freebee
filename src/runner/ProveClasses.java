@@ -45,11 +45,20 @@ public class ProveClasses {
 		da.pushBack(6464);
 		
 		DynamicArrayIterator <Integer> dai = new DynamicArrayIterator<Integer>(da);
+		
+		System.out.println("Orden de inserción \n" + da.toString());
 		while(dai.hasNext()) {
 			int include = dai.next();
+			
 			mh.add(include);
-			System.out.println();
+			System.out.println(mh.toString());
 		}
+		
+		for (int i=0; i<5; i++) {
+			int deleted = mh.deleteMin();
+			System.out.println("Deleted: " + deleted + "\n" + mh.toString());
+		}
+		
 	}
 	
 	

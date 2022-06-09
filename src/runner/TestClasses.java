@@ -158,8 +158,8 @@ public class TestClasses {
 		rd.readFile(); 
 		RedBlackTree rbt = UserList.users;
 		RbNode rb = rbt.searchNode("Usuario11");
-		User xd = rb.getUser();
-		System.out.println(xd.completeUserInfo());
+		User user = rb.getUser();
+		System.out.println(user.completeUserInfo());
 		
 		//AVLTree<Transaction> xdUs = xd.getTransactions();
 		//System.out.println(xdUs.preorderTraverse());

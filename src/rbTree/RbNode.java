@@ -31,11 +31,11 @@ public class RbNode {
 	//Hago aquí el toString() para debuggear
 	  @Override
 	  public String toString() {
-<<<<<<< Updated upstream
-		  return String.valueOf(user);
-=======
+
+		  //return String.valueOf(user);
+
 		  return String.valueOf(username);
->>>>>>> Stashed changes
+
 	  }
 	  
 	}

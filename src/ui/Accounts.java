@@ -1,4 +1,4 @@
-package userInterface;
+package ui;
 
 /*
  * Freebie
@@ -11,11 +11,16 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
@@ -28,6 +33,12 @@ public class Accounts extends JFrame implements ActionListener {
 	JButton settPage;
 	JButton addTrans;
 	JButton getHelp;
+	
+	JButton newAcc;
+	JButton[] accButs = new JButton[5];
+	
+	JLabel info;
+	JLabel balance;
 
 	JLabel welcomeLabel;	
 	
@@ -43,6 +54,45 @@ public class Accounts extends JFrame implements ActionListener {
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
+		
+		// ------------ Label: Bienvenida -------------------
+		
+		info = new JLabel(); 
+		info.setBounds(330,20,150,60); // Tamaño
+		info.setText("Total disponible: "); // Texto
+		info.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
+		info.setForeground(Color.BLACK); // Color del texto
+		info.setVisible(true); // Visibilidad
+				
+		// ------------ Label: Bienvenida -------------------
+				
+		balance = new JLabel(); 
+		balance.setBounds(440,20,200,60); // Tamaño
+		balance.setText("$00000000"); // Texto
+		balance.setFont(new Font("Nunito", Font.BOLD, 15)); // Fuente
+		balance.setForeground(Color.BLACK); // Color del texto
+		balance.setVisible(true); // Visibilidad
+		
+		// Cantidad de cuentas del usuario (máx 5 por ahora)
+		int accAmount = 3;
+		if (accAmount == 0) {
+			JOptionPane.showMessageDialog(null, "Aún no tiene cuentas, cree una", "Cuidado", JOptionPane.WARNING_MESSAGE);
+		}
+		displayAccButtons(accAmount);
+		
+		// ------------ Botón: Nuevo usuario -----------------------
+		
+		newAcc = new JButton();
+		newAcc.setBounds(240,440,95,30); // Tamaño
+		newAcc.setText("Crear cuenta"); // Texto
+		newAcc.setBorder(new LineBorder(Color.BLACK)); // Borde
+		newAcc.setFont(new Font("Consolas", Font.PLAIN, 12)); // Fuente
+		newAcc.setForeground(Color.BLACK); // Color del texto
+		newAcc.setBackground(Color.WHITE); // Color del fondo
+		newAcc.setFocusable(false); // Quitar cuadro alrededor
+		newAcc.addActionListener(this); // Añadir ActionListener
+		newAcc.setBorder(BorderFactory.createEtchedBorder()); // Borde
+		
 		
 		// ================= BOTONES FIJOS =============================
 		
@@ -151,6 +201,9 @@ public class Accounts extends JFrame implements ActionListener {
 		this.add(addTrans);
 		
 		this.add(welcomeLabel);
+		this.add(info);
+		this.add(balance);
+		this.add(newAcc);
 
 
 		
@@ -168,10 +221,51 @@ public class Accounts extends JFrame implements ActionListener {
 		
 	}
 	
+	private void displayAccButtons(int c) {
+			
+		if (c == 0) {
+			return;
+		}
+		
+		// Altura de los botones con relación a cuantos hay (se puede mejorar la anchura)
+		int h = 250/c;
+		
+		for (int i=0; i<c; i++) {
+			accButs[i]= new JButton();
+			accButs[i].setBounds(160,(110 + (i*(h+10))),250,h); // Tamaño
+			// Integrar account name y saldo
+			accButs[i].setText("accountName" + (i+1) + " $" + "0.0"); // Texto
+			accButs[i].setBorder(new LineBorder(Color.BLACK)); // Borde
+			accButs[i].setFont(new Font("Consolas", Font.BOLD, 16)); // Fuente
+			accButs[i].setForeground(Color.BLACK); // Color del texto
+			accButs[i].setBackground(Color.WHITE); // Color del fondo
+			accButs[i].setFocusable(false); // Quitar cuadro alrededor
+			accButs[i].addActionListener(this); // Añadir ActionListener
+			accButs[i].setBorder(BorderFactory.createEtchedBorder()); // Borde
+			this.add(accButs[i]);
+		}
+		
+	}
+
 	// Criterio al presionar el botón
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		
+		for (JButton b : accButs) {
+			if (pressed.getSource() == b){
+				System.out.print(b.getLabel() + "\n");
+				Transactions tr = new Transactions();
+				tr.showTrans(b.getLabel().replaceFirst("\\s*(\\w+).*", "$1"));
+			}
+		}
+			
+		if (pressed.getSource() == newAcc) {
+			System.out.println("Abriendo creación de nuevo cuenta");
+			NewAcc na = new NewAcc(); 
+			na.createAcc();
+		}
+		
+	
 		//--------------------------------------------------------
 		
 		if (pressed.getSource() == catPage) {

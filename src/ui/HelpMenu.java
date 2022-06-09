@@ -1,4 +1,4 @@
-package userInterface;
+package ui;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -497,6 +497,65 @@ public class HelpMenu extends JFrame implements ActionListener {
 		title = new JLabel(); 
 		title.setBounds(30,30,250,40); // Tamaño
 		title.setText("Ayuda - Crear transacción"); // Texto
+		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
+		title.setForeground(Color.BLACK); // Color del texto
+		title.setVisible(true); // Visibilidad
+		
+		// Ayuda 1
+		help1 = new JLabel(); 
+		help1.setBounds(30,120,550,60); // Tamaño
+		help1.setText("Por terminar"); // Texto
+		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help1.setForeground(Color.BLACK); // Color del texto
+		help1.setVisible(true); // Visibilidad
+		
+		// Ayuda 2
+		help2 = new JLabel(); 
+		help2.setBounds(30,150,500,30); // Tamaño
+		help2.setText("Por terminar"); // Texto
+		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		help2.setForeground(Color.BLACK); // Color del texto
+		help2.setVisible(true); // Visibilidad
+		
+		// ----------------- Frame ------------------------
+		
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setTitle("Freebee / Ayuda en categorías"); // Título
+		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
+		this.setIconImage(logo.getImage()); // Poner logo
+		this.setLocationRelativeTo(null);
+		this.setSize(500,300);
+		this.setResizable(false); // No cambia de tamaño
+		this.setLayout(null);
+		this.setVisible(true);
+		this.add(title);
+		this.add(help1);
+		this.add(help2);
+		this.add(support);
+		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
+		
+	}
+	
+public void displayNewAccHelp() {
+		
+		System.out.println("Ventana displayNewAccHelp");
+		
+		// ----------------- Botón: Ayuda y soporte -----------
+		support = new JButton();
+		support.setBounds(330,40,125,25); // Tamaño
+		support.setText("Soporte y contacto"); // Texto
+		support.setFont(new Font("Liberation Mono", Font.ITALIC, 11)); // Fuente
+		support.setForeground(Color.WHITE); // Color del texto
+		support.setBackground(Color.BLACK); // Color del fondo
+		support.setFocusable(false); // Quitar cuadro alrededor
+		support.addActionListener(this); // Añadir ActionListener
+		
+		// ------------------- Label ------------------------
+		
+		// Título
+		title = new JLabel(); 
+		title.setBounds(30,30,250,40); // Tamaño
+		title.setText("Ayuda - Crear nueva cuenta"); // Texto
 		title.setFont(new Font("Nunito", Font.BOLD, 18)); // Fuente
 		title.setForeground(Color.BLACK); // Color del texto
 		title.setVisible(true); // Visibilidad

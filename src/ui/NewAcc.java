@@ -27,33 +27,34 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 
-public class NewUser extends JFrame implements ActionListener {
+public class NewAcc extends JFrame implements ActionListener {
 
-	JButton saveUser;
+	JButton saveAcc;
 	JButton getHelp;
+	
 	JLabel welcomeLabel;
 	JLabel nameLabel;
 	JLabel passLabel;
-	JLabel cpassLabel;
+	JLabel currencyLabel;
 	JLabel warningLabel;
 	JTextField nameField;
-	JTextField passField;
-	JTextField cpassField;
+	JTextField balanceField;
+	JTextField currencyField;
 	
-	String username;
-	String password;
-	String cpass;
+	String accName;
+	Float balance;
+	String currency;
 	
 	
-	public void createUser(){
+	public void createAcc(){
 		
-		System.out.println("Ventana NewUser");
+		System.out.println("Ventana NewAcc");
 		
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
 		welcomeLabel.setBounds(50,20,400,60); // Tamaño
-		welcomeLabel.setText("Creación de usuario"); // Texto
+		welcomeLabel.setText("Nueva cuenta"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
@@ -62,24 +63,24 @@ public class NewUser extends JFrame implements ActionListener {
 		
 		nameLabel = new JLabel(); 
 		nameLabel.setBounds(150,110,300,70); // Tamaño
-		nameLabel.setText("Nombre de usuario"); // Texto
+		nameLabel.setText("Nombre"); // Texto
 		nameLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		nameLabel.setForeground(Color.BLACK); // Color del texto
 		nameLabel.setVisible(true); // Visibilidad
 		
 		passLabel = new JLabel(); 
 		passLabel.setBounds(150,190,300,70); // Tamaño
-		passLabel.setText("Crea una contraseña"); // Texto
+		passLabel.setText("Balance inicial"); // Texto
 		passLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		passLabel.setForeground(Color.BLACK); // Color del texto
 		passLabel.setVisible(true); // Visibilidad
 		
-		cpassLabel = new JLabel(); 	
-		cpassLabel.setBounds(150,270,300,70); // Tamaño
-		cpassLabel.setText("Confirma tu contraseña"); // Texto
-		cpassLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
-		cpassLabel.setForeground(Color.BLACK); // Color del texto
-		cpassLabel.setVisible(true); // Visibilidad
+		currencyLabel = new JLabel(); 	
+		currencyLabel.setBounds(150,270,300,70); // Tamaño
+		currencyLabel.setText("Tipo de divisa"); // Texto
+		currencyLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
+		currencyLabel.setForeground(Color.BLACK); // Color del texto
+		currencyLabel.setVisible(true); // Visibilidad
 		
 		warningLabel = new JLabel(); 
 		warningLabel.setBounds(165,480,280,60); // Tamaño
@@ -90,16 +91,16 @@ public class NewUser extends JFrame implements ActionListener {
 		
 		// ------------ Botón: Crear nuevo ususario -----------------------
 		
-		saveUser = new JButton();
-		saveUser.setBounds(262,430,70,25); // Tamaño
-		saveUser.setText("Guardar"); // Texto
-		saveUser.setBorder(new LineBorder(Color.BLACK)); // Borde
-		saveUser.setFont(new Font("Consolas", Font.BOLD, 12)); // Fuente
-		saveUser.setForeground(Color.BLACK); // Color del texto
-		saveUser.setBackground(Color.WHITE); // Color del fondo
-		saveUser.setFocusable(false); // Quitar cuadro alrededor
-		saveUser.addActionListener(this); // Añadir ActionListener
-		saveUser.setBorder(BorderFactory.createEtchedBorder()); // Borde
+		saveAcc = new JButton();
+		saveAcc.setBounds(262,430,70,25); // Tamaño
+		saveAcc.setText("Guardar"); // Texto
+		saveAcc.setBorder(new LineBorder(Color.BLACK)); // Borde
+		saveAcc.setFont(new Font("Consolas", Font.BOLD, 12)); // Fuente
+		saveAcc.setForeground(Color.BLACK); // Color del texto
+		saveAcc.setBackground(Color.WHITE); // Color del fondo
+		saveAcc.setFocusable(false); // Quitar cuadro alrededor
+		saveAcc.addActionListener(this); // Añadir ActionListener
+		saveAcc.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
 		// ------------ Botón: Obtener ayuda -----------------------
 		
@@ -116,7 +117,7 @@ public class NewUser extends JFrame implements ActionListener {
 		
 		// ------------- TextField: Datos de nuevo usuario ------
 		
-		// Username
+		// accName
 		nameField = new JTextField(); 
 		nameField.setVisible(true);
 		nameField.setText(""); // Texto por defecto
@@ -127,38 +128,38 @@ public class NewUser extends JFrame implements ActionListener {
 		nameField.setCaretColor(Color.DARK_GRAY); // Color del caret
 
 		// Password
-		passField = new JTextField(); 
-		passField.setVisible(true);
-		passField.setText(""); // Texto por defecto
-		passField.setBounds(145, 240, 305, 40); // Tamaño
-		passField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
-		passField.setForeground(Color.BLACK);  // Color del texto
-		passField.setBackground(Color.WHITE); // Color del fondo
-		passField.setCaretColor(Color.DARK_GRAY); // Color del caret
+		balanceField = new JTextField(); 
+		balanceField.setVisible(true);
+		balanceField.setText("0"); // Texto por defecto
+		balanceField.setBounds(145, 240, 305, 40); // Tamaño
+		balanceField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
+		balanceField.setForeground(Color.BLACK);  // Color del texto
+		balanceField.setBackground(Color.WHITE); // Color del fondo
+		balanceField.setCaretColor(Color.DARK_GRAY); // Color del caret
 		
 		// Confirm password
-		cpassField = new JTextField(); 
-		cpassField.setVisible(true);
-		cpassField.setText(""); // Texto por defecto
-		cpassField.setBounds(145, 320, 305, 40); // Tamaño
-		cpassField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
-		cpassField.setForeground(Color.BLACK);  // Color del texto
-		cpassField.setBackground(Color.WHITE); // Color del fondo
-		cpassField.setCaretColor(Color.DARK_GRAY); // Color del caret
+		currencyField = new JTextField(); 
+		currencyField.setVisible(true);
+		currencyField.setText(""); // Texto por defecto
+		currencyField.setBounds(145, 320, 305, 40); // Tamaño
+		currencyField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
+		currencyField.setForeground(Color.BLACK);  // Color del texto
+		currencyField.setBackground(Color.WHITE); // Color del fondo
+		currencyField.setCaretColor(Color.DARK_GRAY); // Color del caret
 		
 				
 		// ------------- Frame -------------------------------
 		
-		this.add(saveUser);
+		this.add(saveAcc);
 		this.add(getHelp);
 		this.add(welcomeLabel);
 		this.add(nameLabel);
 		this.add(passLabel);
-		this.add(cpassLabel);
+		this.add(currencyLabel);
 		this.add(warningLabel);
 		this.add(nameField);
-		this.add(passField);
-		this.add(cpassField);
+		this.add(balanceField);
+		this.add(currencyField);
 		
 		this.setTitle("Freebee"); // Título
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -177,27 +178,30 @@ public class NewUser extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		
-		if (pressed.getSource() == saveUser) {
-			username = nameField.getText();
-			password = passField.getText();
-			cpass = cpassField.getText();
+		if (pressed.getSource() == saveAcc) {
+			accName = nameField.getText();
+			balance = Float.parseFloat(balanceField.getText());
+			currency = currencyField.getText();
 			
-			if (password.equals(cpass)) {
-				System.out.println("Nuevo usuario obtenido: " + username + " " + password + "," + cpass);
-				JOptionPane.showMessageDialog(null, "El usuario " + username + " se ha \nguardado correctamente", "Usuario registrado", JOptionPane.INFORMATION_MESSAGE);
-				// Crear usuario
-				saveUser.setEnabled(false); // Desabilita el botón
+			if (accName.isBlank() == false && currency.isBlank() == false) {
+				System.out.println("Nueva cuenta obtenida: " + accName + " Balance: $" + balance + " Currency: " + currency);
+				JOptionPane.showMessageDialog(null, "La cuenta " + accName + " se ha \nguardado correctamente", "Cuenta creada", JOptionPane.INFORMATION_MESSAGE);
+				
+				// Crear cuenta(accName, balance, currency)
+				
+				saveAcc.setEnabled(false); // Desabilita el botón
 				this.dispose();
-				new Categories();
+				
 			} else {
-				System.out.println("¡Las contraseñas no coinciden!");
-				JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Intentelo de nuevo", JOptionPane.WARNING_MESSAGE);
-			}			
+				System.out.println("¡Falta nombre o currency!");
+				JOptionPane.showMessageDialog(null, "Por favor llene todos los campos", "Faltan datos", JOptionPane.WARNING_MESSAGE);
+			}	
+			
 		}
 		if (pressed.getSource() == getHelp) {
 			System.out.println("Abriendo ayuda");
 			HelpMenu hm = new HelpMenu();
-			hm.displayNewUserHelp();
+			hm.displayNewAccHelp();
 		}
 		
 	}	

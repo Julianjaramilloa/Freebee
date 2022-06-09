@@ -2,45 +2,93 @@ package logic;
 
 import java.time.LocalDate;
 
-
-public class Transaction {
+public class Transaction implements Comparable<Transaction>{
 	LocalDate date;
-	short accId;
+	int accountId;
+	int transactionId;
 	String Description;
-	Categories type;
+	TransactionCategory type;
 	float amount;
 	boolean isIngreso;
 
 	
 	public Transaction(
 			LocalDate date,
-			short accId,
-			String desc,
-			Categories type, 
+			int accountId,
+			int transactionId,
+			String description,
+			TransactionCategory type, 
 			float amount,
 			boolean isIngreso
 			)
 	{
 	this.date = date;
-	this.accId = accId;
-	this.Description = desc;
+	this.accountId = accountId;
+	this.transactionId = transactionId;
+	this.Description = description;
 	this.type = type;
 	this.amount = amount;
 	this.isIngreso = isIngreso;		
 	}
 	
-	public boolean id(short id) {
-		if(this.accId == id) {
-			return true;
-		}else {
-			return false;
-		}
+	protected int accountId() {
+		return accountId;
+	}
+	
+	protected float amount() {
+		return amount;
+	}
+	
+	protected LocalDate getDate() {
+		return this.date;
 	}
 
 	@Override
 	public String toString() {
-		return  date + "; " + Description + "; " + type + "; " + amount + "; " + isIngreso + "; " + accId;
+		String ingreso = null;
+		if(isIngreso) {
+			ingreso = "Es Ingreso";
+		}else {
+			ingreso = "Es Egreso";
+		}
+		return  "Transacción: " 
+				+ date + "; " + 
+				Description + "; " 
+				+ type + "; " 
+				+ amount + "; " 
+				+ ingreso
+				+ "; Id Cuenta: " + accountId 
+				+ "; Id transacción" + transactionId;
 	}
+
+	@Override
+	public int compareTo(Transaction o) {
+		int comparison = this.date.compareTo(o.date);
+		
+		//Criterio de desempate (id de la cuenta):
+		if(comparison == 0) {
+			if(this.accountId == o.accountId){
+				comparison = 0;
+			}else if(this.accountId > o.accountId) {
+				comparison = 1;
+			}else{
+				comparison = -1;
+			}
+		}
+		//Segundo desempate (id de la transacción)
+		if(comparison == 0) {
+			if(this.transactionId == o.transactionId){
+				comparison = 0;
+			}else if(this.transactionId > o.transactionId) {
+				comparison = 1;
+			}else{
+				comparison = -1;
+			}
+		}
+		
+		return comparison;
+	}
+	
 	
 	
 }

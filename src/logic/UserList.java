@@ -1,49 +1,46 @@
 package logic;
 
-import java.util.NoSuchElementException;
-
+import rbTree.RbNode;
+import rbTree.RedBlackTree;
 import seqDataStructures.DynamicArray;
-import seqDataStructures.DynamicArrayIterator;
 
 public class UserList {
 	
-	public static DynamicArray<User> users = new DynamicArray<User>();
-//	private int currentUser;
-	private User currentUser;
-	
-	public UserList() {};
+	public static RedBlackTree users = new RedBlackTree();
+	private User currentUser; //Usuario con la sesión abierta
 	
 	//Métodos para crear un usuario:
 	
-	public String userCreation(String userName, String password, String auxPass) {
+	public String userCreation(String username, String password, String auxPass) {
 		String results = null;
 		if(password.equals(auxPass) == false) {
 			results = "La segunda contraseña no corresponde con la primera";
-		}else if(exists(userName)) {
+		}else if(exists(username)) {
 			results = "Ya existe un usuario con este nombre.";
 		}else {
-			addUserCredentials(userName, password);
+			User user = new User(username, password);
+			addUser(user);
 		}
 		return results;
 	}
 	
 	public void addUserCredentials(String userName, String password) {
 		User user = new User(userName, password);
-		users.pushBack(user);
+		addUser(user);
 	};
 	
 	public void addUser(User user) {
-		users.pushBack(user);
+		try{
+			users.insertNode(user.getUsername(), user);
+		}catch(IllegalArgumentException iae){
+			System.err.println("El usuario que se está intentado ingresar ya existe");
+		}
 	}
 	
-	private boolean exists(String username) {
+	private boolean exists(String username) {		
 		boolean exists = false;
-		DynamicArrayIterator<User> it = users.iterate();
-		while(it.hasNext()) {
-			User aux = it.next();
-			if(aux.getUsername() == username) {
-				exists = true;
-			}
+		if (users.searchNode(username) != null) {
+			exists = true;
 		}
 		return exists;
 	}
@@ -61,13 +58,12 @@ public class UserList {
 	}
 	
 	public boolean hasUsers() {
-		return !users.isEmpty();
+		return users.getRoot() != null;
 	}
 	
 	private String credentialsInfoAfterLogin(String username, String password) {
 		String credentialsInfo = null;
-		
-		DynamicArray<Boolean> succesfulLogin = doLogin(username,password);
+		DynamicArray<Boolean> succesfulLogin = validateCredentials(username,password);
 		
 		if(!succesfulLogin.get(0)) {
 			credentialsInfo = "No existe un usuario con ese nombre";
@@ -79,30 +75,42 @@ public class UserList {
 		return credentialsInfo;
 	}
 	
-	private DynamicArray<Boolean> doLogin(String username, String password) {
+	private DynamicArray<Boolean> validateCredentials(String username, String password) {
 		DynamicArray<Boolean> succesfulLogin = new DynamicArray<Boolean>();
-		DynamicArrayIterator<User> it = users.iterate();
 		
-		boolean rightUsername = false;
-		boolean rightPassword = false;
+		boolean isRightUsername = false;
+		boolean isRightPassword = false;
 		
+		RbNode auxNode = users.searchNode(username);
+
 		User aux;
-		while(it.hasNext()) {
-			aux = it.next();
-			if(aux.areRightCredentials(username, password)) {
-				//Con esta sentencia asignamos se le abre la sesión al usuario
-				this.currentUser = aux;
-				rightUsername = true;
-				rightPassword = true;
-				break;
-			}else if(aux.getUsername() == username){
-				rightUsername = true;
-				rightPassword = false;
-				break;
-			}
+		try {
+			aux = auxNode.getUser();
+		}catch(NullPointerException npe) {
+			aux = null;
 		}
-		succesfulLogin.add(rightUsername, 0);
-		succesfulLogin.add(rightPassword, 1);
+						
+		if(aux == null) {
+			isRightUsername = false;
+			isRightPassword = false;
+		}else if(aux.areRightCredentials(username, password)) {
+			//Con esta sentencia asignamos se le abre la sesión al usuario
+			this.currentUser = aux;
+			currentUser.incorporateIncomingTransactions();
+			System.out.println(currentUser.completeUserInfo());
+			isRightUsername = true;
+			isRightPassword = true;
+			
+		}else if(aux.getUsername() == username){
+			isRightUsername = true;
+			isRightPassword = false;
+			
+		}
+	
+		succesfulLogin.add(isRightUsername, 0);
+		succesfulLogin.add(isRightPassword, 1);
+		
+
 		return succesfulLogin;
 	}
 	
@@ -119,20 +127,15 @@ public class UserList {
 	*/
 
 	public static int size() {
-		return users.size();
+		return users.getSize();
 	}
 
-	public static User get(int u) {
-		return users.get(u);
+	public static User get(String username) {
+		return users.searchNode(username).getUser();
 	};
 	
 	public User getUser() {
 		return this.currentUser;
 	}
-	
-
-
-
-
 
 }

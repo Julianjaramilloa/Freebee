@@ -2,7 +2,7 @@ package ui;
 
 /*
  * Freebe
- * @author Marcos Pinzón Pardo
+ * @author Marcos PinzÃ³n Pardo
  */
 
 import java.awt.BorderLayout;
@@ -38,7 +38,7 @@ public class NewTrans extends JFrame implements ActionListener {
 
 	JButton saveTrans;
 	JButton getHelp;
-	
+
 	JRadioButton income = new JRadioButton();
 	JRadioButton outcome = new JRadioButton();
 	ButtonGroup grp = new ButtonGroup();
@@ -67,13 +67,14 @@ public class NewTrans extends JFrame implements ActionListener {
 //	String[] accList = new String[cantidadDeCuentas]
 //	// Llenar con las cuentas del usuario
 //	for(i = 0; i < cantidadDeCuentas < i++) {
-//		// Iterar a través del arbol y agregar las cuentas
+//		// Iterar a travÃ©s del arbol y agregar las cuentas
 //		accList[i] = getAccount;
 //	}
 	
 	String[] accList = {"T1","T2","T3"};
 	
 	JComboBox accSelect = new JComboBox(accList);
+
 	
 	
 	public void createTrans(){
@@ -83,66 +84,68 @@ public class NewTrans extends JFrame implements ActionListener {
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
-		welcomeLabel.setBounds(50,20,400,60); // Tamaño
-		welcomeLabel.setText("Nueva transacción"); // Texto
+		welcomeLabel.setBounds(50,20,400,60); // TamaÃ±o
+		welcomeLabel.setText("Nueva transacciÃ³n"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
 		
-		// -------- Label: Títulos y advertencia ----------------
+		// -------- Label: TÃ­tulos y advertencia ----------------
 		
 		descLabel = new JLabel(); 
-		descLabel.setBounds(130,145,300,70); // Tamaño
-		descLabel.setText("Descripción (memo):"); // Texto
+
+		descLabel.setBounds(130,145,300,70); // TamaÃ±o
+		descLabel.setText("DescripciÃ³n (memo):"); // Texto
 		descLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		descLabel.setForeground(Color.BLACK); // Color del texto
 		descLabel.setVisible(true); // Visibilidad
 		
 		valueLabel = new JLabel(); 
-		valueLabel.setBounds(130,235,300,70); // Tamaño
+		valueLabel.setBounds(130,235,300,70); // TamaÃ±o
 		valueLabel.setText("Cantidad:"); // Texto
 		valueLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		valueLabel.setForeground(Color.BLACK); // Color del texto
 		valueLabel.setVisible(true); // Visibilidad
-		
 		dateLabel = new JLabel(); 
-		dateLabel.setBounds(160,95,300,70); // Tamaño
-		dateLabel.setText("Fecha: (Año-Mes-Día)"); // Texto
+		dateLabel.setBounds(160,95,300,70); // TamaÃ±o
+		dateLabel.setText("Fecha: (AÃ±o-Mes-DÃ­a)"); // Texto
 		dateLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		dateLabel.setForeground(Color.BLACK); // Color del texto
 		dateLabel.setVisible(true); // Visibilidad
 		
+
 		warningLabel = new JLabel(); 
-		warningLabel.setBounds(165,480,280,60); // Tamaño
-		warningLabel.setText("No use el caracter ';' para evitar fallos en la aplicación"); // Texto
+		warningLabel.setBounds(165,480,280,60); // TamaÃ±o
+		warningLabel.setText("No use el caracter ';' para evitar fallos en la aplicaciÃ³n"); // Texto
 		warningLabel.setFont(new Font("Nunito", Font.ITALIC, 10)); // Fuente
 		warningLabel.setForeground(Color.BLACK); // Color del texto
 		warningLabel.setVisible(true); // Visibilidad
 		
-		// ------------ Botón: Crear nuevo ususario -----------------------
+		// ------------ BotÃ³n: Crear nuevo ususario -----------------------
 		
 		saveTrans = new JButton();
-		saveTrans.setBounds(255,410,70,25); // Tamaño
+		saveTrans.setBounds(255,410,70,25); // TamaÃ±o
 		saveTrans.setText("GUARDAR"); // Texto
+
 		saveTrans.setBorder(new LineBorder(Color.BLACK)); // Borde
 		saveTrans.setFont(new Font("Consolas", Font.BOLD, 12)); // Fuente
 		saveTrans.setForeground(Color.BLACK); // Color del texto
 		saveTrans.setBackground(Color.WHITE); // Color del fondo
 		saveTrans.setFocusable(false); // Quitar cuadro alrededor
-		saveTrans.addActionListener(this); // Añadir ActionListener
+		saveTrans.addActionListener(this); // AÃ±adir ActionListener
 		saveTrans.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
-		// ------------ Botón: Obtener ayuda -----------------------
+		// ------------ BotÃ³n: Obtener ayuda -----------------------
 		
 		getHelp = new JButton();
-		getHelp.setBounds(510,500,25,25); // Tamaño
+		getHelp.setBounds(510,500,25,25); // TamaÃ±o
 		getHelp.setText("?"); // Texto
 		getHelp.setBorder(new LineBorder(Color.BLACK)); // Borde
 		getHelp.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
 		getHelp.setForeground(Color.BLACK); // Color del texto
 		getHelp.setBackground(Color.WHITE); // Color del fondo
 		getHelp.setFocusable(false); // Quitar cuadro alrededor
-		getHelp.addActionListener(this); // Añadir ActionListener
+		getHelp.addActionListener(this); // AÃ±adir ActionListener
 		getHelp.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
 		// ------------- TextField: Datos de nuevo usuario ------
@@ -150,8 +153,9 @@ public class NewTrans extends JFrame implements ActionListener {
 		// Username
 		descField = new JTextField(); 
 		descField.setVisible(true);
+
 		descField.setText(" "); // Texto por defecto
-		descField.setBounds(125, 200, 350, 40); // Tamaño
+		descField.setBounds(125, 200, 350, 40); // TamaÃ±o
 		descField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
 		descField.setForeground(Color.BLACK);  // Color del texto
 		descField.setBackground(Color.WHITE); // Color del fondo
@@ -160,13 +164,16 @@ public class NewTrans extends JFrame implements ActionListener {
 		// Password
 		valueField = new JTextField(); 
 		valueField.setVisible(true);
+
 		valueField.setText("0"); // Texto por defecto
-		valueField.setBounds(220, 250, 100, 40); // Tamaño
+		valueField.setBounds(220, 250, 100, 40); // TamaÃ±o
+
 		valueField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
 		valueField.setForeground(Color.BLACK);  // Color del texto
 		valueField.setBackground(Color.WHITE); // Color del fondo
 		valueField.setCaretColor(Color.DARK_GRAY); // Color del caret
 		
+
 		// Password 
 		LocalDate nowDate = LocalDate.now();//For reference
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -175,31 +182,31 @@ public class NewTrans extends JFrame implements ActionListener {
 		dateField = new JTextField(); 
 		dateField.setVisible(true);
 		dateField.setText(now); // Texto por defecto
-		dateField.setBounds(340, 115, 90, 35); // Tamaño
+		dateField.setBounds(340, 115, 90, 35); // TamaÃ±o
 		dateField.setFont(new Font("Consolas", Font.PLAIN, 14)); // Fuente
 		dateField.setForeground(Color.BLACK);  // Color del texto
 		dateField.setBackground(Color.WHITE); // Color del fondo
 		dateField.setCaretColor(Color.DARK_GRAY); // Color del caret
 		
 		
-		// ------------- ComboBox: Selección de categoría ------
+		// ------------- ComboBox: SelecciÃ³n de categorÃ­a ------
 		
 		catSelect.setVisible(true);
 		catSelect.setSelectedItem(0);
 		catSelect.addActionListener(this);
-		catSelect.setBounds(180, 320, 100, 30); // Tamaño
+		catSelect.setBounds(180, 320, 100, 30); // TamaÃ±o
 		catSelect.setFont(new Font("Consolas", Font.PLAIN, 14)); // Fuente
 		catSelect.setForeground(Color.BLACK);  // Color del texto
 		catSelect.setBackground(Color.WHITE); // Color del fondo
 		catSelect.setBorder(BorderFactory.createDashedBorder(Color.BLACK));
 		catSelect.setFocusable(false); // No hace enfasis en el seleccioando
 		
-		// ------------- ComboBox: Selección de categoría ------
+		// ------------- ComboBox: SelecciÃ³n de categorÃ­a ------
 		
 		accSelect.setVisible(true);
 		accSelect.setSelectedItem(0);
 		accSelect.addActionListener(this);
-		accSelect.setBounds(320, 320, 100, 30); // Tamaño
+		accSelect.setBounds(320, 320, 100, 30); // TamaÃ±o
 		accSelect.setFont(new Font("Consolas", Font.PLAIN, 14)); // Fuente
 		accSelect.setForeground(Color.BLACK);  // Color del texto
 		accSelect.setBackground(Color.WHITE); // Color del fondo
@@ -227,6 +234,7 @@ public class NewTrans extends JFrame implements ActionListener {
 		grp.add(outcome);
 
 					
+
 		// ------------- Frame -------------------------------
 		
 		this.add(saveTrans);
@@ -237,18 +245,20 @@ public class NewTrans extends JFrame implements ActionListener {
 		this.add(warningLabel);
 		this.add(descField);
 		this.add(valueField);
+
 		this.add(catSelect);
 		this.add(accSelect);
 		this.add(income);
 		this.add(outcome);
 		this.add(dateField);
 		this.add(dateLabel);
+
 		
-		this.setTitle("Freebee"); // Título
+		this.setTitle("Freebee"); // TÃ­tulo
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setLayout(null); // Layout
 		this.setSize(600,580); // Dimensiones
-		this.setResizable(false); // No cambia de tamaño
+		this.setResizable(false); // No cambia de tamaÃ±o
 		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
 		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
 		this.setIconImage(logo.getImage()); // Poner logo
@@ -257,14 +267,15 @@ public class NewTrans extends JFrame implements ActionListener {
 
 	}
 	
-	// Criterio al presionar el botón
+	// Criterio al presionar el botÃ³n
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		
+
 		if (pressed.getSource() == catSelect) {
 			JComboBox cb = (JComboBox)pressed.getSource();
 			selectedCat = (String)cb.getSelectedItem();
-			System.out.println("Categoría seleccionada: " + selectedCat);
+			System.out.println("CategorÃ­a seleccionada: " + selectedCat);
 		}
 		
 		if (pressed.getSource() == income) {
@@ -287,7 +298,7 @@ public class NewTrans extends JFrame implements ActionListener {
 		if (pressed.getSource() == saveTrans) {
 			
 			if (selectedCat == null || selectedAcc == null) {
-				JOptionPane.showMessageDialog(null, "Seleccione categoría y valor", "Datos faltantes", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Seleccione categorÃ­a y valor", "Datos faltantes", JOptionPane.WARNING_MESSAGE);
 			} else {
 				desc = descField.getText();
 				value = Float.parseFloat(valueField.getText());
@@ -295,10 +306,10 @@ public class NewTrans extends JFrame implements ActionListener {
 				if (value == 0) {
 					JOptionPane.showMessageDialog(null, "Ingrese un valor", "Datos faltantes", JOptionPane.WARNING_MESSAGE);
 				} else {
-						System.out.println("Nueva transacción: " + "Fecha: " + date + " Cuenta: " + selectedAcc + " Memo: '" + 
-								desc + "' Categoría: " + selectedCat + " Valor: " + value + " isIngreso: " + isIncome);
+						System.out.println("Nueva transacciÃ³n: " + "Fecha: " + date + " Cuenta: " + selectedAcc + " Memo: '" + 
+								desc + "' CategorÃ­a: " + selectedCat + " Valor: " + value + " isIngreso: " + isIncome);
 						
-						//Añadir transacción(date,selectedAcc,desc,selectedCat,value,isIncome);
+						//AÃ±adir transacciÃ³n(date,selectedAcc,desc,selectedCat,value,isIncome);
 						
 						this.dispose();
 						
@@ -306,6 +317,7 @@ public class NewTrans extends JFrame implements ActionListener {
 				}
 			}
 		
+
 		if (pressed.getSource() == getHelp) {
 			System.out.println("Abriendo ayuda");
 			HelpMenu hm = new HelpMenu();

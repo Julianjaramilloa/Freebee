@@ -8,7 +8,7 @@ public class DynamicArray<T> implements List<T> {
 	int size = 0;
 	
 	public void checkIndex(int index) {
-		if(size <= index || index < 0) {
+		if(size < index || index < 0) {
 			throw new IndexOutOfBoundsException("El índice es inválido.");
 		}
 	}
@@ -114,7 +114,21 @@ public class DynamicArray<T> implements List<T> {
 		sb.append("[");
 		for(int i=0; i<size; i++) {
 			sb.append(arr[i].toString());
-			sb.append("; ");
+			sb.append(", ");
+		}
+		sb.deleteCharAt(sb.length()-1);
+		sb.deleteCharAt(sb.length()-1);
+		sb.append("]");		
+		return sb.toString();
+		
+	}
+	
+	public String verticalOrder() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		for(int i=0; i<size; i++) {
+			sb.append(arr[i].toString());
+			sb.append(";\n ");
 		}
 		sb.append("]");		
 		return sb.toString();

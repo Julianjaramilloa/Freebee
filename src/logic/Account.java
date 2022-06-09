@@ -1,13 +1,13 @@
 package logic;
 
 public class Account{
-	short id;
+	int id;
 	String name;
 	float balance;
 	String currency;
 	
 	public Account(
-			short id,
+			int id,
 			String name,
 			float balance,
 			String currency) 
@@ -18,21 +18,21 @@ public class Account{
 		this.currency = currency;
 	}
 	
-	protected void setBalance(float balance) {
-		this.balance = balance;
+	protected void updateBalance(float transaction) {
+		if(balance < 0) {
+			this.balance = this.balance - transaction;
+		}else {
+			this.balance = this.balance + transaction;
+		}
 	}
 	
-	protected boolean id(short id) {
-		if (this.id == id) {
-			return true;
-		}else {
-			return false;
-		}
+	protected int getId() {
+		return id;
 	}
 	
 	@Override
 	public String toString() {
-		return name + "; " + balance + "; " + currency;
+		return "Cuenta: " + name + "; " + balance + "; " + currency + "; ID: " + id;
 	}
 	
 

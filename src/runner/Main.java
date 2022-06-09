@@ -1,8 +1,15 @@
 package runner;
 
+import java.time.LocalDate;
+
+import logic.User;
 import logic.UserList;
+import ui.Categories;
 import ui.ConsoleVersion;
 import ui.LogIn;
+import ui.NewUser;
+import ui.Savings;
+import ui.ReaderWriter;
 
 /**
  * 
@@ -20,28 +27,34 @@ public class Main {
 	/**|
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		//True en el constructor: Cargar datos guardados.
-		/*
-		Console c = new Console(true);
-		c.mainMenu();
-		*/
+	public static void main(String[] args) {	
 		
 		
-//		ProveClasses pc = new ProveClasses();
-//		pc.avlTree();
+//		Savings sv = new Savings();
+//		sv.savings();
+		
+//		UserList ul = new UserList();
+//		NewUser nu = new NewUser(ul);
+//		nu.setVisible(true);
+				
+//		Categories ct = new Categories();
+//		ct.categories();
+		
+//		UserList ul = new UserList();
+//		ReaderWriter rw = new ReaderWriter(ul);
+//		rw.readFile();
+		
+		TestClasses tc = new TestClasses();
+		tc.incomingTransactionsTest();
+		
+//		LogIn lg = new LogIn(ul);
+//		lg.credentialsIn();
 		
 		
-		//pc.rbTree();
 		
-		//pc.linkedListInsertions();
+		//ProveClasses pc = new ProveClasses();
+		//pc.minHeap();
 		
-		UserList ul = new UserList();
-		
-		LogIn lg = new LogIn(ul);
-		lg.credentialsIn();
-//		NewUser nw = new NewUser(); 
-//		nw.createUser();
 		
 	}
 

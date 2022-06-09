@@ -19,16 +19,16 @@ public class ConsoleVersion {
 	}
 	
 	public void readAndLoadData(UserList userlist) {
-		readerWriter read = new readerWriter(userlist);
+		ReaderWriter read = new ReaderWriter(userlist);
 		read.readFile();
 		
 	}
 	
-	public void saveData(UserList userlist) {
-		readerWriter save = new readerWriter(userlist);
-		save.saveChanges();
-		
-	}
+//	public void saveData(UserList userlist) {
+//		readerWriter save = new readerWriter(userlist);
+////		save.saveChanges();
+//		
+//	}
 	
 	public void mainMenu() {
 		
@@ -69,7 +69,7 @@ public class ConsoleVersion {
 				}
 				break;
 			case 4:
-				saveData(userList);
+//				saveData(userList);
 				System.out.println("Gracias por usar freebee");
 				sc.close();
 				System.exit(0);

@@ -26,6 +26,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import logic.UserList;
+
 
 public class NewUser extends JFrame implements ActionListener {
 
@@ -43,6 +45,12 @@ public class NewUser extends JFrame implements ActionListener {
 	String username;
 	String password;
 	String cpass;
+	
+	UserList ul;
+	
+	public NewUser(UserList ul) {
+		this.ul = ul;
+	}
 	
 	
 	public void createUser(){
@@ -183,14 +191,19 @@ public class NewUser extends JFrame implements ActionListener {
 			cpass = cpassField.getText();
 			
 			if (password.equals(cpass)) {
-				System.out.println("Nuevo usuario obtenido: " + username + " " + password + "," + cpass);
 				JOptionPane.showMessageDialog(null, "El usuario " + username + " se ha \nguardado correctamente", "Usuario registrado", JOptionPane.INFORMATION_MESSAGE);
-				// Crear usuario
+
+				try{
+					ul.addUserCredentials(username, password);
+				}catch(IllegalArgumentException iae) {
+					JOptionPane.showMessageDialog(null, "Error con username", "Ese username ya existe", JOptionPane.WARNING_MESSAGE);
+				}
+				System.out.println("Credenciales obtenidas-: " + username + " " + password + "," + cpass);
 				saveUser.setEnabled(false); // Desabilita el botón
 				this.dispose();
 				new Categories();
 			} else {
-				System.out.println("¡Las contraseñas no coinciden!");
+				System.out.println("Â¡Las contraseñas no coinciden!");
 				JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Intentelo de nuevo", JOptionPane.WARNING_MESSAGE);
 			}			
 		}

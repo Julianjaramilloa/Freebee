@@ -27,6 +27,8 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 //import ui.MainMenu;
 
+import logic.UserList;
+
 
 public class LogIn extends JFrame implements ActionListener {
 
@@ -43,6 +45,12 @@ public class LogIn extends JFrame implements ActionListener {
 	String username;
 	String password;
 	
+
+	UserList ul;
+	
+	public LogIn(UserList ul) {
+		this.ul = ul;
+	}
 	
 	public void credentialsIn(){
 		
@@ -156,7 +164,7 @@ public class LogIn extends JFrame implements ActionListener {
 		this.add(nameField);
 		this.add(passField);
 		
-		this.setTitle("Freebee"); // Título
+		this.setTitle("Freebee"); // TÃ­tulo
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null); // Layout
 		this.setSize(600,600); // Dimensiones
@@ -180,18 +188,15 @@ public class LogIn extends JFrame implements ActionListener {
 			System.out.println("Username input: " + username + " Password input: " + password);
 			
 			
-			//Encontrar usuario
-			
-//			String login = ul.login(username, password);
-//			if (login.equals("alright")) {
-//				System.out.println("Username input: " + username + " Password input: " + password);
-//				Categories ct = new Categories();
-//				ct.categories();
-//				this.dispose();
-//			} else {
-//				System.out.println(login);
-//				JOptionPane.showMessageDialog(null, login, "Error", JOptionPane.WARNING_MESSAGE);
-//			}					
+			String login = ul.login(username, password);
+			if (login.equals("alright")) {
+				Categories ct = new Categories();
+				ct.categories();
+				this.dispose();
+			} else {
+				System.out.println(login);
+				JOptionPane.showMessageDialog(null, login, "Error", JOptionPane.WARNING_MESSAGE);
+			}					
 					
 		}
 		
@@ -203,7 +208,7 @@ public class LogIn extends JFrame implements ActionListener {
 		
 		if (pressed.getSource() == newUser) {
 			System.out.println("Abriendo creación de nuevo usuario");
-			NewUser nw = new NewUser(); 
+			NewUser nw = new NewUser(ul); 
 			nw.createUser();
 		}
 		

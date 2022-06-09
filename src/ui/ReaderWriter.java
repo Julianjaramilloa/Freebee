@@ -1,7 +1,5 @@
 package ui;
 import logic.*;
-import seqDataStructures.DynamicArray;
-import seqDataStructures.LinkedList;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -22,7 +20,7 @@ import java.util.Locale.Category;
  * @author Marcos Pinzón Pardo
  */
 
-public class readerWriter {
+public class ReaderWriter {
 	
 	
 	// De aquí en adelante readAndLoad()
@@ -30,11 +28,11 @@ public class readerWriter {
 	final String fileName = "freebeeRecord.txt";
 	User currentUser = null;
 	
-	// "user" es el usuario que se está llenando de cuentas y transacciones en cada momento
+	// "user" es el usuario que se estï¿½ llenando de cuentas y transacciones en cada momento
 	User user = null;
 
 	// Constructor
-	public readerWriter(UserList userList) {
+	public ReaderWriter(UserList userList) {
 		this.userList = userList;
 	}
 	
@@ -75,7 +73,7 @@ public class readerWriter {
 			e.printStackTrace();
 		}
 	}
-	//Este método, como se puede ver en readData(), se aplica sobre cada renglón del txt
+	//Este mï¿½todo, como se puede ver en readData(), se aplica sobre cada renglï¿½n del txt
 	private void tokenize(String line) {
 		
 		System.out.println("Tokenizando línea");
@@ -85,6 +83,12 @@ public class readerWriter {
 		String data = sc.next().trim();
 		
 		if(data.charAt(0) == 'U') {
+			
+			if(currentUser != null) {
+				System.out.println(currentUser.completeUserInfo());
+				System.out.println("-------------------------------------------------------------------------");
+			}
+			
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
 			User userToken = tokenizeUser(sc.next().trim(), sc.next().trim());
 			currentUser = userToken;
@@ -95,7 +99,7 @@ public class readerWriter {
 			
 		} else if(data.charAt(0) == 'C') {
 			String name = sc.next().trim();
-			float balance = Float.parseFloat(sc.next().trim());
+			float balance =  Float.parseFloat(sc.next().trim());
 			String currency = sc.next().trim();
 			tokenizeAccount( name, balance, currency, currentUser);
 			System.out.println("Es una cuenta, tokenizando");
@@ -111,11 +115,11 @@ public class readerWriter {
 				    .toFormatter(Locale.ENGLISH);
 			LocalDate dateOfTransaction = LocalDate.parse(sc.next().trim(),df);
 			String desc = sc.next().trim();
-			Categories cat = Categories.valueOf(sc.next().trim()) ;
+			TransactionCategory cat = TransactionCategory.valueOf(sc.next().trim()) ;
 			float amount = Float.parseFloat(sc.next().trim());
 			Boolean isIngreso = Boolean.parseBoolean(sc.next().trim());
-			short accId = Short.valueOf(sc.next().trim());
-			tokenizeTransaction(dateOfTransaction, accId, desc, cat, amount, isIngreso, currentUser);
+			int accountId = Integer.valueOf(sc.next().trim());
+			tokenizeTransaction(dateOfTransaction, accountId, desc, cat, amount, isIngreso, currentUser);
 
 			System.out.println("Es una transacción, tokenizando");
 			
@@ -145,61 +149,67 @@ public class readerWriter {
 	
 		
 		
-		//Hay que especificar a qué usuario se añade
+		//Hay que especificar a quï¿½ usuario se aï¿½ade
 		currentUser.addAccount(name, balance, currency);
 		System.out.println("\n\tCuenta creada:\n\n" + "Name:" + name + " Balance:" + balance + " Currency:" + currency + "\n");
 		
 	}
 
-	private void tokenizeTransaction(LocalDate dateOfTransaction, short accId, String desc, Categories cat, float amount, boolean isIngreso,  User user) {
+	private void tokenizeTransaction(LocalDate dateOfTransaction, int accId, String desc, TransactionCategory cat, float amount, boolean isIngreso,  User user) {
 		
 		System.out.println("Tokenizando transacción");
 		
 		
 		
 		//Hay que especificar a qué usuario se añade
-		user.addTransaction(dateOfTransaction, accId, desc, cat, amount, isIngreso);
+		try{
+			user.addTransactionData(dateOfTransaction, accId, desc, cat, amount, isIngreso);
+		}catch(NullPointerException npe) {
+			System.err.println("No se insertó la transacción porque no hay existe la cuenta");
+		}
 		
-		System.out.println("\n\tTransacción creada:\n\n" + 
+		System.out.println("\n\ttransacción creada:\n\n" + 
 		"Fecha:" + dateOfTransaction + " Descripción:" + desc + " Category:" + cat +
 		"Cantidad:" + amount + " Es un ingreso:" + isIngreso + " Cuenta Asociada:" + accId + "\n");
 		
 	}
 
 	
-	// Hasta aquí la parte de lectura del .txt
+	// Hasta aquï¿½ la parte de lectura del .txt
 	
-	// De aquí en adelante saveChanges()
+	// De aquï¿½ en adelante saveChanges()
 	
-	public void saveChanges() {
-		
-		// Para que esta función correctamente, se debe modificar el get, de manera que quede
-		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimió bien)
-		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
-		
-		try (FileWriter f = new FileWriter("testSave7.txt", true);
-				BufferedWriter b = new BufferedWriter(f);
-				PrintWriter p = new PrintWriter(b);) {
-			
-			// Recorre la lista de usuarios (lo llamé userList)
-			for (int u = 0; u < userList.size(); u++) {
-				
-				//No tendría por qué haber acceso a las passwords
-				
-				f.write("U; " + userList.get(u).getUsername() + "; " + userList.get(u).getUserPassword() +"\n");
-				
-				// Demostrativo, hay que implementar bien:
-				DynamicArray<Account> listaDeCuentas = userList.get(u).getAccounts(); 
-				LinkedList<Transaction> listaDeTrans = userList.get(u).getTransactions();
-						
-				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
-				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
-				
-	        }
-			
-		} catch (IOException i1) {i1.printStackTrace();}
-		
-	}
+	/*como cambiamos userlist a Rbtree toca crear un iterador para que savechanges funcione*/
+	
+//	public void saveChanges() {
+//		
+//		// Para que esta funciï¿½n correctamente, se debe modificar el get, de manera que quede
+//		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimiï¿½ bien)
+//		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
+//		
+//		try (FileWriter f = new FileWriter("testSave7.txt", true);
+//				BufferedWriter b = new BufferedWriter(f);
+//				PrintWriter p = new PrintWriter(b);) {
+//			
+//			// Recorre la lista de usuarios (lo llamï¿½ userList)
+//			for (int u = 0; u < userList.size(); u++) {
+//				
+//				//No tendrï¿½a por quï¿½ haber acceso a las passwords
+//				
+//				f.write("U; " + userList.get(u).getUsername() + "; " + userList.get(u).getUserPassword() +"\n");
+//				
+//				// Demostrativo, hay que implementar bien:
+//				DynamicArray<Account> listaDeCuentas = userList.get(u).getAccounts(); 
+//				LinkedList<Transaction> listaDeTrans = userList.get(u).getTransactions();
+//						
+//				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
+//				for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " +listaDeTrans.get(t) + "\n");}
+//				
+//	        }
+//			
+//		} catch (IOException i1) {i1.printStackTrace();}
+//		
+//	}
 	
 	
 

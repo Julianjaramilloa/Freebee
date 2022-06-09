@@ -1,5 +1,5 @@
 package avlTree;
 
-public interface BinaryTree {
-	  Node getRoot();
+public interface BinaryTree<T> {
+	  Node<T> getRoot();
 	}

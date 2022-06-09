@@ -1,20 +1,18 @@
 package avlTree;
 
-public class Node {
-	  int data;
+public class Node<T> {
+	  T data;
 
-	  Node left;
-	  Node right;
-	  Node parent;
+	  Node<T> left;
+	  Node<T> right;
+	  Node<T> parent;
 
-	  int height; //Avl
+	  int height;
 
-	  public Node(int data) {
+	  public Node(T data) {
 	    this.data = data;
 	  }
-	  
-	  
-	  //Hago aquí el toString() para debuggear
+
 	  @Override
 	  public String toString() {
 		  return String.valueOf(data);

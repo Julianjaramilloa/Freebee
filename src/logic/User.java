@@ -1,7 +1,9 @@
 package logic;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+import avlTree.AVLTree;
 import seqDataStructures.DynamicArray;
 import seqDataStructures.DynamicArrayIterator;
 import seqDataStructures.LinkedList;
@@ -12,7 +14,7 @@ public class User {
 	private String username;
 	private String password;
 	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
-	private LinkedList<Transaction> transactions = new LinkedList<Transaction>();
+	private AVLTree<Transaction> transactions = new AVLTree<Transaction>();
 	@SuppressWarnings("unused")
 	private IncomingTransactions inc;//Implementación a futuro
 	private short idProvider = 0;
@@ -21,7 +23,7 @@ public class User {
 		return this.accounts;
 	}
 	
-	public LinkedList<Transaction> getTransactions() {
+	public AVLTree<Transaction> getTransactions() {
 		return this.transactions;
 	}
 	
@@ -39,7 +41,7 @@ public class User {
 	
 	public void addTransaction(
 			LocalDate date,
-			short accId,
+			int accId,
 			String desc,
 			TransactionCategory type, 
 			float amount,
@@ -51,7 +53,11 @@ public class User {
 				type,
 				amount,
 				isIngreso);
-		transactions.pushBack(trans); //Toca hacer una verificación de si la cuenta existe
+		try{
+			transactions.insertNode(trans); //Toca hacer una verificación de si la cuenta existe
+		}catch(IllegalArgumentException iae) {
+			System.out.println("La transacción ya existe");
+		}
 	}
 	
 	public String getUsername() {
@@ -76,47 +82,31 @@ public class User {
 		return username;
 	}
 	
-	public void setBalance(short id) {
+	public void setBalance(int id) {
 		
 	}
 	
-	public String accountsInfo(short id)
+	public String accountsInfo(int id)
 	{
-		Account display = null;
-		DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(accounts);
-		Account aux;
-		while(it.hasNext()) {
-			aux = it.next();
-			if(aux.id(id)) {
-				display=aux;
-				break;
-			}
-		}
-		if(display != null) {
-			return display.toString();
-		}else {
-			return "La cuenta no existe(Corregir error)";
-		}
+		return accounts.toString();
 	}
 	
-	public void transactionsInfo(short id) {
-		System.out.println("Transacciones de la cuenta:");
-		LinkedListIterator<Transaction> it = new LinkedListIterator<Transaction>(transactions);
-		Transaction aux;
-		while(it.hasNext()) {
-			aux = it.next();
-			if(aux.id(id)) {
-				System.out.println(aux.toString());
-			}
-		}
+	public String transactionsInfo(int id) {
+		return transactions.toString();
 	}
 	
 	public String completeUserInfo() {
-		return null;			
+		String completeUserInfo = "                                                Info Completa del Usuario: \n";
+		String userStats = "Username: " + username +"; #Cuentas: " + accounts.size() + "; #Transacciones: " + transactions.size() + '\n';
+		completeUserInfo += userStats;
+		completeUserInfo += accounts.toString();
+		completeUserInfo += '\n';
+		completeUserInfo += transactions.preorderTraverse();
+		
+		return completeUserInfo; 			
 	}
 
 	public String getUserPassword() {
-		// TODO Auto-generated method stub
 		return this.password;
 	}
 

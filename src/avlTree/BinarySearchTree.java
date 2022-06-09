@@ -1,7 +1,7 @@
 package avlTree;
 
-public interface BinarySearchTree extends BinaryTree {
-	  Node searchNode(int key);
-	  void insertNode(int key);
-	  void deleteNode(int key);
+public interface BinarySearchTree<T> extends BinaryTree<T> {
+	  Node<T> searchNode(T key);
+	  void insertNode(T key);
+	  void deleteNode(T key);
 	}

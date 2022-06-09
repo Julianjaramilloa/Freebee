@@ -2,10 +2,9 @@ package logic;
 
 import java.time.LocalDate;
 
-
-public class Transaction {
+public class Transaction implements Comparable<Transaction>{
 	LocalDate date;
-	short accId;
+	int accountId;
 	String Description;
 	TransactionCategory type;
 	float amount;
@@ -14,7 +13,7 @@ public class Transaction {
 	
 	public Transaction(
 			LocalDate date,
-			short accId,
+			int accountId,
 			String description,
 			TransactionCategory type, 
 			float amount,
@@ -22,15 +21,15 @@ public class Transaction {
 			)
 	{
 	this.date = date;
-	this.accId = accId;
+	this.accountId = accountId;
 	this.Description = description;
 	this.type = type;
 	this.amount = amount;
 	this.isIngreso = isIngreso;		
 	}
 	
-	public boolean id(short id) {
-		if(this.accId == id) {
+	public boolean id(int id) {
+		if(this.accountId == id) {
 			return true;
 		}else {
 			return false;
@@ -39,8 +38,33 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return  date + "; " + Description + "; " + type + "; " + amount + "; " + isIngreso + "; " + accId;
+		String ingreso = null;
+		if(isIngreso) {
+			ingreso = "Ingreso";
+		}else {
+			ingreso = "Egreso";
+		}
+		return  "Transacción: " + date + "; " + Description + "; " + type + "; " + amount + "; " + ingreso + "; " + accountId;
 	}
+
+	@Override
+	public int compareTo(Transaction o) {
+		int comparison = this.date.compareTo(o.date);
+		
+		//Criterio de desempate:
+		if(comparison == 0) {
+			if(this.accountId == o.accountId){
+				comparison = 0;
+			}else if(this.accountId > o.accountId) {
+				comparison = 1;
+			}else {
+				comparison = -1;
+			}
+		}
+		
+		return comparison;
+	}
+	
 	
 	
 }

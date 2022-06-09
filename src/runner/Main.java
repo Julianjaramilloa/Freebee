@@ -29,12 +29,18 @@ public class Main {
 		c.mainMenu();
 		*/
 		
+//		String a = "as";
+//		String b = "bro";
+//		System.out.println(a.compareTo(b));
+		
+//		ProveClasses pc = new ProveClasses();
+//		pc.avlTree();
 		
 		ProveClasses pc = new ProveClasses();
-		pc.avlTree();
+		pc.userTransactions();
 		
-//		Savings sv = new Savings();
-//		sv.savings();
+		Savings sv = new Savings();
+		sv.savings();
 				
 //		Categories ct = new Categories();
 //		ct.categories();

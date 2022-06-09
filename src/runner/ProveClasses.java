@@ -4,7 +4,16 @@ package runner;
 import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
+import ui.readerWriter;
+
+import java.time.LocalDate;
+
 import avlTree.AVLTree;
+import logic.Transaction;
+import logic.TransactionCategory;
+import logic.User;
+import logic.UserList;
+import rbTree.RbNode;
 import rbTree.RedBlackTree;
 //Esta clase la cree para ir probando que las cosas que vamos creando funcionan
 
@@ -12,7 +21,7 @@ public class ProveClasses {
 	
 	
 	void avlTree () {
-		AVLTree avl = new AVLTree();
+		/*AVLTree<Integer> avl = new AVLTree<Integer>();
 		LinkedList<Integer> treeNodes = new LinkedList<Integer>();
 		
 		treeNodes.pushBack(89);
@@ -53,6 +62,8 @@ public class ProveClasses {
 			avl.deleteNode(toInsert);
 			System.out.println("Árbol:\n" + avl.toString());
 		}
+		
+		*/
 //		System.out.println("Árbol:\n" + avl.toString());
 		
 		
@@ -87,37 +98,27 @@ public class ProveClasses {
 		 		
 	}
 	
-	void rbTree() {
-		RedBlackTree rbt = new RedBlackTree();
-		
-//		rbt.insertNode(89);
-//		rbt.insertNode(60);
-//		rbt.insertNode(27);
-//		rbt.insertNode(01);
-//		rbt.insertNode(36);
-//		rbt.insertNode(789);
-		
-		System.out.println(rbt.toString());
+	private TransactionCategory ts(String toParse) {
+		return TransactionCategory.valueOf(toParse);
 	}
 	
-	void linkedListInsertions() {
-		LinkedList<Integer> ll = new LinkedList<Integer>();
+	public void userTransactions() {
+		User us = new User("cesar", "1234");
+		UserList ul = new UserList();
 		
-		System.out.println(ll.toString());
-		ll.add(85, 0);
-		System.out.println(ll.toString());
-		ll.add(44, 1);
-		ll.add(78, 1);
-		System.out.println(ll.toString());
-		ll.add(72, 0);
-		ll.add(65, 0);
-		ll.add(9, 0);
-		ll.add(12, 0);
-		ll.add(45, 2);
-		ll.add(77, 6);
-		ll.add(1034, 6);
-		System.out.println(ll);
-
+		us.addTransaction(LocalDate.of(2002, 10, 19), 1, "Pago del inmueble", ts("Vivienda"), 40500000, false);
+		AVLTree<Transaction> av = us.getTransactions();
+		System.out.println(av.toString());
 		
+		readerWriter rd = new readerWriter(ul);
+		rd.readFile(); 
+		RedBlackTree rbt = UserList.users;
+		RbNode rb = rbt.searchNode("Usuario11");
+		User xd = rb.getUser();
+		System.out.println(xd.completeUserInfo());
+		
+		//AVLTree<Transaction> xdUs = xd.getTransactions();
+		//System.out.println(xdUs.preorderTraverse());
 	}
+	
 }

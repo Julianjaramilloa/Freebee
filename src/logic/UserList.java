@@ -29,7 +29,11 @@ public class UserList {
 	};
 	
 	public void addUser(User user) {
-		users.insertNode(user.getUsername(), user);
+		try{
+			users.insertNode(user.getUsername(), user);
+		}catch(IllegalArgumentException iae){
+			System.err.println("El usuario que se está intentado ingresar ya existe");
+		}
 	}
 	
 	private boolean exists(String username) {

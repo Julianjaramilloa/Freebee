@@ -35,7 +35,7 @@ public class RbNode {
 	//Hago aquí el toString() para debuggear
 	  @Override
 	  public String toString() {
-		  return String.valueOf(data);
+		  return String.valueOf(user);
 	  }
 	  
 	}

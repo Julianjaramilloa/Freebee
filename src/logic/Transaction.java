@@ -35,6 +35,10 @@ public class Transaction implements Comparable<Transaction>{
 			return false;
 		}
 	}
+	
+	public LocalDate getDate() {
+		return this.date;
+	}
 
 	@Override
 	public String toString() {

@@ -18,16 +18,16 @@ public class Account{
 		this.currency = currency;
 	}
 	
-	protected void setBalance(float balance) {
-		this.balance = balance;
+	protected void updateBalance(float transaction) {
+		if(balance < 0) {
+			this.balance = this.balance - transaction;
+		}else {
+			this.balance = this.balance + transaction;
+		}
 	}
 	
-	protected boolean id(int id) {
-		if (this.id == id) {
-			return true;
-		}else {
-			return false;
-		}
+	protected int getId() {
+		return id;
 	}
 	
 	@Override

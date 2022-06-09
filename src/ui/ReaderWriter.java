@@ -83,6 +83,12 @@ public class ReaderWriter {
 		String data = sc.next().trim();
 		
 		if(data.charAt(0) == 'U') {
+			
+			if(currentUser != null) {
+				System.out.println(currentUser.completeUserInfo());
+				System.out.println("-------------------------------------------------------------------------");
+			}
+			
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
 			User userToken = tokenizeUser(sc.next().trim(), sc.next().trim());
 			currentUser = userToken;
@@ -156,7 +162,11 @@ public class ReaderWriter {
 		
 		
 		//Hay que especificar a qué usuario se añade
-		user.addTransactionData(dateOfTransaction, accId, desc, cat, amount, isIngreso);
+		try{
+			user.addTransactionData(dateOfTransaction, accId, desc, cat, amount, isIngreso);
+		}catch(NullPointerException npe) {
+			System.err.println("No se insertó la transacción porque no hay existe la cuenta");
+		}
 		
 		System.out.println("\n\ttransacción creada:\n\n" + 
 		"Fecha:" + dateOfTransaction + " Descripción:" + desc + " Category:" + cat +

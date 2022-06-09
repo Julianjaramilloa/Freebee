@@ -40,15 +40,15 @@ public class Main {
 //		Categories ct = new Categories();
 //		ct.categories();
 		
-		UserList ul = new UserList();
-		ReaderWriter rw = new ReaderWriter(ul);
-		rw.readFile();
+//		UserList ul = new UserList();
+//		ReaderWriter rw = new ReaderWriter(ul);
+//		rw.readFile();
 		
-//		TestClasses tc = new TestClasses();
-//		tc.incomingTransactionsTest();
+		TestClasses tc = new TestClasses();
+		tc.incomingTransactionsTest();
 		
-		LogIn lg = new LogIn(ul);
-		lg.credentialsIn();
+//		LogIn lg = new LogIn(ul);
+//		lg.credentialsIn();
 		
 		
 		

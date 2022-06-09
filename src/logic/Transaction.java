@@ -31,15 +31,15 @@ public class Transaction implements Comparable<Transaction>{
 	this.isIngreso = isIngreso;		
 	}
 	
-	public boolean id(int id) {
-		if(this.accountId == id) {
-			return true;
-		}else {
-			return false;
-		}
+	protected int accountId() {
+		return accountId;
 	}
 	
-	public LocalDate getDate() {
+	protected float amount() {
+		return amount;
+	}
+	
+	protected LocalDate getDate() {
 		return this.date;
 	}
 

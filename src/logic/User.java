@@ -62,6 +62,7 @@ public class User {
 		}catch(IllegalArgumentException iae) {
 			System.err.println("La transacción ya existe");
 		}
+		setBalance(transaction.accountId(), transaction.amount());
 		idTransactionProvider ++;
 		
 	}
@@ -79,8 +80,7 @@ public class User {
 			boolean isIngreso) {
 		Transaction incomingTransaction = new Transaction(date, accId, idTransactionProvider, desc, type, amount, isIngreso);
 			incomingTransactions.addIncomingTransaction(incomingTransaction);
-
-		
+		idTransactionProvider ++;
 	}
 	
 	protected void incorporateIncomingTransactions() {
@@ -93,7 +93,7 @@ public class User {
 				this.transactions.insertNode(ts);
 			}catch (IllegalArgumentException iae) {
 				System.err.println("Una transacción que estaba programada para ser incorporada ya existe actualmente: \n"
-						+ ts.toString());
+						+ ts.toString() +" \nNo se hizo la inserción");
 			}
 		}
 	}
@@ -120,8 +120,16 @@ public class User {
 		return username;
 	}
 	
-	public void setBalance(int id) {
-		
+	private void setBalance(int accountId, float change) {
+		DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
+		Account toChange = null;
+		while(it.hasNext()) {
+			Account ac = it.next();
+			if(ac.id == accountId) {
+				toChange = ac;
+			}
+		}
+		toChange.updateBalance(change);
 	}
 	
 	public String accountsInfo(int id)
@@ -142,10 +150,6 @@ public class User {
 		completeUserInfo += transactions.preorderTraverse();
 		
 		return completeUserInfo; 			
-	}
-
-	public String getUserPassword() {
-		return this.password;
 	}
 
 }

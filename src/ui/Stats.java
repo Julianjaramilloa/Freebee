@@ -1,6 +1,5 @@
 package ui;
 
-
 /*
  * Freebie
  * @author Marcos Pinzón Pardo

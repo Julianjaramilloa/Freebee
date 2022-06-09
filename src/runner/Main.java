@@ -1,5 +1,8 @@
 package runner;
 
+import java.time.LocalDate;
+
+import logic.User;
 import logic.UserList;
 import ui.Categories;
 import ui.ConsoleVersion;
@@ -38,16 +41,19 @@ public class Main {
 //		ct.categories();
 		
 //		UserList ul = new UserList();
-//		readerWriter rw = new readerWriter(ul);
+//		ReaderWriter rw = new ReaderWriter(ul);
 //		rw.readFile();
 		
-//		ul.addUserCredentials("daniel", "789");
+		TestClasses tc = new TestClasses();
+		tc.incomingTransactionsTest();
 		
 //		LogIn lg = new LogIn(ul);
 //		lg.credentialsIn();
 		
-		ProveClasses pc = new ProveClasses();
-		pc.minHeap();
+		
+		
+		//ProveClasses pc = new ProveClasses();
+		//pc.minHeap();
 		
 		
 	}

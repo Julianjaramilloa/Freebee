@@ -9,7 +9,14 @@ public class IncomingTransactions {
 	private MinHeap<Transaction> incomingTransactions = new MinHeap<Transaction>();
 	
 	public void addIncomingTransaction(Transaction incoming) {
+			
+		LocalDate today = LocalDate.now();
+		LocalDate transactionDate = incoming.getDate();
+		if(today.compareTo(transactionDate) > 0) {
+			throw new IllegalArgumentException ("Está intentando ingresar una transacción para una fecha que ya pasó");
+		}else {
 			this.incomingTransactions.add(incoming);
+		}
 	}
 	
 	public LinkedList<Transaction> popTransaction() {
@@ -18,12 +25,18 @@ public class IncomingTransactions {
 		
 		boolean finished = false;
 		while(!finished) {
-			LocalDate peek = incomingTransactions.peek().getDate();
-			if(peek.equals(today)) {
-				transactionsToPop.pushBack(incomingTransactions.deleteMin());
-			}else {
+			Transaction peek = incomingTransactions.peek();
+			if (peek == null) {
 				finished = true;
+			}else {
+				LocalDate peekDate = incomingTransactions.peek().getDate();
+				if(peekDate.equals(today) || peekDate.compareTo(today) < 0) {
+					transactionsToPop.pushBack(incomingTransactions.deleteMin());
+				}else {
+					finished = true;
+				}				
 			}
+
 		}
 		
 		return transactionsToPop;

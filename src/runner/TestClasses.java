@@ -6,6 +6,7 @@ import seqDataStructures.DynamicArrayIterator;
 import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
+import ui.LogIn;
 import ui.ReaderWriter;
 
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ import rbTree.RbNode;
 import rbTree.RedBlackTree;
 //Esta clase la cree para ir probando que las cosas que vamos creando funcionan
 
-public class ProveClasses {
+public class TestClasses {
 	
 	void minHeap () {
 		MinHeap<Integer> mh = new MinHeap<Integer>();
@@ -162,6 +163,24 @@ public class ProveClasses {
 		
 		//AVLTree<Transaction> xdUs = xd.getTransactions();
 		//System.out.println(xdUs.preorderTraverse());
+	}
+	
+	public void incomingTransactionsTest() {
+		User us = new User("daniel", "789uio");
+		UserList ul = new UserList();
+		ul.addUser(us);
+		System.out.println(us.addAccount("Cuenta Bancolombia", 2500000, "Peso colombiano"));
+		us.addTransactionData(LocalDate.of(2022, 4, 15), 1, "Gasto compra insumos", ts("Trabajo"), 615200, false);
+		try{
+			us.addIncomingTransaction(LocalDate.now(), 1, "Emprendimiento", ts("Ingresos"), 500000, true);
+		}catch (IllegalArgumentException iae) {
+			System.out.println(iae.toString());
+		}
+		
+		System.out.println(us.completeUserInfo());
+		LogIn lg = new LogIn(ul);
+		lg.credentialsIn();
+		
 	}
 	
 	

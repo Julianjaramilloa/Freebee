@@ -16,19 +16,21 @@ public class User {
 	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
 	private AVLTree<Transaction> transactions = new AVLTree<Transaction>();
 	private IncomingTransactions incomingTransactions = new IncomingTransactions();
-	private int idAccountProvider = 0;//Asigna automáticamente un id a la cuenta que se vaya a incluir
-	private int idTransactionProvider = 0;//Asigna automáticamente un id a la transacción que se vaya a incluir
+	private int idAccountProvider = 1; //Asigna automáticamente un id a la cuenta que se vaya a incluir
+	private int idTransactionProvider = 1; //Asigna automáticamente un id a la transacción que se vaya a incluir
 	
 	public User(String userName, String password) {
 		this.username = userName;
 		this.password = password;
 	};
 	
-	public void addAccount(String name, float balance, String currency) {
+	public String addAccount(String name, float balance, String currency) {
 		int id = idAccountProvider;
 		Account acc = new Account(id, name, balance, currency);
 		accounts.pushBack(acc);
+		String returnMessage = "Cuenta creada con el id " + idAccountProvider; 
 		idAccountProvider ++;
+		return returnMessage;
 	}
 	
 	public DynamicArray<Account> getAccounts() {
@@ -76,14 +78,9 @@ public class User {
 			float amount,
 			boolean isIngreso) {
 		Transaction incomingTransaction = new Transaction(date, accId, idTransactionProvider, desc, type, amount, isIngreso);
+			incomingTransactions.addIncomingTransaction(incomingTransaction);
+
 		
-		LocalDate today = LocalDate.now();
-		LocalDate transactionDate = incomingTransaction.getDate();
-		if(today.compareTo(transactionDate) > 0) {
-			throw new IllegalArgumentException ("Está intentando ingresar una transacción para una fecha que ya pasó");
-		}
-		
-		incomingTransactions.addIncomingTransaction(incomingTransaction);
 	}
 	
 	protected void incorporateIncomingTransactions() {

@@ -96,6 +96,8 @@ public class UserList {
 		}else if(aux.areRightCredentials(username, password)) {
 			//Con esta sentencia asignamos se le abre la sesión al usuario
 			this.currentUser = aux;
+			currentUser.incorporateIncomingTransactions();
+			System.out.println(currentUser.completeUserInfo());
 			isRightUsername = true;
 			isRightPassword = true;
 			
@@ -107,6 +109,8 @@ public class UserList {
 	
 		succesfulLogin.add(isRightUsername, 0);
 		succesfulLogin.add(isRightPassword, 1);
+		
+
 		return succesfulLogin;
 	}
 	

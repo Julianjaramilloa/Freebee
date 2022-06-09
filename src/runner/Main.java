@@ -4,7 +4,9 @@ import logic.UserList;
 import ui.Categories;
 import ui.ConsoleVersion;
 import ui.LogIn;
+import ui.NewUser;
 import ui.Savings;
+import ui.readerWriter;
 
 /**
  * 
@@ -22,43 +24,31 @@ public class Main {
 	/**|
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		//True en el constructor: Cargar datos guardados.
-		/*
-		Console c = new Console(true);
-		c.mainMenu();
-		*/
+	public static void main(String[] args) {	
 		
-//		String a = "as";
-//		String b = "bro";
-//		System.out.println(a.compareTo(b));
 		
-//		ProveClasses pc = new ProveClasses();
-//		pc.avlTree();
+//		Savings sv = new Savings();
+//		sv.savings();
 		
-		ProveClasses pc = new ProveClasses();
-		pc.userTransactions();
-		
-		Savings sv = new Savings();
-		sv.savings();
+//		UserList ul = new UserList();
+//		NewUser nu = new NewUser(ul);
+//		nu.setVisible(true);
 				
 //		Categories ct = new Categories();
 //		ct.categories();
 		
-		//pc.rbTree();
-		
-		//pc.linkedListInsertions();
-		
 //		UserList ul = new UserList();
+//		readerWriter rw = new readerWriter(ul);
+//		rw.readFile();
 		
-//		ul.addUserCredentials("carlitosBacca", "789");
+//		ul.addUserCredentials("daniel", "789");
 		
 //		LogIn lg = new LogIn(ul);
 //		lg.credentialsIn();
 		
+		ProveClasses pc = new ProveClasses();
+		pc.minHeap();
 		
-//		NewUser nw = new NewUser(); 
-//		nw.createUser();
 		
 	}
 

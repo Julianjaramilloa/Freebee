@@ -63,11 +63,11 @@ public class Savings extends JFrame implements ActionListener {
 		
 		// ================= BOTONES FIJOS =============================
 		
-		// ------------ Botón: Pagina categorías -------------------
+		// ------------ Bot�n: Pagina categorías -------------------
 		
 		catPage = new JButton();
         catPage.setBounds(22,495,110,40); // Tamaño
-        catPage.setText("Categorías"); // Texto
+        catPage.setText("Categor�as"); // Texto
         catPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         catPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         catPage.setForeground(Color.BLACK); // Color del texto
@@ -76,7 +76,7 @@ public class Savings extends JFrame implements ActionListener {
         catPage.addActionListener(this); // Añadir ActionListener 
         catPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
      
-        // ------------ Botón: Pagina cuentas -------------------
+        // ------------ Bot�n: Pagina cuentas -------------------
 		
      	accPage = new JButton();
         accPage.setBounds(147,495,110,40); // Tamaño
@@ -171,7 +171,7 @@ public class Savings extends JFrame implements ActionListener {
 
 
 		
-		this.setTitle("Freebee"); // Título
+		this.setTitle("Freebee"); // T�tulo
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null); // Layout
 		this.setSize(600,600); // Dimensiones
@@ -208,7 +208,7 @@ public class Savings extends JFrame implements ActionListener {
 	private void tokenize(String line) {
 		
 
-		System.out.println("Tokenizando línea");
+		System.out.println("Tokenizando l�nea");
 		Scanner sc = new Scanner(line);
 		sc.useDelimiter(";");
 		

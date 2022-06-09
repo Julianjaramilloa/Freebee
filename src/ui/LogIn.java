@@ -2,7 +2,7 @@ package ui;
 
 /*
  * Freebe
- * @author Marcos PinzÃ³n Pardo
+ * @author Marcos Pinzón Pardo
  */
 
 import java.awt.BorderLayout;
@@ -59,73 +59,73 @@ public class LogIn extends JFrame implements ActionListener {
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
-		welcomeLabel.setBounds(50,20,400,60); // TamaÃ±o
-		welcomeLabel.setText("Inicio de sesiÃ³n"); // Texto
+		welcomeLabel.setBounds(50,20,400,60); // Tamaño
+		welcomeLabel.setText("Inicio de sesión"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
 		
-		// -------- Label: TÃ­tulos y advertencia ----------------
+		// -------- Label: Títulos y advertencia ----------------
 		
 		nameLabel = new JLabel(); 
-		nameLabel.setBounds(150,135,300,70); // TamaÃ±o
+		nameLabel.setBounds(150,135,300,70); // Tamaño
 		nameLabel.setText("Usuario"); // Texto
 		nameLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		nameLabel.setForeground(Color.BLACK); // Color del texto
 		nameLabel.setVisible(true); // Visibilidad
 		
 		passLabel = new JLabel(); 
-		passLabel.setBounds(150,215,300,70); // TamaÃ±o
-		passLabel.setText("ContraseÃ±a"); // Texto
+		passLabel.setBounds(150,215,300,70); // Tamaño
+		passLabel.setText("Contraseña"); // Texto
 		passLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		passLabel.setForeground(Color.BLACK); // Color del texto
 		passLabel.setVisible(true); // Visibilidad
 		
 		promptLabel = new JLabel(); 	
-		promptLabel.setBounds(205,335,300,70); // TamaÃ±o
-		promptLabel.setText("Â¿No tienes usuario?"); // Texto
+		promptLabel.setBounds(205,335,300,70); // Tamaño
+		promptLabel.setText("¿No tienes usuario?"); // Texto
 		promptLabel.setFont(new Font("Nunito", Font.ITALIC, 9)); // Fuente
 		promptLabel.setForeground(Color.BLACK); // Color del texto
 		promptLabel.setVisible(true); // Visibilidad
 		
 		
-		// ------------ BotÃ³n: Iniciar sesiÃ³n -----------------------
+		// ------------ Botón: Iniciar sesión -----------------------
 		
 		logIn = new JButton();
-		logIn.setBounds(230,420,120,30); // TamaÃ±o
-		logIn.setText("Iniciar sesiÃ³n"); // Texto
+		logIn.setBounds(230,420,120,30); // Tamaño
+		logIn.setText("Iniciar sesión"); // Texto
 		logIn.setBorder(new LineBorder(Color.BLACK)); // Borde
 		logIn.setFont(new Font("Consolas", Font.BOLD, 14)); // Fuente
 		logIn.setForeground(Color.WHITE); // Color del texto
 		logIn.setBackground(Color.BLACK); // Color del fondo
 		logIn.setFocusable(false); // Quitar cuadro alrededor
-		logIn.addActionListener(this); // AÃ±adir ActionListener
+		logIn.addActionListener(this); // Añadir ActionListener
 		logIn.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
-		// ------------ BotÃ³n: Obtener ayuda -----------------------
+		// ------------ Botón: Obtener ayuda -----------------------
 		
 		getHelp = new JButton();
-		getHelp.setBounds(510,500,25,25); // TamaÃ±o
+		getHelp.setBounds(510,500,25,25); // Tamaño
 		getHelp.setText("?"); // Texto
 		getHelp.setBorder(new LineBorder(Color.BLACK)); // Borde
 		getHelp.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
 		getHelp.setForeground(Color.BLACK); // Color del texto
 		getHelp.setBackground(Color.WHITE); // Color del fondo
 		getHelp.setFocusable(false); // Quitar cuadro alrededor
-		getHelp.addActionListener(this); // AÃ±adir ActionListener
+		getHelp.addActionListener(this); // Añadir ActionListener
 		getHelp.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
-		// ------------ BotÃ³n: Nuevo usuario -----------------------
+		// ------------ Botón: Nuevo usuario -----------------------
 		
 		newUser = new JButton();
-		newUser.setBounds(300,359,75,22); // TamaÃ±o
+		newUser.setBounds(300,359,75,22); // Tamaño
 		newUser.setText("Crear usuario"); // Texto
 		newUser.setBorder(new LineBorder(Color.BLACK)); // Borde
 		newUser.setFont(new Font("Consolas", Font.PLAIN, 9)); // Fuente
 		newUser.setForeground(Color.BLACK); // Color del texto
 		newUser.setBackground(Color.WHITE); // Color del fondo
 		newUser.setFocusable(false); // Quitar cuadro alrededor
-		newUser.addActionListener(this); // AÃ±adir ActionListener
+		newUser.addActionListener(this); // Añadir ActionListener
 		newUser.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
 		// ------------- TextField: Datos de log in ------
@@ -134,7 +134,7 @@ public class LogIn extends JFrame implements ActionListener {
 		nameField = new JTextField(); 
 		nameField.setVisible(true);
 		nameField.setText(""); // Texto por defecto
-		nameField.setBounds(145, 185, 305, 40); // TamaÃ±o
+		nameField.setBounds(145, 185, 305, 40); // Tamaño
 		nameField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
 		nameField.setForeground(Color.BLACK);  // Color del texto
 		nameField.setBackground(Color.WHITE); // Color del fondo
@@ -144,7 +144,7 @@ public class LogIn extends JFrame implements ActionListener {
 		passField = new JTextField(); 
 		passField.setVisible(true);
 		passField.setText(""); // Texto por defecto
-		passField.setBounds(145, 265, 305, 40); // TamaÃ±o
+		passField.setBounds(145, 265, 305, 40); // Tamaño
 		passField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
 		passField.setForeground(Color.BLACK);  // Color del texto
 		passField.setBackground(Color.WHITE); // Color del fondo
@@ -168,7 +168,7 @@ public class LogIn extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null); // Layout
 		this.setSize(600,600); // Dimensiones
-		this.setResizable(false); // No cambia de tamaÃ±o
+		this.setResizable(false); // No cambia de tamaño
 		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
 		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
 		this.setIconImage(logo.getImage()); // Poner logo
@@ -177,7 +177,7 @@ public class LogIn extends JFrame implements ActionListener {
 
 	}
 	
-	// Criterio al presionar el botÃ³n
+	// Criterio al presionar el botón
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		
@@ -207,7 +207,7 @@ public class LogIn extends JFrame implements ActionListener {
 		}
 		
 		if (pressed.getSource() == newUser) {
-			System.out.println("Abriendo creaciÃ³n de nuevo usuario");
+			System.out.println("Abriendo creación de nuevo usuario");
 			NewUser nw = new NewUser(ul); 
 			nw.createUser();
 		}

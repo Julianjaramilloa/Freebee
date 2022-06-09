@@ -1,6 +1,8 @@
 package runner;
 
 
+import seqDataStructures.DynamicArray;
+import seqDataStructures.DynamicArrayIterator;
 import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
@@ -13,14 +15,46 @@ import logic.Transaction;
 import logic.TransactionCategory;
 import logic.User;
 import logic.UserList;
+import priorityQueue.MinHeap;
 import rbTree.RbNode;
 import rbTree.RedBlackTree;
 //Esta clase la cree para ir probando que las cosas que vamos creando funcionan
 
 public class ProveClasses {
 	
+	void minHeap () {
+		MinHeap<Integer> mh = new MinHeap<Integer>();
+		
+		DynamicArray<Integer> da = new DynamicArray<Integer>();
+		
+		da.pushBack(78);
+		da.pushBack(98);
+		da.pushBack(12);
+		da.pushBack(70);
+		da.pushBack(654);
+		da.pushBack(9);
+		da.pushBack(4);
+		da.pushBack(2967);
+		da.pushBack(6);
+		da.pushBack(546);
+		da.pushBack(8);
+		da.pushBack(3);
+		da.pushBack(721);
+		da.pushBack(168765);
+		da.pushBack(7943);
+		da.pushBack(6464);
+		
+		DynamicArrayIterator <Integer> dai = new DynamicArrayIterator<Integer>(da);
+		while(dai.hasNext()) {
+			int include = dai.next();
+			mh.add(include);
+			System.out.println();
+		}
+	}
+	
 	
 	void avlTree () {
+		
 		/*AVLTree<Integer> avl = new AVLTree<Integer>();
 		LinkedList<Integer> treeNodes = new LinkedList<Integer>();
 		
@@ -120,5 +154,7 @@ public class ProveClasses {
 		//AVLTree<Transaction> xdUs = xd.getTransactions();
 		//System.out.println(xdUs.preorderTraverse());
 	}
+	
+	
 	
 }

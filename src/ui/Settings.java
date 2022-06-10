@@ -260,7 +260,7 @@ public class Settings extends JFrame implements ActionListener {
 		// Ayuda 1
 		help1 = new JLabel(); 
 		help1.setBounds(30,100,550,30); // Tama√±o
-		help1.setText("Esta app es un proyecto de la materia 'Estructuras de datos' de UNAL sede Bogot√°"); // Texto
+		help1.setText("Esta app es un proyecto de la materia 'Estructuras de datos' de UNAL sede Bogot·"); // Texto
 		help1.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
@@ -268,7 +268,7 @@ public class Settings extends JFrame implements ActionListener {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,130,500,30); // Tama√±o
-		help2.setText("Autores: Marcos Pinz√≥n Pardo, C√©sar Arthuro L√©mos Silva, Dylan Rivero"); // Texto
+		help2.setText("Autores: Marcos PinzÛn Pardo, CÈsar Arthuro LÈmos Silva, Dylan Rivero"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
@@ -276,7 +276,7 @@ public class Settings extends JFrame implements ActionListener {
 		// Ayuda 2
 		help3 = new JLabel(); 
 		help3.setBounds(30,160,500,30); // Tama√±o
-		help3.setText("              Esteves, Juli√°n C√≥rdoba Jaramillo y Camilo Apraez Apraez."); // Texto
+		help3.setText("              Esteves, Juli·n CÛrdoba Jaramillo y Camilo Apraez Apraez."); // Texto
 		help3.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
 		help3.setForeground(Color.BLACK); // Color del texto
 		help3.setVisible(true); // Visibilidad

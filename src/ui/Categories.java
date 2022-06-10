@@ -48,7 +48,7 @@ public class Categories extends JFrame implements ActionListener {
 		
 		welcomeLabel = new JLabel(); 
 		welcomeLabel.setBounds(50,20,400,60); // Tamaño
-		welcomeLabel.setText("Categorías"); // Texto
+		welcomeLabel.setText("Categor�as"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
@@ -59,7 +59,7 @@ public class Categories extends JFrame implements ActionListener {
 		
 		catPage = new JButton();
         catPage.setBounds(22,495,110,40); // Tamaño
-        catPage.setText("Categorías"); // Texto
+        catPage.setText("Categor�as"); // Texto
         catPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         catPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         catPage.setForeground(Color.BLACK); // Color del texto

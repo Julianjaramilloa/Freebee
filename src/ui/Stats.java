@@ -48,18 +48,18 @@ public class Stats extends JFrame implements ActionListener {
 		
 		welcomeLabel = new JLabel(); 
 		welcomeLabel.setBounds(50,20,400,60); // Tamaño
-		welcomeLabel.setText("Estadísticas"); // Texto
+		welcomeLabel.setText("Estad�sticas"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
 		
 		// ================= BOTONES FIJOS =============================
 		
-		// ------------ Botón: Pagina categorías -------------------
+		// ------------ Bot�n: Pagina categor�as -------------------
 		
 		catPage = new JButton();
         catPage.setBounds(22,495,110,40); // Tamaño
-        catPage.setText("Categorías"); // Texto
+        catPage.setText("Categor�as"); // Texto
         catPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         catPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         catPage.setForeground(Color.BLACK); // Color del texto
@@ -68,7 +68,7 @@ public class Stats extends JFrame implements ActionListener {
         catPage.addActionListener(this); // Añadir ActionListener 
         catPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
      
-        // ------------ Botón: Pagina cuentas -------------------
+        // ------------ Bot�n: Pagina cuentas -------------------
 		
      	accPage = new JButton();
         accPage.setBounds(147,495,110,40); // Tamaño
@@ -81,7 +81,7 @@ public class Stats extends JFrame implements ActionListener {
         accPage.addActionListener(this); // Añadir ActionListener
         accPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ Botón: Pagina ahorro -------------------
+        // ------------ Bot�n: Pagina ahorro -------------------
 		
      	savesPage = new JButton();
         savesPage.setBounds(272,495,110,40); // Tamaño
@@ -94,7 +94,7 @@ public class Stats extends JFrame implements ActionListener {
         savesPage.addActionListener(this); // Añadir ActionListener 
         savesPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ Botón: Pagina estadísticas -------------------
+        // ------------ Bot�n: Pagina estadísticas -------------------
 		
      	statsPage = new JButton();
         statsPage.setBounds(397,495,110,40); // Tamaño
@@ -108,7 +108,7 @@ public class Stats extends JFrame implements ActionListener {
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.GRAY)); // Borde
         statsPage.setEnabled(false); // Desabilita el botón
         
-        // ------------ Botón: Pagina ajustes -------------------
+        // ------------ Bot�n: Pagina ajustes -------------------
 		
      	settPage = new JButton();
         settPage.setBounds(522,495,40,40); // Tamaño
@@ -121,7 +121,7 @@ public class Stats extends JFrame implements ActionListener {
         settPage.addActionListener(this); // Añadir ActionListener
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
 		
-		// ------------ Botón: Crear transacción -------------------
+		// ------------ Bot�n: Crear transacción -------------------
 	
 		addTrans = new JButton();
 		addTrans.setBounds(505,440,25,25); // Tamaño
@@ -134,7 +134,7 @@ public class Stats extends JFrame implements ActionListener {
 		addTrans.addActionListener(this); // Añadir ActionListener
 		addTrans.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
-		// ------------ Botón: Obtener ayuda -----------------------
+		// ------------ Bot�n: Obtener ayuda -----------------------
 		
 		getHelp = new JButton();
 		getHelp.setBounds(50,440,25,25); // Tamaño

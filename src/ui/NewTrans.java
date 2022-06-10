@@ -44,12 +44,12 @@ public class NewTrans extends JFrame implements ActionListener {
 
 	JButton saveTrans;
 	JButton getHelp;
+	JButton exit;
 
 	JRadioButton income = new JRadioButton();
 	JRadioButton outcome = new JRadioButton();
 	ButtonGroup grp = new ButtonGroup();
 
-	
 	JLabel welcomeLabel;
 	JLabel descLabel;
 	JLabel valueLabel;
@@ -67,8 +67,9 @@ public class NewTrans extends JFrame implements ActionListener {
 	Boolean isIncome = false;
 	LocalDate date;
 
-	String[] catList = {"Vivienda","Salud","Compras","Comidas","ComidasFuera","Transporte","Arriendo","Educacion","Ocio","Ingresos","Trabajo"};
+	String[] catList = {"Categor�a","Vivienda","Salud","Compras","Comidas","ComidasFuera","Transporte","Arriendo","Educacion","Ocio","Trabajo","Ingresos"};
 	JComboBox catSelect = new JComboBox(catList);
+	JComboBox accSelect;
 	
 	UserList ul;
 	DynamicArray<Account> accounts = new DynamicArray<Account>();
@@ -76,13 +77,15 @@ public class NewTrans extends JFrame implements ActionListener {
 	public NewTrans(UserList ul) {
 		this.ul = ul;
 		accounts = ul.getUser().getAccounts();
+		System.out.println(accounts.toString());
+		accSelect = new JComboBox(fillComboBox());
 	}
 	
-	
 	private String[] fillComboBox() {
-		String[] accList = new String[accounts.size()];
+		String[] accList = new String[accounts.size() + 1];
 		DynamicArrayIterator <Account> it = new DynamicArrayIterator<Account>(accounts);
-		int i=0;
+		accList[0] = "Cuenta";
+		int i=1;
 		while(it.hasNext()) {
 			Account aux = it.next();
 			accList[i] = aux.getName();
@@ -90,10 +93,9 @@ public class NewTrans extends JFrame implements ActionListener {
 		}
 		return accList;
 	}
-	
-	JComboBox accSelect = new JComboBox(fillComboBox());
-	
+
 	public void createTrans(){
+		
 		
 		System.out.println("Ventana NewTrans");
 		
@@ -101,7 +103,7 @@ public class NewTrans extends JFrame implements ActionListener {
 		
 		welcomeLabel = new JLabel(); 
 		welcomeLabel.setBounds(50,20,400,60); // Tamaño
-		welcomeLabel.setText("Nueva transacción"); // Texto
+		welcomeLabel.setText("Nueva transacci�n"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
@@ -109,9 +111,8 @@ public class NewTrans extends JFrame implements ActionListener {
 		// -------- Label: Títulos y advertencia ----------------
 		
 		descLabel = new JLabel(); 
-
 		descLabel.setBounds(130,145,300,70); // Tamaño
-		descLabel.setText("Descripción (memo):"); // Texto
+		descLabel.setText("Descripci�n (memo):"); // Texto
 		descLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		descLabel.setForeground(Color.BLACK); // Color del texto
 		descLabel.setVisible(true); // Visibilidad
@@ -124,7 +125,7 @@ public class NewTrans extends JFrame implements ActionListener {
 		valueLabel.setVisible(true); // Visibilidad
 		dateLabel = new JLabel(); 
 		dateLabel.setBounds(160,95,300,70); // Tamaño
-		dateLabel.setText("Fecha: (Año-Mes-Día)"); // Texto
+		dateLabel.setText("Fecha: (A�o-Mes-D�a)"); // Texto
 		dateLabel.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		dateLabel.setForeground(Color.BLACK); // Color del texto
 		dateLabel.setVisible(true); // Visibilidad
@@ -132,7 +133,7 @@ public class NewTrans extends JFrame implements ActionListener {
 
 		warningLabel = new JLabel(); 
 		warningLabel.setBounds(165,480,280,60); // Tamaño
-		warningLabel.setText("No use el caracter ';' para evitar fallos en la aplicación"); // Texto
+		warningLabel.setText("No use el caracter ';' para evitar fallos en la aplicaci�n"); // Texto
 		warningLabel.setFont(new Font("Nunito", Font.ITALIC, 10)); // Fuente
 		warningLabel.setForeground(Color.BLACK); // Color del texto
 		warningLabel.setVisible(true); // Visibilidad
@@ -142,7 +143,6 @@ public class NewTrans extends JFrame implements ActionListener {
 		saveTrans = new JButton();
 		saveTrans.setBounds(255,410,70,25); // Tamaño
 		saveTrans.setText("GUARDAR"); // Texto
-
 		saveTrans.setBorder(new LineBorder(Color.BLACK)); // Borde
 		saveTrans.setFont(new Font("Consolas", Font.BOLD, 12)); // Fuente
 		saveTrans.setForeground(Color.BLACK); // Color del texto
@@ -164,12 +164,23 @@ public class NewTrans extends JFrame implements ActionListener {
 		getHelp.addActionListener(this); // Añadir ActionListener
 		getHelp.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
+		// Atr�s
+		
+		exit = new JButton();
+		exit.setVisible(true);
+		exit.setBounds(455,40,85,25); // Tama�o
+		exit.setText("VOLVER"); // Texto
+		exit.setFont(new Font("Liberation Mono", Font.ITALIC, 9)); // Fuente
+		exit.setForeground(Color.BLACK); // Color del texto
+		exit.setBackground(Color.LIGHT_GRAY); // Color del fondo
+		exit.setFocusable(false); // Quitar cuadro alrededor
+		exit.addActionListener(this); // A�adir ActionListener
+		
 		// ------------- TextField: Datos de nuevo usuario ------
 		
 		// Username
 		descField = new JTextField(); 
 		descField.setVisible(true);
-
 		descField.setText(" "); // Texto por defecto
 		descField.setBounds(125, 200, 350, 40); // Tamaño
 		descField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
@@ -180,10 +191,8 @@ public class NewTrans extends JFrame implements ActionListener {
 		// Password
 		valueField = new JTextField(); 
 		valueField.setVisible(true);
-
 		valueField.setText("0"); // Texto por defecto
 		valueField.setBounds(220, 250, 100, 40); // Tamaño
-
 		valueField.setFont(new Font("Consolas", Font.PLAIN, 16)); // Fuente
 		valueField.setForeground(Color.BLACK);  // Color del texto
 		valueField.setBackground(Color.WHITE); // Color del fondo
@@ -261,6 +270,7 @@ public class NewTrans extends JFrame implements ActionListener {
 		this.add(warningLabel);
 		this.add(descField);
 		this.add(valueField);
+		this.add(exit);
 
 		this.add(catSelect);
 		this.add(accSelect);
@@ -287,6 +297,12 @@ public class NewTrans extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		
+		if (pressed.getSource() == exit) {
+			System.out.println("Cerrando NewTrans");
+			Accounts ac = new Accounts(ul);
+			ac.accounts();
+			this.dispose();
+		}
 
 		if (pressed.getSource() == catSelect) {
 			JComboBox cb = (JComboBox)pressed.getSource();
@@ -313,8 +329,8 @@ public class NewTrans extends JFrame implements ActionListener {
 		
 		if (pressed.getSource() == saveTrans) {
 			
-			if (selectedCat == null || selectedAcc == null) {
-				JOptionPane.showMessageDialog(null, "Seleccione categoría y valor", "Datos faltantes", JOptionPane.WARNING_MESSAGE);
+			if ((selectedCat == null || selectedCat == "Categor�a") || (selectedAcc == null || selectedAcc == "Cuenta")) {
+				JOptionPane.showMessageDialog(null, "Seleccione categor�a y cuenta", "Datos faltantes", JOptionPane.WARNING_MESSAGE);
 			} else {
 				desc = descField.getText();
 				value = Float.parseFloat(valueField.getText());
@@ -339,6 +355,8 @@ public class NewTrans extends JFrame implements ActionListener {
 						
 						ul.getUser().addTransactionData(date, id, desc, cat, value, isIncome);
 						
+						Accounts ac = new Accounts(ul);
+						ac.accounts();
 						this.dispose();
 						
 					}	

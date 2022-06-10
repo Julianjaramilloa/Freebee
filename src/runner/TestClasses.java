@@ -7,11 +7,11 @@ import seqDataStructures.Iterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
 import ui.LogIn;
-import ui.ReaderWriter;
 
 import java.time.LocalDate;
 
 import avlTree.AVLTree;
+import logic.ReaderWriter;
 import logic.Transaction;
 import logic.TransactionCategory;
 import logic.User;

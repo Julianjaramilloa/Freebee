@@ -18,11 +18,11 @@ public class Account{
 		this.currency = currency;
 	}
 	
-	protected void updateBalance(float transaction) {
-		if(balance < 0) {
-			this.balance = this.balance - transaction;
-		}else {
+	protected void updateBalance(float transaction, boolean t) {
+		if(t == true) {
 			this.balance = this.balance + transaction;
+		}else{
+			this.balance = this.balance - transaction;
 		}
 	}
 	

@@ -27,7 +27,7 @@ public class UserList {
 	public void addUserCredentials(String userName, String password) {
 		User user = new User(userName, password);
 		addUser(user);
-	};
+	}
 	
 	public void addUser(User user) {
 		try{
@@ -67,7 +67,7 @@ public class UserList {
 		
 		if(!succesfulLogin.get(0)) {
 			credentialsInfo = "No existe un usuario con ese nombre";
-		}else if(!succesfulLogin.get(0)) {
+		}else if(!succesfulLogin.get(1)) {
 			credentialsInfo = "La contraseña es incorrecta";
 		}else {
 			return "alright";
@@ -101,7 +101,7 @@ public class UserList {
 			isRightUsername = true;
 			isRightPassword = true;
 			
-		}else if(aux.getUsername() == username){
+		}else if(aux.getUsername().equals(username)){
 			isRightUsername = true;
 			isRightPassword = false;
 			

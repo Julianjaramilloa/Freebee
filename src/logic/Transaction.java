@@ -106,5 +106,9 @@ public class Transaction implements Comparable<Transaction>{
 			return "-";
 		}
 	}
+
+	public boolean getBoolean() {
+		return isIngreso;
+	}
 	
 }

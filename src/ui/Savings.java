@@ -38,8 +38,11 @@ public class Savings extends JFrame implements ActionListener {
 	JButton addTrans;
 	JButton getHelp;
 
-
 	JLabel welcomeLabel;
+	
+	JButton tipButton;
+	JLabel tipLabel1;
+	JLabel tipLabel2;
 	
 	UserList ul;
 	
@@ -51,6 +54,29 @@ public class Savings extends JFrame implements ActionListener {
 	LinkedList<String> citas = new LinkedList<String>();
 	Pila<String> tipsToShow = new Pila<String>();
 		
+	
+	private void changeTipLabel() {	
+		String tip = printRandomTip();
+		String p1, p2;
+	    if (tip.length()%2 == 0){
+	        p1 =tip.substring(0, tip.length()/2);
+	        p2 = tip.substring(tip.length()/2);
+	        System.out.println("if");
+	        System.out.println(p1);
+	        System.out.println(p2);
+	    }else{
+	        p1 = tip.substring(0, tip.length()/2);
+	        p2 = tip.substring(tip.length()/2+1);
+	        System.out.println("Else");
+	        System.out.println(p1);
+	        System.out.println(p2);
+	    }   
+	    
+	    tipLabel1.setText(p1);
+	    tipLabel2.setText(p2);
+	}
+	
+	
 	public void savings(){
 		
 		readData();
@@ -61,19 +87,47 @@ public class Savings extends JFrame implements ActionListener {
 		
 		welcomeLabel = new JLabel(); 
 		welcomeLabel.setBounds(50,20,400,60); // TamaÃ±o
-
 		welcomeLabel.setText("Ahorro"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
 		
+		// ------------ Labels de tip -------------------
+		
+		tipLabel1 = new JLabel(); 
+		tipLabel1.setBounds(80,260,600,200); // TamaÃ±o
+		tipLabel1.setText(""); // Texto
+		tipLabel1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		tipLabel1.setForeground(Color.BLACK); // Color del texto
+		tipLabel1.setVisible(true); // Visibilidad
+		
+		tipLabel2 = new JLabel(); 
+		tipLabel2.setBounds(80,290,600,200); // TamaÃ±o
+		tipLabel2.setText(""); // Texto
+		tipLabel2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
+		tipLabel2.setForeground(Color.BLACK); // Color del texto
+		tipLabel2.setVisible(true); // Visibilidad
+		
+		// ------------ Bot�n: Pagina categor�as -------------------
+		
+		tipButton = new JButton();
+		tipButton.setBounds(350,300,100,30); // TamaÃ±o
+		tipButton.setText("Nuevo tip"); // Texto
+		tipButton.setBorder(new LineBorder(Color.BLACK)); // Borde
+		tipButton.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
+		tipButton.setForeground(Color.BLACK); // Color del texto
+		tipButton.setBackground(Color.WHITE); // Color del fondo
+		tipButton.setFocusable(false); // Quitar cuadro alrededor
+		tipButton.addActionListener(this); // AÃ±adir ActionListener 
+		tipButton.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
+		
 		// ================= BOTONES FIJOS =============================
 		
-		// ------------ Botón: Pagina categorÃ­as -------------------
+		// ------------ Bot�n: Pagina categor�as -------------------
 		
 		catPage = new JButton();
         catPage.setBounds(22,495,110,40); // TamaÃ±o
-        catPage.setText("Categorías"); // Texto
+        catPage.setText("Categor�as"); // Texto
         catPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         catPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         catPage.setForeground(Color.BLACK); // Color del texto
@@ -174,7 +228,9 @@ public class Savings extends JFrame implements ActionListener {
 		this.add(addTrans);
 		
 		this.add(welcomeLabel);
-
+		this.add(tipLabel1);
+		this.add(tipLabel2);
+		this.add(tipButton);
 
 		
 		this.setTitle("Freebee"); // Título
@@ -257,6 +313,11 @@ public class Savings extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		
+		if (pressed.getSource() == tipButton) {
+			System.out.println("Nuevo tip");
+			changeTipLabel();
+		}
+		
 		//--------------------------------------------------------
 		
 		if (pressed.getSource() == catPage) {
@@ -308,6 +369,7 @@ public class Savings extends JFrame implements ActionListener {
 			hm.displaySavingsHelp();
 		}
 
-	}	
+	}
+	
 
 }

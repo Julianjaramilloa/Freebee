@@ -67,7 +67,7 @@ public class User {
 			add = false;
 		}
 		if(add) {
-			setBalance(transaction.getAccountId(), transaction.getAmount());
+			setBalance(transaction.getAccountId(), transaction.getAmount(), transaction.getBoolean());
 			idTransactionProvider ++;
 			this.totalBalance += transaction.getAmount();
 		}
@@ -121,7 +121,7 @@ public class User {
 				doBalance = false;
 			}
 			if(doBalance) {
-				setBalance(ts.getAccountId(), ts.getAmount());
+				setBalance(ts.getAccountId(), ts.getAmount(), ts.getBoolean());
 				this.totalBalance += ts.getAmount();
 			}
 		}
@@ -157,7 +157,7 @@ public class User {
 		return username;
 	}
 	
-	private void setBalance(int accountId, float change) {
+	private void setBalance(int accountId, float change, boolean isIngreso) {
 		DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
 		Account toChange = null;
 		while(it.hasNext()) {
@@ -166,7 +166,7 @@ public class User {
 				toChange = ac;
 			}
 		}
-		toChange.updateBalance(change);
+		toChange.updateBalance(change, isIngreso);
 	}
 	
 	public String accountsInfo(int id)

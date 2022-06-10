@@ -115,7 +115,7 @@ public class Accounts extends JFrame implements ActionListener {
 		
 		catPage = new JButton();
         catPage.setBounds(22,495,110,40); // Tamaño
-        catPage.setText("Categorías"); // Texto
+        catPage.setText("Categor�as"); // Texto
         catPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         catPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         catPage.setForeground(Color.BLACK); // Color del texto
@@ -334,6 +334,7 @@ public class Accounts extends JFrame implements ActionListener {
 			System.out.println("Abriendo CreateTrans");
 			NewTrans nt = new NewTrans(ul);
 			nt.createTrans();
+			this.dispose();
 		}
 				
 		if (pressed.getSource() == getHelp) {

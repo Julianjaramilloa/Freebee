@@ -117,3 +117,16 @@ C; Cuenta24; 254413; USD
 T; 01-05-2020; Juguetes; Compras; 460000; False; 1
 T; 01-03-2019; Salario; Ingresos; 5500000; True; 2
 T; 08-02-2021; Patacón mixto;ComidasFuera; 50000; False; 2
+U; userdemo; demo
+C; DaviPlata; 3800; COP
+C; Nequi; 345820; COP
+C; Bancolombia; 1245800; COP
+T; 01-05-2020; Papel higienico; Compras; 800; False; 1
+T; 01-03-2019; Pago fotocopias; Ingresos; 7000; True; 1
+T; 01-05-2020; Almuerzo; ComidasFuera; 36000; False; 2
+T; 01-05-2020; Mouse; Compras; 254700; False; 3
+T; 01-05-2020; Carne; Comidas; 14600; False; 3
+T; 01-05-2020; Libros de cálculo; Educacion; 140000; False; 3
+T; 01-05-2020; Lampara; Compras; 85700; False; 3
+T; 01-03-2019; Salario; Ingresos; 5500000; True; 3
+T; 01-03-2019; Pago parqueadero; Ingresos; 250000; True; 2

@@ -2,6 +2,7 @@ package ui;
 
 import java.util.Scanner;
 
+import logic.ReaderWriter;
 import logic.User;
 import logic.UserList;
 

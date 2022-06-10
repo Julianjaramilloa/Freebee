@@ -47,8 +47,8 @@ public class Main {
 //		TestClasses tc = new TestClasses();
 //		tc.incomingTransactionsTest();
 		
-//		LogIn lg = new LogIn(ul);
-//		lg.credentialsIn();
+		LogIn lg = new LogIn(ul);
+		lg.credentialsIn();
 		
 		
 		

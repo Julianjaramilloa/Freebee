@@ -201,7 +201,7 @@ public class NewUser extends JFrame implements ActionListener {
 				System.out.println("Credenciales obtenidas-: " + username + " " + password + "," + cpass);
 				saveUser.setEnabled(false); // Desabilita el botón
 				this.dispose();
-				new Categories();
+				new Categories(ul);
 			} else {
 				System.out.println("Â¡Las contraseñas no coinciden!");
 				JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden", "Intentelo de nuevo", JOptionPane.WARNING_MESSAGE);

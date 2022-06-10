@@ -26,6 +26,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import logic.UserList;
+
 
 public class NewAcc extends JFrame implements ActionListener {
 
@@ -45,6 +47,11 @@ public class NewAcc extends JFrame implements ActionListener {
 	Float balance;
 	String currency;
 	
+	UserList ul;
+	
+	public NewAcc(UserList ul) {
+		this.ul = ul;
+	}
 	
 	public void createAcc(){
 		
@@ -187,7 +194,8 @@ public class NewAcc extends JFrame implements ActionListener {
 				System.out.println("Nueva cuenta obtenida: " + accName + " Balance: $" + balance + " Currency: " + currency);
 				JOptionPane.showMessageDialog(null, "La cuenta " + accName + " se ha \nguardado correctamente", "Cuenta creada", JOptionPane.INFORMATION_MESSAGE);
 				
-				// Crear cuenta(accName, balance, currency)
+				
+				ul.getUser().addAccount(accName, balance, currency);
 				
 				saveAcc.setEnabled(false); // Desabilita el botón
 				this.dispose();

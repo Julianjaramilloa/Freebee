@@ -30,18 +30,6 @@ public class Transaction implements Comparable<Transaction>{
 	this.amount = amount;
 	this.isIngreso = isIngreso;		
 	}
-	
-	protected int accountId() {
-		return accountId;
-	}
-	
-	protected float amount() {
-		return amount;
-	}
-	
-	protected LocalDate getDate() {
-		return this.date;
-	}
 
 	@Override
 	public String toString() {
@@ -89,6 +77,34 @@ public class Transaction implements Comparable<Transaction>{
 		return comparison;
 	}
 	
+	//Getters
 	
+	public LocalDate getDate() {
+		return this.date;
+	}
+	
+	public int getAccountId() {
+		return accountId;
+	}
+	
+	public float getAmount() {
+		return amount;
+	}
+	
+	public String getDescription() {
+		return this.Description;
+	}
+	
+	public String getCategory() {
+		return type.toString();
+	}
+	
+	public String isIngreso() {
+		if(isIngreso) {
+			return "+";
+		}else {
+			return "-";
+		}
+	}
 	
 }

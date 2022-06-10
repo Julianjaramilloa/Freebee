@@ -23,7 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-
+import logic.UserList;
 import seqDataStructures.DynamicArray;
 import seqDataStructures.LinkedList;
 import seqDataStructures.Pila;
@@ -41,8 +41,16 @@ public class Savings extends JFrame implements ActionListener {
 
 	JLabel welcomeLabel;
 	
+	UserList ul;
+	
+	public Savings(UserList ul) {
+		this.ul = ul;
+	}
+	
+	
 	LinkedList<String> citas = new LinkedList<String>();
-	Pila<String> tipsToShow = new Pila<String>();	
+	Pila<String> tipsToShow = new Pila<String>();
+		
 	public void savings(){
 		
 		readData();
@@ -253,42 +261,42 @@ public class Savings extends JFrame implements ActionListener {
 		
 		if (pressed.getSource() == catPage) {
 			System.out.println("Abriendo Categories");
-			Categories ct = new Categories();
+			Categories ct = new Categories(ul);
 			ct.categories();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == accPage) {
 			System.out.println("Abriendo Accounts");
-			Accounts ac = new Accounts();
+			Accounts ac = new Accounts(ul);
 			ac.accounts();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == savesPage) {
 			System.out.println("Abriendo Savings");
-			Savings sv = new Savings();
+			Savings sv = new Savings(ul);
 			sv.savings();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == statsPage) {
 			System.out.println("Abriendo Stats");
-			Stats st = new Stats();
+			Stats st = new Stats(ul);
 			st.stats();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == settPage) {
 			System.out.println("Abriendo Settings");
-			Settings st = new Settings();
+			Settings st = new Settings(ul);
 			st.settings();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == addTrans) {
 			System.out.println("Abriendo CreateTrans");
-			NewTrans nt = new NewTrans();
+			NewTrans nt = new NewTrans(ul);
 			nt.createTrans();
 		}
 

@@ -14,17 +14,31 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import logic.Transaction;
+import logic.UserList;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.LinkedList;
+import seqDataStructures.LinkedListIterator;
+
 
 public class Transactions extends JFrame{
 
 	int option;
 	
-	public void showTrans(String acc) {
+	UserList ul;
+	
+	public Transactions(UserList ul) {
+		this.ul = ul;
+	}
+	
+	public void showTrans(String acc, int id) {
 
 		JTable table;
 			
-		// Llenar el array a partir del arbol
-		//ArrayList<Transaccion> t = null;
+		
+		LinkedList<Transaction> transactions = ul.getUser().transactionsInList();
+		LinkedListIterator <Transaction> it = new LinkedListIterator<Transaction>(transactions);
+		
 			
 		setSize(650,550);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -44,22 +58,19 @@ public class Transactions extends JFrame{
 		int b = 50; //t.size(); // Cambiar para variar la cantidad de productos que se muestran
 		Object[][] pdata = new Object[b][a];
 		
-		for(int i = 0 ; i < b; i++){
-			// Cambiar los gets
+		int i=0;
+		while(it.hasNext()){
 			
-			pdata[i][0] = "dd/mm/aaa";
-			pdata[i][1] = "cuenta";
-			pdata[i][2] = "test";
-			pdata[i][3] = "categoría";
-			pdata[i][4] = "00000";
-			pdata[i][5] = "-";
-			
-//			pdata[i][0] = t.get(i).getDate
-//			pdata[i][1] = t.get(i).getAcc
-//			pdata[i][2] = t.get(i).getDesc
-//			pdata[i][3] = t.get(i).getCat
-//			pdata[i][4] = t.get(i).getValue
-//			pdata[i][5] = t.get(i).getIsIngreso
+			Transaction t = it.next();
+			if(t.getAccountId() == id) {
+				pdata[i][0] = t.getDate();
+				pdata[i][1] = t.getAccountId();
+				pdata[i][2] = t.getDescription();
+				pdata[i][3] = t.getCategory();
+				pdata[i][4] = t.getAmount();
+				pdata[i][5] = t.isIngreso();
+				i++;	
+			}
 			
 		}
 			

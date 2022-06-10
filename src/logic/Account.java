@@ -1,10 +1,10 @@
 package logic;
 
 public class Account{
-	int id;
-	String name;
-	float balance;
-	String currency;
+	private int id;
+	private String name;
+	private float balance;
+	private String currency;
 	
 	public Account(
 			int id,
@@ -26,8 +26,16 @@ public class Account{
 		}
 	}
 	
-	protected int getId() {
+	public int getId() {
 		return id;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public float getBalance() {
+		return this.balance;
 	}
 	
 	@Override

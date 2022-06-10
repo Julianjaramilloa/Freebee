@@ -16,6 +16,7 @@ public class User {
 	private DynamicArray<Account> accounts = new DynamicArray<Account>(); 
 	private AVLTree<Transaction> transactions = new AVLTree<Transaction>();
 	private IncomingTransactions incomingTransactions = new IncomingTransactions();
+	private float totalBalance = 0;
 	private int idAccountProvider = 1; //Asigna automáticamente un id a la cuenta que se vaya a incluir
 	private int idTransactionProvider = 1; //Asigna automáticamente un id a la transacción que se vaya a incluir
 	
@@ -30,6 +31,7 @@ public class User {
 		accounts.pushBack(acc);
 		String returnMessage = "Cuenta creada con el id " + idAccountProvider; 
 		idAccountProvider ++;
+		this.totalBalance += acc.getBalance();
 		return returnMessage;
 	}
 	
@@ -57,18 +59,39 @@ public class User {
 	}
 	
 	public void addTransaction(Transaction transaction) {
+		boolean add = true;
 		try{
 			transactions.insertNode(transaction); 
 		}catch(IllegalArgumentException iae) {
 			System.err.println("La transacción ya existe");
+			add = false;
 		}
-		setBalance(transaction.accountId(), transaction.amount());
-		idTransactionProvider ++;
-		
+		if(add) {
+			setBalance(transaction.getAccountId(), transaction.getAmount());
+			idTransactionProvider ++;
+			this.totalBalance += transaction.getAmount();
+		}
 	}
 	
 	public AVLTree<Transaction> getTransactions() {
 		return this.transactions;
+	}
+	
+	public LinkedList<Transaction> transactionsInList(){
+		return this.transactions.avlNodesInList();
+	}
+	
+	public Account getAccountById (int id) {
+		DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
+		Account account= null;
+		while(it.hasNext()) {
+			Account aux = it.next();
+			int accId = aux.getId();
+			if(accId == id) {
+				account = aux;
+			}
+		}
+		return account;
 	}
 	
 	public void addIncomingTransaction(
@@ -98,9 +121,18 @@ public class User {
 				doBalance = false;
 			}
 			if(doBalance) {
-				setBalance(ts.accountId(), ts.amount());
+				setBalance(ts.getAccountId(), ts.getAmount());
+				this.totalBalance += ts.getAmount();
 			}
 		}
+	}
+	
+	public int getAccountsSize() {
+		return this.accounts.size();
+	}
+	
+	public float getTotalBalance() {
+		return this.totalBalance;
 	}
 	
 	public String getUsername() {
@@ -130,7 +162,7 @@ public class User {
 		Account toChange = null;
 		while(it.hasNext()) {
 			Account ac = it.next();
-			if(ac.id == accountId) {
+			if(ac.getId() == accountId) {
 				toChange = ac;
 			}
 		}

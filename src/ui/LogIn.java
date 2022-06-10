@@ -190,7 +190,7 @@ public class LogIn extends JFrame implements ActionListener {
 			
 			String login = ul.login(username, password);
 			if (login.equals("alright")) {
-				Categories ct = new Categories();
+				Categories ct = new Categories(ul);
 				ct.categories();
 				this.dispose();
 			} else {

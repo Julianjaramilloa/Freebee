@@ -2,7 +2,7 @@ package ui;
 
 /*
  * Freebie
- * @author Marcos Pinzón Pardo
+ * @author Marcos Pinz�n Pardo
  */
 
 import java.awt.Color;
@@ -24,6 +24,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import logic.Account;
+import logic.UserList;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.DynamicArrayIterator;
+
 public class Accounts extends JFrame implements ActionListener {
 
 	JButton catPage;
@@ -40,7 +45,15 @@ public class Accounts extends JFrame implements ActionListener {
 	JLabel info;
 	JLabel balance;
 
-	JLabel welcomeLabel;	
+	JLabel welcomeLabel;
+	
+	UserList ul;
+	DynamicArray<Account> accounts;
+	
+	public Accounts(UserList ul) {
+		this.ul = ul;
+		accounts = ul.getUser().getAccounts();
+	}
 	
 	public void accounts(){
 		
@@ -60,7 +73,7 @@ public class Accounts extends JFrame implements ActionListener {
 		// ------------ Label: Bienvenida -------------------
 		
 		info = new JLabel(); 
-		info.setBounds(330,20,150,60); // Tama�o
+		info.setBounds(330,20,150,60); // Tama�o
 		info.setText("Total disponible: "); // Texto
 		info.setFont(new Font("Nunito", Font.PLAIN, 14)); // Fuente
 		info.setForeground(Color.BLACK); // Color del texto
@@ -70,15 +83,15 @@ public class Accounts extends JFrame implements ActionListener {
 				
 		balance = new JLabel(); 
 		balance.setBounds(440,20,200,60); // Tama�o
-		balance.setText("$00000000"); // Texto
+		balance.setText(String.valueOf(ul.getUser().getTotalBalance())); // Texto
 		balance.setFont(new Font("Nunito", Font.BOLD, 15)); // Fuente
 		balance.setForeground(Color.BLACK); // Color del texto
 		balance.setVisible(true); // Visibilidad
 		
 		// Cantidad de cuentas del usuario (m�x 5 por ahora)
-		int accAmount = 3;
+		int accAmount = ul.getUser().getAccountsSize();
 		if (accAmount == 0) {
-			JOptionPane.showMessageDialog(null, "A�n no tiene cuentas, cree una", "Cuidado", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "A�n no tiene cuentas, cree una", "Cuidado", JOptionPane.WARNING_MESSAGE);
 		}
 		displayAccButtons(accAmount);
 		
@@ -98,7 +111,7 @@ public class Accounts extends JFrame implements ActionListener {
 		
 		// ================= BOTONES FIJOS =============================
 		
-		// ------------ Botón: Pagina categorías -------------------
+		// ------------ Bot�n: Pagina categorías -------------------
 		
 		catPage = new JButton();
         catPage.setBounds(22,495,110,40); // Tamaño
@@ -111,7 +124,7 @@ public class Accounts extends JFrame implements ActionListener {
         catPage.addActionListener(this); // Añadir ActionListener 
         catPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
      
-        // ------------ Botón: Pagina cuentas -------------------
+        // ------------ Bot�n: Pagina cuentas -------------------
 		
      	accPage = new JButton();
         accPage.setBounds(147,495,110,40); // Tamaño
@@ -123,9 +136,9 @@ public class Accounts extends JFrame implements ActionListener {
         accPage.setFocusable(false); // Quitar cuadro alrededor
         accPage.addActionListener(this); // Añadir ActionListener
         accPage.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.GRAY)); // Borde
-        accPage.setEnabled(false); // Desabilita el botón
+        accPage.setEnabled(false); // Desabilita el bot�n
         
-        // ------------ Botón: Pagina ahorro -------------------
+        // ------------ Bot�n: Pagina ahorro -------------------
 		
      	savesPage = new JButton();
         savesPage.setBounds(272,495,110,40); // Tamaño
@@ -138,7 +151,7 @@ public class Accounts extends JFrame implements ActionListener {
         savesPage.addActionListener(this); // Añadir ActionListener
         savesPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ Botón: Pagina estadísticas -------------------
+        // ------------ Bot�n: Pagina estadísticas -------------------
 		
      	statsPage = new JButton();
         statsPage.setBounds(397,495,110,40); // Tamaño
@@ -151,7 +164,7 @@ public class Accounts extends JFrame implements ActionListener {
         statsPage.addActionListener(this); // Añadir ActionListener
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ Botón: Pagina ajustes -------------------
+        // ------------ Bot�n: Pagina ajustes -------------------
 		
      	settPage = new JButton();
         settPage.setBounds(522,495,40,40); // Tamaño
@@ -164,7 +177,7 @@ public class Accounts extends JFrame implements ActionListener {
         settPage.addActionListener(this); // Añadir ActionListener
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
 		
-		// ------------ Botón: Crear transacción -------------------
+		// ------------ Bot�n: Crear transacci�n -------------------
 	
 		addTrans = new JButton();
 		addTrans.setBounds(505,440,25,25); // Tamaño
@@ -177,7 +190,7 @@ public class Accounts extends JFrame implements ActionListener {
 		addTrans.addActionListener(this); // Añadir ActionListener
 		addTrans.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
-		// ------------ Botón: Obtener ayuda -----------------------
+		// ------------ Bot�n: Obtener ayuda -----------------------
 		
 		getHelp = new JButton();
 		getHelp.setBounds(50,440,25,25); // Tamaño
@@ -236,8 +249,8 @@ public class Accounts extends JFrame implements ActionListener {
 		for (int i=0; i<c; i++) {
 			accButs[i]= new JButton();
 			accButs[i].setBounds(160,(110 + (i*(h+10))),250,h); // Tama�o
-			// Integrar account name y saldo
-			accButs[i].setText("accountName" + (i+1) + " $" + "0.0"); // Texto
+			Account acc = accounts.get(i);			
+			accButs[i].setText(acc.getName() +  " $" + acc.getBalance()); // Texto
 			accButs[i].setBorder(new LineBorder(Color.BLACK)); // Borde
 			accButs[i].setFont(new Font("Consolas", Font.BOLD, 16)); // Fuente
 			accButs[i].setForeground(Color.BLACK); // Color del texto
@@ -258,14 +271,24 @@ public class Accounts extends JFrame implements ActionListener {
 		for (JButton b : accButs) {
 			if (pressed.getSource() == b){
 				System.out.print(b.getLabel() + "\n");
-				Transactions tr = new Transactions();
-				tr.showTrans(b.getLabel().replaceFirst("\\s*(\\w+).*", "$1"));
+				Transactions tr = new Transactions(this.ul);
+				String accName = b.getLabel().replaceFirst("\\s*(\\w+).*", "$1");
+				DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
+				int id = 0;
+				while(it.hasNext()) {
+					Account aux = it.next();
+					String auxString = aux.getName();
+					if(auxString.equals(accName)) {
+						id = aux.getId();
+					}
+				}
+				tr.showTrans(accName, id);
 			}
 		}
 			
 		if (pressed.getSource() == newAcc) {
 			System.out.println("Abriendo creaci�n de nuevo cuenta");
-			NewAcc na = new NewAcc(); 
+			NewAcc na = new NewAcc(ul); 
 			na.createAcc();
 		}
 		
@@ -274,42 +297,42 @@ public class Accounts extends JFrame implements ActionListener {
 		
 		if (pressed.getSource() == catPage) {
 			System.out.println("Ventana Categories");
-			Categories ct = new Categories();
+			Categories ct = new Categories(ul);
 			ct.categories();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == accPage) {
 			System.out.println("Ventana Accounts");
-			Accounts ac = new Accounts();
+			Accounts ac = new Accounts(ul);
 			ac.accounts();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == savesPage) {
 			System.out.println("Ventana Savings");
-			Savings sv = new Savings();
+			Savings sv = new Savings(ul);
 			sv.savings();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == statsPage) {
 			System.out.println("Ventana Stats");
-			Stats st = new Stats();
+			Stats st = new Stats(ul);
 			st.stats();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == settPage) {
 			System.out.println("Ventana Settings");
-			Settings st = new Settings();
+			Settings st = new Settings(ul);
 			st.settings();
 			this.dispose();
 		}
 				
 		if (pressed.getSource() == addTrans) {
 			System.out.println("Abriendo CreateTrans");
-			NewTrans nt = new NewTrans();
+			NewTrans nt = new NewTrans(ul);
 			nt.createTrans();
 		}
 				

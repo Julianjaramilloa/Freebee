@@ -33,6 +33,12 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import logic.Account;
+import logic.TransactionCategory;
+import logic.UserList;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.DynamicArrayIterator;
+
 
 public class NewTrans extends JFrame implements ActionListener {
 
@@ -64,18 +70,28 @@ public class NewTrans extends JFrame implements ActionListener {
 	String[] catList = {"Vivienda","Salud","Compras","Comidas","ComidasFuera","Transporte","Arriendo","Educacion","Ocio","Ingresos","Trabajo"};
 	JComboBox catSelect = new JComboBox(catList);
 	
-//	String[] accList = new String[cantidadDeCuentas]
-//	// Llenar con las cuentas del usuario
-//	for(i = 0; i < cantidadDeCuentas < i++) {
-//		// Iterar a través del arbol y agregar las cuentas
-//		accList[i] = getAccount;
-//	}
+	UserList ul;
+	DynamicArray<Account> accounts = new DynamicArray<Account>();
 	
-	String[] accList = {"T1","T2","T3"};
+	public NewTrans(UserList ul) {
+		this.ul = ul;
+		accounts = ul.getUser().getAccounts();
+	}
 	
-	JComboBox accSelect = new JComboBox(accList);
-
 	
+	private String[] fillComboBox() {
+		String[] accList = new String[accounts.size()];
+		DynamicArrayIterator <Account> it = new DynamicArrayIterator<Account>(accounts);
+		int i=0;
+		while(it.hasNext()) {
+			Account aux = it.next();
+			accList[i] = aux.getName();
+			i++;
+		}
+		return accList;
+	}
+	
+	JComboBox accSelect = new JComboBox(fillComboBox());
 	
 	public void createTrans(){
 		
@@ -309,7 +325,19 @@ public class NewTrans extends JFrame implements ActionListener {
 						System.out.println("Nueva transacción: " + "Fecha: " + date + " Cuenta: " + selectedAcc + " Memo: '" + 
 								desc + "' Categoría: " + selectedCat + " Valor: " + value + " isIngreso: " + isIncome);
 						
-						//Añadir transacción(date,selectedAcc,desc,selectedCat,value,isIncome);
+						DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
+						int id = 0;
+						while(it.hasNext()) {
+							Account aux = it.next();
+							String auxString = aux.getName();
+							if(auxString.equals(selectedAcc)) {
+								id = aux.getId();
+							}
+						}
+						
+						TransactionCategory cat = TransactionCategory.valueOf(selectedCat);
+						
+						ul.getUser().addTransactionData(date, id, desc, cat, value, isIncome);
 						
 						this.dispose();
 						

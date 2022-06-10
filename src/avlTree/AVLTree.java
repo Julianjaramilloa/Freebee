@@ -1,5 +1,7 @@
 package avlTree;
 
+import seqDataStructures.LinkedList;
+
 public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 
 	protected Node<T> root;
@@ -18,7 +20,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 			}else if(key.compareTo(candidate.data) > 0) {
 				candidate = candidate.right;
 			}else {
-				throw new IllegalArgumentException("El árbol ya contiene el dato " + key);
+				throw new IllegalArgumentException("El Ã¡rbol ya contiene el dato " + key);
 			}
 		}
 		
@@ -41,7 +43,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		try {
 			toDelete = searchNode(key);
 		}catch (NullPointerException npe) {
-			System.err.println("El dato que está intentado eliminar no está presente en el �rbol");
+			System.err.println("El dato que estÃ¡ intentado eliminar no estÃ¡ presente en el ï¿½rbol");
 			npe.printStackTrace();
 		}
 		
@@ -195,7 +197,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		}else if(balanceFactor < -1){
 			leftBalance(toBalance);
 		}else{
-			throw new RuntimeException ("El �rbol actual no necesita ser desbalanceado");
+			throw new RuntimeException ("El ï¿½rbol actual no necesita ser desbalanceado");
 		}
 		
 	}
@@ -258,8 +260,8 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 	}
 	
 	/*
-	 *Las palabras "oldRoot" y "newRoot" se refieren aqu� a la ra�z del sub�rbol que estamos balanceando,
-	 *          no tienen necesariamente que ser la ra�z de todo el �rbol 
+	 *Las palabras "oldRoot" y "newRoot" se refieren aquï¿½ a la raï¿½z del subï¿½rbol que estamos balanceando,
+	 *          no tienen necesariamente que ser la raï¿½z de todo el ï¿½rbol 
 	 */
 	
 	public Node<T> rotateRight(Node<T> oldRoot) {
@@ -306,12 +308,12 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		return size;
 	}
 	
-	//Los m�todos de ac� en adelante sirven para el prop�sito de mostrar la informaci�n del arbol
+	//Los mï¿½todos de acï¿½ en adelante sirven para el propósito de mostrar la información del arbol
 
 	  @Override
 	  public String toString() {
 	    if(root == null) {
-	    	return "Árbol Vacío";
+	    	return "Ã�rbol VacÃ­o";
 	    }else {
 	    	StringBuilder builder = new StringBuilder();
 	  	    appendNodeToStringRecursive(getRoot(), builder, false);
@@ -321,7 +323,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 	  
 	  public String showHeights() {
 		if(root == null) {
-		  	return "Árbol Vacío";
+		  	return "+Arbol VacÃ­o";
 		}else {
 		   	StringBuilder builder = new StringBuilder();
 		    appendNodeToStringRecursive(getRoot(), builder, true);
@@ -372,8 +374,11 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 	    }
 	    
 	  }
-
 	  
+	  public LinkedList<T> avlNodesInList(){
+		  AVLTreeInList<T> avlList = new AVLTreeInList<T>(this);
+		  return avlList.getList();
+	  }
 	  //JUst to debug:
 	  /*protected void appendNodeToString(Node node, StringBuilder builder) {
 		  String parent;

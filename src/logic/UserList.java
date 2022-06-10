@@ -10,6 +10,9 @@ public class UserList {
 	private User currentUser; //Usuario con la sesión abierta
 	
 	//Métodos para crear un usuario:
+	public RbNode getRoot() {
+		return users.getRoot();
+	}
 	
 	public String userCreation(String username, String password, String auxPass) {
 		String results = null;

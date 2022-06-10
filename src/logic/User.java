@@ -131,6 +131,10 @@ public class User {
 		return this.accounts.size();
 	}
 	
+	public String getPassword() {
+		return this.password;
+	}
+	
 	public float getTotalBalance() {
 		return this.totalBalance;
 	}

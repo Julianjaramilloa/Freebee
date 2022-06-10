@@ -51,8 +51,10 @@ public class Main {
 		UserList ul = new UserList();
 		ReaderWriter rw = new ReaderWriter(ul);
 		rw.readFile();
+		
 		LogIn lg = new LogIn(ul);
 		lg.credentialsIn();
+		rw.saveChanges();
 		
 		
 		

@@ -31,22 +31,6 @@ public class Main {
 	public static void main(String[] args) {	
 		
 		
-//		Savings sv = new Savings();
-//		sv.savings();
-		
-//		UserList ul = new UserList();
-//		NewUser nu = new NewUser(ul);
-//		nu.setVisible(true);
-				
-//		Categories ct = new Categories();
-//		ct.categories();
-		
-//		TestClasses tc = new TestClasses();
-//		tc.incomingTransactionsTest();
-		
-//		ProveClasses pc = new ProveClasses();
-//		pc.minHeap();
-				
 		
 		UserList ul = new UserList();
 		ReaderWriter rw = new ReaderWriter(ul);

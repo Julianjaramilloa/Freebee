@@ -11,14 +11,10 @@ import ui.LogIn;
 import java.time.LocalDate;
 
 import avlTree.AVLTree;
-import logic.ReaderWriter;
-import logic.Transaction;
 import logic.TransactionCategory;
 import logic.User;
 import logic.UserList;
 import priorityQueue.MinHeap;
-import rbTree.RbNode;
-import rbTree.RedBlackTree;
 //Esta clase la cree para ir probando que las cosas que vamos creando funcionan
 
 public class TestClasses {
@@ -65,7 +61,7 @@ public class TestClasses {
 	
 	void avlTree () {
 		
-		/*AVLTree<Integer> avl = new AVLTree<Integer>();
+		AVLTree<Integer> avl = new AVLTree<Integer>();
 		LinkedList<Integer> treeNodes = new LinkedList<Integer>();
 		
 		treeNodes.pushBack(89);
@@ -106,63 +102,11 @@ public class TestClasses {
 			avl.deleteNode(toInsert);
 			System.out.println("Árbol:\n" + avl.toString());
 		}
-		
-		*/
-//		System.out.println("Árbol:\n" + avl.toString());
-		
-		
-		/*AVLTree avl = new AVLTree();
-		avl.insertNode(98);
-		avl.insertNode(156);
-		avl.insertNode(27);
-		avl.insertNode(35);
-		avl.insertNode(234);
-		avl.insertNode(350);
-		avl.insertNode(32);*/
-		//avl.insertNode(12);
-
-		
-		/*AVLTree avl = new AVLTree();
-		avl.insertNode(98);
-		avl.insertNode(156);
-		avl.insertNode(273);
-		avl.insertNode(74);
-		avl.insertNode(78);
-		avl.insertNode(789);
-		avl.insertNode(56);
-		avl.insertNode(898);
-		avl.insertNode(67);
-		avl.insertNode(92);
-		avl.insertNode(4);
-		avl.insertNode(31);
-		avl.insertNode(15);
-		avl.insertNode(19);
-		avl.insertNode(79);
-		*/
 		 		
 	}
 	
 	private TransactionCategory ts(String toParse) {
 		return TransactionCategory.valueOf(toParse);
-	}
-	
-	public void userTransactions() {
-		User us = new User("cesar", "1234");
-		UserList ul = new UserList();
-		
-		us.addTransactionData(LocalDate.of(2002, 10, 19), 1, "Pago del inmueble", ts("Vivienda"), 40500000, false);
-		AVLTree<Transaction> av = us.getTransactions();
-		System.out.println(av.toString());
-		
-		ReaderWriter rd = new ReaderWriter(ul);
-		rd.readFile(); 
-		RedBlackTree rbt = UserList.users;
-		RbNode rb = rbt.searchNode("Usuario11");
-		User user = rb.getUser();
-		System.out.println(user.completeUserInfo());
-		
-		//AVLTree<Transaction> xdUs = xd.getTransactions();
-		//System.out.println(xdUs.preorderTraverse());
 	}
 	
 	public void incomingTransactionsTest() {

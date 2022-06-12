@@ -5,13 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Scanner;
 import java.util.Locale;
-import java.util.Locale.Category;
 
 import avlTree.AVLTree;
 import avlTree.AvlTreeIterator;

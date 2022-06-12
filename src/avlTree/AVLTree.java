@@ -20,7 +20,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 			}else if(key.compareTo(candidate.data) > 0) {
 				candidate = candidate.right;
 			}else {
-				throw new IllegalArgumentException("El Ã¡rbol ya contiene el dato " + key);
+				throw new IllegalArgumentException("El Árbol ya contiene el dato " + key);
 			}
 		}
 		
@@ -43,7 +43,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		try {
 			toDelete = searchNode(key);
 		}catch (NullPointerException npe) {
-			System.err.println("El dato que estÃ¡ intentado eliminar no estÃ¡ presente en el ï¿½rbol");
+			System.err.println("El dato que está intentado eliminar no está presente en el árbol");
 			npe.printStackTrace();
 		}
 		
@@ -57,7 +57,6 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 			}
 			updateHeightsAndGuaranteeBalance(parent);
 		}else if(toDelete.right == null){
-			System.out.println("b");
 			Node<T> replacement = toDelete.left;
 			if(parent.right == toDelete) {
 				parent.right = replacement;
@@ -68,7 +67,6 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 			updateHeightsAndGuaranteeBalance(replacement);
 		}
 		else if(toDelete.left == null){
-			System.out.println("c");
 			Node<T> replacement = toDelete.right;
 			if(parent.right == toDelete) {
 				parent.right = replacement;

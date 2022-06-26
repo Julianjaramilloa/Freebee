@@ -32,6 +32,9 @@ public class Stats extends JFrame implements ActionListener {
 	JButton getHelp;
 
 	JLabel welcomeLabel;	
+	JLabel stat1;
+	JLabel stat2;
+	JLabel stat3;
 	
 	UserList ul;
 	
@@ -52,6 +55,33 @@ public class Stats extends JFrame implements ActionListener {
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
+		
+		// ------------ Label: Stat1 -------------------
+		
+		stat1 = new JLabel(); 
+		stat1.setBounds(100,125,400,60); // Tamaño
+		stat1.setText("Su capital ha crecido en un " + "% " + "en el �ltimo mes."); // Texto
+		stat1.setFont(new Font("Nunito", Font.ITALIC, 16)); // Fuente
+		stat1.setForeground(Color.BLACK); // Color del texto
+		stat1.setVisible(true); // Visibilidad
+		
+		// ------------ Label: Stat1 -------------------
+		
+		stat2 = new JLabel(); 
+		stat2.setBounds(100,225,400,60); // Tamaño
+		stat2.setText("En promedio sus ingresos mensuales son: $" + "XXXX"); // Texto
+		stat2.setFont(new Font("Nunito", Font.ITALIC, 16)); // Fuente
+		stat2.setForeground(Color.BLACK); // Color del texto
+		stat2.setVisible(true); // Visibilidad
+				
+		// ------------ Label: Stat1 -------------------
+				
+		stat3 = new JLabel(); 
+		stat3.setBounds(100,325,400,60); // Tamaño
+		stat3.setText("En promedio sus gastos mensuales son: $" + "XXXX"); // Texto
+		stat3.setFont(new Font("Nunito", Font.ITALIC, 16)); // Fuente
+		stat3.setForeground(Color.BLACK); // Color del texto
+		stat3.setVisible(true); // Visibilidad
 		
 		// ================= BOTONES FIJOS =============================
 		
@@ -158,6 +188,10 @@ public class Stats extends JFrame implements ActionListener {
 		this.add(settPage);
 		this.add(getHelp);
 		this.add(addTrans);
+		
+		this.add(stat1);
+		this.add(stat2);
+		this.add(stat3);
 		
 		this.add(welcomeLabel);
 

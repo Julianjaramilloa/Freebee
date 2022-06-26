@@ -268,7 +268,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 1
 		help1 = new JLabel(); 
 		help1.setBounds(30,120,550,60); // Tamaño
-		help1.setText("Por terminar"); // Texto
+		help1.setText("Selecciona la categoría que deseas mirar"); // Texto
 		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
@@ -276,7 +276,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("Por terminar"); // Texto
+		help2.setText("Al seleccionarla, verás todas las trasancciones asociadas"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
@@ -327,7 +327,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 1
 		help1 = new JLabel(); 
 		help1.setBounds(30,120,550,60); // Tamaño
-		help1.setText("Por terminar"); // Texto
+		help1.setText("Selecciona la cuenta que deseas revisar"); // Texto
 		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
@@ -335,7 +335,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("Por terminar"); // Texto
+		help2.setText("Dentro encontrarás todas las tranascciones asociadas"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
@@ -386,7 +386,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 1
 		help1 = new JLabel(); 
 		help1.setBounds(30,120,550,60); // Tamaño
-		help1.setText("Por terminar"); // Texto
+		help1.setText("En la parte de arriba verás estadísticas de ingresos y egresos"); // Texto
 		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
@@ -394,7 +394,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("Por terminar"); // Texto
+		help2.setText("Presiona el botón para obtener tips de ahorro ;)"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
@@ -445,7 +445,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 1
 		help1 = new JLabel(); 
 		help1.setBounds(30,120,550,60); // Tamaño
-		help1.setText("Por terminar"); // Texto
+		help1.setText("En esta ventana puedes conocer algunas estadísticas sobre tu"); // Texto
 		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
@@ -453,7 +453,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("Por terminar"); // Texto
+		help2.setText("cuenta, como el promedio de ingresos y egresos"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
@@ -504,7 +504,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 1
 		help1 = new JLabel(); 
 		help1.setBounds(30,120,550,60); // Tamaño
-		help1.setText("Por terminar"); // Texto
+		help1.setText("Para crear una transacción, por favor llena y selecciona todos los campos"); // Texto
 		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
@@ -512,7 +512,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("Por terminar"); // Texto
+		help2.setText("Si quieres crear una transacción a furuo, sólo asigna la fecha"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad
@@ -536,7 +536,7 @@ public class HelpMenu extends JFrame implements ActionListener {
 		
 	}
 	
-public void displayNewAccHelp() {
+	public void displayNewAccHelp() {
 		
 		System.out.println("Ventana displayNewAccHelp");
 		
@@ -563,7 +563,7 @@ public void displayNewAccHelp() {
 		// Ayuda 1
 		help1 = new JLabel(); 
 		help1.setBounds(30,120,550,60); // Tamaño
-		help1.setText("Por terminar"); // Texto
+		help1.setText("Para crear una cuenta llena todos los campos, debes ponerle"); // Texto
 		help1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help1.setForeground(Color.BLACK); // Color del texto
 		help1.setVisible(true); // Visibilidad
@@ -571,7 +571,7 @@ public void displayNewAccHelp() {
 		// Ayuda 2
 		help2 = new JLabel(); 
 		help2.setBounds(30,150,500,30); // Tamaño
-		help2.setText("Por terminar"); // Texto
+		help2.setText("un nombre y tipo de divisa, puedes dejar el balance en 0"); // Texto
 		help2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		help2.setForeground(Color.BLACK); // Color del texto
 		help2.setVisible(true); // Visibilidad

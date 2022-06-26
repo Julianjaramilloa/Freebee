@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
@@ -306,14 +307,17 @@ public class Settings extends JFrame implements ActionListener {
 		
 		if (pressed.getSource() == user) {
 			System.out.println("Abriendo ajustes/user");
+			JOptionPane.showMessageDialog(null, "Ventana en construcción", "¡Anuncio!", JOptionPane.WARNING_MESSAGE);
 		}
 		
 		if (pressed.getSource() == accounts) {
 			System.out.println("Abriendo ajustes/cuentas");
+			JOptionPane.showMessageDialog(null, "Ventana en construcción", "¡Anuncio!", JOptionPane.WARNING_MESSAGE);
 		}
 		
 		if (pressed.getSource() == general) {
 			System.out.println("Abriendo ajustes/general");
+			JOptionPane.showMessageDialog(null, "Ventana en construcción", "¡Anuncio!", JOptionPane.WARNING_MESSAGE);
 		}
 		
 		if (pressed.getSource() == about) {

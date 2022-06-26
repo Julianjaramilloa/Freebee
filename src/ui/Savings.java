@@ -38,6 +38,9 @@ public class Savings extends JFrame implements ActionListener {
 	JButton addTrans;
 	JButton getHelp;
 
+	
+	JLabel stat1;
+	JLabel stat2;
 	JLabel welcomeLabel;
 	
 	JButton tipButton;
@@ -61,15 +64,9 @@ public class Savings extends JFrame implements ActionListener {
 	    if (tip.length()%2 == 0){
 	        p1 =tip.substring(0, tip.length()/2);
 	        p2 = tip.substring(tip.length()/2);
-	        System.out.println("if");
-	        System.out.println(p1);
-	        System.out.println(p2);
-	    }else{
+	    } else {
 	        p1 = tip.substring(0, tip.length()/2);
 	        p2 = tip.substring(tip.length()/2+1);
-	        System.out.println("Else");
-	        System.out.println(p1);
-	        System.out.println(p2);
 	    }   
 	    
 	    tipLabel1.setText(p1);
@@ -92,17 +89,35 @@ public class Savings extends JFrame implements ActionListener {
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
 		
+		// ------------ Label: Stat1 -------------------
+		
+		stat1 = new JLabel(); 
+		stat1.setBounds(100,120,400,60); // Tama�o
+		stat1.setText("Sus gastos en los �ltimos diez d�as suman: $" + "XXXX"); // Texto
+		stat1.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
+		stat1.setForeground(Color.BLACK); // Color del texto
+		stat1.setVisible(true); // Visibilidad
+				
+		// ------------ Label: Stat1 -------------------
+				
+		stat2 = new JLabel(); 
+		stat2.setBounds(100,170,400,60); // Tama�o
+		stat2.setText("Por otro lado, sus ingresos suman: $" + "XXXX"); // Texto
+		stat2.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
+		stat2.setForeground(Color.BLACK); // Color del texto
+		stat2.setVisible(true); // Visibilidad
+		
 		// ------------ Labels de tip -------------------
 		
 		tipLabel1 = new JLabel(); 
-		tipLabel1.setBounds(80,260,600,200); // TamaÃ±o
+		tipLabel1.setBounds(70,330,600,40); // TamaÃ±o
 		tipLabel1.setText(""); // Texto
 		tipLabel1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		tipLabel1.setForeground(Color.BLACK); // Color del texto
 		tipLabel1.setVisible(true); // Visibilidad
 		
 		tipLabel2 = new JLabel(); 
-		tipLabel2.setBounds(80,290,600,200); // TamaÃ±o
+		tipLabel2.setBounds(70,350,600,40); // TamaÃ±o
 		tipLabel2.setText(""); // Texto
 		tipLabel2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		tipLabel2.setForeground(Color.BLACK); // Color del texto
@@ -111,12 +126,12 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Bot�n: Pagina categor�as -------------------
 		
 		tipButton = new JButton();
-		tipButton.setBounds(350,300,100,30); // TamaÃ±o
-		tipButton.setText("Nuevo tip"); // Texto
+		tipButton.setBounds(300,280,180,30); // TamaÃ±o
+		tipButton.setText("Generar tip de ahorro"); // Texto
 		tipButton.setBorder(new LineBorder(Color.BLACK)); // Borde
 		tipButton.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
 		tipButton.setForeground(Color.BLACK); // Color del texto
-		tipButton.setBackground(Color.WHITE); // Color del fondo
+		tipButton.setBackground(Color.LIGHT_GRAY); // Color del fondo
 		tipButton.setFocusable(false); // Quitar cuadro alrededor
 		tipButton.addActionListener(this); // AÃ±adir ActionListener 
 		tipButton.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
@@ -227,6 +242,8 @@ public class Savings extends JFrame implements ActionListener {
 		this.add(getHelp);
 		this.add(addTrans);
 		
+		this.add(stat1);
+		this.add(stat2);
 		this.add(welcomeLabel);
 		this.add(tipLabel1);
 		this.add(tipLabel2);

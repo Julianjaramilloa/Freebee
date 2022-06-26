@@ -235,13 +235,10 @@ public class Accounts extends JFrame implements ActionListener {
 
 		
 	}
-	
 
 	private void displayAccButtons(int c) {
 			
-		if (c == 0) {
-			return;
-		}
+		if (c == 0) {return;}
 		
 		// Altura de los botones con relaci�n a cuantos hay (se puede mejorar la anchura)
 		int h = 250/c;

@@ -18,20 +18,25 @@ import logic.Account;
 import logic.Transaction;
 import logic.UserList;
 import seqDataStructures.DynamicArray;
+import seqDataStructures.DynamicArrayIterator;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
 
 
-public class Transactions extends JFrame{
-
-	UserList ul;
+public class ShowCategory extends JFrame{
 	
-	public Transactions(UserList ul){ 
+	UserList ul;
+	DynamicArray<Account> accounts;
+	
+	public ShowCategory(UserList ul){ 
 		this.ul = ul; 
+		accounts = ul.getUser().getAccounts();
 	}
 	
-	public void showTrans(String accName, int id) {
+	public void showCat(String cat) {
 
+		System.out.print("Ventana de categoria:" + cat);
+		
 		JTable table;
 			
 		LinkedList<Transaction> transactions = ul.getUser().transactionsInList();
@@ -40,33 +45,33 @@ public class Transactions extends JFrame{
 		setSize(650,550);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setVisible(true);
-		this.setTitle("Freebe / Vista de transacciones de " + accName); // Título
+		this.setTitle("Freebe / Vista de transacciones de: " + cat); // Título
 		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
 		this.setIconImage(logo.getImage()); // Poner logo
 		setResizable(true);
 		setLocationRelativeTo(null);
-			
+
 		// -------------- Datos de la tabla -----------------------------
-					
+
 		// Columnas
-		String[] pcolum = {"Fecha", "Memo", "Categoría", "Valor", "+/-"};
+		String[] pcolum = {"Fecha", "Memo", "Valor", "+/-", "Cuenta"};
 		// Filas
 		int a = pcolum.length;
 		int b = 50; //t.size(); // Cambiar para variar la cantidad de productos que se muestran
 		Object[][] pdata = new Object[b][a];
-		
+				
 		int i=0;
 		while(it.hasNext()){
 			Transaction t = it.next();
-			if(t.getAccountId() == id) {
-				pdata[i][0] = t.getDate();
-				pdata[i][1] = t.getDescription();
-				pdata[i][2] = t.getCategory();
-				pdata[i][3] = t.getAmount();
-				pdata[i][4] = t.isIngreso();
-				i++;	
+			if(t.getCategory() == cat) {
+			Account acc = accounts.get(i);			
+			pdata[i][0] = t.getDate();
+			pdata[i][1] = t.getDescription();
+			pdata[i][2] = t.getAmount();
+			pdata[i][3] = t.isIngreso();
+			pdata[i][4] = acc.getName();
+			i++;	
 			}
-			
 		}
 			
 		// --------------------- JTable -------------------------------------

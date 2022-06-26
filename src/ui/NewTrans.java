@@ -307,7 +307,7 @@ public class NewTrans extends JFrame implements ActionListener {
 		if (pressed.getSource() == catSelect) {
 			JComboBox cb = (JComboBox)pressed.getSource();
 			selectedCat = (String)cb.getSelectedItem();
-			System.out.println("CategorÃ­a seleccionada: " + selectedCat);
+			System.out.println("Categoría seleccionada: " + selectedCat);
 		}
 		
 		if (pressed.getSource() == income) {
@@ -338,8 +338,8 @@ public class NewTrans extends JFrame implements ActionListener {
 				if (value == 0) {
 					JOptionPane.showMessageDialog(null, "Ingrese un valor", "Datos faltantes", JOptionPane.WARNING_MESSAGE);
 				} else {
-						System.out.println("Nueva transacciÃ³n: " + "Fecha: " + date + " Cuenta: " + selectedAcc + " Memo: '" + 
-								desc + "' CategorÃ­a: " + selectedCat + " Valor: " + value + " isIngreso: " + isIncome);
+						System.out.println("Nueva transacción: " + "Fecha: " + date + " Cuenta: " + selectedAcc + " Memo: '" + 
+								desc + "' Categoría: " + selectedCat + " Valor: " + value + " isIngreso: " + isIncome);
 						
 						DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
 						int id = 0;
@@ -353,7 +353,15 @@ public class NewTrans extends JFrame implements ActionListener {
 						
 						TransactionCategory cat = TransactionCategory.valueOf(selectedCat);
 						
-						ul.getUser().addTransactionData(date, id, desc, cat, value, isIncome);
+						if (date.compareTo(LocalDate.now()) <= 0) {
+							System.out.println("Es transaccion normal");
+							ul.getUser().addTransactionData(date, id, desc, cat, value, isIncome);
+							JOptionPane.showMessageDialog(null, "¡Transacción creada!", "¡Éxito!", JOptionPane.INFORMATION_MESSAGE);
+						} else {
+							System.out.println("Es transaccion a futuro");
+							ul.getUser().addIncomingTransaction(date, id, desc, cat, value, isIncome);
+							JOptionPane.showMessageDialog(null, "¡Transacción a futuro registrada!", "¡Éxito!", JOptionPane.INFORMATION_MESSAGE);
+						}
 						
 						Accounts ac = new Accounts(ul);
 						ac.accounts();

@@ -1,6 +1,8 @@
 package ui;
 
 
+import java.awt.BorderLayout;
+
 /*
  * Freebie
  * @author Marcos Pinzón Pardo
@@ -17,10 +19,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
 
+import logic.Account;
+import logic.Transaction;
 import logic.UserList;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.DynamicArrayIterator;
+import seqDataStructures.LinkedList;
+import seqDataStructures.LinkedListIterator;
 
 public class Categories extends JFrame implements ActionListener {
 
@@ -31,18 +43,49 @@ public class Categories extends JFrame implements ActionListener {
 	JButton settPage;
 	JButton addTrans;
 	JButton getHelp;
-
+	JButton cat1;
+		
+	JButton[] catButs = new JButton[11];
+	
 	JLabel welcomeLabel;
 	
 	UserList ul;
 	
 	public Categories(UserList ul) {
-		this.ul = ul;
+		this.ul = ul; 
+	}
+	
+	String[] categories = {"Vivienda", "Salud", "Compras", "Comidas", "ComidasFuera", "Transporte", "Arriendo", "Educacion", "Ocio", "Ingresos", "Trabajo"};
+	
+	private void displayCatButtons() {
+		
+		// Altura de los botones con relaci�n a cuantos hay (se puede mejorar la anchura)
+		int h = 450/11;
+		int p = 0;
+		
+		for (int i=0; i<11; i++) {
+			catButs[i]= new JButton();
+			if (i<5) {
+				catButs[i].setBounds(90,(120 + (i*(h+10))),180,h); // Tama�o
+			} else {
+				catButs[i].setBounds(310,(120 + (p*(h+10))),180,h); // Tama�o
+				p++;
+			}
+			
+			catButs[i].setText(categories[i]); // Texto
+			catButs[i].setBorder(new LineBorder(Color.BLACK)); // Borde
+			catButs[i].setFont(new Font("Consolas", Font.BOLD, 16)); // Fuente
+			catButs[i].setForeground(Color.BLACK); // Color del texto
+			catButs[i].setBackground(Color.WHITE); // Color del fondo
+			catButs[i].setFocusable(false); // Quitar cuadro alrededor
+			catButs[i].addActionListener(this); // A�adir ActionListener
+			catButs[i].setBorder(BorderFactory.createEtchedBorder()); // Borde
+			this.add(catButs[i]);
+		}
+		
 	}
 	
 	public void categories(){
-		
-		System.out.println("Ventana Categories");
 		
 		// ------------ Label: Bienvenida -------------------
 		
@@ -52,6 +95,8 @@ public class Categories extends JFrame implements ActionListener {
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
 		welcomeLabel.setVisible(true); // Visibilidad
+		
+		displayCatButtons();
 		
 		// ================= BOTONES FIJOS =============================
 		
@@ -146,10 +191,8 @@ public class Categories extends JFrame implements ActionListener {
 		getHelp.setFocusable(false); // Quitar cuadro alrededor
 		getHelp.addActionListener(this); // Añadir ActionListener
 		getHelp.setBorder(BorderFactory.createEtchedBorder()); // Borde
-		
-					
+				
 		// ------------- Frame -------------------------------
-		
 		
 		this.add(catPage);
 		this.add(accPage);
@@ -158,11 +201,9 @@ public class Categories extends JFrame implements ActionListener {
 		this.add(settPage);
 		this.add(getHelp);
 		this.add(addTrans);
-		
 		this.add(welcomeLabel);
 
 
-		
 		this.setTitle("Freebee"); // Título
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null); // Layout
@@ -180,6 +221,15 @@ public class Categories extends JFrame implements ActionListener {
 	// Criterio al presionar el botón
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
+		
+		for (JButton b : catButs) {
+			if (pressed.getSource() == b){
+				System.out.print(b.getLabel() + "\n");
+				ShowCategory sc = new ShowCategory(ul);
+				sc.showCat(b.getLabel());
+				//tr.showTrans(accName, id);
+			}
+		}
 		
 		//--------------------------------------------------------
 		

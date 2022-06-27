@@ -1,7 +1,6 @@
-package hashmaps;
+package maps;
 
-//Java program to demonstrate implementation of our
-//own hash table with chaining for collision detection
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -53,6 +52,16 @@ class Map<K, V> {
 	private final int hashCode (K key) {
 		return Objects.hashCode(key);
 	}
+	
+	// Custom Hashcode
+//	private final int hashCode() {
+//        int hash = 7;
+//        hash = 31 * hash + (int) id;
+//        hash = 31 * hash + (name == null ? 0 : name.hashCode());
+//        hash = 31 * hash + (email == null ? 0 : email.hashCode());
+//        logger.info("hashCode() called - Computed hash: " + hash);
+//        return hash;
+//    }
 
 	// This implements hash function to find index
 	// for a key
@@ -167,17 +176,17 @@ class Map<K, V> {
 	}
 
 //	 Driver method to test Map class
-	public static void main(String[] args)
-	{
-		Map<String, Integer> map = new Map<>();
-		map.add("this", 1);
-		map.add("coder", 2);
-		map.add("this", 4);
-		map.add("hi", 5);
-		System.out.println(map.size());
-		System.out.println(map.remove("this"));
-		System.out.println(map.remove("this"));
-		System.out.println(map.size());
-		System.out.println(map.isEmpty());
-	}
+//	public static void main(String[] args)
+//	{
+//		Map<String, Integer> map = new Map<>();
+//		map.add("this", 1);
+//		map.add("coder", 2);
+//		map.add("this", 4);
+//		map.add("hi", 5);
+//		System.out.println(map.size());
+//		System.out.println(map.remove("this"));
+//		System.out.println(map.remove("this"));
+//		System.out.println(map.size());
+//		System.out.println(map.isEmpty());
+//	}
 }

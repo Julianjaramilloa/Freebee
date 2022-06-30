@@ -4,44 +4,25 @@ package maps;
 import java.util.ArrayList;
 import java.util.Objects;
 
-//A node of chains
-class HashNode<K, V> {
-	K key;
-	V value;
-	final int hashCode;
 
-	// Reference to next node
-	HashNode<K, V> next;
-
-	// Constructor
-	public HashNode(K key, V value, int hashCode)
-	{
-		this.key = key;
-		this.value = value;
-		this.hashCode = hashCode;
-	}
-}
-
-//Class to represent entire hash table
 public class hashtable<K, V> {
-	// bucketArray is used to store array of chains
+	// Array para la resolucion de colisiones mediante un encadenamiento separado
 	private ArrayList<HashNode<K, V> > bucketArray;
 
-	// Current capacity of array list
+	//capacidad actual 
 	private int numBuckets;
 
-	// Current size of array list
+	// tamaño actual
 	private int size;
 
-	// Constructor (Initializes capacity, size and
-	// empty chains.
+	// Constructor 
 	public hashtable()
 	{
 		bucketArray = new ArrayList<>();
 		numBuckets = 10;
 		size = 0;
 
-		// Create empty chains
+		// listas vacias
 		for (int i = 0; i < numBuckets; i++)
 			bucketArray.add(null);
 	}
@@ -49,9 +30,6 @@ public class hashtable<K, V> {
 	public int size() { return size; }
 	public boolean isEmpty() { return size() == 0; }
 	
-//	private final int hashCode (K key) {
-//		return Objects.hashCode(key);
-//	}
 	
 	// Custom Hashcode
 	private final int hashCode(K key) {
@@ -67,46 +45,46 @@ public class hashtable<K, V> {
         return hash;
     }
 
-	// This implements hash function to find index
-	// for a key
+	
+	// usamos la funcion hash para hallar el index del key
 	private int getBucketIndex(K key)
 	{
 		int hashCode = hashCode(key);
 		int index = hashCode % numBuckets;
-		// key.hashCode() could be negative.
+		// por si el hashcode es negativo
 		index = index < 0 ? index * -1 : index;
 		return index;
 	}
 
-	// Method to remove a given key
+	// remover usando el key
 	public V remove(K key)
 	{
-		// Apply hash function to find index for given key
+		// funcion hash para hallar el hashcode del key
 		int bucketIndex = getBucketIndex(key);
 		int hashCode = hashCode(key);
-		// Get head of chain
+		
 		HashNode<K, V> head = bucketArray.get(bucketIndex);
 
-		// Search for key in its chain
+		// buscamos el key en la lista
 		HashNode<K, V> prev = null;
 		while (head != null) {
-			// If Key found
+			
 			if (head.key.equals(key) && hashCode == head.hashCode)
 				break;
 
-			// Else keep moving in chain
+			
 			prev = head;
 			head = head.next;
 		}
 
-		// If key was not there
+		
 		if (head == null)
 			return null;
 
-		// Reduce size
+		
 		size--;
 
-		// Remove key
+		// eliminamos el key de la lista
 		if (prev != null)
 			prev.next = head.next;
 		else
@@ -115,35 +93,35 @@ public class hashtable<K, V> {
 		return head.value;
 	}
 
-	// Returns value for a key
+	// obtener el valor del key
 	public V get(K key)
 	{
-		// Find head of chain for given key
+		// buscamos el head de la lista de la llave dada
 		int bucketIndex = getBucketIndex(key);
 		int hashCode = hashCode(key);
 	
 		HashNode<K, V> head = bucketArray.get(bucketIndex);
 
-		// Search key in chain
+		// buscamos en la lista
 		while (head != null) {
 			if (head.key.equals(key) && head.hashCode == hashCode)
 				return head.value;
 			head = head.next;
 		}
 
-		// If key not found
+		
 		return null;
 	}
 
-	// Adds a key value pair to hash
+	// agregamos un keu,value a la tabla hash
 	public void add(K key, V value)
 	{
-		// Find head of chain for given key
+		// encontramos el head de la lista 
 		int bucketIndex = getBucketIndex(key);
 		int hashCode = hashCode(key);
 		HashNode<K, V> head = bucketArray.get(bucketIndex);
 
-		// Check if key is already present
+		// revisamos si ya existe el key
 		while (head != null) {
 			if (head.key.equals(key) && head.hashCode == hashCode) {
 				head.value = value;
@@ -152,7 +130,7 @@ public class hashtable<K, V> {
 			head = head.next;
 		}
 
-		// Insert key in chain
+		// insertamos en la lista 
 		size++;
 		head = bucketArray.get(bucketIndex);
 		HashNode<K, V> newNode
@@ -160,8 +138,8 @@ public class hashtable<K, V> {
 		newNode.next = head;
 		bucketArray.set(bucketIndex, newNode);
 
-		// If load factor goes beyond threshold, then
-		// double hash table size
+
+		//si pasamos el factor de carga, incrementamos el tamaño de la table en 2.
 		if ((1.0 * size) / numBuckets >= 0.7) {
 			ArrayList<HashNode<K, V> > temp = bucketArray;
 			bucketArray = new ArrayList<>();
@@ -179,18 +157,4 @@ public class hashtable<K, V> {
 		}
 	}
 
-//	 Driver method to test Map class
-//	public static void main(String[] args)
-//	{
-//		Map<String, Integer> map = new Map<>();
-//		map.add("this", 1);
-//		map.add("coder", 2);
-//		map.add("this", 4);
-//		map.add("hi", 5);
-//		System.out.println(map.size());
-//		System.out.println(map.remove("this"));
-//		System.out.println(map.remove("this"));
-//		System.out.println(map.size());
-//		System.out.println(map.isEmpty());
-//	}
 }

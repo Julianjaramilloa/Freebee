@@ -32,18 +32,7 @@ public class Main {
 		lg.credentialsIn();
 //		rw.saveChanges();
 		
-//		hashtable<String, Integer> map = new hashtable<>();
-//		map.add("this", 1);
-//		map.add("coder", 2);
-//		map.add("this", 4);
-//		map.add("hi", 5);
-//		System.out.println(map.size());
-//		System.out.println(map.remove("this"));
-//		System.out.println(map.remove("this"));
-//		System.out.println(map.size());
-//		System.out.println(map.isEmpty());
-//		System.out.println(map.get("coder"));
-		
+	
 		
 	}
 

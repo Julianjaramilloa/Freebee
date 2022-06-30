@@ -58,7 +58,7 @@ public class UserList {
 
 	public String login(String username, String password) {
 		String finalState = null;
-		if(!hasUsers()) {
+		if(hasUsers()) {
 			finalState = "No hay ningún usuario registrado en la app. Debes crear uno primero.";
 		}else {
 			finalState = credentialsInfoAfterLogin(username, password);

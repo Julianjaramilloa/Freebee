@@ -4,6 +4,7 @@ import logic.ReaderWriter;
 import logic.User;
 import logic.UserList;
 import ui.LogIn;
+import maps.HashIterate;
 import maps.hashtable;
 
 /**
@@ -30,9 +31,8 @@ public class Main {
 		
 		LogIn lg = new LogIn(ul);
 		lg.credentialsIn();
-//		rw.saveChanges();
+		rw.saveChanges();
 		
-	
 		
 	}
 

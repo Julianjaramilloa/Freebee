@@ -13,8 +13,11 @@ import java.util.Locale;
 
 import avlTree.AVLTree;
 import avlTree.AvlTreeIterator;
+import maps.HashIterate;
+import maps.HashNode;
 import rbTree.TreeIterator;
 import seqDataStructures.DynamicArray;
+import seqDataStructures.LinkedList;
 
 /*
  * freebee
@@ -184,15 +187,38 @@ public class ReaderWriter {
 	
 	/*como cambiamos userlist a Rbtree toca crear un iterador para que savechanges funcione*/
 	
-	public void saveChanges() {
+	public <K, V> void saveChanges() {
 		
 		// Para que esta funci�n correctamente, se debe modificar el get, de manera que quede
 		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimi� bien)
 		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
 		
-//		try (FileWriter f = new FileWriter("testSave2.txt", true);
-//				BufferedWriter b = new BufferedWriter(f);
-//				PrintWriter p = new PrintWriter(b);) {
+		try (FileWriter f = new FileWriter("testSave3.txt", true);
+				BufferedWriter b = new BufferedWriter(f);
+				PrintWriter p = new PrintWriter(b);) {
+			
+			for (int i = 0; i < userList.size();i++) {
+				HashIterate iterate = new HashIterate(userList.users);
+				String key = (String) iterate.next();
+				User user = userList.get(key);
+				f.write("U; " + user.getUsername() + "; " + user.getPassword() +"\n");
+				DynamicArray<Account> listaDeCuentas = user.getAccounts(); 
+				AVLTree<Transaction> listaDeTrans = user.getTransactions();
+				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
+
+				AvlTreeIterator avlIterator = new AvlTreeIterator(listaDeTrans.getRoot());
+				while (avlIterator.hasNext()) {
+					f.write("T; " + avlIterator.next().toString() + "\n");
+				}
+
+
+
+
+				
+			}
+				
+
+			
 //			
 //			// Recorre la lista de usuarios (lo llam� userList)
 //			for (int u = 0; u < userList.size(); u++) {
@@ -227,7 +253,7 @@ public class ReaderWriter {
 //				
 //			}
 			
-//		} catch (IOException i1) {i1.printStackTrace();}
+		} catch (IOException i1) {i1.printStackTrace();}
 		
 	}
 	

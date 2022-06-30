@@ -1,9 +1,9 @@
 package maps;
 
 public class HashNode<K, V> {
-	K key;
+	public K key;
 	V value;
-	final int hashCode;
+	public final int hashCode;
 
 	// Reference to next node
 	HashNode<K, V> next;

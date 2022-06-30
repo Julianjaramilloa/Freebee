@@ -7,7 +7,16 @@ import java.util.Objects;
 
 public class hashtable<K, V> {
 	// Array para la resolucion de colisiones mediante un encadenamiento separado
-	private ArrayList<HashNode<K, V> > bucketArray;
+	public ArrayList<HashNode<K, V> > bucketArray;
+	private ArrayList<K> keySet = new ArrayList<>();
+	
+	public ArrayList getBucketArray() {
+		return this.bucketArray;
+	}
+	
+	public ArrayList getKeySet() {
+		return this.keySet;
+	}
 
 	//capacidad actual 
 	private int numBuckets;
@@ -32,7 +41,7 @@ public class hashtable<K, V> {
 	
 	
 	// Custom Hashcode
-	private final int hashCode(K key) {
+	public final int hashCode(K key) {
         int hash = 0;
         int length = key.toString().length();
         for (int i = 0;i < length;i++) {
@@ -47,7 +56,7 @@ public class hashtable<K, V> {
 
 	
 	// usamos la funcion hash para hallar el index del key
-	private int getBucketIndex(K key)
+	public int getBucketIndex(K key)
 	{
 		int hashCode = hashCode(key);
 		int index = hashCode % numBuckets;
@@ -72,7 +81,7 @@ public class hashtable<K, V> {
 			if (head.key.equals(key) && hashCode == head.hashCode)
 				break;
 
-			
+			keySet.remove(key);
 			prev = head;
 			head = head.next;
 		}
@@ -137,6 +146,7 @@ public class hashtable<K, V> {
 			= new HashNode<K, V>(key, value, hashCode);
 		newNode.next = head;
 		bucketArray.set(bucketIndex, newNode);
+		keySet.add(key);
 
 
 		//si pasamos el factor de carga, incrementamos el tamaño de la table en 2.

@@ -23,7 +23,7 @@ class HashNode<K, V> {
 }
 
 //Class to represent entire hash table
-class Map<K, V> {
+public class hashtable<K, V> {
 	// bucketArray is used to store array of chains
 	private ArrayList<HashNode<K, V> > bucketArray;
 
@@ -35,7 +35,7 @@ class Map<K, V> {
 
 	// Constructor (Initializes capacity, size and
 	// empty chains.
-	public Map()
+	public hashtable()
 	{
 		bucketArray = new ArrayList<>();
 		numBuckets = 10;
@@ -49,19 +49,23 @@ class Map<K, V> {
 	public int size() { return size; }
 	public boolean isEmpty() { return size() == 0; }
 	
-	private final int hashCode (K key) {
-		return Objects.hashCode(key);
-	}
+//	private final int hashCode (K key) {
+//		return Objects.hashCode(key);
+//	}
 	
 	// Custom Hashcode
-//	private final int hashCode() {
-//        int hash = 7;
-//        hash = 31 * hash + (int) id;
-//        hash = 31 * hash + (name == null ? 0 : name.hashCode());
-//        hash = 31 * hash + (email == null ? 0 : email.hashCode());
-//        logger.info("hashCode() called - Computed hash: " + hash);
-//        return hash;
-//    }
+	private final int hashCode(K key) {
+        int hash = 0;
+        int length = key.toString().length();
+        for (int i = 0;i < length;i++) {
+        	hash = 37 * hash + key.toString().charAt(i);       	
+        }       
+        //
+        if(hash < 0) {
+        	hash += size;
+        }        
+        return hash;
+    }
 
 	// This implements hash function to find index
 	// for a key

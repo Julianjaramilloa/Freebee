@@ -190,16 +190,16 @@ public class ReaderWriter {
 		// formateado (parecido a lo que se ve arriba de los prints para confirmar que se imprimi� bien)
 		// y de esta manera se guarde en el .txt como queremos, todo separado por ";"
 		
-		try (FileWriter f = new FileWriter("testSave2.txt", true);
-				BufferedWriter b = new BufferedWriter(f);
-				PrintWriter p = new PrintWriter(b);) {
-			
-			// Recorre la lista de usuarios (lo llam� userList)
+//		try (FileWriter f = new FileWriter("testSave2.txt", true);
+//				BufferedWriter b = new BufferedWriter(f);
+//				PrintWriter p = new PrintWriter(b);) {
+//			
+//			// Recorre la lista de usuarios (lo llam� userList)
 //			for (int u = 0; u < userList.size(); u++) {
 //				
 //				//No tendr�a por qu� haber acceso a las passwords
 //				
-//				f.write("U; " + userList.get(u).getUsername() + "; " + userList.get(u).getUserPassword() +"\n");
+//				f.write("U; " + userList.get(u)) + "; " + userList.get(u)) +"\n");
 //				
 //				// Demostrativo, hay que implementar bien:
 //				DynamicArray<Account> listaDeCuentas = userList.get(u).getAccounts(); 
@@ -210,24 +210,24 @@ public class ReaderWriter {
 //				
 //	        }
 			
-			TreeIterator iterator = new TreeIterator(userList.getRoot());
-
-			while (iterator.hasNext()) {
-				User user = iterator.next().getUser();
-				f.write("U; " + user.getUsername() + "; " + user.getPassword() + "\n");
-				DynamicArray<Account> listaDeCuentas = user.getAccounts();
-				AVLTree<Transaction> listaDeTrans = user.getTransactions();
-				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
-				AvlTreeIterator avlIterator = new AvlTreeIterator(listaDeTrans.getRoot());
-				while (avlIterator.hasNext()) {
-					f.write("T; " + avlIterator.next().toString() + "\n");
-				}
-				//for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " + avlIterator.next(). + "\n");}
-
-				
-			}
+//			TreeIterator iterator = new TreeIterator(userList.getRoot());
+//
+//			while (iterator.hasNext()) {
+//				User user = iterator.next().getUser();
+//				f.write("U; " + user.getUsername() + "; " + user.getPassword() + "\n");
+//				DynamicArray<Account> listaDeCuentas = user.getAccounts();
+//				AVLTree<Transaction> listaDeTrans = user.getTransactions();
+//				for (int a = 0; a < listaDeCuentas.size(); a++) {f.write("C; " +listaDeCuentas.get(a) + "\n");}
+//				AvlTreeIterator avlIterator = new AvlTreeIterator(listaDeTrans.getRoot());
+//				while (avlIterator.hasNext()) {
+//					f.write("T; " + avlIterator.next().toString() + "\n");
+//				}
+//				//for (int t = 0; t < listaDeTrans.size(); t++) {f.write("T; " + avlIterator.next(). + "\n");}
+//
+//				
+//			}
 			
-		} catch (IOException i1) {i1.printStackTrace();}
+//		} catch (IOException i1) {i1.printStackTrace();}
 		
 	}
 	

@@ -1,8 +1,10 @@
 package runner;
 
 import logic.ReaderWriter;
+import logic.User;
 import logic.UserList;
 import ui.LogIn;
+import maps.hashtable;
 
 /**
  * 
@@ -28,9 +30,19 @@ public class Main {
 		
 		LogIn lg = new LogIn(ul);
 		lg.credentialsIn();
-		rw.saveChanges();
+//		rw.saveChanges();
 		
-		
+//		hashtable<String, Integer> map = new hashtable<>();
+//		map.add("this", 1);
+//		map.add("coder", 2);
+//		map.add("this", 4);
+//		map.add("hi", 5);
+//		System.out.println(map.size());
+//		System.out.println(map.remove("this"));
+//		System.out.println(map.remove("this"));
+//		System.out.println(map.size());
+//		System.out.println(map.isEmpty());
+//		System.out.println(map.get("coder"));
 		
 		
 	}

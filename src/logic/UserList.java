@@ -1,18 +1,24 @@
 package logic;
 
+import maps.hashtable;
 import rbTree.RbNode;
 import rbTree.RedBlackTree;
 import seqDataStructures.DynamicArray;
 
 public class UserList {
 	
-	public static RedBlackTree users = new RedBlackTree();
+//	public static RedBlackTree users = new RedBlackTree();
 	private User currentUser; //Usuario con la sesión abierta
 	
+	public static hashtable<String, User> users = new hashtable<>();
+	
+	
+//	public RbNode getRoot() {
+//	return users.getRoot();
+//}
+	
 	//Métodos para crear un usuario:
-	public RbNode getRoot() {
-		return users.getRoot();
-	}
+
 	
 	public String userCreation(String username, String password, String auxPass) {
 		String results = null;
@@ -34,7 +40,7 @@ public class UserList {
 	
 	public void addUser(User user) {
 		try{
-			users.insertNode(user.getUsername(), user);
+			users.add(user.getUsername(), user);
 		}catch(IllegalArgumentException iae){
 			System.err.println("El usuario que se está intentado ingresar ya existe");
 		}
@@ -42,7 +48,7 @@ public class UserList {
 	
 	private boolean exists(String username) {		
 		boolean exists = false;
-		if (users.searchNode(username) != null) {
+		if (users.get(username) != null) {
 			exists = true;
 		}
 		return exists;
@@ -61,7 +67,7 @@ public class UserList {
 	}
 	
 	public boolean hasUsers() {
-		return users.getRoot() != null;
+		return users.isEmpty();
 	}
 	
 	private String credentialsInfoAfterLogin(String username, String password) {
@@ -84,14 +90,14 @@ public class UserList {
 		boolean isRightUsername = false;
 		boolean isRightPassword = false;
 		
-		RbNode auxNode = users.searchNode(username);
+		User aux = users.get(username);
 
-		User aux;
-		try {
-			aux = auxNode.getUser();
-		}catch(NullPointerException npe) {
-			aux = null;
-		}
+//		User aux;
+//		try {
+//			aux = auxNode.getUser();
+//		}catch(NullPointerException npe) {
+//			aux = null;
+//		}
 						
 		if(aux == null) {
 			isRightUsername = false;
@@ -130,11 +136,11 @@ public class UserList {
 	*/
 
 	public static int size() {
-		return users.getSize();
+		return users.size();
 	}
 
 	public static User get(String username) {
-		return users.searchNode(username).getUser();
+		return users.get(username);
 	};
 	
 	public User getUser() {

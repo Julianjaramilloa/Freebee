@@ -6,9 +6,16 @@ import java.util.Objects;
 
 
 public class hashtable<K, V> {
-	// Array para la resolucion de colisiones mediante un encadenamiento separado
+	// Lista para la resolucion de colisiones mediante un encadenamiento separado
 	public ArrayList<HashNode<K, V> > bucketArray;
+	// Lista con todos los keys para luego poder iterar
 	private ArrayList<K> keySet = new ArrayList<>();
+	//capacidad actual 
+	private int numBuckets;
+
+	// tamaño actual
+	private int size;
+
 	
 	public ArrayList getBucketArray() {
 		return this.bucketArray;
@@ -18,11 +25,6 @@ public class hashtable<K, V> {
 		return this.keySet;
 	}
 
-	//capacidad actual 
-	private int numBuckets;
-
-	// tamaño actual
-	private int size;
 
 	// Constructor 
 	public hashtable()
@@ -81,7 +83,7 @@ public class hashtable<K, V> {
 			if (head.key.equals(key) && hashCode == head.hashCode)
 				break;
 
-			keySet.remove(key);
+			
 			prev = head;
 			head = head.next;
 		}
@@ -92,13 +94,13 @@ public class hashtable<K, V> {
 
 		
 		size--;
-
+		
 		// eliminamos el key de la lista
 		if (prev != null)
 			prev.next = head.next;
 		else
 			bucketArray.set(bucketIndex, head.next);
-
+		keySet.remove(key);	
 		return head.value;
 	}
 
@@ -122,7 +124,7 @@ public class hashtable<K, V> {
 		return null;
 	}
 
-	// agregamos un keu,value a la tabla hash
+	// agregamos un key,value a la tabla hash
 	public void add(K key, V value)
 	{
 		// encontramos el head de la lista 

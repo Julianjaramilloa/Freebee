@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -23,9 +24,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import logic.Transaction;
+import logic.User;
 import logic.UserList;
 import seqDataStructures.DynamicArray;
 import seqDataStructures.LinkedList;
+import seqDataStructures.LinkedListIterator;
 import seqDataStructures.Pila;
 
 public class Savings extends JFrame implements ActionListener {
@@ -80,6 +84,36 @@ public class Savings extends JFrame implements ActionListener {
 
 		System.out.println("Ventana Savings");
 		
+		User us = ul.getUser();
+		float totalBalance = us.getTotalBalance();
+		float lastTenDaysBalance = 0;
+		LocalDate today = LocalDate.now();
+		LocalDate tenDaysBefore = today.minusDays(10);
+		LinkedList<Transaction> allTransactions = us.transactionsInList();
+		LinkedListIterator<Transaction> it = new LinkedListIterator<Transaction>(allTransactions);
+		LinkedList<Transaction> inRangeTransactions = new LinkedList<Transaction>();
+		
+		
+		while(it.hasNext()) {
+			Transaction ts = it.next();
+			if(ts.getDate().compareTo(tenDaysBefore) >= 0) {
+				inRangeTransactions.pushBack(ts);
+			}
+		}
+		
+		LinkedListIterator<Transaction> inIt = new LinkedListIterator<Transaction>(inRangeTransactions);
+		while(inIt.hasNext()) {
+			Transaction ts = inIt.next();
+			float tsBalance = ts.getAmount();
+			boolean isIngreso = ts.getBoolean();
+			if(isIngreso) {
+				lastTenDaysBalance += tsBalance;	
+			}else {
+				lastTenDaysBalance -= tsBalance;
+			}
+			
+		}
+		
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
@@ -92,8 +126,8 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Label: Stat1 -------------------
 		
 		stat1 = new JLabel(); 
-		stat1.setBounds(100,120,400,60); // Tamaño
-		stat1.setText("Sus gastos en los últimos diez días suman: $" + "XXXX"); // Texto
+		stat1.setBounds(60,120,400,60); // Tamaño
+		stat1.setText("Sus gastos en los últimos diez días suman: $" + lastTenDaysBalance); // Texto
 		stat1.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		stat1.setForeground(Color.BLACK); // Color del texto
 		stat1.setVisible(true); // Visibilidad
@@ -102,7 +136,7 @@ public class Savings extends JFrame implements ActionListener {
 				
 		stat2 = new JLabel(); 
 		stat2.setBounds(100,170,400,60); // Tamaño
-		stat2.setText("Por otro lado, sus ingresos suman: $" + "XXXX"); // Texto
+		stat2.setText("Por otro lado, sus ingresos suman: $" + totalBalance); // Texto
 		stat2.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		stat2.setForeground(Color.BLACK); // Color del texto
 		stat2.setVisible(true); // Visibilidad

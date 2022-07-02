@@ -377,15 +377,6 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 		  AVLTreeInList<T> avlList = new AVLTreeInList<T>(this);
 		  return avlList.getList();
 	  }
-	  //JUst to debug:
-	  /*protected void appendNodeToString(Node node, StringBuilder builder) {
-		  String parent;
-		  try {
-			  parent = node.parent.toString();
-		  }catch(NullPointerException npe) {
-			  parent = "No parent";
-		  }
-		  builder.append(node.data + "-" + parent);
-	  }*/
+
 	
 }

@@ -558,3 +558,1123 @@ T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id C
 T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
 T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
 T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4
+U; Usuario1; passwordTest
+C; Cuenta: Cuenta1; -105408.0; USD; ID: 1
+C; Cuenta: Cuenta2; -265200.0; COP; ID: 2
+T; Transacción: 2020-01-01; Compra en Amazon; Compras; 460000.0; Es Egreso; Id Cuenta: 1; Id transacción1
+T; Transacción: 2020-02-01; Sandwich en Tostao; ComidasFuera; 5600.0; Es Egreso; Id Cuenta: 2; Id transacción2
+T; Transacción: 2020-05-01; Pago por servicio comunitario; Ingresos; 50000.0; Es Ingreso; Id Cuenta: 1; Id transacción3
+T; Transacción: 2020-07-11; Arriendo parqueadero; Vivienda; 280000.0; Es Egreso; Id Cuenta: 2; Id transacción4

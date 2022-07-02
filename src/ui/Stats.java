@@ -81,7 +81,8 @@ public class Stats extends JFrame implements ActionListener {
 			}
 		}
 		
-		float percentageMonth = (previous * 100)/lastMonthBalance;
+		float percentageMonth = (lastMonthBalance * 100)/previous;
+		percentageMonth = (float) ((Math.round(percentageMonth*100.0))/100.0);
 		if(lastMonthBalance == 0) {
 			percentageMonth = 0;
 		}

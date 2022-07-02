@@ -107,9 +107,9 @@ public class Savings extends JFrame implements ActionListener {
 			float tsBalance = ts.getAmount();
 			boolean isIngreso = ts.getBoolean();
 			if(isIngreso) {
-				lastTenDaysBalance += tsBalance;	
+				lastTenDaysBalance -= tsBalance;	
 			}else {
-				lastTenDaysBalance -= tsBalance;
+				lastTenDaysBalance += tsBalance;
 			}
 			
 		}
@@ -126,8 +126,8 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Label: Stat1 -------------------
 		
 		stat1 = new JLabel(); 
-		stat1.setBounds(60,140,400,60); // Tamaño
-		stat1.setText("Sus gastos en los últimos diez días suman: $" + lastTenDaysBalance); // Texto
+		stat1.setBounds(60,180,400,60); // Tamaño
+		stat1.setText("Sus gastos en los últimos diez días: $" + lastTenDaysBalance); // Texto
 		stat1.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		stat1.setForeground(Color.BLACK); // Color del texto
 		stat1.setVisible(true); // Visibilidad
@@ -135,7 +135,7 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Label: Stat1 -------------------
 				
 		stat2 = new JLabel(); 
-		stat2.setBounds(100,170,400,60); // Tamaño
+		stat2.setBounds(100,200,400,60); // Tamaño
 		stat2.setText("Por otro lado, sus ingresos suman: $" + totalBalance); // Texto
 		stat2.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		stat2.setForeground(Color.BLACK); // Color del texto

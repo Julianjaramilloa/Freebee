@@ -39,6 +39,14 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		this.arr = (T[]) new Comparable[1];
 	}
 	
+	public boolean isEmpty() {
+		if(this.size == 0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 	private void expandArray() {
 		T[] aux = arr;
 		int lenght = aux.length;

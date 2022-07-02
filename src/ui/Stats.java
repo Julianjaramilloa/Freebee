@@ -11,6 +11,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,7 +21,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import avlTree.AVLTree;
+import logic.Transaction;
+import logic.User;
 import logic.UserList;
+import priorityQueue.MinHeap;
+import seqDataStructures.DynamicArray;
+import seqDataStructures.LinkedList;
+import seqDataStructures.LinkedListIterator;
 
 public class Stats extends JFrame implements ActionListener {
 
@@ -47,6 +56,52 @@ public class Stats extends JFrame implements ActionListener {
 		
 		System.out.println("Ventana Stats");
 		
+		User us = ul.getUser();
+		float lastMonthBalance = 0;
+		float previous = 0;
+		LocalDate today = LocalDate.now();
+		LinkedList<Transaction> thisMonth = new LinkedList<Transaction>();
+		LinkedListIterator<Transaction> it = new LinkedListIterator<Transaction>(us.transactionsInList());
+		
+		while(it.hasNext()) {
+			Transaction ts = it.next();
+			LocalDate date = ts.getDate();
+			float amount = ts.getAmount();
+			boolean isIngreso = ts.getBoolean();
+			if(isIngreso) {
+				amount += ts.getAmount();
+			}else {
+				amount -= ts.getAmount();
+			}
+			
+			if(date.getMonth().equals(today.getMonth())) {
+				lastMonthBalance += amount;
+			}else {
+				previous += amount;
+			}
+		}
+		
+		float percentageMonth = (previous * 100)/lastMonthBalance;
+		if(lastMonthBalance == 0) {
+			percentageMonth = 0;
+		}
+		
+		float gastoTotal = 0;
+		float ingresosTotal = 0;
+		
+		LinkedListIterator<Transaction> it2 = new LinkedListIterator<Transaction>(us.transactionsInList());
+		while(it2.hasNext()) {
+			Transaction ts = it2.next();
+			boolean isIngreso = ts.getBoolean();
+			if(isIngreso) {
+				ingresosTotal += ts.getAmount();
+			}else {
+				gastoTotal += ts.getAmount();
+			}
+		}
+		
+		
+		
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
@@ -59,8 +114,8 @@ public class Stats extends JFrame implements ActionListener {
 		// ------------ Label: Stat1 -------------------
 		
 		stat1 = new JLabel(); 
-		stat1.setBounds(100,125,400,60); // Tamaño
-		stat1.setText("Su capital ha crecido en un " + "% " + "en el �ltimo mes."); // Texto
+		stat1.setBounds(90,160,400,60); // Tamaño
+		stat1.setText("Su capital ha crecido un " + percentageMonth + "% " + "en el �ltimo mes."); // Texto
 		stat1.setFont(new Font("Nunito", Font.ITALIC, 16)); // Fuente
 		stat1.setForeground(Color.BLACK); // Color del texto
 		stat1.setVisible(true); // Visibilidad
@@ -69,7 +124,7 @@ public class Stats extends JFrame implements ActionListener {
 		
 		stat2 = new JLabel(); 
 		stat2.setBounds(100,225,400,60); // Tamaño
-		stat2.setText("En promedio sus ingresos mensuales son: $" + "XXXX"); // Texto
+		stat2.setText("El total de dinero que ha gastado es: $" + gastoTotal); // Texto
 		stat2.setFont(new Font("Nunito", Font.ITALIC, 16)); // Fuente
 		stat2.setForeground(Color.BLACK); // Color del texto
 		stat2.setVisible(true); // Visibilidad
@@ -78,7 +133,7 @@ public class Stats extends JFrame implements ActionListener {
 				
 		stat3 = new JLabel(); 
 		stat3.setBounds(100,325,400,60); // Tamaño
-		stat3.setText("En promedio sus gastos mensuales son: $" + "XXXX"); // Texto
+		stat3.setText("El total de dinero que ha ingresado es $" + ingresosTotal); // Texto
 		stat3.setFont(new Font("Nunito", Font.ITALIC, 16)); // Fuente
 		stat3.setForeground(Color.BLACK); // Color del texto
 		stat3.setVisible(true); // Visibilidad

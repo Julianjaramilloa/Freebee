@@ -126,7 +126,7 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Label: Stat1 -------------------
 		
 		stat1 = new JLabel(); 
-		stat1.setBounds(60,120,400,60); // Tamaño
+		stat1.setBounds(60,140,400,60); // Tamaño
 		stat1.setText("Sus gastos en los últimos diez días suman: $" + lastTenDaysBalance); // Texto
 		stat1.setFont(new Font("Nunito", Font.BOLD, 16)); // Fuente
 		stat1.setForeground(Color.BLACK); // Color del texto

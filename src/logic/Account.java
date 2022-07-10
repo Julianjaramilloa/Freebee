@@ -44,7 +44,7 @@ public class Account{
 	}
 	
 	public String saveData() {
-		return name + ";" + currency + ";" + currency;
+		return name + ";" + balance + ";" + currency;
 	}
 	
 }

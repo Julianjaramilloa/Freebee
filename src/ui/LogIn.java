@@ -1,36 +1,28 @@
 package ui;
 
 /*
- * Freebe
+ * Freebee
  * @author Marcos Pinzón Pardo
  */
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
-//import ui.MainMenu;
 
 import logic.UserList;
 
 
-public class LogIn extends JFrame implements ActionListener {
+public class LogIn extends JFrame implements ActionListener{
 
 	JButton logIn;
 	JButton getHelp;
@@ -174,6 +166,7 @@ public class LogIn extends JFrame implements ActionListener {
 		this.setIconImage(logo.getImage()); // Poner logo
 		this.setVisible(true); // Visible
 		this.setLocationRelativeTo(null); // Muestra en centro
+		this.getRootPane().setDefaultButton(logIn); //Permite iniciar sesión presionando Enter
 
 	}
 	

@@ -1,13 +1,11 @@
 package ui;
 /*
- * Freebie
- * @author Marcos PinzÃ³n Pardo
+ * Freebee
+ * @author Marcos Pinzón Pardo
  */
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -21,14 +19,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import avlTree.AvlTreeIterator;
 import logic.Transaction;
 import logic.User;
 import logic.UserList;
-import seqDataStructures.DynamicArray;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
 import seqDataStructures.Pila;

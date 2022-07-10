@@ -1,6 +1,9 @@
 package logic;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.Locale;
 
 public class Transaction implements Comparable<Transaction>{
 	LocalDate date;
@@ -112,7 +115,14 @@ public class Transaction implements Comparable<Transaction>{
 	}
 	
 	public String saveData() {
-		return date + ";" + Description +";" + type + ";" + amount + ";" + isIngreso + ";" + accountId;
+		DateTimeFormatter df = new DateTimeFormatterBuilder()
+			    // case insensitive to parse JAN and FEB
+			    .parseCaseInsensitive()
+			    // add pattern
+			    .appendPattern("dd-MM-yyyy")
+			    // create formatter (use English Locale to parse month names)
+			    .toFormatter(Locale.ENGLISH);
+		return date.format(df) + ";" + Description +";" + type + ";" + amount + ";" + isIngreso + ";" + accountId;
 	}
 	
 }

@@ -1,122 +1,122 @@
 U; Usuario1; passwordTest
-C; Cuenta1;-5025408.0;USD
-C; Cuenta2;-3692400.0;COP
+C; Cuenta1;-515408.0;USD
+C; Cuenta2;-550800.0;COP
 T; 01-01-2020;Compra en Amazon;Compras;460000.0;false;1
 T; 01-02-2020;Sandwich en Tostao;ComidasFuera;5600.0;false;2
 T; 01-05-2020;Pago por servicio comunitario;Ingresos;50000.0;true;1
 T; 11-07-2020;Arriendo parqueadero;Vivienda;280000.0;false;2
 U; Usuario2; password2
-C; Cuenta 17;-760000.0;COP
+C; Cuenta 17;-100000.0;COP
 T; 05-06-2020;Taxi;Transporte;52000.0;false;1
 T; 10-12-2020;Almuerzo;ComidasFuera;8000.0;false;1
 U; Usuario3; password3
-C; Cuenta3;551578.0;USD
-C; Cuenta4;-3.63816E7;EUR
+C; Cuenta3;342578.0;USD
+C; Cuenta4;-5581600.0;EUR
 T; 01-03-2020;Compra en Homecenter;Vivienda;465000.0;false;1
 T; 01-03-2020;Pollo KFC;ComidasFuera;16000.0;false;1
 T; 11-04-2020;Compra de computador;Educacion;2800000.0;false;2
 T; 01-07-2020;Pago por arrendamiento local;Ingresos;500000.0;true;1
 U; Usuario4; password4
-C; Cuenta 18;84250.0;COP
+C; Cuenta 18;224500.0;COP
 T; 05-04-2020;Transmilenio;Transporte;2750.0;false;1
 T; 10-09-2020;Hamburguesa;ComidasFuera;10000.0;false;1
 U; Usuario5; password5
-C; Cuenta5;564647.0;EUR
-C; Cuenta6;-6053400.0;COP
+C; Cuenta5;344603.0;EUR
+C; Cuenta6;-909800.0;COP
 T; 03-01-2020;Compra en Amazon;Compras;460000.0;false;2
 T; 03-02-2020;Sandwich en Qbanitos;ComidasFuera;7600.0;false;2
 T; 04-05-2020;Pago por venta de zapatos;Ingresos;300004.0;true;1
 T; 11-07-2020;Arriendo parqueadero;Arriendo;280000.0;false;1
 U; Usuario6; password6
-C; Cuenta 19;-740520.0;COP
+C; Cuenta 19;-80080.0;COP
 T; 05-06-2022;Uber;Transporte;52040.0;false;1
 T; 10-12-2022;Almuerzo;ComidasFuera;8000.0;false;1
 U; Usuario7; password7
-C; Cuenta7;149690.0;USD
-C; Cuenta8;-3.63974592E8;USD
-C; DaviPlata;663000.0;COP
+C; Cuenta7;281690.0;USD
+C; Cuenta8;-5.59746E7;USD
+C; DaviPlata;168000.0;COP
 T; 01-04-2021;Cuenta de Netflix;Ocio;12000.0;false;1
 T; 01-05-2021;Compra penicilina;Salud;5000.0;false;3
 T; 01-05-2022;Pago por productos Natura;Ingresos;50000.0;true;3
 T; 11-06-2022;Arriendo maquinaria;Arriendo;2.8E7;false;2
 U; Usuario8; password8
-C; Cuenta 20;420400.0;EUR
+C; Cuenta 20;543600.0;EUR
 T; 10-12-2020;Almuerzo;ComidasFuera;9000.0;false;1
-T; 05-06-2021;Mï¿½o;Transporte;2200.0;false;1
+T; 05-06-2021;Mío;Transporte;2200.0;false;1
 U; Usuario9; password9
-C; Cuenta9;1.0704502E7;USD
-C; Cuenta10;-1.01014E7;COP
+C; Cuenta9;1904502.0;USD
+C; Cuenta10;-1536800.0;COP
 T; 01-01-2020;Compra de Lavadora LG;Compras;490000.0;false;2
 T; 11-08-2020;Electricidad;Vivienda;280000.0;false;2
 T; 01-02-2021;Arroz chino;ComidasFuera;8600.0;false;2
-T; 01-07-2021;Pago por elaboraciï¿½n de planos;Ingresos;800000.0;true;1
+T; 01-07-2021;Pago por elaboración de planos;Ingresos;800000.0;true;1
 U; Usuario10; password10
-C; Cuenta21;-159400.0;COP
+C; Cuenta21;-7600.0;COP
 T; 05-06-2020;Taxi;Transporte;5800.0;false;1
 T; 10-12-2020;Cena;ComidasFuera;8000.0;false;1
 U; Usuario11; password11
 C; Cuenta11;304592.0;EUR
-C; Cuenta12;7.3134E7;COP
-T; 04-01-2020;Jabï¿½n en polvo en Exito;Compras;90000.0;false;2
+C; Cuenta12;1.1424E7;COP
+T; 04-01-2020;Jabón en polvo en Exito;Compras;90000.0;false;2
 T; 05-02-2020;Burger King;ComidasFuera;20000.0;false;2
-T; 04-05-2020;Salario bï¿½sico;Ingresos;6000000.0;true;2
+T; 04-05-2020;Salario básico;Ingresos;6000000.0;true;2
 T; 15-07-2021;Arriendo;Arriendo;280000.0;false;2
 U; Usuario12; password12
-C; Cuenta 22;-787999.0;COP
+C; Cuenta 22;48001.0;COP
 T; 05-06-2021;Ticket Satena;Transporte;52000.0;false;1
 T; 10-11-2021;Kartz;Ocio;24000.0;false;1
 U; Usuario13; password13
-C; Cuenta13;-3447308.0;USD
-C; Cuenta14;-5.33524E7;COP
+C; Cuenta13;-357408.0;USD
+C; Cuenta14;-8190800.0;COP
 T; 02-01-2020;Compra en Electromillonaria;Compras;4600000.0;false;2
 T; 03-02-2020;Arroz mixto;ComidasFuera;5600.0;false;2
-T; 02-05-2020;Ensayo de tensiï¿½n;Ingresos;500000.0;true;2
+T; 02-05-2020;Ensayo de tensión;Ingresos;500000.0;true;2
 T; 11-07-2020;Arriendo parqueadero;Arriendo;280900.0;false;1
 U; Usuario14; password14
-C; Cuenta 23;-550016.0;COP
+C; Cuenta 23;84684.0;COP
 T; 05-06-2020;Transmilenio;Transporte;50000.0;false;1
 T; 10-12-2020;Almuerzo;ComidasFuera;7700.0;false;1
 U; Usuario15; password15
-C; Bank Of America;-6.1173542E8;USD
+C; Bank Of America;-9.3855408E7;USD
 C; Cuenta16;20400.0;COP
-C; Ahorros Colpatria;405700.0;USD
+C; Ahorros Colpatria;87800.0;USD
 T; 01-04-2020;Compra en Ford;Compras;4.6E7;false;1
 T; 01-06-2020;Pollo en Frisby;ComidasFuera;21100.0;false;3
 T; 01-08-2020;Pago por servicio comunitario;Ingresos;50000.0;true;3
 T; 08-06-2022;Arriendo de local;Ingresos;1080000.0;false;1
 U; Usuario16; password15
-C; Cuenta17;423594.0;USD
-C; Cuenta18;-6250297.0;COP
+C; Cuenta17;93594.0;USD
+C; Cuenta18;-738197.0;COP
 T; 01-04-2020;Compra de armario;Vivienda;460000.0;false;2
 T; 01-05-2020;Postres Magolita;ComidasFuera;21100.0;false;2
 T; 01-07-2020;Pago por venta de accesorios;Ingresos;50000.0;true;1
 T; 08-06-2021;Libros;Educacion;20000.0;false;1
 T; 08-06-2021;Libros;Educacion;20000.0;false;2
 U; Usuario17; password17
-C; Cuenta19;7822514.0;EUR
-C; Cuenta20;-5883287.0;USD
+C; Cuenta19;1233514.0;EUR
+C; Cuenta20;-690187.0;USD
 T; 01-03-2020;Prestaciones sociales;Ingresos;600000.0;true;1
 T; 01-04-2020;Burritos;ComidasFuera;11100.0;false;2
 T; 01-05-2020;Compra de armario;Vivienda;460000.0;false;2
 T; 08-02-2021;Tijeras;Educacion;1000.0;false;1
 T; 08-02-2021;Tijeras;Educacion;1000.0;false;2
 U; Usuario18; password18
-C; Cuenta21;-1.0401786E7;COP
-C; Cuenta22;7.8154016E7;USD
+C; Cuenta21;-1578686.0;COP
+C; Cuenta22;1.2154013E7;USD
 T; 05-03-2020;Pago de rifas;Ingresos;6000000.0;true;2
 T; 05-04-2020;Burritos;ComidasFuera;11100.0;false;1
 T; 01-05-2020;resinas para dientes;Salud;790000.0;false;1
-T; 01-02-2021;Colbï¿½n;Educacion;1000.0;false;1
+T; 01-02-2021;Colbón;Educacion;1000.0;false;1
 U; Usuario19; password19
-C; Cuenta23;-5944456.0;EUR
-C; Cuenta24;7.1104416E7;USD
+C; Cuenta23;-884456.0;EUR
+C; Cuenta24;1.1154413E7;USD
 T; 01-03-2019;Salario;Ingresos;5500000.0;true;2
 T; 01-05-2020;Juguetes;Compras;460000.0;false;1
-T; 08-02-2021;Patacï¿½n mixto;ComidasFuera;50000.0;false;2
+T; 08-02-2021;Patacón mixto;ComidasFuera;50000.0;false;2
 U; userdemo; demo
-C; DaviPlata;84400.0;COP
-C; Nequi;3127820.0;COP
-C; Bancolombia;6.63108E7;COP
+C; DaviPlata;16200.0;COP
+C; Nequi;773820.0;COP
+C; Bancolombia;1.12558E7;COP
 T; 01-03-2019;Pago fotocopias;Ingresos;7000.0;true;1
 T; 01-03-2019;Pago parqueadero;Ingresos;250000.0;true;2
 T; 01-03-2019;Salario;Ingresos;5500000.0;true;3
@@ -124,6 +124,5 @@ T; 01-05-2020;Papel higienico;Compras;800.0;false;1
 T; 01-05-2020;Almuerzo;ComidasFuera;36000.0;false;2
 T; 01-05-2020;Mouse;Compras;254700.0;false;3
 T; 01-05-2020;Carne;Comidas;14600.0;false;3
-T; 01-05-2020;Libros de cï¿½lculo;Educacion;140000.0;false;3
+T; 01-05-2020;Libros de cálculo;Educacion;140000.0;false;3
 T; 01-05-2020;Lampara;Compras;85700.0;false;3
-

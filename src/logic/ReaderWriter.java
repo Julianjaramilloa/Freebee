@@ -84,7 +84,7 @@ public class ReaderWriter {
 			e.printStackTrace();
 		}
 	}
-	//Este mï¿½todo, como se puede ver en readData(), se aplica sobre cada renglï¿½n del txt
+	//Este método, como se puede ver en readData(), se aplica sobre cada renglï¿½n del txt
 	private void tokenize(String line) {
 		
 //		System.out.println("Tokenizando línea");
@@ -99,6 +99,7 @@ public class ReaderWriter {
 				System.out.println(currentUser.completeUserInfo());
 				System.out.println("-------------------------------------------------------------------------");
 			}
+			
 			
 			// Se lee el usuario temporal, se agrega a la lista de usuarios y se usa hasta que se lee otro que lo sobreescribe
 			User userToken = tokenizeUser(sc.next().trim(), sc.next().trim());
@@ -142,7 +143,6 @@ public class ReaderWriter {
 		
 
 //		System.out.println("Tokenizando usuario");	
-	
 		
 		User user = new User(name, password);
 		System.out.println("\n\tUsuario creado:\n\n" + "Name:" + name + " Password:" + password + "\n");
@@ -200,12 +200,12 @@ public class ReaderWriter {
 				DynamicArray<Account> listaDeCuentas = user.getAccounts(); 
 				AVLTree<Transaction> listaDeTrans = user.getTransactions();
 				for (int a = 0; a < listaDeCuentas.size(); a++) {
-					f.write("C; " +listaDeCuentas.get(a) + "\n");
+					f.write("C; " +listaDeCuentas.get(a).saveData() + "\n");
 				}
 
-				AvlTreeIterator avlIterator = new AvlTreeIterator(listaDeTrans.getRoot());
+				AvlTreeIterator<Transaction> avlIterator = new AvlTreeIterator<Transaction>(listaDeTrans.getRoot());
 				while (avlIterator.hasNext()) {
-					f.write("T; " + avlIterator.next().toString() + "\n");
+					f.write("T; " + (avlIterator.next().getData()).saveData() + "\n");
 				}
 				
 			}

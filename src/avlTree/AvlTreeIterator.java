@@ -2,12 +2,10 @@ package avlTree;
 
 import java.util.NoSuchElementException;
 
-import rbTree.RbNode;
+public class AvlTreeIterator<T> {
+    private Node<T> next;
 
-public class AvlTreeIterator {
-    private Node next;
-
-    public AvlTreeIterator(Node root) {
+    public AvlTreeIterator(Node<T> root) {
         next = root;
         if(next == null)
             return;
@@ -20,9 +18,9 @@ public class AvlTreeIterator {
         return next != null;
     }
 
-    public Node next(){
+    public Node<T> next(){
         if(!hasNext()) throw new NoSuchElementException();
-        Node r = next;
+        Node<T> r = next;
 
         // If you can walk right, walk right, then fully left.
         // otherwise, walk up until you come from left.

@@ -40,9 +40,11 @@ public class Account{
 	
 	@Override
 	public String toString() {
-		return "Cuenta: " + name + "; " + balance + "; " + currency + "; ID: " + id;
+		return name + "; " + balance + "; " + currency + "; ID: " + id;
 	}
 	
-
+	public String saveData() {
+		return name + ";" + currency + ";" + currency;
+	}
 	
 }

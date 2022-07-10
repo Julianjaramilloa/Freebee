@@ -185,8 +185,10 @@ public class User {
 		String completeUserInfo = "                                Info Completa del Usuario: \n";
 		String userStats = "Username: " + username +"; #Cuentas: " + accounts.size() + "; #Transacciones: " + transactions.size() + '\n';
 		completeUserInfo += userStats;
+		completeUserInfo += "Cuentas:\n";
 		completeUserInfo += accounts.verticalOrder();
 		completeUserInfo += '\n';
+		completeUserInfo += "Transacciones:\n";
 		completeUserInfo += transactions.preorderTraverse();
 		
 		return completeUserInfo; 			

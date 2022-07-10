@@ -125,7 +125,7 @@ public class hashtable<K, V> {
 	}
 
 	// agregamos un key,value a la tabla hash
-	public void add(K key, V value)
+	public void add(K key, V value, boolean addKeySet)
 	{
 		// encontramos el head de la lista 
 		int bucketIndex = getBucketIndex(key);
@@ -148,7 +148,10 @@ public class hashtable<K, V> {
 			= new HashNode<K, V>(key, value, hashCode);
 		newNode.next = head;
 		bucketArray.set(bucketIndex, newNode);
-		keySet.add(key);
+		
+		if(addKeySet) {
+			keySet.add(key);
+		}		
 
 
 		//si pasamos el factor de carga, incrementamos el tamaño de la table en 2.
@@ -162,7 +165,7 @@ public class hashtable<K, V> {
 
 			for (HashNode<K, V> headNode : temp) {
 				while (headNode != null) {
-					add(headNode.key, headNode.value);
+					add(headNode.key, headNode.value,false);
 					headNode = headNode.next;
 				}
 			}

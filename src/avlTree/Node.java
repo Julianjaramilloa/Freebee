@@ -18,4 +18,8 @@ public class Node<T> {
 		  return String.valueOf(data);
 	  }
 	  
+	  public T getData() {
+		  return this.data;
+	  }
+	  
 	}

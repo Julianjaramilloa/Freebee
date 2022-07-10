@@ -32,24 +32,6 @@ public class Transaction implements Comparable<Transaction>{
 	}
 
 	@Override
-	public String toString() {
-		String ingreso = null;
-		if(isIngreso) {
-			ingreso = "Es Ingreso";
-		}else {
-			ingreso = "Es Egreso";
-		}
-		return  "Transacción: " 
-				+ date + "; " + 
-				Description + "; " 
-				+ type + "; " 
-				+ amount + "; " 
-				+ ingreso
-				+ "; Id Cuenta: " + accountId 
-				+ "; Id transacción" + transactionId;
-	}
-
-	@Override
 	public int compareTo(Transaction o) {
 		int comparison = this.date.compareTo(o.date);
 		
@@ -109,6 +91,28 @@ public class Transaction implements Comparable<Transaction>{
 
 	public boolean getBoolean() {
 		return isIngreso;
+	}
+	
+
+	@Override
+	public String toString() {
+		String ingreso = null;
+		if(isIngreso) {
+			ingreso = "Ingreso";
+		}else {
+			ingreso = "Egreso";
+		}
+		return  date + "; " + 
+				Description + "; " 
+				+ type + "; " 
+				+ amount + "; " 
+				+ ingreso
+				+ "; Id Cuenta: " + accountId 
+				+ "; Id transacción " + transactionId;
+	}
+	
+	public String saveData() {
+		return date + ";" + Description +";" + type + ";" + amount + ";" + isIngreso + ";" + accountId;
 	}
 	
 }

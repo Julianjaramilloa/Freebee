@@ -187,13 +187,13 @@ public class Accounts extends JFrame implements ActionListener {
 		addTrans.setForeground(Color.ORANGE); // Color del texto
 		addTrans.setBackground(Color.WHITE); // Color del fondo
 		addTrans.setFocusable(false); // Quitar cuadro alrededor
-		addTrans.addActionListener(this); // AÃ±adir ActionListener
+		addTrans.addActionListener(this); // Añadir ActionListener
 		addTrans.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
 		// ------------ Botón: Obtener ayuda -----------------------
 		
 		getHelp = new JButton();
-		getHelp.setBounds(50,440,25,25); // TamaÃ±o
+		getHelp.setBounds(50,440,25,25); // Tamaño
 		getHelp.setText("?"); // Texto
 		getHelp.setBorder(new LineBorder(Color.BLACK)); // Borde
 		getHelp.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
@@ -284,7 +284,7 @@ public class Accounts extends JFrame implements ActionListener {
 		}
 			
 		if (pressed.getSource() == newAcc) {
-			System.out.println("Abriendo creaciï¿½n de nuevo cuenta");
+			System.out.println("Abriendo creación de nuevo cuenta");
 			NewAcc na = new NewAcc(ul); 
 			na.createAcc();
 		}

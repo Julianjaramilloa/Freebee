@@ -76,10 +76,6 @@ public class User {
 		return this.transactions;
 	}
 	
-	public LinkedList<Transaction> transactionsInList(){
-		return this.transactions.avlNodesInList();
-	}
-	
 	public Account getAccountById (int id) {
 		DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
 		Account account= null;
@@ -185,8 +181,10 @@ public class User {
 		String completeUserInfo = "                                Info Completa del Usuario: \n";
 		String userStats = "Username: " + username +"; #Cuentas: " + accounts.size() + "; #Transacciones: " + transactions.size() + '\n';
 		completeUserInfo += userStats;
+		completeUserInfo += "Cuentas:\n";
 		completeUserInfo += accounts.verticalOrder();
 		completeUserInfo += '\n';
+		completeUserInfo += "Transacciones:\n";
 		completeUserInfo += transactions.preorderTraverse();
 		
 		return completeUserInfo; 			

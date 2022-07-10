@@ -125,12 +125,10 @@ public class DynamicArray<T> implements List<T> {
 	
 	public String verticalOrder() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("[");
 		for(int i=0; i<size; i++) {
 			sb.append(arr[i].toString());
 			sb.append(";\n ");
 		}
-		sb.append("]");		
 		return sb.toString();
 		
 	}

@@ -40,7 +40,7 @@ public class UserList {
 	
 	public void addUser(User user) {
 		try{
-			users.add(user.getUsername(), user);
+			users.add(user.getUsername(), user, true);
 		}catch(IllegalArgumentException iae){
 			System.err.println("El usuario que se está intentado ingresar ya existe");
 		}

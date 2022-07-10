@@ -373,10 +373,7 @@ public class AVLTree<T extends Comparable<T>> implements BinarySearchTree<T>{
 	    
 	  }
 	  
-	  public LinkedList<T> avlNodesInList(){
-		  AVLTreeInList<T> avlList = new AVLTreeInList<T>(this);
-		  return avlList.getList();
-	  }
+	 
 
 	
 }

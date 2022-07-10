@@ -76,10 +76,6 @@ public class User {
 		return this.transactions;
 	}
 	
-	public LinkedList<Transaction> transactionsInList(){
-		return this.transactions.avlNodesInList();
-	}
-	
 	public Account getAccountById (int id) {
 		DynamicArrayIterator<Account> it = new DynamicArrayIterator<Account>(this.accounts);
 		Account account= null;

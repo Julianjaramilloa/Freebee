@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import avlTree.AvlTreeIterator;
 import logic.Account;
 import logic.Transaction;
 import logic.UserList;
@@ -39,8 +40,7 @@ public class ShowCategory extends JFrame{
 		
 		JTable table;
 			
-		LinkedList<Transaction> transactions = ul.getUser().transactionsInList();
-		LinkedListIterator <Transaction> it = new LinkedListIterator<Transaction>(transactions);
+		AvlTreeIterator<Transaction> it = new AvlTreeIterator<Transaction>(ul.getUser().getTransactions().getRoot());
 		
 		setSize(650,550);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

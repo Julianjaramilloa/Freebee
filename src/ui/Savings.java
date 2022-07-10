@@ -24,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import avlTree.AvlTreeIterator;
 import logic.Transaction;
 import logic.User;
 import logic.UserList;
@@ -89,8 +90,7 @@ public class Savings extends JFrame implements ActionListener {
 		float lastTenDaysBalance = 0;
 		LocalDate today = LocalDate.now();
 		LocalDate tenDaysBefore = today.minusDays(10);
-		LinkedList<Transaction> allTransactions = us.transactionsInList();
-		LinkedListIterator<Transaction> it = new LinkedListIterator<Transaction>(allTransactions);
+		AvlTreeIterator<Transaction> it = new AvlTreeIterator<Transaction>(ul.getUser().getTransactions().getRoot());
 		LinkedList<Transaction> inRangeTransactions = new LinkedList<Transaction>();
 		
 		
@@ -117,7 +117,7 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Label: Bienvenida -------------------
 		
 		welcomeLabel = new JLabel(); 
-		welcomeLabel.setBounds(50,20,400,60); // TamaÃƒÂ±o
+		welcomeLabel.setBounds(50,20,400,60); // Tamaño
 		welcomeLabel.setText("Ahorro"); // Texto
 		welcomeLabel.setFont(new Font("Nunito", Font.BOLD, 24)); // Fuente
 		welcomeLabel.setForeground(Color.BLACK); // Color del texto
@@ -144,14 +144,14 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Labels de tip -------------------
 		
 		tipLabel1 = new JLabel(); 
-		tipLabel1.setBounds(70,330,600,40); // TamaÃƒÂ±o
+		tipLabel1.setBounds(70,330,600,40); // Tamaño
 		tipLabel1.setText(""); // Texto
 		tipLabel1.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		tipLabel1.setForeground(Color.BLACK); // Color del texto
 		tipLabel1.setVisible(true); // Visibilidad
 		
 		tipLabel2 = new JLabel(); 
-		tipLabel2.setBounds(70,350,600,40); // TamaÃƒÂ±o
+		tipLabel2.setBounds(70,350,600,40); // Tamaño
 		tipLabel2.setText(""); // Texto
 		tipLabel2.setFont(new Font("Nunito", Font.PLAIN, 12)); // Fuente
 		tipLabel2.setForeground(Color.BLACK); // Color del texto
@@ -160,14 +160,14 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Botón: Pagina categorías -------------------
 		
 		tipButton = new JButton();
-		tipButton.setBounds(300,280,180,30); // TamaÃƒÂ±o
+		tipButton.setBounds(300,280,180,30); // Tamaño
 		tipButton.setText("Generar tip de ahorro"); // Texto
 		tipButton.setBorder(new LineBorder(Color.BLACK)); // Borde
 		tipButton.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
 		tipButton.setForeground(Color.BLACK); // Color del texto
 		tipButton.setBackground(Color.LIGHT_GRAY); // Color del fondo
 		tipButton.setFocusable(false); // Quitar cuadro alrededor
-		tipButton.addActionListener(this); // AÃƒÂ±adir ActionListener 
+		tipButton.addActionListener(this); // Añadir ActionListener 
 		tipButton.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
 		
 		// ================= BOTONES FIJOS =============================
@@ -175,93 +175,93 @@ public class Savings extends JFrame implements ActionListener {
 		// ------------ Botón: Pagina categorías -------------------
 		
 		catPage = new JButton();
-        catPage.setBounds(22,495,110,40); // TamaÃƒÂ±o
+        catPage.setBounds(22,495,110,40); // Tamaño
         catPage.setText("Categorías"); // Texto
         catPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         catPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         catPage.setForeground(Color.BLACK); // Color del texto
         catPage.setBackground(Color.WHITE); // Color del fondo
         catPage.setFocusable(false); // Quitar cuadro alrededor
-        catPage.addActionListener(this); // AÃƒÂ±adir ActionListener 
+        catPage.addActionListener(this); // Añadir ActionListener 
         catPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
      
         // ------------ BotÃ³n: Pagina cuentas -------------------
 		
      	accPage = new JButton();
-        accPage.setBounds(147,495,110,40); // TamaÃƒÂ±o
+        accPage.setBounds(147,495,110,40); // Tamaño
         accPage.setText("Cuentas"); // Texto
         accPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         accPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         accPage.setForeground(Color.BLACK); // Color del texto
         accPage.setBackground(Color.WHITE); // Color del fondo
         accPage.setFocusable(false); // Quitar cuadro alrededor
-        accPage.addActionListener(this); // AÃƒÂ±adir ActionListener
+        accPage.addActionListener(this); // Añadir ActionListener
         accPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ BotÃƒÂ³n: Pagina ahorro -------------------
+        // ------------ Botón: Pagina ahorro -------------------
 		
      	savesPage = new JButton();
-        savesPage.setBounds(272,495,110,40); // TamaÃƒÂ±o
+        savesPage.setBounds(272,495,110,40); // Tamaño
         savesPage.setText("Ahorro"); // Texto
         savesPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         savesPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         savesPage.setForeground(Color.BLACK); // Color del texto
         savesPage.setBackground(Color.LIGHT_GRAY); // Color del fondo
         savesPage.setFocusable(false); // Quitar cuadro alrededor
-        savesPage.addActionListener(this); // AÃƒÂ±adir ActionListener 
+        savesPage.addActionListener(this); // Añadir ActionListener 
         savesPage.setBorder(BorderFactory.createEtchedBorder(Color.WHITE, Color.GRAY)); // Borde
-        savesPage.setEnabled(false); // Desabilita el botÃƒÂ³n
+        savesPage.setEnabled(false); // Desabilita el botón
         
-        // ------------ BotÃƒÂ³n: Pagina estadÃƒÂ­sticas -------------------
+        // ------------ Botón: Pagina estadísticas -------------------
 		
      	statsPage = new JButton();
-        statsPage.setBounds(397,495,110,40); // TamaÃƒÂ±o
+        statsPage.setBounds(397,495,110,40); // Tamaño
         statsPage.setText("Resumen"); // Texto
         statsPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         statsPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         statsPage.setForeground(Color.BLACK); // Color del texto
         statsPage.setBackground(Color.WHITE); // Color del fondo
         statsPage.setFocusable(false); // Quitar cuadro alrededor
-        statsPage.addActionListener(this); // AÃƒÂ±adir ActionListener
+        statsPage.addActionListener(this); // Añadir ActionListener
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
         
-        // ------------ BotÃƒÂ³n: Pagina ajustes -------------------
+        // ------------ Botón: Pagina ajustes -------------------
 		
      	settPage = new JButton();
-        settPage.setBounds(522,495,40,40); // TamaÃƒÂ±o
+        settPage.setBounds(522,495,40,40); // Tamaño
         settPage.setText("="); // Texto
         settPage.setBorder(new LineBorder(Color.BLACK)); // Borde
         settPage.setFont(new Font("Consolas", Font.ITALIC, 15)); // Fuente
         settPage.setForeground(Color.BLACK); // Color del texto
         settPage.setBackground(Color.WHITE); // Color del fondo
         settPage.setFocusable(false); // Quitar cuadro alrededor
-        settPage.addActionListener(this); // AÃƒÂ±adir ActionListener
+        settPage.addActionListener(this); // Añadir ActionListener
         statsPage.setBorder(BorderFactory.createEtchedBorder(Color.GRAY, Color.LIGHT_GRAY)); // Borde
 		
-		// ------------ BotÃƒÂ³n: Crear transacciÃƒÂ³n -------------------
+		// ------------ Botón: Crear transacción -------------------
 	
 		addTrans = new JButton();
-		addTrans.setBounds(505,440,25,25); // TamaÃƒÂ±o
+		addTrans.setBounds(505,440,25,25); // Tamaño
 		addTrans.setText("+"); // Texto
 		addTrans.setBorder(new LineBorder(Color.BLACK)); // Borde
 		addTrans.setFont(new Font("Consolas", Font.BOLD, 14)); // Fuente
 		addTrans.setForeground(Color.ORANGE); // Color del texto
 		addTrans.setBackground(Color.WHITE); // Color del fondo
 		addTrans.setFocusable(false); // Quitar cuadro alrededor
-		addTrans.addActionListener(this); // AÃƒÂ±adir ActionListener
+		addTrans.addActionListener(this); // Añadir ActionListener
 		addTrans.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
-		// ------------ BotÃƒÂ³n: Obtener ayuda -----------------------
+		// ------------ Botón: Obtener ayuda -----------------------
 		
 		getHelp = new JButton();
-		getHelp.setBounds(50,440,25,25); // TamaÃƒÂ±o
+		getHelp.setBounds(50,440,25,25); // Tamaño
 		getHelp.setText("?"); // Texto
 		getHelp.setBorder(new LineBorder(Color.BLACK)); // Borde
 		getHelp.setFont(new Font("Consolas", Font.ITALIC, 12)); // Fuente
 		getHelp.setForeground(Color.BLACK); // Color del texto
 		getHelp.setBackground(Color.WHITE); // Color del fondo
 		getHelp.setFocusable(false); // Quitar cuadro alrededor
-		getHelp.addActionListener(this); // AÃƒÂ±adir ActionListener
+		getHelp.addActionListener(this); // Añadir ActionListener
 		getHelp.setBorder(BorderFactory.createEtchedBorder()); // Borde
 		
 					
@@ -288,7 +288,7 @@ public class Savings extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null); // Layout
 		this.setSize(600,600); // Dimensiones
-		this.setResizable(false); // No cambia de tamaÃƒÂ±o
+		this.setResizable(false); // No cambia de tamaño
 		this.getContentPane().setBackground(Color.WHITE); // Color de fondo
 		ImageIcon logo = new ImageIcon("Freebee_Icon.png"); // Logo
 		this.setIconImage(logo.getImage()); // Poner logo
@@ -320,8 +320,6 @@ public class Savings extends JFrame implements ActionListener {
 	
 	private void tokenize(String line) {
 		
-
-		System.out.println("Tokenizando lÃ­nea");
 		Scanner sc = new Scanner(line);
 		sc.useDelimiter(";");
 		
@@ -360,7 +358,7 @@ public class Savings extends JFrame implements ActionListener {
     return tipToShow;
 	}
 	
-	// Criterio al presionar el botÃƒÂ³n
+	// Criterio al presionar el botón
 	@Override
 	public void actionPerformed(ActionEvent pressed) {
 		

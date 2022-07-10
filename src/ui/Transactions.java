@@ -1,26 +1,22 @@
 package ui;
 
 /*
- * Freebie
+ * Freebee
  * @author Marcos Pinzón Pardo
  */
 
 import java.awt.BorderLayout;
-import java.awt.Font;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import logic.Account;
+import avlTree.AvlTreeIterator;
 import logic.Transaction;
 import logic.UserList;
-import seqDataStructures.DynamicArray;
 import seqDataStructures.LinkedList;
 import seqDataStructures.LinkedListIterator;
-
 
 public class Transactions extends JFrame{
 
@@ -34,8 +30,8 @@ public class Transactions extends JFrame{
 
 		JTable table;
 			
-		LinkedList<Transaction> transactions = ul.getUser().transactionsInList();
-		LinkedListIterator <Transaction> it = new LinkedListIterator<Transaction>(transactions);
+		AvlTreeIterator<Transaction> it = new AvlTreeIterator<Transaction>(ul.getUser().getTransactions().getRoot());
+		
 		
 		setSize(650,550);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

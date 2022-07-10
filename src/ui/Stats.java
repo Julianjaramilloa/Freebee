@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import avlTree.AVLTree;
+import avlTree.AvlTreeIterator;
 import logic.Transaction;
 import logic.User;
 import logic.UserList;
@@ -61,7 +62,7 @@ public class Stats extends JFrame implements ActionListener {
 		float previous = 0;
 		LocalDate today = LocalDate.now();
 		LinkedList<Transaction> thisMonth = new LinkedList<Transaction>();
-		LinkedListIterator<Transaction> it = new LinkedListIterator<Transaction>(us.transactionsInList());
+		AvlTreeIterator<Transaction> it = new AvlTreeIterator<Transaction>(ul.getUser().getTransactions().getRoot());
 		
 		while(it.hasNext()) {
 			Transaction ts = it.next();
@@ -90,7 +91,7 @@ public class Stats extends JFrame implements ActionListener {
 		float gastoTotal = 0;
 		float ingresosTotal = 0;
 		
-		LinkedListIterator<Transaction> it2 = new LinkedListIterator<Transaction>(us.transactionsInList());
+		AvlTreeIterator<Transaction> it2 = new AvlTreeIterator<Transaction>(ul.getUser().getTransactions().getRoot());
 		while(it2.hasNext()) {
 			Transaction ts = it2.next();
 			boolean isIngreso = ts.getBoolean();

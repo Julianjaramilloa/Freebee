@@ -205,7 +205,7 @@ public class ReaderWriter {
 
 				AvlTreeIterator<Transaction> avlIterator = new AvlTreeIterator<Transaction>(listaDeTrans.getRoot());
 				while (avlIterator.hasNext()) {
-					f.write("T; " + (avlIterator.next().getData()).saveData() + "\n");
+					f.write("T; " + (avlIterator.next()).saveData() + "\n");
 				}
 				
 			}

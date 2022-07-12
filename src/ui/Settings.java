@@ -12,6 +12,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,6 +24,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import logic.ReaderWriter;
 import logic.UserList;
 
 public class Settings extends JFrame implements ActionListener {
@@ -283,6 +287,13 @@ public class Settings extends JFrame implements ActionListener {
 		help3.setVisible(true); // Visibilidad
 		
 		// ----------------- Frame ------------------------
+		
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				ReaderWriter rw = new ReaderWriter(ul);
+				rw.saveChanges();
+			}
+		});
 		
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setTitle("Freebe / Acerca de"); // Título

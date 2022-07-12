@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
@@ -22,6 +24,7 @@ import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 
 import avlTree.AvlTreeIterator;
+import logic.ReaderWriter;
 import logic.Transaction;
 import logic.User;
 import logic.UserList;
@@ -279,6 +282,12 @@ public class Savings extends JFrame implements ActionListener {
 		this.add(tipLabel2);
 		this.add(tipButton);
 
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				ReaderWriter rw = new ReaderWriter(ul);
+				rw.saveChanges();
+			}
+		});
 		
 		this.setTitle("Freebee"); // Título
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

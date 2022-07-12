@@ -11,6 +11,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.time.LocalDate;
 
 import javax.swing.BorderFactory;
@@ -23,6 +25,7 @@ import javax.swing.border.LineBorder;
 
 import avlTree.AVLTree;
 import avlTree.AvlTreeIterator;
+import logic.ReaderWriter;
 import logic.Transaction;
 import logic.User;
 import logic.UserList;
@@ -252,7 +255,12 @@ public class Stats extends JFrame implements ActionListener {
 		
 		this.add(welcomeLabel);
 
-
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				ReaderWriter rw = new ReaderWriter(ul);
+				rw.saveChanges();
+			}
+		});
 		
 		this.setTitle("Freebee"); // Título
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -265,7 +273,7 @@ public class Stats extends JFrame implements ActionListener {
 		this.setVisible(true); // Visible
 		this.setLocationRelativeTo(null); // Muestra en centro
 
-		
+
 	}
 	
 	// Criterio al presionar el botón

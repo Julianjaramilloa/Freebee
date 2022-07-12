@@ -11,6 +11,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,6 +27,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import logic.Account;
+import logic.ReaderWriter;
 import logic.UserList;
 import seqDataStructures.DynamicArray;
 import seqDataStructures.DynamicArrayIterator;
@@ -220,7 +223,12 @@ public class Accounts extends JFrame implements ActionListener {
 		this.add(balance);
 		this.add(newAcc);
 
-
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				ReaderWriter rw = new ReaderWriter(ul);
+				rw.saveChanges();
+			}
+		});
 		
 		this.setTitle("Freebee"); // Título
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -233,7 +241,7 @@ public class Accounts extends JFrame implements ActionListener {
 		this.setVisible(true); // Visible
 		this.setLocationRelativeTo(null); // Muestra en centro
 
-		
+
 	}
 
 	private void displayAccButtons(int c) {
